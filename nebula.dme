@@ -3133,5 +3133,8 @@
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
 #include "mods\_modpack.dm"
+#include "tethys\code\datums\music_tracks\intermissi0n.dm"
+#include "tethys\code\datums\music_tracks\liquidcontrol.dm"
+#include "tethys\overrides\maps\bearcat\bearcat_define.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
