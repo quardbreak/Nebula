@@ -21,10 +21,11 @@
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
 	hidden_from_codex = TRUE
 	reflectiveness = MAT_VALUE_DULL
+	resilience = 16
 
 /material/cult/place_dismantled_girder(var/turf/target)
 	new /obj/structure/girder/cult(target)
 
 /material/cult/reinf
 	display_name = "runic inscriptions"
-	
+	resilience = 25

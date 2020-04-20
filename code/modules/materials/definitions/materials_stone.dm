@@ -26,6 +26,9 @@
 	sheet_singular_name = "gem"
 	sheet_plural_name = "gems"
 	value = 70
+	integrity = 250
+	resilience = 25
+	reflectance = 50
 
 /material/diamond/crystal
 	display_name = "crystal"
@@ -59,6 +62,7 @@
 		)
 	sale_price = 1
 	value = 4
+	resilience = 9
 
 /material/stone/ceramic
 	display_name = "ceramic"
@@ -80,6 +84,8 @@
 	chem_products = null
 	sale_price = 4
 	value = 20
+	resilience = 9
+	reflectance = 5
 
 /material/stone/concrete
 	display_name = "concrete"

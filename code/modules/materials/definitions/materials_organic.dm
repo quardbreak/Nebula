@@ -18,6 +18,8 @@
 	sale_price = 1
 	reflectiveness = MAT_VALUE_SHINY
 	wall_support_value = 10
+	resilience = 0
+	reflectance = -20
 
 /material/plastic/holographic
 	display_name = "holographic plastic"

@@ -9,7 +9,7 @@
 	integrity = 50
 	shard_type = SHARD_SHARD
 	tableslam_noise = 'sound/effects/Glasshit.ogg'
-	hardness = MAT_VALUE_RIGID + 10	
+	hardness = MAT_VALUE_RIGID + 10
 	reflectiveness = MAT_VALUE_SHINY
 	melting_point = T0C + 100
 	weight = 14
@@ -24,6 +24,8 @@
 	sale_price = 1
 	value = 4
 	wall_support_value = 14
+	resilience = 0
+	reflectance = 30
 
 /material/glass/proc/is_reinforced()
 	return (integrity > 75) //todo
@@ -49,3 +51,5 @@
 	alloy_materials = list(MAT_GLASS = 2500, MAT_PLATINUM = 1250)
 	sale_price = 2
 	value = 40
+	resilience = 0
+	reflectance = 40

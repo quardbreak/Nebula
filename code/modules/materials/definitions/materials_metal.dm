@@ -20,6 +20,8 @@
 	sale_price = 2
 	value = 100
 	removed_by_welder = TRUE
+	resilience = 16
+	reflectance = 15
 
 /material/gold
 	display_name = "gold"
@@ -45,8 +47,10 @@
 	ore_scan_icon = "mineral_uncommon"
 	ore_icon_overlay = "nugget"
 	sale_price = 3
-	value = 40	
+	value = 40
 	removed_by_welder = TRUE
+	resilience = 4
+	reflectance = 20
 
 /material/gold/bronze //placeholder for ashtrays
 	display_name = "bronze"
@@ -107,6 +111,8 @@
 	sale_price = 2
 	value = 35
 	removed_by_welder = TRUE
+	resilience = 9
+	reflectance = 25
 
 /material/steel
 	display_name = "steel"
@@ -114,7 +120,7 @@
 	wall_name = "bulkhead"
 	stack_type = /obj/item/stack/material/steel
 	weight = 25
-	integrity = 150
+	integrity = 200
 	brute_armor = 5
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
@@ -132,6 +138,8 @@
 	reflectiveness = MAT_VALUE_SHINY
 	value = 4
 	removed_by_welder = TRUE
+	resilience = 36
+	reflectance = 13
 
 /material/steel/holographic
 	display_name = "holographic steel"
@@ -203,6 +211,8 @@
 	value = 12
 	reflectiveness = MAT_VALUE_MATTE
 	removed_by_welder = TRUE
+	resilience = 49
+	reflectance = 20
 
 /material/plasteel/titanium
 	display_name = "titanium"
@@ -222,11 +232,13 @@
 	alloy_product = FALSE
 	value = 30
 	reflectiveness = MAT_VALUE_SHINY
+	resilience = 49
+	reflectance = 15
 
 /material/plasteel/ocp
 	display_name = "osmium-carbide plasteel"
 	stack_type = /obj/item/stack/material/ocp
-	integrity = 200
+	integrity = 300
 	melting_point = 12000
 	icon_base = "solid"
 	icon_reinf = "reinf_over"
@@ -240,6 +252,8 @@
 	alloy_product = TRUE
 	sale_price = 3
 	reflectiveness = MAT_VALUE_SHINY
+	resilience = 49
+	reflectance = 25
 
 /material/osmium
 	display_name = "osmium"
@@ -279,6 +293,8 @@
 	value = 80
 	reflectiveness = MAT_VALUE_SHINY
 	removed_by_welder = TRUE
+	resilience = 16
+	reflectance = 20
 
 /material/iron
 	display_name = "iron"
@@ -298,6 +314,8 @@
 	value = 5
 	reflectiveness = MAT_VALUE_MATTE
 	removed_by_welder = TRUE
+	resilience = 25
+	reflectance = 10
 
 // Adminspawn only, do not let anyone get this.
 /material/voxalloy
@@ -315,6 +333,8 @@
 	value = 100
 	reflectiveness = MAT_VALUE_SHINY
 	removed_by_welder = TRUE
+	resilience = 49
+	reflectance = 10
 
 // Likewise.
 /material/voxalloy/elevatorium

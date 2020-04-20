@@ -106,6 +106,11 @@
 	var/list/alloy_materials     // If set, material can be produced via alloying these materials in these amounts.
 	var/wall_support_value = 30
 
+	// The higher this value is, the higher is the chance that bullets will ricochet from wall's surface. Don't set negative values.
+	var/resilience = 1
+	// Defines whether material in walls raises (positive values) or decreases (negative values) reflection chance.
+	var/reflectance = -50 // -50 <= reflectance <= 50 - recommended values.
+
 	// Placeholder vars for the time being, todo properly integrate windows/light tiles/rods.
 	var/wire_product
 	var/list/window_options = list()
@@ -186,7 +191,7 @@
 
 /material/proc/build_wired_product(var/mob/user, var/obj/item/stack/used_stack, var/obj/item/stack/target_stack)
 	if(!wire_product)
-		to_chat(user, SPAN_WARNING("You cannot make anything out of \the [target_stack]."))	
+		to_chat(user, SPAN_WARNING("You cannot make anything out of \the [target_stack]."))
 		return
 	if(!used_stack.can_use(5) || !target_stack.can_use(1))
 		to_chat(user, SPAN_WARNING("You need five wires and one sheet of [display_name] to make anything useful."))

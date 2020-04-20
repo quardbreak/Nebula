@@ -259,6 +259,8 @@
 	gas_symbol_html = "Ph"
 	gas_symbol = "Ph"
 	reflectiveness = MAT_VALUE_SHINY
+	resilience = 4
+	reflectance = 25
 
 /material/phoron/supermatter
 	display_name = "exotic matter"

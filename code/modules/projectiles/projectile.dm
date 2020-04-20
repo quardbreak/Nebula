@@ -57,6 +57,8 @@
 	var/tracer_type
 	var/impact_type
 
+	var/ricochet_id = 0
+
 	var/fire_sound
 	var/miss_sounds
 	var/ricochet_sounds
@@ -511,6 +513,6 @@
 		SP.SetName((name != "shrapnel")? "[name] shrapnel" : "shrapnel")
 		SP.desc += " It looks like it was fired from [shot_from]."
 		return SP
-	
+
 /obj/item/projectile/get_autopsy_descriptors()
 	return list(name)
