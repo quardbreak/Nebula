@@ -12,10 +12,9 @@
 	obj_flags = OBJ_FLAG_ROTATABLE
 	material = DEFAULT_FURNITURE_MATERIAL
 	material_alteration = MAT_FLAG_ALTERATION_ALL
+	maxhealth = 100
 
 	var/broken =    FALSE
-	var/health =    70
-	var/maxhealth = 70
 	var/neighbor_status = 0
 
 /obj/structure/railing/mapped
@@ -29,9 +28,6 @@
 /obj/structure/railing/mapped/no_density
 	density = 0
 
-/obj/structure/railing/mapped/no_density/Initialize()
-	. = ..()
-	update_icon()
 
 /obj/structure/railing/Process()
 	if(!material || !material.radioactivity)
@@ -41,6 +37,8 @@
 
 /obj/structure/railing/Initialize()
 	. = ..()
+	if(!material)
+		return INITIALIZE_HINT_QDEL
 	if(material.products_need_process())
 		START_PROCESSING(SSobj, src)
 	if(material.conductive)
@@ -50,16 +48,18 @@
 	if(anchored)
 		update_icon(FALSE)
 
-/obj/structure/railing/update_materials(var/keep_health)
-	..()
-	desc = "A simple [material.display_name] railing designed to protect against careless trespass."
-	if(!keep_health)
-		maxhealth = round(material.integrity / 5)
-		health = maxhealth
+/obj/structure/railing/get_material_health_modifier()
+	. = 0.2
+
+/obj/structure/railing/update_material_desc(override_desc)
+	if(material)
+		desc = "A simple [material.display_name] railing designed to protect against careless trespass."
+	else
+		..()
 
 /obj/structure/railing/Destroy()
 	anchored = FALSE
-	atom_flags = 0
+	atom_flags &= ~ATOM_FLAG_CHECKS_BORDER
 	broken = TRUE
 	for(var/thing in trange(1, src))
 		var/turf/T = thing

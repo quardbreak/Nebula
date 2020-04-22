@@ -207,6 +207,17 @@
 	burnt = TRUE
 	update_icon()
 
+/turf/simulated/floor/exoplanet/concrete/reinforced
+	name = "reinforced concrete"
+	desc = "Stone-like artificial material. It has been reinforced with an unknown compound"
+	icon_state = "hexacrete"
+
+/turf/simulated/floor/exoplanet/concrete/reinforced/road
+	icon_state = "hexacrete_dark"
+
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged
+	broken = TRUE
+
 //Special world edge turf
 
 /turf/simulated/planet_edge
@@ -217,6 +228,7 @@
 	dynamic_lighting = FALSE
 	icon = null
 	icon_state = null
+	permit_ao = FALSE
 
 /turf/simulated/planet_edge/Initialize()
 	. = ..()

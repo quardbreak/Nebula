@@ -5,11 +5,19 @@
 	planetary_area = /area/exoplanet/volcanic
 	rock_colors = list(COLOR_DARK_GRAY)
 	plant_colors = list("#a23c05","#3f1f0d","#662929","#ba6222","#7a5b3a","#120309")
-	possible_themes = list()
+	max_themes = 1
+	possible_themes = list(
+		/datum/exoplanet_theme = 100,
+		/datum/exoplanet_theme/robotic_guardians = 10
+	)
 	map_generators = list(/datum/random_map/automata/cave_system/mountains/volcanic, /datum/random_map/noise/exoplanet/volcanic, /datum/random_map/noise/ore/filthy_rich)
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER
 	surface_color = "#261e19"
 	water_color = "#c74d00"
+	flora_diversity = 3
+	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/hostile/retaliate/beast/shantak/lava, /mob/living/simple_animal/hostile/retaliate/beast/charbaby)
+	megafauna_types = list(/mob/living/simple_animal/hostile/drake)
+	has_trees = FALSE
 
 /obj/effect/overmap/visitable/sector/exoplanet/volcanic/get_atmosphere_color()
 	return COLOR_GRAY20
@@ -43,9 +51,6 @@
 	fauna_prob = 1
 	flora_prob = 3
 	large_flora_prob = 0
-	flora_diversity = 3
-	fauna_types = list(/mob/living/simple_animal/thinbug, /mob/living/simple_animal/hostile/retaliate/beast/shantak/lava, /mob/living/simple_animal/hostile/retaliate/beast/charbaby)
-	megafauna_types = list(/mob/living/simple_animal/hostile/drake)
 
 //Squashing most of 1 tile lava puddles
 /datum/random_map/noise/exoplanet/volcanic/cleanup()
