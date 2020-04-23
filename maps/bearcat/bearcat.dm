@@ -3,6 +3,9 @@
 	#include "../../mods/misc/mundane.dm"
 	#include "../../mods/corporate/_corporate.dme"
 
+	// Tethys Edit
+	#include "../../tethys/mods/machine/_machine.dme"
+
 	#include "bearcat_unit_testing.dm"
 
 	#include "../../code/datums/music_tracks/businessend.dm"
