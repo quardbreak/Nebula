@@ -4,7 +4,7 @@
 
 /obj/item/storage/backpack/satchel
 	worn_access = TRUE
-	max_w_class = ITEM_SIZE_NORMAL
+//	max_w_class = ITEM_SIZE_NORMAL todo: revisit, fix travis error
 
 /obj/item/storage/backpack/attackby(obj/item/W, mob/user)
 	if(!worn_check(user)) return
