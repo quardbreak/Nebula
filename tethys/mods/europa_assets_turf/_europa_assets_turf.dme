@@ -1,0 +1,15 @@
+#ifndef MODPACK_EUROPA_ASSETS_TURF
+#define MODPACK_EUROPA_ASSETS_TURF
+// BEGIN_INCLUDE
+#include "europa_assets_turf.dm"
+#include "turfs\flooring\flooring.dm"
+#include "turfs\flooring\flooring_premade.dm"
+// END_INCLUDE
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
