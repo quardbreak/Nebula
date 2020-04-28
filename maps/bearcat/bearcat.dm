@@ -5,7 +5,7 @@
 
 	// Tethys Edit
 	#include "../../tethys/mods/machine/_machine.dme"
-//	#include "../../tethys/mods/europa_assets_turf/_europa_assets_turf.dme"
+//	#include "../../tethys/mods/europa_floors/_europa_floors.dme"
 
 	#include "bearcat_unit_testing.dm"
 

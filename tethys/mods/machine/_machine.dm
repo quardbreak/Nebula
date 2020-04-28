@@ -6,4 +6,4 @@
 #define FACTION_POSITRONICS "Positronic Union"
 
 /decl/modpack/ipc
-	name = "IPC Species Content"
+	name = "Species - IPC"

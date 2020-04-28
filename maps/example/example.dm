@@ -9,6 +9,10 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
+	// Tethys Edit
+	#include "../../tethys/mods/machine/_machine.dme"
+	#include "../../tethys/mods/europa_floors/_europa_floors.dme"
+
 	#include "example_areas.dm"
 	#include "example_shuttles.dm"
 	#include "example_unit_testing.dm"

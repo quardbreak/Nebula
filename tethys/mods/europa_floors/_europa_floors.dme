@@ -1,7 +1,7 @@
-#ifndef MODPACK_EUROPA_ASSETS_TURF
-#define MODPACK_EUROPA_ASSETS_TURF
+#ifndef MODPACK_EUROPA_FLOORS
+#define MODPACK_EUROPA_FLOORS
 // BEGIN_INCLUDE
-#include "europa_assets_turf.dm"
+#include "europa_floors.dm"
 #include "turfs\flooring\flooring.dm"
 #include "turfs\flooring\flooring_premade.dm"
 // END_INCLUDE
