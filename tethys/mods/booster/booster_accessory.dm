@@ -1,7 +1,7 @@
 /datum/sprite_accessory/marking/booster
 	species_allowed = list(SPECIES_HUMAN)
 	subspecies_allowed = list(SPECIES_BOOSTER)
-	icon = 'icons/mob/human_races/species/human/subspecies/booster_mods.dmi'
+	icon = 'booster_mods.dmi'
 
 /datum/sprite_accessory/marking/booster/ears
 	body_parts = list(BP_HEAD)

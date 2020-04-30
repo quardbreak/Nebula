@@ -9,7 +9,7 @@
 	inhuman in outlook and perspective."
 	cyborg_noun = null
 
-	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
+	preview_icon = 'preview.dmi'
 	bodytype = BODYTYPE_HUMANOID
 
 	unarmed_attacks = list(/decl/natural_attack/punch, /decl/natural_attack/kick, /decl/natural_attack/stomp)
