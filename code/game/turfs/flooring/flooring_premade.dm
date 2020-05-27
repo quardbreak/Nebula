@@ -5,37 +5,46 @@
 	icon_state = "plating"
 	layer = PLATING_LAYER
 
-/turf/simulated/floor/bluegrid
+/turf/simulated/floor/circuit
 	name = "mainframe floor"
 	icon = 'icons/turf/flooring/circuit.dmi'
-	icon_state = "bcircuit"
+	icon_state = "circuit"
 	initial_flooring = /decl/flooring/reinforced/circuit
 	light_outer_range = 2
 	light_max_bright = 1
-	light_color = COLOR_BLUE
 
-/turf/simulated/floor/bluegrid/airless
+	light_color = COLOR_BLUE
+	color = COLOR_BLUE
+
+/turf/simulated/floor/circuit/proc/set_light_color(color, flash = FALSE)
+	if(!lenght(color))
+		set_light(0)
+		icon = "circuit_off"
+		return
+
+	icon = "circuit"
+	light_color = color
+	color = color
+
+	if(flash)
+
+/turf/simulated/floor/circuit/airless
 	initial_gas = null
 
-/turf/simulated/floor/greengrid
-	name = "mainframe floor"
-	icon = 'icons/turf/flooring/circuit.dmi'
-	icon_state = "gcircuit"
+/turf/simulated/floor/circuit/green
 	initial_flooring = /decl/flooring/reinforced/circuit/green
-	light_outer_range = 2
-	light_max_bright = 1
 	light_color = COLOR_GREEN
+	color = COLOR_GREEN
 
-/turf/simulated/floor/blackgrid
-	name = "mainframe floor"
-	icon = 'icons/turf/flooring/circuit.dmi'
-	icon_state = "rcircuit"
+/turf/simulated/floor/circuit/green/airless
+	initial_gas = null
+
+/turf/simulated/floor/circuit/red
 	initial_flooring = /decl/flooring/reinforced/circuit/red
-	light_outer_range = 2
-	light_max_bright = 1
 	light_color = COLOR_RED
+	color = COLOR_RED
 
-/turf/simulated/floor/greengrid/airless
+/turf/simulated/floor/circuit/red/airless
 	initial_gas = null
 
 /turf/simulated/floor/wood

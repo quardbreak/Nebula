@@ -296,17 +296,18 @@
 /decl/flooring/reinforced/circuit
 	name = "processing strata"
 	icon = 'icons/turf/flooring/circuit.dmi'
-	icon_base = "bcircuit"
+	icon_base = "circuit"
 	build_type = null
 	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_WRENCH
 	can_paint = 1
 	can_engrave = FALSE
+	color = COLOR_BLUE
 
 /decl/flooring/reinforced/circuit/green
-	icon_base = "gcircuit"
+	color = COLOR_GREEN
 
 /decl/flooring/reinforced/circuit/red
-	icon_base = "rcircuit"
+	color = COLOR_RED
 	flags = TURF_ACID_IMMUNE
 	can_paint = 0
 
