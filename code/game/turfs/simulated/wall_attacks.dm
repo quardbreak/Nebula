@@ -70,9 +70,9 @@
 	. = TRUE
 	if(rotting)
 		if(reinf_material)
-			to_chat(user, "<span class='danger'>\The [reinf_material.display_name] feels porous and crumbly.</span>")
+			to_chat(user, "<span class='danger'>\The [reinf_material.solid_name] feels porous and crumbly.</span>")
 		else
-			to_chat(user, "<span class='danger'>\The [material.display_name] crumbles under your touch!</span>")
+			to_chat(user, "<span class='danger'>\The [material.solid_name] crumbles under your touch!</span>")
 			dismantle_wall()
 			return
 
@@ -102,28 +102,6 @@
 	if(!.)
 		return try_touch(user, rotting)
 
-/turf/simulated/wall/attack_generic(var/mob/user, var/damage, var/attack_message, var/wallbreaker)
-
-	radiate()
-	if(!istype(user))
-		return
-
-	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	var/rotting = (locate(/obj/effect/overlay/wallrot) in src)
-	if(!damage || !wallbreaker)
-		try_touch(user, rotting)
-		return
-
-	if(rotting)
-		return success_smash(user)
-
-	if(reinf_material)
-		if(damage >= max(material.hardness,reinf_material.hardness))
-			return success_smash(user)
-	else if(wallbreaker == 2 || damage >= material.hardness)
-		return success_smash(user)
-	return fail_smash(user)
-
 /turf/simulated/wall/attackby(var/obj/item/W, var/mob/user, click_params)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -139,8 +117,8 @@
 
 	if(W)
 		radiate()
-		if(is_hot(W))
-			burn(is_hot(W))
+		if(W.get_heat() >= T100C)
+			burn(W.get_heat())
 
 	if(locate(/obj/effect/overlay/wallrot) in src)
 		if(isWelder(W))

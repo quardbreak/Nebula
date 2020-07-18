@@ -2,10 +2,10 @@
 	hierarchy_type = /decl/hierarchy/outfit/tournament_gear
 	head = /obj/item/clothing/head/helmet/thunderdome
 	suit = /obj/item/clothing/suit/armor/vest
-	l_hand = /obj/item/material/knife/combat
-	r_hand = /obj/item/gun/energy/pulse_rifle/destroyer
+	l_hand = /obj/item/knife/combat
+	r_hand = /obj/item/gun/energy/laser
 	r_pocket = /obj/item/grenade/smokebomb
-	shoes = /obj/item/clothing/shoes/black
+	shoes = /obj/item/clothing/shoes/color/black
 
 /decl/hierarchy/outfit/tournament_gear/red
 	name = "Tournament - Red"
@@ -29,9 +29,9 @@
 	head = /obj/item/clothing/head/chefhat
 	uniform = /obj/item/clothing/under/rank/chef
 	suit = /obj/item/clothing/suit/chef
-	r_hand = /obj/item/material/kitchen/rollingpin
-	l_pocket = /obj/item/material/knife/combat
-	r_pocket = /obj/item/material/knife/combat
+	r_hand = /obj/item/kitchen/rollingpin
+	l_pocket = /obj/item/knife/combat
+	r_pocket = /obj/item/knife/combat
 
 /decl/hierarchy/outfit/tournament_gear/janitor
 	name = "Tournament gear - Janitor"
@@ -47,4 +47,4 @@
 	..()
 	var/obj/item/chems/glass/bucket/bucket = locate(/obj/item/chems/glass/bucket) in H
 	if(bucket)
-		bucket.reagents.add_reagent(/decl/reagent/water, 70)
+		bucket.reagents.add_reagent(/decl/material/liquid/water, 70)

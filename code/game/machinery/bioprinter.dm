@@ -125,7 +125,7 @@
 		)
 
 	var/matter_amount_per_sheet = 10
-	var/matter_type = MAT_STEEL
+	var/matter_type = /decl/material/solid/metal/steel
 
 /obj/machinery/organ_printer/robot/mapped/Initialize()
 	. = ..()
@@ -253,8 +253,8 @@
 	// DNA sample from syringe.
 	if(istype(W,/obj/item/chems/syringe))
 		var/obj/item/chems/syringe/S = W
-		if(REAGENT_VOLUME(S.reagents, /decl/reagent/blood))
-			var/loaded_dna = REAGENT_DATA(S.reagents, /decl/reagent/blood)
+		if(REAGENT_VOLUME(S.reagents, /decl/material/liquid/blood))
+			var/loaded_dna = REAGENT_DATA(S.reagents, /decl/material/liquid/blood)
 			if(islist(loaded_dna))
 				var/weakref/R = loaded_dna["donor"]
 				var/mob/living/carbon/human/H = R.resolve()

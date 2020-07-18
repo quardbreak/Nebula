@@ -22,9 +22,7 @@ Small, little HP, poisonous.
 	mob_size = MOB_SIZE_MINISCULE
 	can_escape = TRUE
 	pass_flags = PASS_FLAG_TABLE
-	melee_damage_lower = 5
-	melee_damage_upper = 10
-	melee_damage_flags = DAM_SHARP
+	natural_weapon = /obj/item/natural_weapon/bite
 	holder_type = /obj/item/holder/voxslug
 	faction = "Hostile Fauna"
 
@@ -69,7 +67,7 @@ Small, little HP, poisonous.
 			if(prob(1))
 				to_chat(L, "<span class='warning'>You feel strange as \the [src] pulses...</span>")
 			var/datum/reagents/R = L.reagents
-			R.add_reagent(/decl/reagent/presyncopics, 0.5)
+			R.add_reagent(/decl/material/liquid/presyncopics, 0.5)
 
 /obj/item/holder/voxslug/attack(var/mob/target, var/mob/user)
 	var/mob/living/simple_animal/hostile/voxslug/V = contents[1]

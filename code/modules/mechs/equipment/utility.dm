@@ -257,17 +257,17 @@
 #undef CATAPULT_AREA
 
 
-/obj/item/material/drill_head
+/obj/item/drill_head
 	name = "drill head"
 	desc = "A replaceable drill head usually used in exosuit drills."
 	icon = 'icons/obj/items/tool/drill_head.dmi'
 	icon_state = "drill_head"
 	var/durability = 0
 
-/obj/item/material/drill_head/proc/get_durability_percentage()
+/obj/item/drill_head/proc/get_durability_percentage()
 	return (durability * 100) / (2 * material.integrity)
 
-/obj/item/material/drill_head/examine(mob/user, distance)
+/obj/item/drill_head/examine(mob/user, distance)
 	. = ..()
 	var/percentage = get_durability_percentage()
 	var/descriptor = "looks close to breaking"
@@ -282,7 +282,7 @@
 
 	to_chat(user, "It [descriptor].")
 
-/obj/item/material/drill_head/Initialize()
+/obj/item/drill_head/Initialize()
 	. = ..()
 	durability = 2 * material.integrity
 
@@ -295,12 +295,12 @@
 	equipment_delay = 10
 
 	//Drill can have a head
-	var/obj/item/material/drill_head/drill_head
+	var/obj/item/drill_head/drill_head
 	origin_tech = "{'materials':2,'engineering':2}"
 
 /obj/item/mech_equipment/drill/Initialize()
 	. = ..()
-	drill_head = new /obj/item/material/drill_head(src, MAT_STEEL) //You start with a basic steel head
+	drill_head = new /obj/item/drill_head(src, /decl/material/solid/metal/steel) //You start with a basic steel head
 
 /obj/item/mech_equipment/drill/attack_self(var/mob/user)
 	. = ..()
@@ -315,8 +315,8 @@
 	return
 
 /obj/item/mech_equipment/drill/attackby(obj/item/W, mob/user)
-	if(istype(W,/obj/item/material/drill_head))
-		var/obj/item/material/drill_head/DH = W
+	if(istype(W,/obj/item/drill_head))
+		var/obj/item/drill_head/DH = W
 		if(!user.unEquip(DH))
 			return
 		if(drill_head)
@@ -336,8 +336,8 @@
 			var/obj/target_obj = target
 			if(target_obj.unacidable)
 				return
-		if(istype(target,/obj/item/material/drill_head))
-			var/obj/item/material/drill_head/DH = target
+		if(istype(target,/obj/item/drill_head))
+			var/obj/item/drill_head/DH = target
 			if(drill_head)
 				owner.visible_message(SPAN_NOTICE("\The [owner] detaches the [drill_head] mounted on the [src]."))
 				drill_head.forceMove(owner.loc)
@@ -368,25 +368,26 @@
 					drill_head.shatter()
 					drill_head = null
 					return
-				if(istype(target, /turf/simulated/wall))
+
+				if(istype(target, /turf/simulated/wall/natural))
+					for(var/turf/simulated/wall/natural/M in range(target,1))
+						if(get_dir(owner,M)&owner.dir)
+							M.dismantle_wall()
+							drill_head.durability -= 1
+				else if(istype(target, /turf/simulated/wall))
 					var/turf/simulated/wall/W = target
 					if(max(W.material.hardness, W.reinf_material ? W.reinf_material.hardness : 0) > drill_head.material.hardness)
 						to_chat(user, "<span class='warning'>\The [target] is too hard to drill through with this drill head.</span>")
-					target.ex_act(2)
+					target.explosion_act(2)
 					drill_head.durability -= 1
 					log_and_message_admins("used [src] on the wall [W].", user, owner.loc)
-				else if(istype(target, /turf/simulated/mineral))
-					for(var/turf/simulated/mineral/M in range(target,1))
-						if(get_dir(owner,M)&owner.dir)
-							M.GetDrilled()
-							drill_head.durability -= 1
 				else if(istype(target, /turf/simulated/floor/asteroid))
 					for(var/turf/simulated/floor/asteroid/M in range(target,1))
 						if(get_dir(owner,M)&owner.dir)
 							M.gets_dug()
 							drill_head.durability -= 1
 				else if(target.loc == T)
-					target.ex_act(2)
+					target.explosion_act(2)
 					drill_head.durability -= 1
 					log_and_message_admins("[src] used to drill [target].", user, owner.loc)
 
@@ -420,8 +421,8 @@
 	holding_type = /obj/item/gun/energy/plasmacutter/mounted/mech
 	restricted_hardpoints = list(HARDPOINT_LEFT_HAND, HARDPOINT_RIGHT_HAND, HARDPOINT_LEFT_SHOULDER, HARDPOINT_RIGHT_SHOULDER)
 	restricted_software = list(MECH_SOFTWARE_UTILITY)
-	origin_tech = "{'materials':4,'phorontech':4,'engineering':6,'combat':3}"
-	material = MAT_STEEL
+	origin_tech = "{'materials':4,'exoticmatter':4,'engineering':6,'combat':3}"
+	material = /decl/material/solid/metal/steel
 
 /obj/item/gun/energy/plasmacutter/mounted/mech
 	use_external_power = TRUE

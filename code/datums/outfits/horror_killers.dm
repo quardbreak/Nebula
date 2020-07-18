@@ -9,7 +9,7 @@
 	glasses = /obj/item/clothing/glasses/thermal/plain/monocle
 	suit = /obj/item/clothing/suit/chaplain_hoodie
 	r_pocket = /obj/item/bikehorn
-	r_hand = /obj/item/material/twohanded/fireaxe
+	r_hand = /obj/item/twohanded/fireaxe
 
 	id_slot = slot_wear_id
 	id_type = /obj/item/card/id/centcom/station
@@ -18,16 +18,16 @@
 /decl/hierarchy/outfit/masked_killer
 	name = "Masked killer"
 	uniform = /obj/item/clothing/under/overalls
-	shoes = /obj/item/clothing/shoes/white
+	shoes = /obj/item/clothing/shoes/color/white
 	gloves = /obj/item/clothing/gloves/latex
 	mask = /obj/item/clothing/mask/surgical
 	head = /obj/item/clothing/head/welding
 	l_ear = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/thermal/plain/monocle
 	suit = /obj/item/clothing/suit/apron
-	l_pocket = /obj/item/material/knife/combat
+	l_pocket = /obj/item/knife/combat
 	r_pocket = /obj/item/scalpel
-	r_hand = /obj/item/material/twohanded/fireaxe
+	r_hand = /obj/item/twohanded/fireaxe
 
 /decl/hierarchy/outfit/masked_killer/post_equip(var/mob/living/carbon/human/H)
 	..()
@@ -38,11 +38,11 @@
 /decl/hierarchy/outfit/reaper
 	name = "Reaper"
 	uniform = /obj/item/clothing/under/suit_jacket{ starting_accessories=list(/obj/item/clothing/accessory/wcoat/black) }
-	shoes = /obj/item/clothing/shoes/black
+	shoes = /obj/item/clothing/shoes/color/black
 	gloves = /obj/item/clothing/gloves/thick
 	l_ear = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/sunglasses
-	l_pocket = /obj/item/melee/energy/sword
+	l_pocket = /obj/item/energy_blade/sword
 
 	id_slot = slot_wear_id
 	id_type = /obj/item/card/id/syndicate/station_access

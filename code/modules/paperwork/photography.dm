@@ -66,7 +66,7 @@ var/global/photo_count = 0
 	..()
 
 /obj/item/photo/examine(mob/user, distance)
-	. = TRUE
+	. = ..()
 	if(!img)
 		return
 	if(distance <= 1)
@@ -83,7 +83,6 @@ var/global/photo_count = 0
 		+ "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"\
 		+ "</body></html>", "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
 	onclose(user, "[name]")
-	return
 
 /obj/item/photo/verb/rename()
 	set name = "Rename photo"
@@ -147,8 +146,8 @@ var/global/photo_count = 0
 	w_class = ITEM_SIZE_SMALL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	material = MAT_ALUMINIUM
-	matter = list(MAT_PLASTIC = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/aluminium
+	matter = list(/decl/material/solid/plastic = MATTER_AMOUNT_REINFORCEMENT)
 	var/pictures_max = 10
 	var/pictures_left = 10
 	var/on = 1

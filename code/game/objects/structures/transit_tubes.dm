@@ -53,35 +53,10 @@
 
 	..()
 
-
-
-// When destroyed by explosions, properly handle contents.
-obj/structure/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			for(var/atom/movable/AM in contents)
-				AM.dropInto(loc)
-				AM.ex_act(severity++)
-
-			qdel(src)
-			return
-		if(2.0)
-			if(prob(50))
-				for(var/atom/movable/AM in contents)
-					AM.dropInto(loc)
-					AM.ex_act(severity++)
-
-				qdel(src)
-				return
-		if(3.0)
-			return
-
-
-
 /obj/structure/transit_tube_pod/Initialize()
 	. = ..()
 
-	air_contents.adjust_multi(MAT_OXYGEN, MOLES_O2STANDARD * 2, MAT_NITROGEN, MOLES_N2STANDARD)
+	air_contents.adjust_multi(/decl/material/gas/oxygen, MOLES_O2STANDARD * 2, /decl/material/gas/nitrogen, MOLES_N2STANDARD)
 	air_contents.temperature = T20C
 
 	// Give auto tubes time to align before trying to start moving

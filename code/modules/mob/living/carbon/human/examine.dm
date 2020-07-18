@@ -1,4 +1,5 @@
 /mob/living/carbon/human/examine(mob/user, distance)
+	SHOULD_CALL_PARENT(FALSE)
 	. = TRUE
 	var/skipgloves = 0
 	var/skipsuitstorage = 0
@@ -175,8 +176,11 @@
 					else
 						to_chat(user, "<span class='deadsay'>[T.He] [T.has] a pulse!</span>")
 
-	if(fire_stacks)
-		msg += "[T.He] looks flammable.\n"
+	if(fire_stacks > 0)
+		msg += "[T.He] is covered in flammable liquid!\n"
+	else if(fire_stacks < 0)
+		msg += "[T.He] [T.is] soaking wet.\n"
+
 	if(on_fire)
 		msg += "<span class='warning'>[T.He] [T.is] on fire!.</span>\n"
 

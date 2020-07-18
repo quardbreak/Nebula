@@ -30,7 +30,7 @@
 /obj/effect/overmap/visitable/sector/exoplanet/chlorine/generate_atmosphere()
 	..()
 	if(atmosphere)
-		atmosphere.adjust_gas(MAT_CHLORINE, MOLES_O2STANDARD)
+		atmosphere.adjust_gas(/decl/material/gas/chlorine, MOLES_O2STANDARD)
 		atmosphere.temperature = T100C - rand(0, 100)
 		atmosphere.update_values()
 
@@ -55,7 +55,7 @@
 	icon_state = "chlorine_liquid"
 	desc = "A pool of noxious liquid chlorine. It's full of silt and plant matter."
 	dirt_color = "#d2e0b7"
-	reagent_type = /decl/reagent/toxin/chlorine
+	reagent_type = /decl/material/gas/chlorine
 
 /turf/simulated/floor/exoplanet/chlorine_sand
 	name = "chlorinated sand"

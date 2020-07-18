@@ -8,7 +8,8 @@
 		energy = ARMOR_ENERGY_SHIELDED, 
 		bomb = ARMOR_BOMB_SHIELDED
 		)
-	icon_state = "necromancer"
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/necromancer.dmi'
 	item_flags = ITEM_FLAG_AIRTIGHT
 	max_pressure_protection = FIRESUIT_MAX_PRESSURE
 	min_pressure_protection = 0
@@ -41,5 +42,7 @@
 /obj/item/clothing/shoes/sandal/grimboots
 	name = "stained boots"
 	desc = "These boots are stained with blood so dry that it's turned black..."
-	icon_state = "grimboots"
+	icon_state = ICON_STATE_WORLD
+	color = COLOR_BLACK
+	shine = 10
 	item_flags = ITEM_FLAG_SILENT

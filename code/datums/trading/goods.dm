@@ -32,7 +32,7 @@
 								/obj/item/toy/figure                  = TRADER_SUBTYPES_ONLY,
 								/obj/item/toy/figure/ert              = TRADER_BLACKLIST,
 								/obj/item/toy/plushie                 = TRADER_SUBTYPES_ONLY,
-								/obj/item/toy/katana                  = TRADER_THIS_TYPE,
+								/obj/item/sword/katana/toy                  = TRADER_THIS_TYPE,
 								/obj/item/toy/sword                   = TRADER_THIS_TYPE,
 								/obj/item/toy/bosunwhistle            = TRADER_THIS_TYPE,
 								/obj/item/board                = TRADER_THIS_TYPE,
@@ -78,7 +78,7 @@
 								/obj/item/stack/cable_coil/random                        = TRADER_BLACKLIST,
 								/obj/item/stack/cable_coil/cut                           = TRADER_BLACKLIST,
 								/obj/item/stock_parts/circuitboard/air_alarm             = TRADER_THIS_TYPE,
-								/obj/item/airlock_electronics                     = TRADER_ALL,
+								/obj/item/stock_parts/circuitboard/airlock_electronics   = TRADER_ALL,
 								/obj/item/cell                                    = TRADER_THIS_TYPE,
 								/obj/item/cell/crap                               = TRADER_THIS_TYPE,
 								/obj/item/cell/high                               = TRADER_THIS_TYPE,
@@ -134,13 +134,12 @@
 	possible_origins = list("Foot Safe", "Paysmall", "Popular Footwear", "Grimbly's Shoes", "Right Steps")
 	possible_trading_items = list(/obj/item/clothing/shoes                = TRADER_SUBTYPES_ONLY,
 								/obj/item/clothing/shoes/chameleon        = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/combat           = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/jackboots/swat/combat           = TRADER_BLACKLIST,
 								/obj/item/clothing/shoes/clown_shoes      = TRADER_BLACKLIST,
 								/obj/item/clothing/shoes/cult             = TRADER_BLACKLIST,
-								/obj/item/clothing/shoes/cyborg           = TRADER_BLACKLIST,
 								/obj/item/clothing/shoes/lightrig         = TRADER_BLACKLIST_ALL,
 								/obj/item/clothing/shoes/magboots         = TRADER_BLACKLIST_ALL,
-								/obj/item/clothing/shoes/swat             = TRADER_BLACKLIST,
+								/obj/item/clothing/shoes/jackboots/swat             = TRADER_BLACKLIST,
 								/obj/item/clothing/shoes/syndigaloshes    = TRADER_BLACKLIST)
 
 /datum/trader/ship/clothingshop/hatglovesaccessories
@@ -344,7 +343,7 @@ Sells devices, odds and ends, and medical stuff
 								  /obj/item/circular_saw = TRADER_THIS_TYPE,
 								  /obj/item/bonegel = TRADER_THIS_TYPE,
 								  /obj/item/bonesetter = TRADER_THIS_TYPE,
-								  /obj/item/chems/glass/bottle/adrenaline = TRADER_THIS_TYPE,
+								  /obj/item/chems/glass/bottle/stabilizer = TRADER_THIS_TYPE,
 								  /obj/item/chems/glass/bottle/sedatives = TRADER_THIS_TYPE,
 								  /obj/item/chems/glass/bottle/antitoxin = TRADER_THIS_TYPE,
 								  /obj/item/bodybag/cryobag = TRADER_THIS_TYPE,

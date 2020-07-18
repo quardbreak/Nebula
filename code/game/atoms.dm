@@ -57,7 +57,7 @@
 		updateVisibility(src)
 		var/turf/T = loc
 		if(istype(T))
-			T.handle_opacity_change(src)
+			T.RecalculateOpacity()
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -66,6 +66,7 @@
 	return
 
 /atom/Destroy()
+	global.is_currently_exploding -= src
 	QDEL_NULL(reagents)
 	. = ..()
 
@@ -241,6 +242,7 @@ its easier to just keep the beam vertical.
 // Calls to ..() should generally not supply any arguments and instead rely on BYOND's automatic argument passing
 // There is no need to check the return value of ..(), this is only done by the calling /examinate() proc to validate the call chain
 /atom/proc/examine(mob/user, distance, infix = "", suffix = "")
+	SHOULD_CALL_PARENT(TRUE)
 	//This reformat names to get a/an properly working on item descriptions when they are bloody
 	var/f_name = "\a [src][infix]."
 	if(blood_color && !istype(src, /obj/effect/decal))
@@ -261,6 +263,7 @@ its easier to just keep the beam vertical.
 
 //called to set the atom's dir and used to add behaviour to dir-changes
 /atom/proc/set_dir(new_dir)
+	SHOULD_CALL_PARENT(TRUE)
 	var/old_dir = dir
 	if(new_dir == old_dir)
 		return FALSE
@@ -268,6 +271,7 @@ its easier to just keep the beam vertical.
 	return TRUE
 
 /atom/proc/set_icon_state(var/new_icon_state)
+	SHOULD_CALL_PARENT(TRUE)
 	if(has_extension(src, /datum/extension/base_icon_state))
 		var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 		bis.base_icon_state = new_icon_state
@@ -276,13 +280,46 @@ its easier to just keep the beam vertical.
 		icon_state = new_icon_state
 
 /atom/proc/update_icon()
+	SHOULD_CALL_PARENT(TRUE)
 	on_update_icon(arglist(args))
 
 /atom/proc/on_update_icon()
 	return
 
-/atom/proc/ex_act()
-	return
+/atom/proc/get_contained_external_atoms()
+	. = contents
+
+/atom/proc/dump_contents()
+	for(var/thing in get_contained_external_atoms())
+		var/atom/movable/AM = thing
+		AM.dropInto(loc)
+		if(ismob(AM))
+			var/mob/M = AM
+			if(M.client)
+				M.client.eye = M.client.mob
+				M.client.perspective = MOB_PERSPECTIVE
+
+/atom/proc/physically_destroyed()
+	SHOULD_CALL_PARENT(TRUE)
+	dump_contents()
+	. = TRUE
+
+/atom/proc/try_detonate_reagents(var/severity = 3)
+	if(reagents)
+		for(var/rtype in reagents.reagent_volumes)
+			var/decl/material/R = decls_repository.get_decl(rtype)
+			R.explosion_act(src, severity)
+
+/atom/proc/explosion_act(var/severity)
+	SHOULD_CALL_PARENT(TRUE)
+	if(!global.is_currently_exploding[src])
+		global.is_currently_exploding[src] = TRUE
+		. = (severity <= 3)
+		if(.)
+			for(var/atom/movable/AM in contents)
+				AM.explosion_act(severity++)
+			try_detonate_reagents(severity)
+		global.is_currently_exploding -= src
 
 /atom/proc/emag_act(var/remaining_charges, var/mob/user, var/emag_source)
 	return NO_EMAG_ACT
@@ -324,7 +361,7 @@ its easier to just keep the beam vertical.
 	return 1
 
 /mob/living/proc/handle_additional_vomit_reagents(var/obj/effect/decal/cleanable/vomit/vomit)
-	vomit.reagents.add_reagent(/decl/reagent/acid/stomach, 5)
+	vomit.reagents.add_reagent(/decl/material/liquid/acid/stomach, 5)
 
 /atom/proc/clean_blood()
 	if(!simulated)
@@ -365,7 +402,6 @@ its easier to just keep the beam vertical.
 		return 1
 	else
 		return 0
-
 
 // Show a message to all mobs and objects in sight of this atom
 // Use for objects performing visible actions
@@ -447,7 +483,7 @@ its easier to just keep the beam vertical.
 	do_climb(usr)
 
 /atom/proc/can_climb(var/mob/living/user, post_climb_check=0)
-	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !can_touch(user) || (!post_climb_check && climbers && (user in climbers)))
+	if (!(atom_flags & ATOM_FLAG_CLIMBABLE) || !user.can_touch(src) || (!post_climb_check && climbers && (user in climbers)))
 		return 0
 
 	if (!user.Adjacent(src))
@@ -460,20 +496,15 @@ its easier to just keep the beam vertical.
 		return 0
 	return 1
 
-/atom/proc/can_touch(var/mob/user)
-	if (!user)
-		return 0
-	if(!Adjacent(user))
-		return 0
-	if (user.restrained() || user.buckled)
-		to_chat(user, "<span class='notice'>You need your hands and legs free for this.</span>")
-		return 0
-	if (user.incapacitated())
-		return 0
-	if (issilicon(user))
-		to_chat(user, "<span class='notice'>You need hands for this.</span>")
-		return 0
-	return 1
+/mob/proc/can_touch(var/atom/touching)
+	if(!touching.Adjacent(src) || incapacitated())
+		return FALSE
+	if(restrained())
+		to_chat(src, SPAN_WARNING("You are restrained."))
+		return FALSE
+	if (buckled)
+		to_chat(src, SPAN_WARNING("You are buckled down."))
+	return TRUE
 
 /atom/proc/turf_is_crowded(var/atom/ignore)
 	var/turf/T = get_turf(src)
@@ -580,3 +611,9 @@ its easier to just keep the beam vertical.
 			user.examinate(src)
 			return TOPIC_HANDLED
 	. = ..()
+
+/atom/proc/get_heat()
+	. = temperature
+
+/atom/proc/isflamesource()
+	. = FALSE

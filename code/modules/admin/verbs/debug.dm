@@ -355,13 +355,10 @@
 
 	for(var/obj/machinery/power/rad_collector/Rad in world)
 		if(Rad.anchored)
-			if(!Rad.P)
-				var/obj/item/tank/phoron/Phoron = new/obj/item/tank/phoron(Rad)
-				Phoron.air_contents.gas[MAT_PHORON] = 70
+			if(!Rad.loaded_tank)
+				Rad.loaded_tank = new /obj/item/tank/hydrogen(Rad)
+				Rad.loaded_tank.air_contents.gas[/decl/material/gas/hydrogen] = 70
 				Rad.drainratio = 0
-				Rad.P = Phoron
-				Phoron.forceMove(Rad)
-
 			if(!Rad.active)
 				Rad.toggle_power()
 
@@ -490,5 +487,5 @@
 	var/material = input("Select material to spawn") as null|anything in SSmaterials.materials_by_name
 	if(!material)
 		return
-	var/material/M = SSmaterials.get_material_datum(material)
+	var/decl/material/M = decls_repository.get_decl(material)
 	new M.stack_type(get_turf(mob), 50, M)

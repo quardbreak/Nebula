@@ -12,11 +12,11 @@
 		/obj/item/clothing/head/caphat/cap,
 		/obj/item/clothing/under/rank/captain,
 		/obj/item/clothing/head/helmet,
-		/obj/item/clothing/shoes/brown,
+		/obj/item/clothing/shoes/color/brown,
 		/obj/item/radio/headset/heads/captain,
 		/obj/item/clothing/gloves/captain,
 		/obj/item/gun/energy/gun,
-		/obj/item/melee/telebaton,
+		/obj/item/telebaton,
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/head/caphat/formal,
 		/obj/item/clothing/under/captainformal,
@@ -50,10 +50,10 @@
 		/obj/item/clothing/under/lawyer/black,
 		/obj/item/clothing/under/lawyer/red,
 		/obj/item/clothing/under/lawyer/oldman,
-		/obj/item/clothing/shoes/brown,
-		/obj/item/clothing/shoes/black,
-		/obj/item/clothing/shoes/leather,
-		/obj/item/clothing/shoes/white,
+		/obj/item/clothing/shoes/color/brown,
+		/obj/item/clothing/shoes/color/black,
+		/obj/item/clothing/shoes/craftable,
+		/obj/item/clothing/shoes/color/white,
 		/obj/item/clothing/under/rank/head_of_personnel_whimsy,
 		/obj/item/clothing/head/caphat/hop
 	)
@@ -67,11 +67,10 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec)),
 		/obj/item/clothing/head/HoS,
-		/obj/item/clothing/suit/storage/vest/nt/hos,
+		/obj/item/clothing/suit/armor/vest/heavy/hos,
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/suit/armor/hos/jensen,
 		/obj/item/clothing/suit/armor/hos,
-		/obj/item/clothing/head/HoS/dermal,
 		/obj/item/radio/headset/heads/hos,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
@@ -79,10 +78,10 @@
 		/obj/item/storage/box/flashbangs,
 		/obj/item/storage/belt/holster/security,
 		/obj/item/flash,
-		/obj/item/melee/baton/loaded,
+		/obj/item/baton/loaded,
 		/obj/item/gun/energy/gun,
 		/obj/item/clothing/accessory/storage/holster/waist,
-		/obj/item/melee/telebaton,
+		/obj/item/telebaton,
 		/obj/item/holowarrant
 	)
 
@@ -95,9 +94,9 @@
 	return list(
 		new/datum/atom_creator/weighted(list(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec)),
 		new/datum/atom_creator/simple(/obj/item/storage/backpack/dufflebag/sec, 50),
-		/obj/item/clothing/suit/storage/vest/nt/warden,
+		/obj/item/clothing/suit/armor/vest/heavy/warden,
 		/obj/item/clothing/under/rank/warden,
-		/obj/item/clothing/suit/armor/vest/warden,
+		/obj/item/clothing/suit/armor/warden,
 		/obj/item/clothing/head/warden,
 		/obj/item/radio/headset/headset_sec,
 		/obj/item/clothing/glasses/sunglasses/sechud,
@@ -106,7 +105,7 @@
 		/obj/item/storage/box/teargas,
 		/obj/item/storage/belt/holster/security,
 		/obj/item/chems/spray/pepper,
-		/obj/item/melee/baton/loaded,
+		/obj/item/baton/loaded,
 		/obj/item/gun/energy/gun,
 		/obj/item/storage/box/holobadge,
 		/obj/item/holowarrant
@@ -127,7 +126,7 @@
 		/obj/item/flash,
 		/obj/item/chems/spray/pepper,
 		/obj/item/grenade/chem_grenade/teargas,
-		/obj/item/melee/baton/loaded,
+		/obj/item/baton/loaded,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/hailer,
@@ -174,10 +173,10 @@
 		/obj/item/clothing/gloves/thick,
 		/obj/item/clothing/head/det,
 		/obj/item/clothing/head/det/grey,
-		/obj/item/clothing/shoes/laceup,
+		/obj/item/clothing/shoes/dress,
 		/obj/item/storage/box/evidence,
 		/obj/item/radio/headset/headset_sec,
-		/obj/item/clothing/suit/armor/vest/detective,
+		/obj/item/clothing/suit/armor/pcarrier/detective,
 		/obj/item/taperoll/police,
 		/obj/item/gun/projectile/pistol,
 		/obj/item/clothing/accessory/storage/holster/armpit,
@@ -202,7 +201,7 @@
 /obj/structure/closet/secure_closet/brig/WillContain()
 	return list(
 		/obj/item/clothing/under/color/orange,
-		/obj/item/clothing/shoes/orange
+		/obj/item/clothing/shoes/color/orange
 	)
 
 /obj/structure/closet/secure_closet/courtroom
@@ -211,7 +210,7 @@
 
 /obj/structure/closet/secure_closet/courtroom/WillContain()
 	return list(
-		/obj/item/clothing/shoes/brown,
+		/obj/item/clothing/shoes/color/brown,
 		/obj/item/paper/court = 3,
 		/obj/item/pen ,
 		/obj/item/clothing/suit/judgerobe,

@@ -6,7 +6,7 @@
 	slot_flags = SLOT_BELT
 	w_class = ITEM_SIZE_SMALL
 	item_state = "electronic"
-	material = MAT_STEEL
+	material = /decl/material/solid/metal/steel
 	var/weakref/target
 	var/active = 0
 	var/beeping = 2
@@ -101,7 +101,7 @@
 		overlays += image(icon,"pin_up")
 		return
 
-	dir = get_dir(here,there)
+	set_dir(get_dir(here, there))
 	var/image/pointer = image(icon,"pin_point")
 	var/distance = get_dist(here,there)
 	if(distance < world.view)
@@ -116,8 +116,8 @@
 /obj/item/pinpointer/radio
 	name = "locator device"
 	desc = "Used to scan and locate signals on a particular frequency."
-	material = MAT_ALUMINIUM
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/aluminium
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	var/tracking_freq = PUB_FREQ
 
 /obj/item/pinpointer/radio/acquire_target()

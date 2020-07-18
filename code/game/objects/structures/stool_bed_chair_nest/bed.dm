@@ -44,7 +44,7 @@
 		var/image/I = image(icon, "[icon_state]_padding")
 		if(material_alteration & MAT_FLAG_ALTERATION_COLOR)
 			I.appearance_flags |= RESET_COLOR
-			I.color = reinf_material.icon_colour
+			I.color = reinf_material.color
 		LAZYADD(new_overlays, I)
 	overlays = new_overlays
 
@@ -54,19 +54,10 @@
 	else
 		return ..()
 
-/obj/structure/bed/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			qdel(src)
-			return
-		if(2.0)
-			if (prob(50))
-				qdel(src)
-				return
-		if(3.0)
-			if (prob(5))
-				qdel(src)
-				return
+/obj/structure/bed/explosion_act(severity)
+	. = ..()
+	if(. && !QDELETED(src) && (severity == 1 || (severity == 2 && prob(50)) || (severity == 3 && prob(5))))
+		physically_destroyed(src)
 
 /obj/structure/bed/attackby(obj/item/W, mob/user)
 	. = ..()
@@ -81,7 +72,7 @@
 				return
 			var/padding_type //This is awful but it needs to be like this until tiles are given a material var.
 			if(istype(W,/obj/item/stack/tile/carpet))
-				padding_type = MAT_CARPET
+				padding_type = /decl/material/solid/carpet
 			else if(istype(W,/obj/item/stack/material))
 				var/obj/item/stack/material/M = W
 				if(M.material && (M.material.flags & MAT_FLAG_PADDING))
@@ -138,7 +129,7 @@
 	update_icon()
 
 /obj/structure/bed/proc/add_padding(var/padding_type)
-	reinf_material = SSmaterials.get_material_datum(padding_type)
+	reinf_material = decls_repository.get_decl(padding_type)
 	update_icon()
 
 /obj/structure/bed/psych
@@ -147,12 +138,12 @@
 	icon_state = "psychbed"
 
 /obj/structure/bed/psych
-	material = MAT_WALNUT
-	reinf_material = MAT_LEATHER_GENERIC
+	material = /decl/material/solid/wood/walnut
+	reinf_material = /decl/material/solid/leather
 
 /obj/structure/bed/padded
-	material = MAT_ALUMINIUM
-	reinf_material = MAT_CLOTH
+	material = /decl/material/solid/metal/aluminium
+	reinf_material = /decl/material/solid/cloth
 
 /*
  * Roller beds

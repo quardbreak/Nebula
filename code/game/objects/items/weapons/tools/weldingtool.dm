@@ -7,16 +7,16 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	center_of_mass = @"{'x':14,'y':15}"
-	waterproof = FALSE
 	force = 5
 	throwforce = 5
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_SMALL
-	material = MAT_STEEL
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	origin_tech = "{'engineering':1}"
 
+	var/waterproof = FALSE
 	var/welding = 0 	//Whether or not the welding tool is off(0), on(1) or currently welding(2)
 	var/status = 1 		//Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
 	var/welding_resource = "welding fuel"
@@ -40,6 +40,12 @@
 	QDEL_NULL(tank)
 
 	return ..()
+
+/obj/item/weldingtool/get_heat()
+	. = max(..(), isOn() ? 3800 : 0)
+
+/obj/item/weldingtool/isflamesource()
+	. = isOn()
 
 /obj/item/weldingtool/examine(mob/user, distance)
 	. = ..()
@@ -122,7 +128,8 @@
 	else
 		..()
 
-/obj/item/weldingtool/water_act()
+/obj/item/weldingtool/fluid_act(var/datum/reagents/fluids)
+	..()
 	if(welding && !waterproof)
 		setWelding(0)
 
@@ -165,7 +172,7 @@
 
 //Returns the amount of fuel in the welder
 /obj/item/weldingtool/proc/get_fuel()
-	return tank ? REAGENT_VOLUME(tank.reagents, /decl/reagent/fuel) : 0
+	return tank ? REAGENT_VOLUME(tank.reagents, /decl/material/liquid/fuel) : 0
 
 //Removes fuel from the welding tool. If a mob is passed, it will perform an eyecheck on the mob. This should probably be renamed to use()
 /obj/item/weldingtool/proc/remove_fuel(var/amount = 1, var/mob/M = null)
@@ -197,11 +204,11 @@
 
 	if(in_mob)
 		amount = max(amount, 2)
-		tank.reagents.trans_type_to(in_mob, /decl/reagent/fuel, amount)
+		tank.reagents.trans_type_to(in_mob, /decl/material/liquid/fuel, amount)
 		in_mob.IgniteMob()
 
 	else
-		tank.reagents.remove_reagent(/decl/reagent/fuel, amount)
+		tank.reagents.remove_reagent(/decl/material/liquid/fuel, amount)
 		var/turf/location = get_turf(src.loc)
 		if(location)
 			location.hotspot_expose(700, 5)
@@ -316,8 +323,8 @@
 
 /obj/item/weldingtool/experimental
 	tank = /obj/item/welder_tank/experimental
-	material = MAT_STEEL
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 
 ///////////////////////
 //Welding tool tanks//
@@ -338,7 +345,7 @@
 
 /obj/item/welder_tank/Initialize()
 	create_reagents(max_fuel)
-	reagents.add_reagent(/decl/reagent/fuel, max_fuel)
+	reagents.add_reagent(/decl/material/liquid/fuel, max_fuel)
 	. = ..()
 
 /obj/item/welder_tank/afterattack(obj/O, mob/user, proximity)
@@ -406,8 +413,8 @@
 	return ..()
 
 /obj/item/welder_tank/experimental/Process()
-	var/cur_fuel = REAGENT_VOLUME(reagents, /decl/reagent/fuel)
+	var/cur_fuel = REAGENT_VOLUME(reagents, /decl/material/liquid/fuel)
 	if(cur_fuel < max_fuel)
 		var/gen_amount = ((world.time-last_gen)/25)
-		reagents.add_reagent(/decl/reagent/fuel, gen_amount)
+		reagents.add_reagent(/decl/material/liquid/fuel, gen_amount)
 		last_gen = world.time

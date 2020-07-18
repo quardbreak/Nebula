@@ -99,9 +99,9 @@
 	// Death vars.
 	var/meat_type =     /obj/item/chems/food/snacks/meat/human
 	var/meat_amount =   3
-	var/skin_material = MAT_SKIN_GENERIC
+	var/skin_material = /decl/material/solid/skin
 	var/skin_amount =   3
-	var/bone_material = MAT_BONE_GENERIC
+	var/bone_material = /decl/material/solid/bone
 	var/bone_amount =   3
 	var/remains_type =  /obj/item/remains/xeno
 	var/gibbed_anim =   "gibbed-h"
@@ -118,10 +118,10 @@
 	// Environment tolerance/life processes vars.
 	var/reagent_tag                                             // Used for metabolizing reagents.
 	var/breath_pressure = 16                                    // Minimum partial pressure safe for breathing, kPa
-	var/breath_type = MAT_OXYGEN                                  // Non-oxygen gas breathed, if any.
-	var/poison_types = list(MAT_PHORON = TRUE, MAT_CHLORINE = TRUE) // Noticeably poisonous air - ie. updates the toxins indicator on the HUD.
-	var/exhale_type = MAT_CO2                          // Exhaled gas type.
-	var/blood_reagent = /decl/reagent/blood
+	var/breath_type = /decl/material/gas/oxygen                                  // Non-oxygen gas breathed, if any.
+	var/poison_types = list(/decl/material/gas/chlorine = TRUE) // Noticeably poisonous air - ie. updates the toxins indicator on the HUD.
+	var/exhale_type = /decl/material/gas/carbon_dioxide                          // Exhaled gas type.
+	var/blood_reagent = /decl/material/liquid/blood
 
 	var/max_pressure_diff = 60                                  // Maximum pressure difference that is safe for lungs
 	var/cold_level_1 = 243                                      // Cold damage level 1 below this point. -30 Celsium degrees
@@ -262,6 +262,8 @@
 	)
 
 	var/manual_dexterity = DEXTERITY_FULL
+
+	var/datum/ai/ai						// Type abused. Define with path and will automagically create. Determines behaviour for clientless mobs. This will override mob AIs.
 
 /*
 These are all the things that can be adjusted for equipping stuff and
@@ -515,10 +517,6 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 			return 1
 	return 0
 
-// Called in life() when the mob has no client.
-/datum/species/proc/handle_npc(var/mob/living/carbon/human/H)
-	return
-
 /datum/species/proc/handle_vision(var/mob/living/carbon/human/H)
 	var/list/vision = H.get_accumulated_vision_handlers()
 	H.update_sight()
@@ -528,7 +526,7 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	if(H.stat == DEAD)
 		return 1
 
-	if(!H.druggy)
+	if(!H.drugged)
 		H.set_see_in_dark((H.sight == (SEE_TURFS|SEE_MOBS|SEE_OBJS)) ? 8 : min(H.getDarkvisionRange() + H.equipment_darkness_modifier, 8))
 		if(H.equipment_see_invis)
 			H.set_see_invisible(max(min(H.see_invisible, H.equipment_see_invis), vision[2]))
@@ -547,7 +545,11 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 	var/how_nearsighted = get_how_nearsighted(H)
 	H.set_fullscreen(how_nearsighted, "nearsighted", /obj/screen/fullscreen/oxy, how_nearsighted)
 	H.set_fullscreen(H.eye_blurry, "blurry", /obj/screen/fullscreen/blurry)
-	H.set_fullscreen(H.druggy, "high", /obj/screen/fullscreen/high)
+	H.set_fullscreen(H.drugged, "high", /obj/screen/fullscreen/high)
+	if(H.drugged)
+		H.add_client_color(/datum/client_color/oversaturated)
+	else
+		H.remove_client_color(/datum/client_color/oversaturated)
 
 	for(var/overlay in H.equipment_overlays)
 		H.client.screen |= overlay
@@ -778,16 +780,16 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 				else if(damage_types[kind] < 1)
 					dat += "</br><b>Resistant to [kind].</b>"
 			if(breath_type)
-				var/material/mat = SSmaterials.get_material_datum(breath_type)
-				dat += "</br><b>They breathe [mat.display_name].</b>"
+				var/decl/material/mat = decls_repository.get_decl(breath_type)
+				dat += "</br><b>They breathe [mat.gas_name].</b>"
 			if(exhale_type)
-				var/material/mat = SSmaterials.get_material_datum(exhale_type)
-				dat += "</br><b>They exhale [mat.display_name].</b>"
+				var/decl/material/mat = decls_repository.get_decl(exhale_type)
+				dat += "</br><b>They exhale [mat.gas_name].</b>"
 			if(LAZYLEN(poison_types))
 				var/list/poison_names = list()
 				for(var/g in poison_types)
-					var/material/mat = SSmaterials.get_material_datum(exhale_type)
-					poison_names |= mat.display_name
+					var/decl/material/mat = decls_repository.get_decl(exhale_type)
+					poison_names |= mat.gas_name
 				dat += "</br><b>[capitalize(english_list(poison_names))] [LAZYLEN(poison_names) == 1 ? "is" : "are"] poisonous to them.</b>"
 			dat += "</small>"
 		dat += "</td>"

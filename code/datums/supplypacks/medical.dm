@@ -12,7 +12,7 @@
 					/obj/item/storage/firstaid/adv,
 					/obj/item/storage/firstaid/stab,
 					/obj/item/chems/glass/bottle/antitoxin,
-					/obj/item/chems/glass/bottle/adrenaline,
+					/obj/item/chems/glass/bottle/stabilizer,
 					/obj/item/chems/glass/bottle/sedatives,
 					/obj/item/storage/box/syringes,
 					/obj/item/storage/box/autoinjectors)
@@ -118,7 +118,7 @@
 					/obj/item/clothing/suit/storage/toggle/labcoat/cmo,
 					/obj/item/clothing/suit/storage/toggle/labcoat/cmoalt,
 					/obj/item/clothing/mask/surgical,
-					/obj/item/clothing/shoes/white,
+					/obj/item/clothing/shoes/color/white,
 					/obj/item/clothing/gloves/latex,
 					/obj/item/scanner/health,
 					/obj/item/flashlight/pen,
@@ -138,7 +138,7 @@
 					/obj/item/clothing/suit/storage/toggle/labcoat,
 					/obj/item/clothing/mask/surgical,
 					/obj/item/storage/firstaid/adv,
-					/obj/item/clothing/shoes/white,
+					/obj/item/clothing/shoes/color/white,
 					/obj/item/clothing/gloves/latex,
 					/obj/item/scanner/health,
 					/obj/item/flashlight/pen,
@@ -157,7 +157,7 @@
 					/obj/item/clothing/glasses/science,
 					/obj/item/clothing/suit/storage/toggle/labcoat/chemist,
 					/obj/item/clothing/mask/surgical,
-					/obj/item/clothing/shoes/white,
+					/obj/item/clothing/shoes/color/white,
 					/obj/item/clothing/gloves/latex,
 					/obj/item/chems/dropper,
 					/obj/item/scanner/health,
@@ -198,11 +198,11 @@
 	contains = list(/obj/item/clothing/under/rank/psych,
 					/obj/item/radio/headset/headset_med,
 					/obj/item/clothing/under/rank/psych/turtleneck,
-					/obj/item/clothing/shoes/laceup,
+					/obj/item/clothing/shoes/dress,
 					/obj/item/clothing/suit/storage/toggle/labcoat,
-					/obj/item/clothing/shoes/white,
-					/obj/item/material/clipboard,
-					/obj/item/folder/white,
+					/obj/item/clothing/shoes/color/white,
+					/obj/item/clipboard,
+					/obj/item/folder/cyan,
 					/obj/item/pen)
 	cost = 15
 	containertype = /obj/structure/closet/crate/secure
@@ -211,7 +211,7 @@
 
 /decl/hierarchy/supply_pack/medical/medicalscrubs
 	name = "Gear - Medical scrubs"
-	contains = list(/obj/item/clothing/shoes/white = 4,
+	contains = list(/obj/item/clothing/shoes/color/white = 4,
 					/obj/item/clothing/under/rank/medical/scrubs/blue,
 					/obj/item/clothing/under/rank/medical/scrubs/green,
 					/obj/item/clothing/under/rank/medical/scrubs/purple,
@@ -229,7 +229,7 @@
 
 /decl/hierarchy/supply_pack/medical/autopsy
 	name = "Gear - Autopsy equipment"
-	contains = list(/obj/item/folder/white,
+	contains = list(/obj/item/folder/cyan,
 					/obj/item/camera,
 					/obj/item/camera_film = 2,
 					/obj/item/scanner/autopsy,
@@ -244,7 +244,7 @@
 
 /decl/hierarchy/supply_pack/medical/medicaluniforms
 	name = "Gear - Medical uniforms"
-	contains = list(/obj/item/clothing/shoes/white = 3,
+	contains = list(/obj/item/clothing/shoes/color/white = 3,
 					/obj/item/clothing/under/rank/chief_medical_officer,
 					/obj/item/clothing/under/rank/geneticist,
 					/obj/item/clothing/under/rank/virologist,

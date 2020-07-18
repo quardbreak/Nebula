@@ -4,8 +4,8 @@
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "syringe-cartridge"
 	var/icon_flight = "syringe-cartridge-flight" //so it doesn't look so weird when shot
-	material = MAT_STEEL
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT | SLOT_EARS
 	throwforce = 3
@@ -63,12 +63,11 @@
 /obj/item/gun/launcher/syringe
 	name = "syringe gun"
 	desc = "A spring loaded rifle designed to fit syringes, designed to incapacitate unruly patients from a distance."
-	icon = 'icons/obj/guns/syringegun.dmi'
-	icon_state = "syringegun"
-	item_state = "syringegun"
+	icon = 'icons/obj/guns/launcher/syringe.dmi'
+	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_LARGE
 	force = 7
-	material = MAT_STEEL
+	material = /decl/material/solid/metal/steel
 	slot_flags = SLOT_BELT
 
 	fire_sound = 'sound/weapons/empty.ogg'
@@ -133,11 +132,10 @@
 /obj/item/gun/launcher/syringe/rapid
 	name = "syringe gun revolver"
 	desc = "A modification of the syringe gun design, using a rotating cylinder to store up to five syringes. The spring still needs to be drawn between shots."
-	icon_state = "rapidsyringegun"
-	item_state = "rapidsyringegun"
+	icon = 'icons/obj/guns/launcher/syringe_rapid.dmi'
 	max_darts = 5
-	material = MAT_STEEL
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 
 /obj/item/gun/launcher/syringe/disguised
 	name = "deluxe electronic cigarette"

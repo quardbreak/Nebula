@@ -31,13 +31,13 @@
 	if(istype(A, /turf))
 		var/turf/T = A
 		var/obj/effect/fluid/F = locate() in T
-		if(F && F.fluid_amount > 0)
-			if(F.fluid_amount > FLUID_SHALLOW)
+		if(F && F.reagents.total_volume > 0)
+			if(F.reagents.total_volume > FLUID_SHALLOW)
 				to_chat(user, SPAN_WARNING("There is too much water here to be mopped up."))
 			else
 				user.visible_message("<span class='notice'>\The [user] begins to mop up \the [T].</span>")
 				if(do_after(user, 40, T) && F && !QDELETED(F))
-					if(F.fluid_amount > FLUID_SHALLOW)
+					if(F.reagents.total_volume > FLUID_SHALLOW)
 						to_chat(user, SPAN_WARNING("There is too much water here to be mopped up."))
 					else
 						qdel(F)
@@ -77,14 +77,14 @@
 	force = 6
 	throwforce = 11
 	mopspeed = 20
-	material = MAT_ALUMINIUM
+	material = /decl/material/solid/metal/aluminium
 	matter = list(
-		MAT_STEEL = MATTER_AMOUNT_REINFORCEMENT,
-		MAT_PLASTIC = MATTER_AMOUNT_TRACE
+		/decl/material/solid/metal/steel = MATTER_AMOUNT_REINFORCEMENT,
+		/decl/material/solid/plastic = MATTER_AMOUNT_TRACE
 	)
 	var/refill_enabled = TRUE //Self-refill toggle for when a janitor decides to mop with something other than water.
 	var/refill_rate = 1 //Rate per process() tick mop refills itself
-	var/refill_reagent = /decl/reagent/cleaner //Determins what reagent to use for refilling, just in case someone wanted to make a HOLY MOP OF PURGING
+	var/refill_reagent = /decl/material/liquid/cleaner //Determins what reagent to use for refilling, just in case someone wanted to make a HOLY MOP OF PURGING
 
 /obj/item/mop/advanced/Initialize()
 	. = ..()

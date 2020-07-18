@@ -6,8 +6,8 @@
 	w_class = ITEM_SIZE_SMALL
 	anchored = 0
 
-	material = MAT_ALUMINIUM
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/aluminium
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 
 	//	Motion, EMP-Proof, X-Ray
 	var/list/obj/item/possible_upgrades = list(/obj/item/assembly/prox_sensor, /obj/item/stack/material/osmium, /obj/item/stock_parts/scanning_module)
@@ -109,7 +109,7 @@
 				for(var/i = 5; i >= 0; i -= 1)
 					var/direct = input(user, "Direction?", "Assembling Camera", null) in list("LEAVE IT", "NORTH", "EAST", "SOUTH", "WEST" )
 					if(direct != "LEAVE IT")
-						C.dir = text2dir(direct)
+						C.set_dir(text2dir(direct))
 					if(i != 0)
 						var/confirm = alert(user, "Is this what you want? Chances Remaining: [i]", "Confirmation", "Yes", "No")
 						if(confirm == "Yes")

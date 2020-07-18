@@ -68,14 +68,16 @@
 	if(flood_amt)
 		var/turf/T = loc
 		if(istype(T))
-			var/obj/effect/fluid/F = locate() in T
-			if(!F) F = new(loc)
 			T.show_bubbles()
 			if(world.time > next_gurgle)
 				visible_message("\The [src] gurgles and overflows!")
 				next_gurgle = world.time + 80
 				playsound(T, pick(SSfluids.gurgles), 50, 1)
-			SET_FLUID_DEPTH(F, min(F.fluid_amount + (rand(30,50)*clogged), flood_amt))
+			var/obj/effect/fluid/F = locate() in T
+			var/adding = min(flood_amt-F?.reagents.total_volume, rand(30,50)*clogged)
+			if(adding > 0)
+				if(!F) F = new(T)
+				F.reagents.add_reagent(/decl/material/liquid/water, adding)
 
 /obj/structure/hygiene/proc/drain()
 	if(!can_drain) return
@@ -234,7 +236,7 @@
 
 /obj/structure/hygiene/shower/Initialize()
 	. = ..()
-	create_reagents(50)
+	create_reagents(5)
 
 /obj/structure/hygiene/shower/Destroy()
 	QDEL_NULL(sound_token)
@@ -340,7 +342,7 @@
 			if(istype(L))
 				process_heat(L)
 	wash_floor()
-	reagents.add_reagent(/decl/reagent/water, REAGENTS_FREE_SPACE(reagents))
+	reagents.add_reagent(/decl/material/liquid/water, REAGENTS_FREE_SPACE(reagents))
 
 /obj/structure/hygiene/shower/proc/wash_floor()
 	if(!ismist && is_washing)
@@ -441,13 +443,13 @@
 
 	var/obj/item/chems/RG = O
 	if (istype(RG) && ATOM_IS_OPEN_CONTAINER(RG) && RG.reagents)
-		RG.reagents.add_reagent(/decl/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+		RG.reagents.add_reagent(/decl/material/liquid/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		user.visible_message("<span class='notice'>[user] fills \the [RG] using \the [src].</span>","<span class='notice'>You fill \the [RG] using \the [src].</span>")
 		playsound(loc, 'sound/effects/sink.ogg', 75, 1)
 		return 1
 
-	else if (istype(O, /obj/item/melee/baton))
-		var/obj/item/melee/baton/B = O
+	else if (istype(O, /obj/item/baton))
+		var/obj/item/baton/B = O
 		if(B.bcell)
 			if(B.bcell.charge > 0 && B.status == 1)
 				flick("baton_active", src)
@@ -464,7 +466,7 @@
 					"<span class='userdanger'>[user] was stunned by \his wet [O]!</span>")
 				return 1
 	else if(istype(O, /obj/item/mop))
-		O.reagents.add_reagent(/decl/reagent/water, 5)
+		O.reagents.add_reagent(/decl/material/liquid/water, 5)
 		to_chat(user, "<span class='notice'>You wet \the [O] in \the [src].</span>")
 		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 		return

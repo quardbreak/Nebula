@@ -6,8 +6,15 @@
 /datum/fabricator_recipe/robotics/prosthetic/get_resources()
 	. = ..()
 	for(var/key in resources)
-		if(ispath(key, /decl/reagent))
+		if(ispath(key, /decl/material))
 			resources -= key
+
+/datum/fabricator_recipe/robotics/prosthetic/get_product_name()
+	. = ..()
+	. = "prosthetic ([.])"
+	if(model)
+		var/datum/robolimb/brand = model
+		return "[.] ([initial(brand.company)])"
 
 /datum/fabricator_recipe/robotics/prosthetic/build()
 	. = ..()

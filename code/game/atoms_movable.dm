@@ -2,7 +2,6 @@
 	layer = OBJ_LAYER
 	appearance_flags = TILE_BOUND
 	glide_size = 4
-	var/waterproof = TRUE
 	var/movable_flags
 	var/last_move = null
 	var/anchored = 0
@@ -77,7 +76,7 @@
 /atom/movable/proc/momentum_power(var/atom/movable/AM, var/datum/thrownthing/TT)
 	if(anchored)
 		return 0
-	
+
 	. = (AM.get_mass()*TT.speed)/(get_mass()*min(AM.throw_speed,2))
 	if(has_gravity())
 		. *= 0.5
@@ -92,7 +91,7 @@
 			step(src, direction)
 
 		if(0.25 to 0.5)	//glancing change in direction
-			var/drift_dir	
+			var/drift_dir
 			if(direction & (NORTH|SOUTH))
 				if(inertia_dir & (NORTH|SOUTH))
 					drift_dir |= (direction & (NORTH|SOUTH)) & (inertia_dir & (NORTH|SOUTH))
@@ -114,8 +113,12 @@
 
 /atom/movable/Destroy()
 	. = ..()
+#ifdef DISABLE_DEBUG_CRASH
+	// meh do nothing. we know what we're doing. pro engineers.
+#else
 	if(!(atom_flags & ATOM_FLAG_INITIALIZED))
-		crash_with("Was deleted before initalization")
+		crash_with("Was deleted before initialization")
+#endif
 
 	for(var/A in src)
 		qdel(A)

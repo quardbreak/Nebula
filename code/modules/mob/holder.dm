@@ -42,7 +42,7 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/holder/throw_impact(atom/hit_atom, datum/thrownthing/TT)
 	. = ..()
 	update_state(1)
-	
+
 /obj/item/holder/proc/update_state(var/delay)
 	set waitfor = 0
 
@@ -101,13 +101,13 @@ var/list/holder_mob_icon_cache = list()
 	..()
 
 /obj/item/holder/proc/sync(var/mob/living/M)
-	dir = 2
+	set_dir(SOUTH)
 	overlays.Cut()
 	icon = M.icon
 	icon_state = M.icon_state
 	item_state = M.item_state
 	color = M.color
-	name = M.name
+	SetName(M.name)
 	desc = M.desc
 	overlays |= M.overlays
 	var/mob/living/carbon/human/H = loc
@@ -192,9 +192,9 @@ var/list/holder_mob_icon_cache = list()
 	var/mob/living/carbon/human/owner = M
 	if(istype(owner) && owner.species && LAZYLEN(generate_for_slots))
 
-		var/skin_colour = rgb(owner.r_skin, owner.g_skin, owner.b_skin)
-		var/hair_colour = rgb(owner.r_hair, owner.g_hair, owner.b_hair)
-		var/eye_colour =  rgb(owner.r_eyes, owner.g_eyes, owner.b_eyes)
+		var/skin_colour = owner.skin_colour
+		var/hair_colour = owner.hair_colour
+		var/eye_colour =  owner.eye_colour
 		var/species_name = lowertext(owner.species.get_bodytype(owner))
 
 		for(var/cache_entry in generate_for_slots)

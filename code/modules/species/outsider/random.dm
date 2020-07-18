@@ -112,11 +112,11 @@
 	breath_type = pick(atmosphere.gas)
 	breath_pressure = 0.8*(atmosphere.gas[breath_type]/atmosphere.total_moles)*normal_pressure
 
-	var/list/newgases = SSmaterials.all_gasses
+	var/list/newgases = subtypesof(/decl/material/gas)
 	newgases = newgases.Copy()
 	newgases ^= atmosphere.gas
 	for(var/gas in newgases)
-		var/material/mat = SSmaterials.get_material_datum(gas)
+		var/decl/material/mat = decls_repository.get_decl(gas)
 		if(mat.gas_flags & (XGM_GAS_OXIDIZER|XGM_GAS_FUEL))
 			newgases -= gas
 	if(newgases.len)

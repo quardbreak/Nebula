@@ -74,7 +74,7 @@ var/list/organ_cache = list()
 	species.resize_organ(src)
 
 	create_reagents(5 * (w_class-1)**2)
-	reagents.add_reagent(/decl/reagent/nutriment/protein, reagents.maximum_volume)
+	reagents.add_reagent(/decl/material/liquid/nutriment/protein, reagents.maximum_volume)
 
 	update_icon()
 
@@ -115,7 +115,7 @@ var/list/organ_cache = list()
 
 	if(!owner && reagents)
 		if(prob(40) && reagents.total_volume >= 0.1)
-			if(reagents.has_reagent(/decl/reagent/blood))
+			if(reagents.has_reagent(/decl/material/liquid/blood))
 				blood_splatter(get_turf(src), src, 1)
 			reagents.remove_any(0.1)
 		if(config.organs_decay)
@@ -154,7 +154,7 @@ var/list/organ_cache = list()
 /obj/item/organ/proc/handle_germ_effects()
 	//** Handle the effects of infections
 	var/germ_immunity = owner.get_immunity() //reduces the amount of times we need to call this proc
-	var/antibiotics = REAGENT_VOLUME(owner.reagents, /decl/reagent/antibiotics)
+	var/antibiotics = REAGENT_VOLUME(owner.reagents, /decl/material/liquid/antibiotics)
 
 	if (germ_level > 0 && germ_level < INFECTION_LEVEL_ONE/2 && prob(germ_immunity*0.3))
 		germ_level--
@@ -203,7 +203,7 @@ var/list/organ_cache = list()
 						germ_level += rand(2,3)
 					if(501 to INFINITY)
 						germ_level += rand(3,5)
-						owner.reagents.add_reagent(/decl/reagent/toxin, rand(1,2))
+						owner.reagents.add_reagent(/decl/material/liquid/coagulated_blood, rand(1,2))
 
 /obj/item/organ/proc/receive_chem(chemical)
 	return 0
@@ -280,11 +280,12 @@ var/list/organ_cache = list()
 	if(!BP_IS_PROSTHETIC(src) && species && reagents?.total_volume < 5)
 		owner.vessel.trans_to(src, 5 - reagents.total_volume, 1, 1)
 
-	if(owner && vital)
+	if(vital)
 		if(user)
 			admin_attack_log(user, owner, "Removed a vital organ ([src]).", "Had a vital organ ([src]) removed.", "removed a vital organ ([src]) from")
 		owner.death()
-
+	screen_loc = null
+	owner.client?.screen -= src
 	owner = null
 
 /obj/item/organ/proc/replaced(var/mob/living/carbon/human/target, var/obj/item/organ/external/affected)

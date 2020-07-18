@@ -3,23 +3,21 @@
 /obj/effect/overmap/visitable/sector/exoplanet/proc/generate_atmosphere()
 	atmosphere = new
 	if(habitability_class == HABITABILITY_IDEAL)
-		atmosphere.adjust_gas(MAT_OXYGEN, MOLES_O2STANDARD, 0)
-		atmosphere.adjust_gas(MAT_NITROGEN, MOLES_N2STANDARD)
+		atmosphere.adjust_gas(/decl/material/gas/oxygen, MOLES_O2STANDARD, 0)
+		atmosphere.adjust_gas(/decl/material/gas/nitrogen, MOLES_N2STANDARD)
 	else //let the fuckery commence
-		var/list/newgases = SSmaterials.all_gasses
+		var/list/newgases = subtypesof(/decl/material/gas)
 		newgases = newgases.Copy() // So we don't mutate the global list.
-		if(prob(90)) //all phoron planet should be rare
-			newgases -= MAT_PHORON
 		if(prob(50)) //alium gas should be slightly less common than mundane shit
-			newgases -= MAT_ALIEN_GAS
-		newgases -= MAT_STEAM
+			newgases -= /decl/material/gas/alien
+		newgases -= /decl/material/liquid/water
 
 		var/total_moles = MOLES_CELLSTANDARD * rand(80,120)/100
 		var/badflag = 0
 
 		//Breathable planet
 		if(habitability_class == HABITABILITY_OKAY)
-			atmosphere.gas[MAT_OXYGEN] += MOLES_O2STANDARD
+			atmosphere.gas[/decl/material/gas/oxygen] += MOLES_O2STANDARD
 			total_moles -= MOLES_O2STANDARD
 			badflag = XGM_GAS_FUEL|XGM_GAS_CONTAMINANT
 
@@ -29,11 +27,11 @@
 		while(i <= gasnum && total_moles && newgases.len)
 			if(badflag && sanity)
 				for(var/g in newgases)
-					var/material/mat = SSmaterials.get_material_datum(g)
+					var/decl/material/mat = decls_repository.get_decl(g)
 					if(mat.gas_flags & badflag)
 						newgases -= g
 			var/ng = pick_n_take(newgases)	//pick a gas
-			var/material/mat = SSmaterials.get_material_datum(ng)
+			var/decl/material/mat = decls_repository.get_decl(ng)
 			if(sanity) //make sure atmosphere is not flammable... always
 				if(mat.gas_flags & XGM_GAS_OXIDIZER)
 					badflag |= XGM_GAS_FUEL

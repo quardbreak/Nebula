@@ -110,12 +110,12 @@
 /obj/item/clothing/accessory/storage/knifeharness/Initialize()
 	. = ..()
 	hold.can_hold = list(
-		/obj/item/material/hatchet,
-		/obj/item/material/knife,
+		/obj/item/hatchet,
+		/obj/item/knife,
 	)
 
-	new /obj/item/material/knife/table/primitive(hold)
-	new /obj/item/material/knife/table/primitive(hold)
+	new /obj/item/knife/table/primitive(hold)
+	new /obj/item/knife/table/primitive(hold)
 
 /obj/item/clothing/accessory/storage/bandolier
 	name = "bandolier"
@@ -129,8 +129,8 @@
 	hold.can_hold = list(
 		/obj/item/ammo_casing,
 		/obj/item/grenade,
-		/obj/item/material/knife,
-		/obj/item/material/star,
+		/obj/item/knife,
+		/obj/item/star,
 		/obj/item/rcd_ammo,
 		/obj/item/chems/syringe,
 		/obj/item/chems/hypospray,
@@ -142,7 +142,6 @@
 		/obj/item/multitool,
 		/obj/item/magnetic_ammo,
 		/obj/item/ammo_magazine,
-		/obj/item/net_shell,
 		/obj/item/chems/glass/beaker/vial,
 		/obj/item/paper,
 		/obj/item/pen,
@@ -152,8 +151,3 @@
 		/obj/item/storage/pill_bottle
 	)
 
-/obj/item/clothing/accessory/storage/bandolier/safari/Initialize()
-	. = ..()
-
-	for(var/i = 0, i < slots, i++)
-		new /obj/item/net_shell(hold)

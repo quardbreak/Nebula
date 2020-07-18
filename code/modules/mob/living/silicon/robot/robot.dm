@@ -38,6 +38,7 @@
 	var/obj/screen/inv1 = null
 	var/obj/screen/inv2 = null
 	var/obj/screen/inv3 = null
+	var/obj/screen/robot_drop_grab/ui_drop_grab
 
 	var/shown_robot_modules = 0 //Used to determine whether they have the module menu shown or not
 	var/obj/screen/robot_modules_background
@@ -954,7 +955,7 @@
 	set waitfor = 0
 	if(!LAZYLEN(module_sprites))
 		to_chat(src, "Something is badly wrong with the sprite selection. Harass a coder.")
-		return
+		CRASH("Can't setup robot icon for [src] ([src.client]). Module: [module?.name]")
 
 	icon_selected = FALSE
 	if(module_sprites.len == 1 || !client)
@@ -965,6 +966,7 @@
 		for(var/i in module_sprites)
 			var/image/radial_button = image(icon = src.icon, icon_state = module_sprites[i])
 			radial_button.overlays.Add(image(icon = src.icon, icon_state = "eyes-[module_sprites[i]]"))
+			radial_button.name = i
 			options[i] = radial_button
 		icontype = show_radial_menu(src, src, options, radius = 42, tooltips = TRUE)
 

@@ -8,9 +8,8 @@
 #define ATM_O2		3
 #define ATM_N2		4
 #define ATM_CO2		5
-#define ATM_P		6	//Phoron
-#define ATM_N2O		7
-#define ATM_H2		8
+#define ATM_N2O		6
+#define ATM_H2		7
 
 //--------------------------------------------
 // Omni port datum
@@ -20,7 +19,7 @@
 //--------------------------------------------
 /datum/omni_port
 	var/obj/machinery/atmospherics/omni/master
-	var/dir
+	var/direction
 	var/update = 1
 	var/mode = 0
 	var/concentration = 0
@@ -32,7 +31,7 @@
 
 /datum/omni_port/New(var/obj/machinery/atmospherics/omni/M, var/direction = NORTH)
 	..()
-	dir = direction
+	src.direction = direction
 	if(istype(M))
 		master = M
 	air = new
@@ -79,9 +78,9 @@
 
 //returns a direction flag based on the string passed to it
 // case insensitive
-/proc/dir_flag(var/dir)
-	dir = lowertext(dir)
-	switch(dir)
+/proc/dir_flag(var/direction)
+	direction = lowertext(direction)
+	switch(direction)
 		if("north")
 			return NORTH
 		if("south")
@@ -96,16 +95,14 @@
 /proc/mode_to_gasid(var/mode)
 	switch(mode)
 		if(ATM_O2)
-			return MAT_OXYGEN
+			return /decl/material/gas/oxygen
 		if(ATM_N2)
-			return MAT_NITROGEN
+			return /decl/material/gas/nitrogen
 		if(ATM_CO2)
-			return MAT_CO2
-		if(ATM_P)
-			return MAT_PHORON
+			return /decl/material/gas/carbon_dioxide
 		if(ATM_N2O)
-			return MAT_N2O
+			return /decl/material/gas/nitrous_oxide
 		if(ATM_H2)
-			return MAT_HYDROGEN
+			return /decl/material/gas/hydrogen
 		else
 			return null

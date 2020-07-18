@@ -50,7 +50,7 @@
 		remove_contents(user)
 
 /obj/item/chems/glass/rag/attackby(obj/item/W, mob/user)
-	if(isflamesource(W))
+	if(W.isflamesource())
 		if(on_fire)
 			to_chat(user, SPAN_WARNING("\The [src] is already blazing merrily!"))
 			return
@@ -173,7 +173,7 @@
 	if(reagents)
 		total_volume += reagents.total_volume
 		for(var/rtype in reagents.reagent_volumes)
-			var/decl/reagent/R = decls_repository.get_decl(rtype)
+			var/decl/material/R = decls_repository.get_decl(rtype)
 			total_fuel = REAGENT_VOLUME(reagents, rtype) * R.fuel_value
 	. = (total_fuel >= 2 && total_fuel >= total_volume*0.5)
 
@@ -182,16 +182,6 @@
 		return
 	if(!can_ignite())
 		return
-
-	//also copied from matches
-	if(REAGENT_VOLUME(reagents, /decl/reagent/toxin/phoron)) // the phoron explodes when exposed to fire
-		visible_message(SPAN_DANGER("\The [src] explodes!"))
-		var/datum/effect/effect/system/reagents_explosion/e = new()
-		e.set_up(round(REAGENT_VOLUME(reagents, /decl/reagent/toxin/phoron) / 2.5, 1), get_turf(src), 0, 0)
-		e.start()
-		qdel(src)
-		return
-
 	START_PROCESSING(SSobj, src)
 	set_light(0.5, 0.1, 2, 2, "#e38f46")
 	on_fire = 1
@@ -231,6 +221,6 @@
 		qdel(src)
 		return
 
-	reagents.remove_reagent(/decl/reagent/fuel, reagents.maximum_volume/25)
+	reagents.remove_reagent(/decl/material/liquid/fuel, reagents.maximum_volume/25)
 	update_name()
 	burn_time--

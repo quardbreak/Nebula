@@ -23,30 +23,9 @@
 /obj/item/clothing/head/xeno/scarf
 	name = "headscarf"
 	desc = "A scarf of coarse fabric. Seems to have ear-holes."
-	icon_state = "zhan_scarf"
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/headscarf.dmi'
 	body_parts_covered = HEAD|FACE
-
-/obj/item/clothing/shoes/sandal/xeno/caligae
-	name = "caligae"
-	desc = "A pair of sandals modelled after the ancient Roman caligae."
-	icon_state = "caligae"
-	item_state = "caligae"
-	body_parts_covered = FEET|LEGS
-
-/obj/item/clothing/shoes/sandal/xeno/caligae/white
-	desc = "A pair of sandals modelled after the ancient Roman caligae. This one has a white covering."
-	icon_state = "whitecaligae"
-	item_state = "whitecaligae"
-
-/obj/item/clothing/shoes/sandal/xeno/caligae/grey
-	desc = "A pair of sandals modelled after the ancient Roman caligae. This one has a grey covering."
-	icon_state = "greycaligae"
-	item_state = "greycaligae"
-
-/obj/item/clothing/shoes/sandal/xeno/caligae/black
-	desc = "A pair of sandals modelled after the ancient Roman caligae. This one has a black covering."
-	icon_state = "blackcaligae"
-	item_state = "blackcaligae"
 
 /obj/item/clothing/accessory/shouldercape
 	name = "shoulder cape"

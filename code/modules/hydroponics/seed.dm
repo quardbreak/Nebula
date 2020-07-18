@@ -182,9 +182,9 @@
 		return
 	if(!(light_supplied) || !(get_trait(TRAIT_REQUIRES_WATER)))
 		return
-	if(environment.get_gas(MAT_CO2) >= req_CO2_moles)
-		environment.adjust_gas(MAT_CO2, -req_CO2_moles, 1)
-		environment.adjust_gas(MAT_OXYGEN, req_CO2_moles, 1)
+	if(environment.get_gas(/decl/material/gas/carbon_dioxide) >= req_CO2_moles)
+		environment.adjust_gas(/decl/material/gas/carbon_dioxide, -req_CO2_moles, 1)
+		environment.adjust_gas(/decl/material/gas/oxygen, req_CO2_moles, 1)
 
 //Splatter a turf.
 /datum/seed/proc/splatter(var/turf/T,var/obj/item/thrown)
@@ -336,7 +336,7 @@
 			health_change += rand(1,3) * HYDRO_SPEED_MULTIPLIER
 
 	for(var/obj/effect/effect/smoke/chem/smoke in range(1, current_turf))
-		if(smoke.reagents.has_reagent(/decl/reagent/toxin/plantbgone))
+		if(smoke.reagents.has_reagent(/decl/material/liquid/weedkiller))
 			return 100
 
 	// Pressure and temperature are needed as much as water and light.
@@ -447,37 +447,40 @@
 
 	if(prob(5))
 		consume_gasses = list()
-		var/gas = pick(MAT_OXYGEN,MAT_NITROGEN,MAT_PHORON,MAT_CO2)
+		var/gas = pick(subtypesof(/decl/material/gas))
 		consume_gasses[gas] = rand(3,9)
 
 	if(prob(5))
 		exude_gasses = list()
-		var/gas = pick(MAT_OXYGEN,MAT_NITROGEN,MAT_PHORON,MAT_CO2)
+		var/gas = pick(subtypesof(/decl/material/gas))
 		exude_gasses[gas] = rand(3,9)
 
 	chems = list()
 	if(prob(80))
-		chems[/decl/reagent/nutriment] = list(rand(1,10),rand(10,20))
+		chems[/decl/material/liquid/nutriment] = list(rand(1,10),rand(10,20))
 
 	var/additional_chems = rand(0,5)
 
 	if(additional_chems)
 		var/list/banned_chems = list(
-			/decl/reagent/adminordrazine,
-			/decl/reagent/nutriment,
-			/decl/reagent/water/holywater,
-			/decl/reagent/toxin/plantbgone
+			/decl/material/liquid/adminordrazine,
+			/decl/material/liquid/nutriment,
+			/decl/material/liquid/weedkiller
 			)
-		banned_chems += subtypesof(/decl/reagent/ethanol)
-		banned_chems += subtypesof(/decl/reagent/tobacco)
-		banned_chems += typesof(/decl/reagent/drink)
-		banned_chems += typesof(/decl/reagent/nutriment)
-		banned_chems += typesof(/decl/reagent/toxin/fertilizer)
+		banned_chems += subtypesof(/decl/material/liquid/ethanol)
+		banned_chems += subtypesof(/decl/material/solid/tobacco)
+		banned_chems += typesof(/decl/material/liquid/drink)
+		banned_chems += typesof(/decl/material/liquid/nutriment)
+		banned_chems += typesof(/decl/material/liquid/fertilizer)
 
-		if(prob(30))	banned_chems |= typesof(/decl/reagent/toxin)
+		if(prob(30))
+			for(var/R in subtypesof(/decl/material))
+				var/decl/material/mat = decls_repository.get_decl(R)
+				if(mat.toxicity)
+					banned_chems |= R
 
 		for(var/x=1;x<=additional_chems;x++)
-			var/new_chem = pick(subtypesof(/decl/reagent))
+			var/new_chem = pick(subtypesof(/decl/material))
 			if(new_chem in banned_chems)
 				x--
 				continue

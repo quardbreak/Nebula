@@ -45,22 +45,19 @@
 	else
 		return ..()
 
-/turf/simulated/floor/exoplanet/ex_act(severity)
-	switch(severity)
-		if(1)
-			ChangeTurf(get_base_turf_by_area(src))
-		if(2)
-			if(prob(40))
-				ChangeTurf(get_base_turf_by_area(src))
+/turf/simulated/floor/exoplanet/explosion_act(severity)
+	SHOULD_CALL_PARENT(FALSE)
+	if(!istype(src, get_base_turf_by_area(src)) && (severity == 1 || (severity == 2 && prob(40))))
+		ChangeTurf(get_base_turf_by_area(src))
 
 /turf/simulated/floor/exoplanet/Initialize()
 	. = ..()
 	update_icon(1)
 
 /turf/simulated/floor/exoplanet/on_update_icon(var/update_neighbors)
-	overlays.Cut()
+	cut_overlays()
 	if(LAZYLEN(decals))
-		overlays += decals
+		add_overlay(decals)
 	for(var/direction in GLOB.cardinal)
 		var/turf/turf_to_check = get_step(src,direction)
 		if(!istype(turf_to_check, type))
@@ -75,7 +72,7 @@
 					rock_side.pixel_x += world.icon_size
 				if(WEST)
 					rock_side.pixel_x -= world.icon_size
-			overlays += rock_side
+			add_overlay(rock_side)
 		else if(update_neighbors)
 			turf_to_check.update_icon()
 
@@ -92,7 +89,7 @@
 	icon_state = "seashallow"
 	movement_delay = 2
 	footstep_type = /decl/footsteps/water
-	var/reagent_type = /decl/reagent/water
+	var/reagent_type = /decl/material/liquid/water
 
 /turf/simulated/floor/exoplanet/water/shallow/attackby(obj/item/O, var/mob/living/user)
 	var/obj/item/chems/RG = O
@@ -152,11 +149,11 @@
 	if(!resources)
 		resources = list()
 	if(prob(70))
-		resources[MAT_GRAPHITE] = rand(3,5)
+		resources[/decl/material/solid/mineral/graphite] = rand(3,5)
 	if(prob(5))
-		resources[MAT_URANIUM] = rand(1,3)
+		resources[/decl/material/solid/metal/uranium] = rand(1,3)
 	if(prob(2))
-		resources[MAT_DIAMOND] = 1
+		resources[/decl/material/solid/gemstone/diamond] = 1
 
 /turf/simulated/floor/exoplanet/grass/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if((temperature > T0C + 200 && prob(5)) || temperature > T0C + 1000)
@@ -197,11 +194,11 @@
 	icon_state = "concrete"
 
 /turf/simulated/floor/exoplanet/concrete/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 	if(burnt)
-		overlays |= get_damage_overlay("burned[(x + y) % 3]", BLEND_MULTIPLY)
+		add_overlay(get_damage_overlay("burned[(x + y) % 3]", BLEND_MULTIPLY))
 	if(broken)
-		overlays |= get_damage_overlay("broken[(x + y) % 5]", BLEND_MULTIPLY)
+		add_overlay(get_damage_overlay("broken[(x + y) % 5]", BLEND_MULTIPLY))
 
 /turf/simulated/floor/exoplanet/concrete/melt()
 	burnt = TRUE

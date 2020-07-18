@@ -99,7 +99,7 @@
 	overlays.Cut()
 	var/image/I
 
-	var/new_color = (paint_color ? paint_color : material.icon_colour)
+	var/new_color = (paint_color ? paint_color : material.color)
 	color = new_color
 
 	for(var/i = 1 to 4)
@@ -159,7 +159,7 @@
 	paint_color = COLOR_WALL_GUNMETAL
 
 /obj/structure/wall_frame/titanium
-	material = MAT_TITANIUM
+	material = /decl/material/solid/metal/plasteel/titanium
 
 /obj/structure/wall_frame/hull
 	paint_color = COLOR_HULL

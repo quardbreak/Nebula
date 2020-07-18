@@ -36,7 +36,7 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/Initialize()
 	. = ..()
-	scrubbing_gas -= MAT_METHYL_BROMIDE
+	scrubbing_gas -= /decl/material/gas/methyl_bromide
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/shuttle
 	stock_part_presets = list(
@@ -68,9 +68,9 @@ MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
 
 MANTIDIFY(/obj/item/chems/chem_disp_cartridge, "canister", "chemical storage")
 /obj/item/chems/chem_disp_cartridge/ascent/crystal
-	spawn_reagent = /decl/reagent/crystal
+	spawn_reagent = /decl/material/liquid/crystal_agent
 /obj/item/chems/chem_disp_cartridge/ascent/bromide
-	spawn_reagent = /decl/reagent/toxin/bromide
+	spawn_reagent = /decl/material/liquid/bromide
 
 /obj/machinery/sleeper/ascent
 	name = "mantid sleeper"

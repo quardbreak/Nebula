@@ -22,7 +22,7 @@
 
 	body_parts_covered = UPPER_TORSO | LOWER_TORSO| ARMS
 	armor = list(laser = ARMOR_LASER_MINOR, energy = ARMOR_ENERGY_MINOR, bomb = ARMOR_BOMB_MINOR)
-	allowed = list(/obj/item/flashlight,/obj/item/tank/emergency,/obj/item/extinguisher,/obj/item/crowbar/emergency_forcing_tool,/obj/item/clothing/head/hardhat)
+	allowed = list(/obj/item/flashlight,/obj/item/tank/emergency,/obj/item/extinguisher,/obj/item/clothing/head/hardhat)
 	
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
@@ -50,7 +50,8 @@
 /obj/item/clothing/head/bomb_hood
 	name = "bomb hood"
 	desc = "Use in case of bomb."
-	icon_state = "bombsuit"
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/bombsuit.dmi'
 	armor = list(
 		melee = ARMOR_MELEE_VERY_HIGH, 
 		bullet = ARMOR_BALLISTIC_MINOR, 
@@ -88,10 +89,10 @@
 /obj/item/clothing/head/bomb_hood/security
 	icon_state = "bombsuitsec"
 	body_parts_covered = HEAD
-
+	icon = 'icons/clothing/head/bombsuit_olive.dmi'
 /obj/item/clothing/suit/bomb_suit/security
 	icon_state = "bombsuitsec"
-	allowed = list(/obj/item/gun/energy,/obj/item/melee/baton,/obj/item/handcuffs)
+	allowed = list(/obj/item/gun/energy,/obj/item/baton,/obj/item/handcuffs)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 
 /*
@@ -99,8 +100,9 @@
  */
 /obj/item/clothing/head/radiation
 	name = "Radiation Hood"
-	icon_state = "rad"
 	desc = "A hood with radiation protective properties. Label: Made with lead, do not eat insulation."
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/radsuit.dmi'
 	flags_inv = BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
@@ -130,3 +132,39 @@
 /obj/item/clothing/suit/radiation/Initialize()
 	. = ..()
 	slowdown_per_slot[slot_shoes] = 1.5
+
+/*
+ * chemical protection
+ */
+
+/obj/item/clothing/head/chem_hood
+	name = "chemical hood"
+	desc = "A hood that protects the head from chemical comtaminants."
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/chem_hood.dmi'
+	permeability_coefficient = 0
+	armor = list(
+		bio = ARMOR_BIO_RESISTANT, 
+		rad = ARMOR_RAD_MINOR
+		)
+	flags_inv = HIDEEARS|HIDEEYES|BLOCKHAIR
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = HEAD
+	siemens_coefficient = 0.9
+
+/obj/item/clothing/suit/chem_suit
+	name = "chemical suit"
+	desc = "A suit that protects against chemical contamination."
+	icon_state = "chem_suit"
+	w_class = ITEM_SIZE_HUGE//bulky item
+	gas_transfer_coefficient = 0
+	permeability_coefficient = 0
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	allowed = list(/obj/item/tank/emergency,/obj/item/pen,/obj/item/flashlight/pen,/obj/item/scanner/health,/obj/item/ano_scanner,/obj/item/clothing/head/chem_hood,/obj/item/clothing/mask/gas,/obj/item/geiger)
+	armor = list(
+		bio = ARMOR_BIO_RESISTANT, 
+		rad = ARMOR_RAD_MINOR
+		)
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	siemens_coefficient = 0.9

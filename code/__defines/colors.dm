@@ -1,3 +1,8 @@
+#define HEX_RED(COLOUR)   hex2num(copytext(COLOUR,2,4))
+#define HEX_GREEN(COLOUR) hex2num(copytext(COLOUR,4,6))
+#define HEX_BLUE(COLOUR)  hex2num(copytext(COLOUR,6,8))
+#define HEX_ALPHA(COLOUR) hex2num(copytext(COLOUR,8,10))
+
 // BYOND lower-cases color values, and thus we do so as well to ensure atom.color == COLOR_X will work correctly
 #define COLOR_BLACK            "#000000"
 #define COLOR_NAVY_BLUE        "#000080"
@@ -47,10 +52,12 @@
 #define COLOR_PALE_PURPLE_GRAY "#bda2ba"
 #define COLOR_PALE_BLUE_GRAY   "#8bbbd5"
 #define COLOR_LUMINOL          "#66ffff"
+#define COLOR_ACID_CYAN        "#00ffc8"
 #define COLOR_SILVER           "#c0c0c0"
 #define COLOR_GRAY80           "#cccccc"
 #define COLOR_OFF_WHITE        "#eeeeee"
 #define COLOR_WHITE            "#ffffff"
+#define COLOR_EGGSHELL         "#e4e0d2"
 #define COLOR_GOLD             "#ffcc33"
 #define COLOR_CLOSET_GOLD      "#6d6133"
 #define COLOR_NT_RED           "#9d2300"
@@ -61,6 +68,7 @@
 #define COLOR_STEEL            "#a8b0b2"
 #define COLOR_MUZZLE_FLASH     "#ffffb2"
 #define COLOR_CHESTNUT         "#996633"
+#define COLOR_COPPER           "#b87333"
 #define COLOR_BEASTY_BROWN     "#663300"
 #define COLOR_WHEAT            "#ffff99"
 #define COLOR_CYAN_BLUE        "#3366cc"
@@ -75,7 +83,9 @@
 #define COLOR_TITANIUM         "#d1e6e3"
 #define COLOR_DARK_GUNMETAL    "#4c535b"
 #define COLOR_BRONZE           "#8c7853"
+#define COLOR_TAN			   "#a39682"
 #define COLOR_BRASS            "#b99d71"
+#define COLOR_POLISHED_BRASS   "#fdef6e"
 #define COLOR_INDIGO           "#4b0082"
 #define COLOR_ALUMINIUM        "#bbbbbb"
 #define COLOR_CRYSTAL          "#00c8a5"
@@ -117,7 +127,7 @@
 #define WOOD_COLOR_YELLOW      "#e3994e"
 
 #define GLASS_COLOR            "#74c1ee"
-#define GLASS_COLOR_PHORON     "#7c3a9a"
+#define GLASS_COLOR_SILICATE   "#7c3a9a"
 #define GLASS_COLOR_TINTED     "#222222"
 #define GLASS_COLOR_FROSTED    "#ffffff"
 

@@ -104,16 +104,16 @@
 	door_color = COLOR_AMBER
 
 /turf/simulated/floor/usedup
-	initial_gas = list(MAT_CO2 = MOLES_O2STANDARD, MAT_NITROGEN = MOLES_N2STANDARD)
+	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
 /turf/simulated/floor/tiled/usedup
-	initial_gas = list(MAT_CO2 = MOLES_O2STANDARD, MAT_NITROGEN = MOLES_N2STANDARD)
+	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
 /turf/simulated/floor/tiled/dark/usedup
-	initial_gas = list(MAT_CO2 = MOLES_O2STANDARD, MAT_NITROGEN = MOLES_N2STANDARD)
+	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
 /turf/simulated/floor/tiled/white/usedup
-	initial_gas = list(MAT_CO2 = MOLES_O2STANDARD, MAT_NITROGEN = MOLES_N2STANDARD)
+	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
 /obj/effect/landmark/deadcap
 	name = "Dead Captain"
@@ -143,7 +143,7 @@
 	name = "Derelict Captain"
 	uniform = /obj/item/clothing/under/casual_pants/classicjeans
 	suit = /obj/item/clothing/suit/storage/hooded/wintercoat
-	shoes = /obj/item/clothing/shoes/black
+	shoes = /obj/item/clothing/shoes/color/black
 	r_pocket = /obj/item/radio
 
 /decl/hierarchy/outfit/deadcap/post_equip(mob/living/carbon/human/H)

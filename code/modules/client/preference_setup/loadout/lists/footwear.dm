@@ -20,9 +20,9 @@
 	.[/datum/gear_tweak/path/specified_types_list] |= list(
 		/obj/item/clothing/shoes/jackboots,
 		/obj/item/clothing/shoes/workboots,
-		/obj/item/clothing/shoes/dutyboots,
-		/obj/item/clothing/shoes/jungleboots,
-		/obj/item/clothing/shoes/desertboots
+		/obj/item/clothing/shoes/jackboots/duty,
+		/obj/item/clothing/shoes/jackboots/jungleboots,
+		/obj/item/clothing/shoes/jackboots/desertboots
 	)
 
 /datum/gear/shoes/color
@@ -33,19 +33,19 @@
 	. = ..()
 	LAZYINITLIST(.[/datum/gear_tweak/path/specified_types_list])
 	.[/datum/gear_tweak/path/specified_types_list] |= list(
-		/obj/item/clothing/shoes/black,
-		/obj/item/clothing/shoes/blue,
-		/obj/item/clothing/shoes/brown,
-		/obj/item/clothing/shoes/laceup,
+		/obj/item/clothing/shoes/color/black,
+		/obj/item/clothing/shoes/color/blue,
+		/obj/item/clothing/shoes/color/brown,
+		/obj/item/clothing/shoes/dress,
 		/obj/item/clothing/shoes/dress/white,
-		/obj/item/clothing/shoes/green,
-		/obj/item/clothing/shoes/leather,
-		/obj/item/clothing/shoes/orange,
-		/obj/item/clothing/shoes/purple,
+		/obj/item/clothing/shoes/color/green,
+		/obj/item/clothing/shoes/craftable,
+		/obj/item/clothing/shoes/color/orange,
+		/obj/item/clothing/shoes/color/purple,
 		/obj/item/clothing/shoes/rainbow,
-		/obj/item/clothing/shoes/red,
-		/obj/item/clothing/shoes/white,
-		/obj/item/clothing/shoes/yellow
+		/obj/item/clothing/shoes/color/red,
+		/obj/item/clothing/shoes/color/white,
+		/obj/item/clothing/shoes/color/yellow
 	)
 
 /datum/gear/shoes/flats
@@ -55,7 +55,7 @@
 
 /datum/gear/shoes/high
 	display_name = "high tops selection"
-	path = /obj/item/clothing/shoes/hightops
+	path = /obj/item/clothing/shoes/color/hightops
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/shoes/sandal

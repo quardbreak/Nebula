@@ -212,8 +212,8 @@
 	. = ..()
 	airtank = new()
 	airtank.temperature = T0C
-	airtank.adjust_gas(MAT_OXYGEN, MOLES_O2STANDARD, 0)
-	airtank.adjust_gas(MAT_NITROGEN, MOLES_N2STANDARD)
+	airtank.adjust_gas(/decl/material/gas/oxygen, MOLES_O2STANDARD, 0)
+	airtank.adjust_gas(/decl/material/gas/nitrogen, MOLES_N2STANDARD)
 
 /obj/machinery/cryopod/lifepod/return_air()
 	return airtank
@@ -231,7 +231,7 @@
 	if(GLOB.using_map.use_overmap)
 		var/obj/effect/overmap/visitable/O = map_sectors["[z]"]
 		for(var/obj/effect/overmap/visitable/OO in range(O,2))
-			if(OO.in_space || istype(OO,/obj/effect/overmap/visitable/sector/exoplanet))
+			if((OO.sector_flags & OVERMAP_SECTOR_IN_SPACE) || istype(OO,/obj/effect/overmap/visitable/sector/exoplanet))
 				possible_locations |= text2num(level)
 
 	var/newz = GLOB.using_map.get_empty_zlevel()
@@ -599,6 +599,6 @@
 			busy = 0
 			icon_state = "broken_cryo_open"
 			var/obj/dead = new remains_type(loc)
-			dead.dir = src.dir//skeleton is oriented as cryo
+			dead.set_dir(dir) //skeleton is oriented as cryo
 	else
 		to_chat(user, "<span class='notice'>The glass cover is already open.</span>")

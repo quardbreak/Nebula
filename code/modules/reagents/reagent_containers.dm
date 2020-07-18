@@ -1,7 +1,7 @@
 /obj/item/chems
 	name = "Container"
 	desc = "..."
-	icon = 'icons/obj/items/chem/beaker.dmi'
+	icon = 'icons/obj/items/chem/container.dmi'
 	icon_state = null
 	w_class = ITEM_SIZE_SMALL
 
@@ -18,6 +18,19 @@
 		to_chat(usr, SPAN_WARNING("You can't set transfer amounts while \the [src] is being held by someone else."))
 		return TRUE
 	return FALSE
+
+/obj/item/chems/proc/get_base_name()
+	. = initial(name)
+
+/obj/item/chems/on_reagent_change()
+	if(atom_flags & ATOM_FLAG_SHOW_REAGENT_NAME)
+		var/decl/material/R = reagents?.get_primary_reagent_decl()
+		var/newname = get_base_name()
+		if(R)
+			newname = "[newname] of [R.get_presentation_name(src)]"
+		if(newname != name)
+			SetName(newname)
+	update_icon()
 
 /obj/item/chems/verb/set_amount_per_transfer_from_this()
 	set name = "Set Transfer Amount"
@@ -211,10 +224,3 @@
 		to_chat(user, "<span class='notice'>The [src] contains: [reagents.get_reagents(precision = prec)].</span>")
 	else if((loc == user) && user.skill_check(SKILL_CHEMISTRY, SKILL_EXPERT))
 		to_chat(user, "<span class='notice'>Using your chemistry knowledge, you identify the following reagents in \the [src]: [reagents.get_reagents(!user.skill_check(SKILL_CHEMISTRY, SKILL_PROF), 5)].</span>")
-
-/obj/item/chems/ex_act(severity)
-	if(reagents)
-		for(var/rtype in reagents.reagent_volumes)
-			var/decl/reagent/R = decls_repository.get_decl(rtype)
-			R.ex_act(src, severity)
-	..()

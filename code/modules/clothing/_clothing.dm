@@ -17,6 +17,14 @@
 	var/move_trail = /obj/effect/decal/cleanable/blood/tracks/footprints // if this item covers the feet, the footprints it should leave
 	var/made_of_cloth = FALSE
 
+	var/markings_icon	// simple colored overlay that would be applied to the icon
+	var/markings_color	// for things like colored parts of labcoats or shoes
+
+/obj/item/clothing/Initialize()
+	. = ..()
+	if(markings_icon && markings_color)
+		update_icon()
+
 // Sort of a placeholder for proper tailoring.
 /obj/item/clothing/attackby(obj/item/I, mob/user)
 	if(made_of_cloth && (I.edge || I.sharp) && user.a_intent == I_HURT)
@@ -66,8 +74,27 @@
 	if(length(accessories))
 		for(var/obj/item/clothing/accessory/A in accessories)
 			ret.overlays += A.get_mob_overlay(user_mob, slot)
+
+	if(markings_icon && markings_color)
+		ret.overlays += get_mutable_overlay(ret.icon, markings_icon, markings_color)
 	return ret
 
+/obj/item/clothing/apply_overlays(var/mob/user_mob, var/bodytype, var/image/overlay, var/slot)
+	var/image/ret = ..()
+	if(length(accessories))
+		for(var/obj/item/clothing/accessory/A in accessories)
+			ret.overlays += A.get_mob_overlay(user_mob, slot)
+
+	if(markings_icon && markings_color && check_state_in_icon("[ret.icon_state][markings_icon]", ret.icon))
+		ret.overlays += get_mutable_overlay(ret.icon, "[ret.icon_state][markings_icon]", markings_color)
+	
+	return ret
+
+/obj/item/clothing/on_update_icon()
+	..()
+	if(markings_icon && markings_color)
+		overlays += get_mutable_overlay(icon, "[get_world_inventory_state()][markings_icon]", markings_color)
+		
 /obj/item/clothing/proc/change_smell(smell = SMELL_DEFAULT)
 	smell_state = smell
 
@@ -129,19 +156,11 @@
 	if(!bodytype_restricted)
 		return
 	bodytype_restricted = list(target_bodytype)
-	if (sprite_sheets_obj && (target_bodytype in sprite_sheets_obj))
-		icon = sprite_sheets_obj[target_bodytype]
-	else
-		icon = initial(icon)
-
-/obj/item/clothing/head/helmet/refit_for_bodytype(var/target_bodytype)
-	if(!bodytype_restricted)
-		return
-	bodytype_restricted = list(target_bodytype)
-	if (sprite_sheets_obj && (target_bodytype in sprite_sheets_obj))
-		icon = sprite_sheets_obj[target_bodytype]
-	else
-		icon = initial(icon)
+	if(!use_single_icon)
+		if (sprite_sheets_obj && (target_bodytype in sprite_sheets_obj))
+			icon = sprite_sheets_obj[target_bodytype]
+		else
+			icon = initial(icon)
 
 /obj/item/clothing/get_examine_line()
 	. = ..()

@@ -38,18 +38,16 @@
 
 //Vox pinning weapon.
 /obj/item/gun/launcher/alien/spikethrower
-
 	name = "spike thrower"
 	desc = "A vicious alien projectile weapon. Parts of it quiver gelatinously, as though the thing is insectile and alive."
 	w_class = ITEM_SIZE_LARGE
 	ammo_name = "spike"
 	ammo_type = /obj/item/spike
 	release_force = 30
-	icon = 'icons/obj/guns/spikethrower.dmi'
-	icon_state = "spikethrower3"
-	item_state = "spikethrower"
+	icon = 'icons/obj/guns/launcher/voxspike.dmi'
+	icon_state = ICON_STATE_WORLD
 	fire_sound_text = "a strange noise"
 	fire_sound = 'sound/weapons/spike.ogg'
 
 /obj/item/gun/launcher/alien/spikethrower/on_update_icon()
-	icon_state = "spikethrower[ammo]"
+	icon_state = "[get_world_inventory_state()][Clamp(ammo,0,3)]"

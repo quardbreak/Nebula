@@ -8,7 +8,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	layer = LATTICE_LAYER
 	color = COLOR_STEEL
-	material = MAT_STEEL
+	material = /decl/material/solid/metal/steel
 	obj_flags = OBJ_FLAG_NOFALL
 	material_alteration = MAT_FLAG_ALTERATION_ALL
 
@@ -28,9 +28,9 @@
 
 /obj/structure/lattice/update_material_desc()
 	if(material)
-		desc = "A lightweight support [material.display_name] lattice."
+		desc = "A lightweight support [material.solid_name] lattice."
 	else
-		desc = "A lightweight support [material.display_name] lattice."
+		desc = "A lightweight support [material.solid_name] lattice."
 
 /obj/structure/lattice/Destroy()
 	var/turf/old_loc = get_turf(src)
@@ -46,9 +46,10 @@
 		if(L)
 			L.update_icon()
 
-/obj/structure/lattice/ex_act(severity)
-	if(severity <= 2)
-		qdel(src)
+/obj/structure/lattice/explosion_act(severity)
+	..()
+	if(!QDELETED(src) && severity <= 2)
+		physically_destroyed()
 
 /obj/structure/lattice/proc/deconstruct(var/mob/user)
 	to_chat(user, SPAN_NOTICE("Slicing lattice joints..."))

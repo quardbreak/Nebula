@@ -27,25 +27,6 @@
 		/obj/item/clothing/gloves/insulated = 1
 	)
 
-/obj/machinery/vending/tool/adherent
-	name = "Adherent Tool Dispenser"
-	desc = "This looks like a heavily modified vending machine. It contains technology that doesn't appear to be human in origin."
-	product_ads = "\[C#\]\[Cb\]\[Db\]. \[Ab\]\[A#\]\[Bb\]. \[E\]\[C\]\[Gb\]\[B#\]. \[C#\].;\[Cb\]\[A\]\[F\]\[Cb\]\[C\]\[E\]\[Cb\]\[E\]\[Fb\]. \[G#\]\[C\]\[Ab\]\[A\]\[C#\]\[B\]. \[Eb\]\[choral\]. \[E#\]\[C#\]\[Ab\]\[E\]\[C#\]\[Fb\]\[Cb\]\[F#\]\[C#\]\[Gb\]."
-	icon_state = "adh-tool"
-	icon_deny = "adh-tool-deny"
-	icon_vend = "adh-tool-vend"
-	vend_delay = 5
-	products = list(
-		/obj/item/weldingtool/electric/crystal = 5,
-		/obj/item/wirecutters/crystal = 5,
-		/obj/item/screwdriver/crystal = 5,
-		/obj/item/crowbar/crystal = 5,
-		/obj/item/wrench/crystal = 5,
-		/obj/item/multitool/crystal = 5,
-		/obj/item/storage/belt/utility/crystal = 5,
-		/obj/item/storage/toolbox/crystal = 5
-	)
-
 /obj/machinery/vending/tool/adherent/vend(var/datum/stored_items/vending_products/R, var/mob/living/carbon/user)
 	if(emagged)
 		. = ..()
@@ -61,12 +42,12 @@
 	markup = 0
 	vend_delay = 21
 	base_type = /obj/machinery/vending/engivend
-	req_access = list(list(access_atmospherics,access_engine_equip))
+	initial_access = list(list(access_atmospherics, access_engine_equip))
 	products = list(
 		/obj/item/clothing/glasses/meson = 2,
 		/obj/item/multitool = 4,
 		/obj/item/geiger = 4,
-		/obj/item/airlock_electronics = 10,
+		/obj/item/stock_parts/circuitboard/airlock_electronics = 10,
 		/obj/item/stock_parts/circuitboard/apc = 10,
 		/obj/item/stock_parts/circuitboard/air_alarm = 10,
 		/obj/item/cell = 10,
@@ -84,7 +65,7 @@
 	icon_vend = "engi-vend"
 	base_type = /obj/machinery/vending/engineering
 	markup = 0
-	req_access = list(list(access_atmospherics,access_engine_equip))
+	initial_access = list(list(access_atmospherics, access_engine_equip))
 	products = list(
 		/obj/item/storage/belt/utility = 4,
 		/obj/item/clothing/glasses/meson = 4,
@@ -117,7 +98,7 @@
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
 	icon_vend = "robotics-vend"
-	req_access = list(access_robotics)
+	initial_access = list(access_robotics)
 	base_type = /obj/machinery/vending/robotics
 	products = list(
 		/obj/item/stack/cable_coil = 4,
@@ -132,3 +113,29 @@
 		/obj/item/crowbar = 2
 	)
 	contraband = list(/obj/item/flash = 2)
+
+/obj/machinery/vending/materials
+	name = "MatterVend"
+	desc = "Provides access to baryonic matter in easy to handle sheet form."
+	icon_state = "engivend"
+	icon_deny = "engivend-deny"
+	icon_vend = "engivend-vend"
+	markup = 0
+	vend_delay = 21
+	base_type = /obj/machinery/vending/materials
+	products = list(
+		/obj/item/stack/material/steel/fifty = 3,
+		/obj/item/stack/material/plastic/fifty = 4,
+		/obj/item/stack/material/aluminium/fifty = 3,
+		/obj/item/stack/material/plasteel/ten = 4,
+		/obj/item/stack/material/glass/fifty = 4
+	)
+	contraband = list(/obj/item/stack/material/ocp/ten = 3)
+
+/obj/machinery/vending/materials/build_inventory()
+	..()
+	for(var/datum/stored_items/vending_products/P in product_records)
+		if(ispath(P.item_path, /obj/item/stack/material))
+			var/obj/item/stack/material/S = P.item_path
+			var/decl/material/sheet_material = decls_repository.get_decl(initial(S.material))
+			P.item_name = "[sheet_material.solid_name] [sheet_material.sheet_plural_name] ([initial(S.amount)]x)"

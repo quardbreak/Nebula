@@ -14,6 +14,8 @@
 	var/projectile_type					//The bullet type to create when New() is called
 	var/obj/item/projectile/BB = null	//The loaded bullet - make it so that the projectiles are created only when needed?
 	var/spent_icon = "pistolcasing-spent"
+	var/bullet_color = COLOR_COPPER
+	var/marking_color
 	var/fall_sounds = list('sound/weapons/guns/casingfall1.ogg','sound/weapons/guns/casingfall2.ogg','sound/weapons/guns/casingfall3.ogg')
 
 /obj/item/ammo_casing/Initialize()
@@ -81,7 +83,17 @@
 	else ..()
 
 /obj/item/ammo_casing/on_update_icon()
-	if(spent_icon && !BB)
+	if(use_single_icon)
+		cut_overlays()
+		if(BB)
+			var/image/I = overlay_image(icon, "[icon_state]-bullet", bullet_color, flags=RESET_COLOR)
+			I.dir = dir
+			add_overlay(I)
+		if(marking_color)
+			var/image/I = overlay_image(icon, "[icon_state]-marking", marking_color, flags=RESET_COLOR)
+			I.dir = dir
+			add_overlay(I)
+	else if(spent_icon && !BB)
 		icon_state = spent_icon
 
 /obj/item/ammo_casing/examine(mob/user)
@@ -100,7 +112,7 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 	item_state = "syringe_kit"
-	material = MAT_STEEL
+	material = /decl/material/solid/metal/steel
 	throwforce = 5
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 4

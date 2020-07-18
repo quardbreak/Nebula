@@ -2,7 +2,7 @@
 	name = "emergency response command hardsuit control module"
 	desc = "A hardsuit used by many corporate and governmental emergency response forces. Has blue highlights. Armoured and space ready."
 	suit_type = "emergency response command"
-	icon_state = "ert_commander_rig"
+	icon = 'mods/corporate/icons/rigs/ert_commander.dmi'
 
 	chest_type = /obj/item/clothing/suit/space/rig/ert
 	helm_type = /obj/item/clothing/head/helmet/space/rig/ert
@@ -22,7 +22,7 @@
 		)
 	allowed = list(/obj/item/flashlight, /obj/item/tank,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/handcuffs, /obj/item/t_scanner, /obj/item/rcd, /obj/item/crowbar, \
 	/obj/item/screwdriver, /obj/item/weldingtool, /obj/item/wirecutters, /obj/item/wrench, /obj/item/multitool, \
-	/obj/item/radio, /obj/item/scanner/gas,/obj/item/storage/briefcase/inflatable, /obj/item/melee/baton, /obj/item/gun, \
+	/obj/item/radio, /obj/item/scanner/gas,/obj/item/storage/briefcase/inflatable, /obj/item/baton, /obj/item/gun, \
 	/obj/item/storage/firstaid, /obj/item/chems/hypospray, /obj/item/roller)
 
 	initial_modules = list(
@@ -35,27 +35,19 @@
 /obj/item/clothing/head/helmet/space/rig/ert
 	light_overlay = "helmet_light_dual"
 	camera = /obj/machinery/camera/network/ert
-	icon = 'mods/corporate/icons/obj/clothing/obj_head.dmi'
-	item_icons = list(slot_head_str = 'mods/corporate/icons/mob/onmob_head.dmi')
 
 /obj/item/clothing/suit/space/rig/ert
-	icon = 'mods/corporate/icons/obj/clothing/obj_suit.dmi'
-	item_icons = list(slot_wear_suit_str = 'mods/corporate/icons/mob/onmob_suit.dmi')
 
 /obj/item/clothing/shoes/magboots/rig/ert
-	icon = 'mods/corporate/icons/obj/clothing/obj_feet.dmi'
-	item_icons = list(slot_shoes_str = 'mods/corporate/icons/mob/onmob_feet.dmi')
 
 /obj/item/clothing/gloves/rig/ert
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_NOCUFFS
-	icon = 'mods/corporate/icons/obj/clothing/obj_hands.dmi'
-	item_icons = list(slot_gloves_str = 'mods/corporate/icons/mob/onmob_hands.dmi')
 
 /obj/item/rig/ert/engineer
 	name = "emergency response engineering hardsuit control module"
 	desc = "A hardsuit used by many corporate and governmental emergency response forces. Has orange highlights. Armoured and space ready."
 	suit_type = "emergency response engineer"
-	icon_state = "ert_engineer_rig"
+	icon = 'mods/corporate/icons/rigs/ert_engineer.dmi'
 
 	glove_type = /obj/item/clothing/gloves/rig/ert/engineer
 
@@ -74,7 +66,7 @@
 	name = "emergency response sanitation hardsuit control module"
 	desc = "A hardsuit used by many corporate and governmental emergency response forces. Has purple highlights. Armoured and space ready."
 	suit_type = "emergency response sanitation"
-	icon_state = "ert_janitor_rig"
+	icon = 'mods/corporate/icons/rigs/ert_janitor.dmi'
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -89,7 +81,7 @@
 	name = "emergency response medical hardsuit control module"
 	desc = "A hardsuit used by many corporate and governmental emergency response forces. Has white highlights. Armoured and space ready."
 	suit_type = "emergency response medic"
-	icon_state = "ert_medical_rig"
+	icon = 'mods/corporate/icons/rigs/ert_medic.dmi'
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -103,8 +95,7 @@
 	name = "emergency response security hardsuit control module"
 	desc = "A hardsuit used by many corporate and governmental emergency response forces. Has red highlights. Armoured and space ready."
 	suit_type = "emergency response security"
-	icon_state = "ert_security_rig"
-
+	icon = 'mods/corporate/icons/rigs/ert_security.dmi'
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
@@ -117,7 +108,7 @@
 	name = "heavy emergency response suit control module"
 	desc = "A heavy, modified version of a common emergency response hardsuit. Has blood red highlights.  Armoured and space ready."
 	suit_type = "heavy emergency response"
-	icon_state = "asset_protection_rig"
+	icon = 'mods/corporate/icons/rigs/asset_protection.dmi'
 	armor = list(
 		melee = ARMOR_MELEE_VERY_HIGH, 
 		bullet = ARMOR_BALLISTIC_RESISTANT, 

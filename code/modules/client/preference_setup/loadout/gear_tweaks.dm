@@ -10,7 +10,7 @@
 /datum/gear_tweak/proc/tweak_gear_data(var/metadata, var/datum/gear_data)
 	return
 
-/datum/gear_tweak/proc/tweak_item(var/obj/item/I, var/metadata)
+/datum/gear_tweak/proc/tweak_item(var/user, var/obj/item/I, var/metadata)
 	return
 
 /datum/gear_tweak/proc/tweak_description(var/description, var/metadata)
@@ -38,7 +38,7 @@
 		return input(user, "Choose a color.", title, metadata) as null|anything in valid_colors
 	return input(user, "Choose a color.", title, metadata) as color|null
 
-/datum/gear_tweak/color/tweak_item(var/obj/item/I, var/metadata)
+/datum/gear_tweak/color/tweak_item(var/user, var/obj/item/I, var/metadata)
 	if(valid_colors && !(metadata in valid_colors))
 		return
 	I.color = sanitize_hexcolor(metadata, I.color)
@@ -126,7 +126,7 @@
 		else
 			return metadata
 
-/datum/gear_tweak/contents/tweak_item(var/obj/item/I, var/list/metadata)
+/datum/gear_tweak/contents/tweak_item(var/owner, var/obj/item/I, var/list/metadata)
 	if(length(metadata) != length(valid_contents))
 		return
 	for(var/i = 1 to valid_contents.len)
@@ -166,7 +166,7 @@
 	if(!.)
 		return metadata
 
-/datum/gear_tweak/reagents/tweak_item(var/obj/item/I, var/list/metadata)
+/datum/gear_tweak/reagents/tweak_item(var/user, var/obj/item/I, var/list/metadata)
 	if(metadata == "None")
 		return
 	var/reagent
@@ -176,6 +176,23 @@
 		reagent = valid_reagents[metadata]
 	if(reagent)
 		return I.reagents.add_reagent(reagent, REAGENTS_FREE_SPACE(I.reagents))
+
+/*
+* Custom Setup
+*/
+/datum/gear_tweak/custom_setup
+	var/custom_setup_proc
+
+/datum/gear_tweak/custom_setup/New(custom_setup_proc)
+	src.custom_setup_proc = custom_setup_proc
+	..()
+
+/datum/gear_tweak/custom_setup/tweak_item(var/user, var/item)
+	call(item, custom_setup_proc)(user)
+
+/*
+* Tablet Stuff
+*/
 
 /datum/gear_tweak/tablet
 	var/list/ValidProcessors = list(/obj/item/stock_parts/computer/processor_unit/small)
@@ -322,28 +339,60 @@
 	for(var/i in 1 to TWEAKABLE_COMPUTER_PART_SLOTS)
 		. += 1
 
-/datum/gear_tweak/tablet/tweak_item(var/obj/item/modular_computer/tablet/I, var/list/metadata)
+/datum/gear_tweak/tablet/tweak_item(var/user, var/obj/item/modular_computer/tablet/I, var/list/metadata)
 	if(length(metadata) < TWEAKABLE_COMPUTER_PART_SLOTS)
 		return
+	var/datum/extension/assembly/modular_computer/assembly = get_extension(I, /datum/extension/assembly)
 	if(ValidProcessors[metadata[1]])
 		var/t = ValidProcessors[metadata[1]]
-		I.processor_unit = new t(I)
+		assembly.add_replace_component(null, PART_CPU, new t(I))
 	if(ValidBatteries[metadata[2]])
 		var/t = ValidBatteries[metadata[2]]
-		I.battery_module = new t(I)
-		I.battery_module.charge_to_full()
+		assembly.add_replace_component(null, PART_BATTERY, new t(I))
 	if(ValidHardDrives[metadata[3]])
 		var/t = ValidHardDrives[metadata[3]]
-		I.hard_drive = new t(I)
+		assembly.add_replace_component(null, PART_HDD, new t(I))
 	if(ValidNetworkCards[metadata[4]])
 		var/t = ValidNetworkCards[metadata[4]]
-		I.network_card = new t(I)
+		assembly.add_replace_component(null, PART_NETWORK, new t(I))
 	if(ValidNanoPrinters[metadata[5]])
 		var/t = ValidNanoPrinters[metadata[5]]
-		I.nano_printer = new t(I)
+		assembly.add_replace_component(null, PART_PRINTER, new t(I))
 	if(ValidCardSlots[metadata[6]])
 		var/t = ValidCardSlots[metadata[6]]
-		I.card_slot = new t(I)
+		assembly.add_replace_component(null, PART_CARD, new t(I))
 	if(ValidTeslaLinks[metadata[7]])
 		var/t = ValidTeslaLinks[metadata[7]]
-		I.tesla_link = new t(I)
+		assembly.add_replace_component(null, PART_TESLA, new t(I))
+
+/datum/gear_tweak/charge_stick/get_contents(var/metadata)
+	return "Charge Stick: [metadata]"
+
+/datum/gear_tweak/charge_stick/get_default()
+	return "Half"
+
+/datum/gear_tweak/charge_stick/get_metadata(var/user, var/list/metadata, title)
+	. = input(user, "Choose an entry.", CHARACTER_PREFERENCE_INPUT_TITLE, metadata) as null|anything in (list("None", "Half", "Full"))
+	if(!.)
+		return metadata
+
+/datum/gear_tweak/charge_stick/tweak_item(var/mob/living/user, var/obj/item/I, var/metadata)
+	if(metadata == "None")
+		return
+	if(!istype(user))
+		return
+	
+	var/datum/money_account/M = user.mind.initial_account
+	var/obj/item/charge_stick/stick = I
+	if(stick.loaded_worth)
+		M.money += stick.loaded_worth // Return any money.
+	stick.creator = user.real_name
+	stick.currency = M.currency
+	var/amount = 0
+	switch(metadata)
+		if("Half")
+			amount = min(stick.max_worth, M.money * 0.5)
+		if("Full")
+			amount = min(stick.max_worth, M.money)
+	stick.loaded_worth = amount
+	M.money -= amount 

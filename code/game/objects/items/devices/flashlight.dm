@@ -11,8 +11,8 @@
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
 
-	material = MAT_PLASTIC
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/plastic
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 
 	action_button_name = "Toggle Flashlight"
 	var/on = FALSE
@@ -119,8 +119,8 @@
 		if(H.getBrainLoss() > 15)
 			to_chat(user, "<span class='notice'>There's visible lag between left and right pupils' reactions.</span>")
 
-		var/list/pinpoint = list(/decl/reagent/painkillers=5,/decl/reagent/amphetamines=1)
-		var/list/dilating = list(/decl/reagent/psychoactives=5,/decl/reagent/hallucinogenics=1,/decl/reagent/adrenaline=1)
+		var/list/pinpoint = list(/decl/material/liquid/painkillers=5,/decl/material/liquid/amphetamines=1)
+		var/list/dilating = list(/decl/material/liquid/psychoactives=5,/decl/material/liquid/hallucinogenics=1,/decl/material/liquid/adrenaline=1)
 		var/datum/reagents/ingested = H.get_ingested_reagents()
 		if(H.reagents.has_any_reagent(pinpoint) || ingested.has_any_reagent(pinpoint))
 			to_chat(user, "<span class='notice'>\The [H]'s pupils are already pinpoint and cannot narrow any more.</span>")
@@ -168,9 +168,8 @@
 	item_state = "maglight"
 	force = 10
 	attack_verb = list ("smacked", "thwacked", "thunked")
-	material = MAT_ALUMINIUM
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
-	hitsound = "swing_hit"
+	material = /decl/material/solid/metal/aluminium
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	flashlight_max_bright = 0.5
 	flashlight_outer_range = 5
 
@@ -186,8 +185,8 @@
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_BELT
-	material = MAT_STEEL
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	flashlight_outer_range = 5
 
 /obj/item/flashlight/lantern/on_update_icon()
@@ -432,8 +431,8 @@
 	on = 0
 	action_button_name = "Toggle lamp"
 	flashlight_outer_range = 3 //range of light when on
-	material = MAT_ALUMINIUM
-	matter = list(MAT_GLASS = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/metal/aluminium
+	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 
 /obj/item/flashlight/lamp/lava/on_update_icon()
 	overlays.Cut()

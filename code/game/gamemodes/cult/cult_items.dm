@@ -1,18 +1,11 @@
-/obj/item/melee/cultblade
+/obj/item/sword/cultblade
 	name = "cult blade"
 	desc = "An arcane weapon wielded by the followers of Nar-Sie."
-	icon = 'icons/obj/items/weapon/broadswords.dmi'
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	edge = 1
-	sharp = 1
-	w_class = ITEM_SIZE_LARGE
-	force = 30
-	throwforce = 10
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	icon = 'icons/obj/items/weapon/swords/cult.dmi'
+	applies_material_colour = FALSE
+	applies_material_name = FALSE
 
-/obj/item/melee/cultblade/attack(mob/living/M, mob/living/user, var/target_zone)
+/obj/item/sword/cultblade/attack(mob/living/M, mob/living/user, var/target_zone)
 	if(iscultist(user) || (user.mind in GLOB.godcult.current_antagonists))
 		return ..()
 
@@ -40,7 +33,7 @@
 
 	return 1
 
-/obj/item/melee/cultblade/pickup(mob/living/user)
+/obj/item/sword/cultblade/pickup(mob/living/user)
 	if(!iscultist(user))
 		to_chat(user, "<span class='warning'>An overwhelming feeling of dread comes over you as you pick up the cultist's sword. It would be wise to be rid of this blade quickly.</span>")
 		user.make_dizzy(120)
@@ -48,8 +41,9 @@
 
 /obj/item/clothing/head/culthood
 	name = "cult hood"
-	icon_state = "culthood"
 	desc = "A hood worn by the followers of Nar-Sie."
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/cult.dmi'
 	flags_inv = HIDEFACE
 	body_parts_covered = HEAD
 	armor = list(
@@ -62,8 +56,9 @@
 
 /obj/item/clothing/head/culthood/magus
 	name = "magus helm"
-	icon_state = "magus"
 	desc = "A helm worn by the followers of Nar-Sie."
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/head/wizard/magus.dmi'
 	flags_inv = HIDEFACE | BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
 	armor = list(
@@ -74,14 +69,13 @@
 	)
 
 /obj/item/clothing/head/culthood/alt
-	icon_state = "cult_hoodalt"
-
+	icon = 'icons/clothing/head/cult_alt.dmi'
 /obj/item/clothing/suit/cultrobes
 	name = "cult robes"
 	desc = "A set of durable robes worn by the followers of Nar-Sie."
 	icon_state = "cultrobes"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
-	allowed = list(/obj/item/book/tome,/obj/item/melee/cultblade)
+	allowed = list(/obj/item/book/tome,/obj/item/sword/cultblade)
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_PISTOL,
@@ -116,7 +110,7 @@
 /obj/item/clothing/head/helmet/space/cult
 	name = "cult helmet"
 	desc = "A space worthy helmet used by the followers of Nar-Sie."
-	icon_state = "cult_helmet"
+	icon = 'icons/clothing/spacesuit/cult/helmet.dmi'
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_RIFLE,
@@ -130,9 +124,9 @@
 
 /obj/item/clothing/suit/space/cult
 	name = "cult armour"
-	icon_state = "cult_armour"
 	desc = "A bulky suit of armour, bristling with spikes. It looks space proof."
-	allowed = list(/obj/item/book/tome,/obj/item/melee/cultblade,/obj/item/tank,/obj/item/suit_cooling_unit)
+	icon = 'icons/clothing/spacesuit/cult/suit.dmi'
+	allowed = list(/obj/item/book/tome,/obj/item/sword/cultblade,/obj/item/tank,/obj/item/suit_cooling_unit)
 	armor = list(
 		melee = ARMOR_MELEE_RESISTANT,
 		bullet = ARMOR_BALLISTIC_RIFLE,

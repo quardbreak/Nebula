@@ -41,7 +41,7 @@
 	speed = 8
 	can_escape = TRUE
 	stop_automated_movement_when_pulled = 0
-	attacktext = "punched"
+	natural_weapon = /obj/item/natural_weapon/punch
 	var/obj/effect/landmark/corpse/lar_maria/corpse = null
 	var/weapon = null
 
@@ -62,9 +62,6 @@
 	icon_dead = "test_subject_dead"
 	maxHealth = 40
 	health = 40
-	harm_intent_damage = 5
-	melee_damage_lower = 10
-	melee_damage_upper = 10
 	corpse = /obj/effect/landmark/corpse/lar_maria/test_subject
 
 /obj/effect/landmark/corpse/lar_maria/test_subject
@@ -75,7 +72,7 @@
 /decl/hierarchy/outfit/corpse/test_subject
 	name = "Dead ZHP test subject"
 	uniform = /obj/item/clothing/under/color/orange
-	shoes = /obj/item/clothing/shoes/orange
+	shoes = /obj/item/clothing/shoes/color/orange
 
 /obj/effect/landmark/corpse/lar_maria/zhp_guard
 	name = "dead guard"
@@ -90,7 +87,7 @@
 	uniform = /obj/item/clothing/under/rank/virologist
 	suit = /obj/item/clothing/suit/armor/pcarrier
 	head = /obj/item/clothing/head/soft/lar_maria/zhp_cap
-	shoes = /obj/item/clothing/shoes/dutyboots
+	shoes = /obj/item/clothing/shoes/jackboots/duty
 	l_ear = /obj/item/radio/headset
 
 /mob/living/simple_animal/hostile/lar_maria/guard//angry guards armed with batons and shotguns. Still bite
@@ -99,10 +96,8 @@
 	icon_state = "guard_light"
 	maxHealth = 60
 	health = 60
-	harm_intent_damage = 5
-	melee_damage_lower = 20
-	melee_damage_upper = 20
-	weapon = /obj/item/melee/baton
+	natural_weapon = /obj/item/baton
+	weapon = /obj/item/baton
 	corpse = /obj/effect/landmark/corpse/lar_maria/zhp_guard
 
 /mob/living/simple_animal/hostile/lar_maria/guard/Initialize()
@@ -134,9 +129,6 @@
 	icon_state = "virologist_m"
 	maxHealth = 50
 	health = 50
-	harm_intent_damage = 5
-	melee_damage_lower = 8
-	melee_damage_upper = 12
 	corpse = /obj/effect/landmark/corpse/lar_maria/virologist
 
 /obj/effect/landmark/corpse/lar_maria/virologist
@@ -147,7 +139,7 @@
 	name = "Dead male ZHP virologist"
 	uniform = /obj/item/clothing/under/rank/virologist
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	shoes = /obj/item/clothing/shoes/white
+	shoes = /obj/item/clothing/shoes/color/white
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	head = /obj/item/clothing/head/surgery
 	mask = /obj/item/clothing/mask/surgical
@@ -169,7 +161,7 @@
 	name = "Dead female ZHP virologist"
 	uniform = /obj/item/clothing/under/rank/virologist
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
-	shoes = /obj/item/clothing/shoes/white
+	shoes = /obj/item/clothing/shoes/color/white
 	gloves = /obj/item/clothing/gloves/latex/nitrile
 	mask = /obj/item/clothing/mask/surgical
 

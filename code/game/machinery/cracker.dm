@@ -51,14 +51,14 @@
 		if(istype(F))
 
 			// Drink more water!
-			var/consuming = min(F.fluid_amount, fluid_consumption_per_tick)
-			LOSE_FLUID(F, consuming)
+			var/consuming = min(F.reagents.total_volume, fluid_consumption_per_tick)
+			F.reagents.remove_any(consuming)
 			T.show_bubbles()
 
 			// Gas production.
 			var/datum/gas_mixture/produced = new
 			var/gen_amt = min(1, (gas_generated_per_tick * (consuming/fluid_consumption_per_tick)))
-			produced.adjust_gas(MAT_OXYGEN,  gen_amt)
-			produced.adjust_gas(MAT_HYDROGEN, gen_amt * 2)
+			produced.adjust_gas(/decl/material/gas/oxygen,  gen_amt)
+			produced.adjust_gas(/decl/material/gas/hydrogen, gen_amt * 2)
 			produced.temperature = T20C //todo water temperature
 			air_contents.merge(produced)

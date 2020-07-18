@@ -46,7 +46,7 @@
 	armor_pieces = list(/obj/item/clothing/under/color/grey = slot_w_uniform,
 						/obj/item/clothing/gloves/insulated/cheap = slot_gloves,
 						/obj/item/clothing/mask/gas = slot_wear_mask,
-						/obj/item/clothing/shoes/black = slot_shoes,
+						/obj/item/clothing/shoes/color/black = slot_shoes,
 						/obj/item/storage/toolbox/mechanical = slot_r_hand,
 						/obj/item/extinguisher = slot_l_hand)
 
@@ -72,7 +72,7 @@
 	name = "Toggle Sword"
 	invocation_type = SpI_EMOTE
 	invocation = "thrusts /his hand forward, and it is enveloped in golden embers!"
-	armor_pieces = list(/obj/item/excalibur = slot_r_hand)
+	armor_pieces = list(/obj/item/sword/excalibur = slot_r_hand)
 	hud_state = "excalibur"
 
 /spell/toggle_armor/fiend

@@ -1,10 +1,13 @@
 /obj/item/clothing/shoes
 	name = "shoes"
-	icon = 'icons/obj/clothing/obj_feet.dmi'
 	desc = "Comfortable-looking shoes."
+	icon_state = ICON_STATE_WORLD
+	icon = 'icons/clothing/feet/generic_shoes.dmi'
 	gender = PLURAL
 	siemens_coefficient = 0.9
+	cold_protection = FEET
 	body_parts_covered = FEET
+	heat_protection = FEET
 	slot_flags = SLOT_FEET
 	permeability_coefficient = 0.50
 	force = 2
@@ -15,6 +18,7 @@
 	var/can_add_hidden_item = TRUE
 	var/hidden_item_max_w_class = ITEM_SIZE_SMALL
 	var/obj/item/hidden_item = null
+	var/shine = -1 // if material should apply shine overlay. Set to -1 for it to not do that
 
 /obj/item/clothing/shoes/Destroy()
 	. = ..()
@@ -147,3 +151,25 @@
 	if (ismob(src.loc))
 		var/mob/M = src.loc
 		M.update_inv_shoes()
+
+/obj/item/clothing/shoes/set_material(var/new_material)
+	..()
+	if(shine != -1 && material.reflectiveness >= MAT_VALUE_DULL)
+		shine = material.reflectiveness
+
+/obj/item/clothing/shoes/on_update_icon()
+	. = ..()
+	if(shine > 0 && check_state_in_icon("[icon_state]_shine", icon))
+		var/mutable_appearance/S = get_mutable_overlay(icon, "[icon_state]_shine")
+		S.alpha = 127 * shine / 100
+		S.blend_mode = BLEND_ADD
+		overlays += S
+
+/obj/item/clothing/shoes/apply_overlays(var/mob/user_mob, var/bodytype, var/image/overlay, var/slot)
+	var/image/I = ..()
+	if(shine > 0 && slot == slot_shoes_str)
+		var/mutable_appearance/S = get_mutable_overlay(I.icon, "shine")
+		S.alpha = 127 * shine / 100
+		S.blend_mode = BLEND_ADD
+		I.overlays += S
+	return I

@@ -1,14 +1,26 @@
 /datum/admins/proc/spawn_fluid_verb()
-	set name = "Spawn Water"
+	set name = "Spawn Fluid"
 	set desc = "Flood the turf you are standing on."
 	set category = "Debug"
 
-	if(!check_rights(R_SPAWN)) return
+	if(!check_rights(R_SPAWN)) 
+		return
+
 	var/mob/user = usr
-	if(istype(user) && user.client)
-		for(var/thing in trange(1, get_turf(user)))
-			var/turf/T = thing
-			T.add_fluid(2000, /decl/reagent/water)
+	if(!istype(user) || !user.client)
+		return
+	var/spawn_range = input("How wide a radius?", "Spawn Fluid", 0) as num|null
+	var/reagent_amount = input("How deep?", "Spawn Fluid", 1000) as num|null
+	if(!reagent_amount)
+		return
+	var/reagent_type = input("What kind of reagent?", "Spawn Fluid", /decl/material/liquid/water) as null|anything in subtypesof(/decl/material)
+	if(!reagent_type || !user || !check_rights(R_SPAWN))
+		return
+	var/turf/flooding = get_turf(user)
+	for(var/thing in RANGE_TURFS(flooding, spawn_range))
+		var/obj/effect/fluid/F = locate() in thing
+		if(!F) F = new(thing)
+		F.reagents.add_reagent(reagent_type, reagent_amount)
 
 /datum/admins/proc/jump_to_fluid_source()
 

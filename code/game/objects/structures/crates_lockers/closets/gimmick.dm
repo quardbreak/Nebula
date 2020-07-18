@@ -37,7 +37,7 @@
 		/obj/item/clothing/gloves/thick/swat = 2,
 		/obj/item/clothing/head/helmet/swat = 2,
 		/obj/item/clothing/mask/gas = 2,
-		/obj/item/clothing/shoes/swat = 2,
+		/obj/item/clothing/shoes/jackboots/swat = 2,
 		/obj/item/clothing/suit/space/void/swat = 2,
 		/obj/item/clothing/under/syndicate/tacticool = 2)
 
@@ -54,9 +54,9 @@
 /obj/structure/closet/thunderdome/tdred/WillContain()
 	return list(
 		/obj/item/clothing/suit/armor/tdome/red = 3,
-		/obj/item/melee/energy/sword = 3,
+		/obj/item/energy_blade/sword = 3,
 		/obj/item/gun/energy/laser = 3,
-		/obj/item/melee/baton = 3,
+		/obj/item/baton = 3,
 		/obj/item/storage/box/flashbangs = 3,
 		/obj/item/clothing/head/helmet/thunderdome = 3
 	)
@@ -68,9 +68,9 @@
 /obj/structure/closet/thunderdome/tdgreen/WillContain()
 	return list(
 		/obj/item/clothing/suit/armor/tdome/green = 3,
-		/obj/item/melee/energy/sword = 3,
+		/obj/item/energy_blade/sword = 3,
 		/obj/item/gun/energy/laser = 3,
-		/obj/item/melee/baton = 3,
+		/obj/item/baton = 3,
 		/obj/item/storage/box/flashbangs = 3,
 		/obj/item/clothing/head/helmet/thunderdome = 3
 	)

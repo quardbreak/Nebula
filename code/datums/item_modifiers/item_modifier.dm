@@ -15,7 +15,15 @@
 		return FALSE
 
 	I.SetName(type_setup[SETUP_NAME])
-	I.icon_state = type_setup[SETUP_ICON_STATE]
+
+	var/icon_state = type_setup[SETUP_ICON_STATE]
+	if(icon_state)
+		I.icon_state = type_setup[SETUP_ICON_STATE]
+
+	var/onmob = type_setup[SETUP_ONMOB_ICON]
+	if(onmob)
+		I.use_single_icon = TRUE
+		I.icon = onmob
 
 	var/item_state = type_setup[SETUP_ITEM_STATE]
 	if(item_state)

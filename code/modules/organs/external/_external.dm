@@ -34,11 +34,11 @@
 	var/model                          // Used when caching robolimb icons.
 	var/force_icon                     // Used to force override of species-specific limb icons (for prosthetics).
 	var/icon/mob_icon                  // Cached icon for use in mob overlays.
-	var/s_tone                         // Skin tone.
-	var/s_base = ""                    // Skin base.
-	var/list/s_col                     // skin colour
-	var/s_col_blend = ICON_ADD         // How the skin colour is applied.
-	var/list/h_col                     // hair colour
+	var/skin_tone                      // Skin tone.
+	var/skin_base = ""                 // Skin base.
+	var/skin_colour                    // skin colour
+	var/skin_blend = ICON_ADD          // How the skin colour is applied.
+	var/hair_colour                    // hair colour
 	var/body_hair                      // Icon blend for body hair if any.
 	var/list/markings = list()         // Markings (body_markings) to apply to the icon
 
@@ -152,8 +152,8 @@
 
 /obj/item/organ/external/set_dna(var/datum/dna/new_dna)
 	..()
-	s_col_blend = species.limb_blend
-	s_base = new_dna.s_base
+	skin_blend = species.limb_blend
+	skin_base =  new_dna.skin_base
 
 /obj/item/organ/external/emp_act(severity)
 
@@ -641,7 +641,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(germ_level < INFECTION_LEVEL_TWO)
 		return ..()
 
-	var/antibiotics = REAGENT_VOLUME(owner.reagents, /decl/reagent/antibiotics)
+	var/antibiotics = REAGENT_VOLUME(owner.reagents, /decl/material/liquid/antibiotics)
 
 	if(germ_level >= INFECTION_LEVEL_TWO)
 		//spread the infection to internal organs
@@ -891,7 +891,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		victim.updatehealth()
 		victim.UpdateDamageIcon()
 		victim.regenerate_icons()
-		dir = 2
+		set_dir(SOUTH, TRUE)
 
 	switch(disintegrate)
 		if(DROPLIMB_EDGE)
@@ -905,7 +905,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				// Throw limb around.
 				if(src && istype(loc,/turf))
 					throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
-				dir = 2
+				set_dir(SOUTH, TRUE)
 		if(DROPLIMB_BURN)
 			new /obj/effect/decal/cleanable/ash(get_turf(victim))
 			for(var/obj/item/I in src)
@@ -915,7 +915,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(DROPLIMB_BLUNT)
 			var/obj/gore
 			if(BP_IS_CRYSTAL(src))
-				gore = new /obj/item/material/shard(get_turf(victim), MAT_CRYSTAL)
+				gore = new /obj/item/shard(get_turf(victim), /decl/material/solid/gemstone/crystal)
 			else if(BP_IS_PROSTHETIC(src))
 				gore = new /obj/effect/decal/cleanable/blood/gibs/robot(get_turf(victim))
 			else

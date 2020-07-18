@@ -62,7 +62,7 @@
 			if(O.reagents.total_volume < 1)
 				to_chat(user, "The [O] is empty.")
 			else if(O.reagents.total_volume >= 1)
-				if(O.reagents.has_reagent(/decl/reagent/acid/polyacid, 1))
+				if(O.reagents.has_reagent(/decl/material/liquid/acid/polyacid, 1))
 					to_chat(user, "The acid chews through the balloon!")
 					O.reagents.splash(user, reagents.total_volume)
 					qdel(src)
@@ -136,12 +136,7 @@
 	name = "foam dart crossbow"
 	desc = "A weapon favored by many overactive children. Ages 8 and up."
 	icon = 'icons/obj/guns/energy_crossbow.dmi'
-	icon_state = "crossbow"
-	item_state = "crossbow"
-	item_icons = list(
-		icon_l_hand = 'icons/mob/onmob/items/lefthand_guns.dmi',
-		icon_r_hand = 'icons/mob/onmob/items/righthand_guns.dmi',
-		)
+	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_SMALL
 	attack_verb = list("attacked", "struck", "hit")
 	var/bullets = 5
@@ -282,18 +277,10 @@
 		src.add_fingerprint(user)
 		return
 
-/obj/item/toy/katana
-	name = "replica katana"
+/obj/item/sword/katana/toy
+	name = "toy katana"
 	desc = "Woefully underpowered in D20."
-	icon = 'icons/obj/items/weapon/katana.dmi'
-	icon_state = "katana"
-	item_state = "katana"
-	obj_flags = OBJ_FLAG_CONDUCTIBLE
-	slot_flags = SLOT_BELT | SLOT_BACK
-	force = 5
-	throwforce = 5
-	w_class = ITEM_SIZE_LARGE
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
+	material = /decl/material/solid/plastic
 
 /*
  * Snap pops
@@ -738,8 +725,8 @@
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes the [src].</span>","<span class='notice'>You poke the [src].</span>")
 
 /obj/item/toy/plushie/mouse
-	name = "snaprat plush"
-	desc = "A plushie of a snaprat! What was once considered a vile rodent is now your very best friend."
+	name = "mouse plush"
+	desc = "A plushie of a mouse! What was once considered a vile rodent is now your very best friend."
 	icon_state = "mouseplushie"
 
 /obj/item/toy/plushie/kitten
@@ -758,14 +745,13 @@
 	icon_state = "spiderplushie"
 
 //Toy cult sword
-/obj/item/toy/cultsword
+/obj/item/sword/cult_toy
 	name = "foam sword"
 	desc = "An arcane weapon (made of foam) wielded by the followers of the hit Saturday morning cartoon \"King Nursee and the Acolytes of Heroism\"."
-	icon = 'icons/obj/items/weapon/broadswords.dmi'
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	w_class = ITEM_SIZE_HUGE
-	attack_verb = list("attacked", "slashed", "stabbed", "poked")
+	icon = 'icons/obj/items/weapon/swords/cult.dmi'
+	material = /decl/material/solid/plastic
+	edge = 0
+	sharp = 0
 
 /obj/item/inflatable_duck
 	name = "inflatable duck"

@@ -116,6 +116,11 @@ var/list/restricted_camera_networks = list(NETWORK_ERT, NETWORK_MERCENARY, NETWO
 #define SUPERMATTER_EMERGENCY 5		// Integrity < 25%
 #define SUPERMATTER_DELAMINATING 6	// Pretty obvious.
 
+#define SUPERMATTER_DATA_EER         "Relative EER"
+#define SUPERMATTER_DATA_TEMPERATURE "Temperature"
+#define SUPERMATTER_DATA_PRESSURE    "Pressure"
+#define SUPERMATTER_DATA_EPR         "Chamber EPR"
+
 // Scrubber modes
 #define SCRUBBER_SIPHON   "siphon"
 #define SCRUBBER_SCRUB    "scrub"
@@ -173,3 +178,5 @@ var/list/restricted_camera_networks = list(NETWORK_ERT, NETWORK_MERCENARY, NETWO
 #define  PART_AI  		/obj/item/stock_parts/computer/ai_slot							// AI slot, an intellicard housing that allows modifications of AIs.
 #define  PART_TESLA  	/obj/item/stock_parts/computer/tesla_link					// Tesla Link, Allows remote charging from nearest APC.
 #define  PART_SCANNER  	/obj/item/stock_parts/computer/scanner							// One of several optional scanner attachments.
+#define  PART_D_SLOT	/obj/item/stock_parts/computer/drive_slot				// Portable drive slot.
+#define  PART_MSTICK	/obj/item/stock_parts/computer/charge_stick_slot		// Charge-slot component for transactions /w charge sticks.

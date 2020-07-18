@@ -31,6 +31,11 @@
 	set_hydration(400)
 	..()
 
+/mob/living/carbon/get_ai_type()
+	if(ispath(species?.ai))
+		return species.ai
+	return ..()
+
 /mob/living/carbon/Move(NewLoc, direct)
 	. = ..()
 	if(!.)
@@ -473,9 +478,6 @@
 /mob/living/carbon/get_sex()
 	return species.get_sex(src)
 
-/mob/living/carbon/proc/get_ingested_reagents()
-	return reagents
-
 /mob/living/carbon/proc/set_nutrition(var/amt)
 	nutrition = Clamp(amt, 0, initial(nutrition))
 
@@ -505,3 +507,10 @@
 
 /mob/living/carbon/has_dexterity(var/dex_level)
 	. = ..() && (species.get_manual_dexterity() >= dex_level)
+
+/mob/living/carbon/fluid_act(var/datum/reagents/fluids)
+	var/saturation =  min(fluids.total_volume, round(mob_size * 1.5 * reagent_permeability()) - touching.total_volume)
+	if(saturation > 0)
+		fluids.trans_to_holder(touching, saturation)
+	if(fluids.total_volume)
+		..()
