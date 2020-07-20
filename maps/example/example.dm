@@ -9,8 +9,7 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
-	// Tethys Edit
-	#include "../../tethys/mods/machine/_machine.dme"
+	// Tethys Project
 	#include "../../tethys/mods/booster/_booster.dme"
 	#include "../../tethys/mods/europa_floors/_europa_floors.dme"
 

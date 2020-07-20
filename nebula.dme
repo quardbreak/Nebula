@@ -3227,6 +3227,6 @@
 #include "tethys\code\datums\music_tracks\liquidcontrol.dm"
 #include "tethys\code\game\objects\items\weapons\storage\backpack.dm"
 #include "tethys\code\modules\webhooks\webhook_message_ooc.dm"
-#include "tethys\overrides\maps\bearcat\bearcat_define.dm"
+#include "tethys\overrides\maps\tradeship\tradeship_define.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE

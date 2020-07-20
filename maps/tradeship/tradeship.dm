@@ -3,6 +3,10 @@
 	#include "../../mods/corporate/_corporate.dme"
 	#include "../../mods/ascent/_ascent.dme"
 
+	// Tethys Project
+	#include "../../tethys/mods/booster/_booster.dme"
+	#include "../../tethys/mods/europa_floors/_europa_floors.dme"
+
 	#include "tradeship_antagonists.dm"
 	#include "tradeship_areas.dm"
 	#include "tradeship_documents.dm"
