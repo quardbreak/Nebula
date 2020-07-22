@@ -9,9 +9,9 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
-	// Tethys Project
-	#include "../../tethys/mods/booster/_booster.dme"
-	#include "../../tethys/mods/europa_floors/_europa_floors.dme"
+	// Starlight Station
+	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 	#include "example_areas.dm"
 	#include "example_shuttles.dm"
