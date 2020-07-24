@@ -3222,6 +3222,7 @@
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
 #include "mods\_modpack.dm"
+#include "starlight\code\datums\footsteps.dm"
 #include "starlight\code\datums\communication\ooc.dm"
 #include "starlight\code\datums\music_tracks\intermissi0n.dm"
 #include "starlight\code\datums\music_tracks\liquidcontrol.dm"
