@@ -3,7 +3,7 @@
 	#include "../../mods/corporate/_corporate.dme"
 	#include "../../mods/ascent/_ascent.dme"
 
-	// Starlight Station
+	// Starlight Edit
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 

@@ -9,7 +9,7 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
-	// Starlight Station
+	// Starlight Edit
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
