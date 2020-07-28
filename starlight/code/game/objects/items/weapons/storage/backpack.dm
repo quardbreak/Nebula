@@ -24,7 +24,7 @@
 	..(user)
 
 /obj/item/storage/backpack/proc/worn_check(mob/L, show_warning = TRUE)
-	if(!worn_access && L?.get_equipped_item(slot_back) == src)
+	if(!worn_access && L?.get_equipped_item(slot_back_str) == src)
 		if(show_warning)
 			to_chat(L, SPAN_WARNING("You need to take off \the [src] before you can use it!"))
 		return FALSE
