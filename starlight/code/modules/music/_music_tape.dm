@@ -8,7 +8,7 @@
 	force = 1
 	throwforce = 0
 
-	matter = list(MATERIAL_PLASTIC = 20, MATERIAL_STEEL = 5, MATERIAL_GLASS = 5)
+	matter = list(/decl/material/solid/plastic = 20, /decl/material/solid/metal/steel = 5, /decl/material/solid/glass = 5)
 
 	var/ruined = FALSE
 	var/random_color = TRUE
