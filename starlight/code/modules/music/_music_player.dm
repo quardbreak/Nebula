@@ -106,6 +106,9 @@ GLOBAL_LIST_EMPTY(music_players)
 		if(cell)
 			overlays += image(icon, "[icon_state]_panel-cell")
 
+	if(mode == PLAYER_STATE_PLAY)
+		overlays += image(icon, "notes_overlay")
+
 /obj/item/music_player/Process()
 	if(!get_cell() || !cell.checked_use(power_usage * CELLRATE))
 		StopPlaying()
