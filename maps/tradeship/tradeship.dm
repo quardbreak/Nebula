@@ -6,6 +6,7 @@
 	// Starlight Edit
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
+//	#include "../../mods/ship_combat2/_spacebattles.dme"
 
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"
