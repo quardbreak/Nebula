@@ -1,11 +1,13 @@
 // Pre-made cassetes
 
-/obj/item/music_tape/random
-	random_color = TRUE
-
 /obj/item/music_tape/random/Initialize()
 	. = ..()
 	track = pick(setup_music_tracks())
+
+/obj/item/music_tape/custom
+	name = "dusty tape"
+	desc = "A dusty tape, which can hold anything. Only what you need is blow the dust away and you will be able to play it again."
+	rewrites_left = 1
 
 /obj/item/music_tape/custom/attack_self(mob/user)
 	if(!ruined && !track)
@@ -15,7 +17,7 @@
 	..()
 
 /obj/item/music_tape/custom/proc/setup_tape(mob/user)
-	var/new_sound = input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is a good choice.", "Song Reminiscence: File") as null|sound
+	var/new_sound = input(user, "Select sound to upload. You should use only those audio formats which byond can accept. Ogg and module files is a good choice.", "Song Reminiscence") as null|sound
 	if(isnull(new_sound))
 		return FALSE
 
