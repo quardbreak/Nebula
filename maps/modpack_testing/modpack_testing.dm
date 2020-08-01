@@ -5,7 +5,7 @@
 
 	// - Starlight Edit -
 	#include "..\..\starlight\mods\booster\_booster.dme"
-	#include "..\..\starlight\mods\machine\machine_.dme"
+	#include "..\..\starlight\mods\machine\_machine.dme"
 	#include "..\..\starlight\mods\europa_floors\_europa_floors.dme"
 
 	#include "..\..\mods\misc\mundane.dm"
