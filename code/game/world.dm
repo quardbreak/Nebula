@@ -1,4 +1,4 @@
-/var/server_name = "Nebula13"
+/var/server_name = "Starlight \[RU\]"
 
 /var/game_id = null
 /hook/global_init/proc/generate_gameid()
@@ -69,7 +69,7 @@
 
 	enable_debugger()
 	//set window title
-	name = "[server_name] - [GLOB.using_map.full_name]"
+	name = "[server_name]: [GLOB.using_map.full_name]"
 
 	//logs
 	SetupLogs()
