@@ -100,9 +100,9 @@
 	///Sound used when equipping the item into a valid slot
 	var/equip_sound
 	///Sound uses when picking the item up (into your hands)
-	var/pickup_sound = 'sound/items/pickup/device.ogg'
+	var/pickup_sound
 	///Sound uses when dropping the item, or when its thrown.
-	var/drop_sound = 'sound/items/drop/device.ogg'
+	var/drop_sound
 
 /obj/item/create_matter()
 	..()
@@ -924,9 +924,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/proc/get_examine_line()
 	if(blood_color)
-		. = SPAN_WARNING("\icon[src] [gender==PLURAL?"some":"a"] <font color='[blood_color]'>stained</font> [src]")
+		. = SPAN_WARNING("[html_icon(src)] [gender==PLURAL?"some":"a"] <font color='[blood_color]'>stained</font> [src]")
 	else
-		. = "\icon[src] \a [src]"
+		. = "[html_icon(src)] \a [src]"
 	var/ID = GetIdCard()
 	if(ID)
 		. += "  <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
