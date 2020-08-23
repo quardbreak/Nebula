@@ -237,6 +237,8 @@
 	else
 		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
 
+		if(damage_type == BRUTE) playsound(target_mob, pick(GLOB.bullet_hit_sound), 50, 1) // Starlight Edit
+
 	//admin logs
 	if(!no_attack_log)
 		if(istype(firer, /mob))

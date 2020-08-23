@@ -209,6 +209,10 @@
 	playsound(T, 'sound/effects/bangtaper.ogg', 50, 1, 1)//so it plays sounds on the turf instead, makes for awesome carps to hull collision and such
 	apply_damage(speed*5, BRUTE)
 
+	// Starlight Edit
+	playsound(T, pick(GLOB.smash_sound), 50, 1, 1)
+	if(client) shake_camera(src, 7, 1)
+
 /mob/living/proc/near_wall(var/direction,var/distance=1)
 	var/turf/T = get_step(get_turf(src),direction)
 	var/turf/last_turf = src.loc

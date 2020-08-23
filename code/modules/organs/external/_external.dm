@@ -903,11 +903,23 @@ Note that amputating the affected organ does in fact remove the infection from t
 				if(src && istype(loc,/turf))
 					throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 				set_dir(SOUTH, TRUE)
+
+			// Starlight Edit - Start
+			if(!clean) playsound(victim, pick(
+				'starlight/sound/effects/gore/chop2.ogg',
+				'starlight/sound/effects/gore/chop3.ogg',
+				'starlight/sound/effects/gore/chop4.ogg'), 100, 0)
+			else playsound(victim, 'starlight/sound/effects/gore/severed.ogg', 100, 0)
+			// Starlight Edit - End
+
 		if(DROPLIMB_BURN)
 			new /obj/effect/decal/cleanable/ash(get_turf(victim))
 			for(var/obj/item/I in src)
 				if(I.w_class > ITEM_SIZE_SMALL && !istype(I,/obj/item/organ))
 					I.dropInto(loc)
+
+			if(victim.can_feel_pain() && prob(50)) victim.emote("scream") // Starlight Edit
+
 			qdel(src)
 		if(DROPLIMB_BLUNT)
 			var/obj/gore
@@ -922,6 +934,10 @@ Note that amputating the affected organ does in fact remove the infection from t
 					G.fleshcolor = use_flesh_colour
 					G.basecolor =  use_blood_colour
 					G.update_icon()
+
+				// Starlight Edit
+				playsound(victim, 'starlight/sound/effects/gore/chop6.ogg', 100 , 0)
+				if(victim.can_feel_pain() && prob(50)) victim.emote("scream")
 
 			gore.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
 
@@ -1048,7 +1064,9 @@ obj/item/organ/external/proc/remove_clamps()
 		if(can_feel_pain())
 			owner.emote("scream")
 
-	playsound(src.loc, "fracture", 100, 1, -2)
+	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // Starlight Edit
+
+//	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
 

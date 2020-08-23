@@ -235,6 +235,9 @@
 			A.alert_on_fall(src)
 	updatehealth()
 
+	// Starlight Edit
+	playsound(landing, pick(GLOB.smash_sound), 50, 1, -1)
+	if(client) shake_camera(src, 7, 0.5)
 
 /mob/living/carbon/human/proc/climb_up(atom/A)
 	if(!isturf(loc) || !bound_overlay || bound_overlay.destruction_timer || is_physically_disabled())	// This destruction_timer check ideally wouldn't be required, but I'm not awake enough to refactor this to not need it.
