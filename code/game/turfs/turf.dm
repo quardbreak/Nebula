@@ -49,6 +49,8 @@
 	if (z_flags & ZM_MIMIC_BELOW)
 		setup_zmimic(mapload)
 	update_starlight()
+	if(flooded && !density)
+		fluid_update(FALSE)
 
 /turf/on_update_icon()
 	update_flood_overlay()
@@ -259,6 +261,7 @@ var/const/enterloopsanity = 100
 
 //expects an atom containing the reagents used to clean the turf
 /turf/proc/clean(atom/source, mob/user = null, var/time = null, var/message = null)
+	set waitfor = FALSE
 	if(source.reagents.has_reagent(/decl/material/liquid/water, 1) || source.reagents.has_reagent(/decl/material/liquid/cleaner, 1))
 		if(user && time && !do_after(user, time, src))
 			return
@@ -363,3 +366,6 @@ var/const/enterloopsanity = 100
 			set_light(min(0.1*config.starlight, 1), 1, 3, l_color = SSskybox.background_color)
 			return
 	set_light(0)
+
+/turf/proc/get_footstep_sound(var/mob/caller)
+	return
