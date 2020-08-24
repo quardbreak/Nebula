@@ -3263,6 +3263,7 @@
 #include "starlight\code\modules\music\_music_tape.dm"
 #include "starlight\code\modules\music\music_player.dm"
 #include "starlight\code\modules\music\music_tape.dm"
+#include "starlight\code\modules\species\station\utility_frame.dm"
 #include "starlight\code\modules\webhooks\webhook_message_ooc.dm"
 #include "starlight\maps\tradeship\tradeship_define.dm"
 #include "~code\global_init.dm"
