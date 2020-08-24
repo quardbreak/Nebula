@@ -3257,6 +3257,7 @@
 #include "starlight\code\game\machinery\jukebox.dm"
 #include "starlight\code\game\objects\items\weapons\storage\backpack.dm"
 #include "starlight\code\modules\admin\topic.dm"
+#include "starlight\code\modules\client\preference_setup\global\preferences.dm"
 #include "starlight\code\modules\emotes\definitions\_species.dm"
 #include "starlight\code\modules\emotes\definitions\audible.dm"
 #include "starlight\code\modules\music\_music_player.dm"
