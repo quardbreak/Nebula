@@ -12,6 +12,7 @@ GLOBAL_VAR_CONST(PREF_FANCY, "Fancy")
 GLOBAL_VAR_CONST(PREF_PLAIN, "Plain")
 GLOBAL_VAR_CONST(PREF_PRIMARY, "Primary")
 GLOBAL_VAR_CONST(PREF_ALL, "All")
+GLOBAL_VAR_CONST(PREF_ON, "On")
 GLOBAL_VAR_CONST(PREF_OFF, "Off")
 GLOBAL_VAR_CONST(PREF_BASIC, "Basic")
 GLOBAL_VAR_CONST(PREF_FULL, "Full")
@@ -203,6 +204,15 @@ var/list/_client_preferences_by_type
 /datum/client_preference/chat_position/changed(mob/preference_mob, new_value)
 	if(preference_mob.client)
 		preference_mob.client.update_chat_position(new_value == GLOB.PREF_YES)
+
+/datum/client_preference/darkmode
+	description = "Dark Theme"
+	key = "SKIN_DARKMODE"
+	options = list(GLOB.PREF_OFF, GLOB.PREF_ON)
+
+/datum/client_preference/darkmode/changed(mob/preference_mob, new_value)
+	if(preference_mob.client)
+		new_value == GLOB.PREF_ON ? preference_mob.client.force_dark_theme() : preference_mob.client.force_white_theme()
 
 /datum/client_preference/autohiss
 	description = "Autohiss"
