@@ -330,7 +330,7 @@
 	if(!client)
 		return
 	if(client.get_preference_value(/datum/client_preference/darkmode) == GLOB.PREF_ON)
-		client.force_dark_theme()
+		client.force_theme_dark()
 	if(client.get_preference_value(/datum/client_preference/chat_position) == GLOB.PREF_YES)
 		client.update_chat_position(TRUE)
 	if(client.get_preference_value(/datum/client_preference/fullscreen_mode) != GLOB.PREF_OFF)

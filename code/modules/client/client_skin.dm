@@ -1,123 +1,117 @@
-/client/proc/force_white_theme() //There's no way round it. We're essentially changing the skin by hand. It's painful but it works, and is the way Lummox suggested.
+/client/proc/force_theme_white()
 	set background = TRUE
 
-	//Main windows
-	winset(src, "infowindow", "background-color = [COLOR_DARKMODE_DARKBACKGROUND];background-color = none")
-	winset(src, "infowindow", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "rpane", "background-color = [COLOR_DARKMODE_DARKBACKGROUND];background-color = none")
-	winset(src, "rpane", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "info", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "info", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "browseroutput", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "browseroutput", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "outputwindow", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "outputwindow", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "rpanewindow", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "rpanewindow", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "mainwindow", "background-color = [COLOR_DARKMODE_DARKBACKGROUND];background-color = none")
-	winset(src, "split", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "mainvsplit", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
+	winset(src, null, {"
+	infowindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	infowindow.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	rpane.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	rpane.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	info.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	info.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	outputwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	outputwindow.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	rpanewindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	rpanewindow.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	mainwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	split.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	mainvsplit.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
 
-	//Buttons
-	winset(src, "textb", "background-color = #494949;background-color = none")
-	winset(src, "textb", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "infob", "background-color = #494949;background-color = none")
-	winset(src, "infob", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "rulesb", "background-color = #494949;background-color = none")
-	winset(src, "rulesb", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "Lore", "background-color = #494949;background-color = none")
-	winset(src, "Lore", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "wikib", "background-color = #494949;background-color = none")
-	winset(src, "wikib", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "forumb", "background-color = #494949;background-color = none")
-	winset(src, "forumb", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "changelog", "background-color = #494949;background-color = none")
-	winset(src, "changelog", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "github", "background-color = #494949;background-color = none")
-	winset(src, "github", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "BugReport", "background-color = #494949;background-color = none")
-	winset(src, "BugReport", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "hotkey_toggle", "background-color = #494949;background-color = none")
-	winset(src, "hotkey_toggle", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
+	textb.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	textb.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	infob.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	infob.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	rulesb.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	rulesb.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	Lore.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	Lore.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	wikib.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	wikib.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	forumb.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	forumb.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	changelog.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	changelog.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	github.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	github.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	BugReport.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	BugReport.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	hotkey_toggle.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	hotkey_toggle.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
 
-	//Status and verb tabs
-	winset(src, "output", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "output", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "outputwindow", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "outputwindow", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "statwindow", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "statwindow", "text-color = #eaeaea;text-color = #000000")
-	winset(src, "info", "background-color = [COLOR_DARKMODE_DARKBACKGROUND];background-color = #FFFFFF")
-	winset(src, "info", "tab-background-color = [COLOR_DARKMODE_BACKGROUND];tab-background-color = none")
-	winset(src, "info", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "info", "tab-text-color = [COLOR_DARKMODE_TEXT];tab-text-color = #000000")
-	winset(src, "info", "prefix-color = [COLOR_DARKMODE_TEXT];prefix-color = #000000")
-	winset(src, "info", "suffix-color = [COLOR_DARKMODE_TEXT];suffix-color = #000000")
+	output.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	output.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	outputwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	outputwindow.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	statwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	statwindow.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	info.background-color = [SKIN_THEME_COLOR_BACKGROUND_WHITE];
+	info.tab-background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	info.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	info.tab-text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	info.prefix-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	info.suffix-color = [SKIN_THEME_COLOR_TEXT_BLACK];
 
-	//Say, OOC, me Buttons etc.
-	winset(src, "saybutton", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "saybutton", "text-color = [COLOR_DARKMODE_TEXT];text-color = #000000")
-	winset(src, "asset_cache_browser", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
-	winset(src, "asset_cache_browser", "background-color = [COLOR_DARKMODE_BACKGROUND];background-color = none")
+	saybutton.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	saybutton.text-color = [SKIN_THEME_COLOR_TEXT_BLACK];
+	asset_cache_browser.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	asset_cache_browser.background-color = [SKIN_THEME_COLOR_BACKGROUND_NONE];
+	"})
 
-/client/proc/force_dark_theme() //Inversely, if theyre using white theme and want to swap to the superior dark theme, let's get WINSET() ing
+/client/proc/force_theme_dark()
 	set background = TRUE
 
-	//Main windows
-	winset(src, "infowindow", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "infowindow", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "rpane", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "rpane", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "info", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "info", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "browseroutput", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "browseroutput", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "outputwindow", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "outputwindow", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "rpanewindow", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "rpanewindow", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "mainwindow", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "split", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "mainvsplit", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
+	winset(src, null, {"
+	infowindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	infowindow.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	rpane.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	rpane.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	info.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	info.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	browseroutput.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	browseroutput.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	outputwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	outputwindow.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	rpanewindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	rpanewindow.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	mainwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	split.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	mainvsplit.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
 
-	//Buttons
-	winset(src, "textb", "background-color = none;background-color = #494949")
-	winset(src, "textb", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "infob", "background-color = none;background-color = #494949")
-	winset(src, "infob", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "rulesb", "background-color = none;background-color = #494949")
-	winset(src, "rulesb", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "Lore", "background-color = none;background-color = #494949")
-	winset(src, "Lore", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "wikib", "background-color = none;background-color = #494949")
-	winset(src, "wikib", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "forumb", "background-color = none;background-color = #494949")
-	winset(src, "forumb", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "changelog", "background-color = none;background-color = #494949")
-	winset(src, "changelog", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "github", "background-color = none;background-color = #494949")
-	winset(src, "github", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "BugReport", "background-color = none;background-color = #494949")
-	winset(src, "BugReport", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "hotkey_toggle", "background-color = none;background-color = #494949")
-	winset(src, "hotkey_toggle", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
+	textb.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	textb.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	infob.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	infob.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	rulesb.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	rulesb.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	Lore.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	Lore.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	wikib.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	wikib.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	forumb.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	forumb.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	changelog.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	changelog.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	github.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	github.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	BugReport.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	BugReport.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	hotkey_toggle.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	hotkey_toggle.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
 
-	//Status and verb tabs
-	winset(src, "output", "background-color = none;background-color = [COLOR_DARKMODE_DARKBACKGROUND]")
-	winset(src, "output", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "outputwindow", "background-color = none;background-color = [COLOR_DARKMODE_DARKBACKGROUND]")
-	winset(src, "outputwindow", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "statwindow", "background-color = none;background-color = [COLOR_DARKMODE_DARKBACKGROUND]")
-	winset(src, "statwindow", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "info", "background-color = #FFFFFF;background-color = [COLOR_DARKMODE_DARKBACKGROUND]")
-	winset(src, "info", "tab-background-color = none;tab-background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "info", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "info", "tab-text-color = #000000;tab-text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "info", "prefix-color = #000000;prefix-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "info", "suffix-color = #000000;suffix-color = [COLOR_DARKMODE_TEXT]")
+	output.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARKEST];
+	output.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	outputwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARKEST];
+	outputwindow.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	statwindow.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARKEST];
+	statwindow.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	info.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARKEST];
+	info.tab-background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	info.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	info.tab-text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	info.prefix-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	info.suffix-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
 
-	//Say, OOC, me Buttons etc.
-	winset(src, "saybutton", "background-color = none;background-color = #494949")
-	winset(src, "saybutton", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
-	winset(src, "asset_cache_browser", "background-color = none;background-color = [COLOR_DARKMODE_BACKGROUND]")
-	winset(src, "asset_cache_browser", "text-color = #000000;text-color = [COLOR_DARKMODE_TEXT]")
+	saybutton.background-color = [SKIN_THEME_COLOR_BACKGROUND_GRAY];
+	saybutton.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	asset_cache_browser.background-color = [SKIN_THEME_COLOR_BACKGROUND_DARK];
+	asset_cache_browser.text-color = [SKIN_THEME_COLOR_TEXT_CYAN ];
+	"})
