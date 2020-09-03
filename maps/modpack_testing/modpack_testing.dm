@@ -3,11 +3,6 @@
 	#include "modpack_testing_lobby.dm"
 	#include "blank.dmm"
 
-	// - Starlight Edit -
-	#include "..\..\starlight\mods\booster\_booster.dme"
-	#include "..\..\starlight\mods\machine\_machine.dme"
-	#include "..\..\starlight\mods\europa_floors\_europa_floors.dme"
-
 	#include "..\..\mods\misc\mundane.dm"
 	#include "..\..\mods\corporate\_corporate.dme"
 	#include "..\..\mods\government\_government.dme"
@@ -18,6 +13,10 @@
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
 	#define USING_MAP_DATUM /datum/map/modpack_testing
+
+	// - Starlight Edit -
+	#include "..\..\starlight\mods\booster\_booster.dme"
+	#include "..\..\starlight\mods\europa_floors\_europa_floors.dme"
 
 #elif !defined(MAP_OVERRIDE)
 

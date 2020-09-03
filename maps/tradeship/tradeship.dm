@@ -3,11 +3,6 @@
 	#include "../../mods/corporate/_corporate.dme"
 	#include "../../mods/ascent/_ascent.dme"
 
-	// Starlight Edit
-	#include "../../starlight/mods/booster/_booster.dme"
-//	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
-//	#include "../../mods/ship_combat2/_spacebattles.dme"
-
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"
 	#include "../../mods/corporate/away_sites/lar_maria/lar_maria.dm"
@@ -53,6 +48,10 @@
 	#include "outfits/science.dm"
 
 	#define USING_MAP_DATUM /datum/map/tradeship
+
+	// - Starlight Edit -
+	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 #elif !defined(MAP_OVERRIDE)
 
