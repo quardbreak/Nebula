@@ -1063,10 +1063,11 @@ obj/item/organ/external/proc/remove_clamps()
 		jostle_bone()
 		if(can_feel_pain())
 			owner.emote("scream")
-
-	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // Starlight Edit
-
-//	playsound(src.loc, "fracture", 100, 1, -2)
+#if defined(MODPACK_STARLIGHT)
+	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2)
+#else
+	playsound(src.loc, "fracture", 100, 1, -2)
+#endif
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
 

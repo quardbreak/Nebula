@@ -237,7 +237,9 @@
 	else
 		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
 
-		if(damage_type == BRUTE) playsound(target_mob, pick(GLOB.bullet_hit_sound), 50, 1) // Starlight Edit
+#if defined(MODPACK_STARLIGHT)
+		if(damage_type == BRUTE) playsound(target_mob, pick(GLOB.bullet_hit_sound), 50, 1)
+#endif
 
 	//admin logs
 	if(!no_attack_log)
@@ -320,7 +322,7 @@
 
 /obj/item/projectile/explosion_act()
 	SHOULD_CALL_PARENT(FALSE)
-	return 
+	return
 
 /obj/item/projectile/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	return 1
@@ -527,7 +529,7 @@
 		SP.SetName((name != "shrapnel")? "[name] shrapnel" : "shrapnel")
 		SP.desc += " It looks like it was fired from [shot_from]."
 		return SP
-	
+
 /obj/item/projectile/get_autopsy_descriptors()
 	return list(name)
 
