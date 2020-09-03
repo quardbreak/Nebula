@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/stool, /obj/structure/hygiene/
 	name = "noose"
 	desc = "A morbid apparatus."
 	icon_state = "noose"
-	icon = 'starlight/icons/obj/noose.dmi'
+	icon = 'noose.dmi'
 	anchored = TRUE
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -194,7 +194,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/stool, /obj/structure/hygiene/
 				M.visible_message(\
 					SPAN_WARNING("[user] ties \the [src] over [G.his] neck!"),\
 					SPAN_WARNING("You tie \the [src] over your neck!"))
-				playsound(user, 'starlight/sound/effects/noosed.ogg', 50, 1, -1)
+				playsound(user, 'noosed.ogg', 50, 1, -1)
 				return TRUE
 
 		user.visible_message(\
@@ -212,7 +212,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/stool, /obj/structure/hygiene/
 				M.visible_message(\
 					SPAN_DANGER("[user] ties \the [src] over [M]'s neck!"),\
 					SPAN_DANGER("You tie \the [src] over your neck!"))
-				playsound(user, 'starlight/sound/effects/noosed.ogg', 50, 1, -1)
+				playsound(user, 'noosed.ogg', 50, 1, -1)
 				return TRUE
 
 		user.visible_message(\
@@ -250,7 +250,7 @@ GLOBAL_LIST_INIT(standing_objects, list(/obj/item/stool, /obj/structure/hygiene/
 			buckled_mob.pixel_x += 1
 
 			if(buckled_mob)
-				playsound(buckled_mob, 'starlight/sound/effects/noose_idle.ogg', 50, 1, -3)
+				playsound(buckled_mob, 'noose_idle.ogg', 50, 1, -3)
 				if(ishuman(buckled_mob))
 					var/mob/living/carbon/human/H = buckled_mob
 					if(!H.need_breathe())

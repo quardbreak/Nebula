@@ -52,4 +52,3 @@
 		tape = null
 		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
 		verbs -= .verb/eject
-

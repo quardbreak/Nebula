@@ -2,5 +2,5 @@
 	artist = "DJ Rozwell"
 	title = "LIQUIDCONTROL"
 	album = "Sludge Dredd"
-	song = 'starlight/lobby_music/liquidcontrol.ogg'
+	song = 'liquidcontrol.ogg'
 	license = /decl/license/grandfathered

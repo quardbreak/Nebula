@@ -50,8 +50,9 @@
 	#define USING_MAP_DATUM /datum/map/tradeship
 
 	// - Starlight Edit -
+	#include "../../starlight/mods/starlight/_starlight.dme"
+//	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 #elif !defined(MAP_OVERRIDE)
 

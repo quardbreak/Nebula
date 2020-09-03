@@ -1,5 +1,5 @@
 /music_track/intermissi0n
 	artist = "XellDRK"
 	title = "Intermissi0n"
-	song = 'starlight/lobby_music/intermissi0n.ogg'
+	song = 'intermissi0n.ogg'
 	license = /decl/license/grandfathered
