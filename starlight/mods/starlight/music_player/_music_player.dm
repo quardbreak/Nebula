@@ -15,9 +15,7 @@ GLOBAL_LIST_EMPTY(music_players)
 /obj/item/music_player
 	name = "music player"
 	desc = "A little device which can be used to play soft tunes. If you see this you're probably should be banned for abuse. Report this situation to dev team."
-	icon = 'music_player.dmi'
-	icon_state = null
-	item_state = null
+	icon_state = ICON_STATE_WORLD
 
 	w_class = ITEM_SIZE_NORMAL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -95,19 +93,19 @@ GLOBAL_LIST_EMPTY(music_players)
 			to_chat(user, SPAN_WARNING("It's broken."))
 
 /obj/item/music_player/on_update_icon()
-	overlays.Cut()
+	cut_overlays()
 
 	if(mode == PLAYER_STATE_PLAY)
-		overlays += image(icon, "[icon_state]_play")
+		add_overlay(image(icon, "[icon_state]_play"))
 
 	if(panel == PANEL_OPENED)
-		overlays += image(icon, "[icon_state]_panel-open")
+		add_overlay(image(icon, "[icon_state]_panel-open"))
 
 		if(cell)
-			overlays += image(icon, "[icon_state]_panel-cell")
+			add_overlay(image(icon, "[icon_state]_panel-cell"))
 
 	if(mode == PLAYER_STATE_PLAY)
-		overlays += image(icon, "notes_overlay")
+		add_overlay(image(icon, "notes_overlay"))
 
 /obj/item/music_player/Process()
 	if(!get_cell() || !cell.checked_use(power_usage * CELLRATE))
