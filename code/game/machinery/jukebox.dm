@@ -100,10 +100,7 @@ datum/track/proc/GetTrack()
 		"current_track" = current_track != null ? current_track.title : "No track selected",
 		"playing" = playing,
 		"tracks" = juke_tracks,
-		"volume" = volume,
-#if defined(MODPACK_STARLIGHT)
-		"tape" = tape
-#endif
+		"volume" = volume
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)

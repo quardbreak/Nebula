@@ -11,6 +11,25 @@
 		eject()
 		return TOPIC_REFRESH
 
+/obj/machinery/media/jukebox/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1)
+	var/list/juke_tracks = new
+	for(var/datum/track/T in tracks)
+		juke_tracks.Add(list(list("track"=T.title)))
+
+	var/list/data = list(
+		"current_track" = current_track != null ? current_track.title : "No track selected",
+		"playing" = playing,
+		"tracks" = juke_tracks,
+		"volume" = volume,
+		"tape" = tape
+	)
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if (!ui)
+		ui = new(user, src, ui_key, "jukebox.tmpl", "Your Media Library", 340, 440)
+		ui.set_initial_data(data)
+		ui.open()
+
 /obj/machinery/media/jukebox/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/music_tape))
 		var/obj/item/music_tape/D = W

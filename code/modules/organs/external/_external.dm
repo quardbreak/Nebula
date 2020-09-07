@@ -906,10 +906,10 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 			// Starlight Edit - Start
 			if(!clean) playsound(victim, pick(
-				'starlight/mods/starlight/sound/effects/gore/chop2.ogg',
-				'starlight/mods/starlight/sound/effects/gore/chop3.ogg',
-				'starlight/mods/starlight/sound/effects/gore/chop4.ogg'), 100, 0)
-			else playsound(victim, 'starlight/mods/starlight/sound/effects/gore/severed.ogg', 100, 0)
+				'starlight/sound/effects/gore/chop2.ogg',
+				'starlight/sound/effects/gore/chop3.ogg',
+				'starlight/sound/effects/gore/chop4.ogg'), 100, 0)
+			else playsound(victim, 'starlight/sound/effects/gore/severed.ogg', 100, 0)
 			// Starlight Edit - End
 
 		if(DROPLIMB_BURN)
@@ -936,7 +936,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 					G.update_icon()
 
 				// Starlight Edit
-				playsound(victim, 'starlight/mods/starlight/sound/effects/gore/chop6.ogg', 100 , 0)
+				playsound(victim, 'starlight/sound/effects/gore/chop6.ogg', 100 , 0)
 				if(victim.can_feel_pain() && prob(50)) victim.emote("scream")
 
 			gore.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
@@ -1063,11 +1063,9 @@ obj/item/organ/external/proc/remove_clamps()
 		jostle_bone()
 		if(can_feel_pain())
 			owner.emote("scream")
-#if defined(MODPACK_STARLIGHT)
-	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2)
-#else
-	playsound(src.loc, "fracture", 100, 1, -2)
-#endif
+
+	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // - Starlight Edit -
+//	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
 

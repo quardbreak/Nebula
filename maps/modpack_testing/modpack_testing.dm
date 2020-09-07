@@ -15,7 +15,6 @@
 	#define USING_MAP_DATUM /datum/map/modpack_testing
 
 	// - Starlight Edit -
-	#include "../../starlight/mods/starlight/_starlight.dme"
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
 
