@@ -38,6 +38,10 @@ Now poorly imported for Nebula!
 	#include "outfits/science.dm"
 	#include "outfits/security.dm"
 
+	// - Starlight Edit -
+	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
+
 #elif !defined(MAP_OVERRIDE)
 
 	#warn A map has already been included, ignoring ministation.
