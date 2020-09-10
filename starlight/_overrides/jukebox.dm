@@ -41,12 +41,11 @@
 			to_chat(user, SPAN_WARNING("\The [D] is ruined, you can't use it."))
 			return
 
-		if(user.drop_item())
-			visible_message(SPAN_NOTICE("[usr] insert \a [tape] into \the [src]."))
-			D.forceMove(src)
+		if(user.unEquip(D, src))
 			tape = D
+			visible_message(SPAN_NOTICE("[usr] insert \a [tape] into \the [src]."))
 			tracks.Insert(1, tape.track)
-			verbs += .verb/eject
+			verbs |= .verb/eject
 		return
 	return ..()
 
@@ -68,6 +67,6 @@
 		if(!usr.put_in_hands(tape))
 			tape.dropInto(loc)
 
-		tape = null
 		visible_message(SPAN_NOTICE("[usr] eject \a [tape] from \the [src]."))
+		tape = null
 		verbs -= .verb/eject
