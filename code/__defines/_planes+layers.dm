@@ -60,7 +60,7 @@ What is the naming convention for planes or layers?
 	FLOAT_PLANE = -32767
 */
 
-#define CLICKCATCHER_PLANE -100
+#define CLICKCATCHER_PLANE -500
 
 #define SPACE_PLANE               -99
 	#define SPACE_LAYER                  1
