@@ -141,6 +141,23 @@
 /obj/item/chems/hypospray/vial/afterattack(obj/target, mob/user, proximity) // hyposprays can be dumped into, why not out? uses standard_pour_into helper checks.
 	if(!proximity)
 		return
+
+	if(!reagents.total_volume && istype(target, /obj/item/chems/glass))
+		var/good_target = is_type_in_list(target, list(
+			/obj/item/chems/glass/beaker,
+			/obj/item/chems/glass/bottle
+		))
+		if(!good_target)
+			return
+		if(!ATOM_IS_OPEN_CONTAINER(target))
+			to_chat(user, SPAN_ITALIC("\The [target] is closed."))
+		if(!target.reagents?.total_volume)
+			to_chat(user, SPAN_ITALIC("\The [target] is empty."))
+			return
+		var/trans = target.reagents.trans_to_obj(src, amount_per_transfer_from_this)
+		to_chat(user, SPAN_NOTICE("You fill \the [src] with [trans] units of the solution."))
+		return
+
 	standard_pour_into(user, target)
 
 /obj/item/chems/hypospray/autoinjector
