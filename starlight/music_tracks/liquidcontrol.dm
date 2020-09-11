@@ -4,3 +4,6 @@
 	album = "Sludge Dredd"
 	song = 'liquidcontrol.ogg'
 	license = /decl/license/grandfathered
+
+/obj/item/music_tape/liquidcontrol
+	track = /music_track/liquidcontrol

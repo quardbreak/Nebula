@@ -18,8 +18,13 @@
 
 /obj/item/music_tape/Initialize()
 	. = ..()
+
+	if(ispath(track, /music_track))
+		track = pick(setup_music_tracks(track))
+
 	if(random_color)
 		color = get_random_colour()
+
 	update_icon()
 
 /obj/item/music_tape/on_update_icon()
