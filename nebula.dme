@@ -3282,6 +3282,8 @@
 #include "starlight\music_tracks\liquidcontrol.dm"
 #include "starlight\music_tracks\rainfall_over_parallel_ports.dm"
 #include "starlight\noose\noose.dm"
+#include "starlight\sprite_accessory\hair.dm"
+#include "starlight\sprite_accessory\markings.dm"
 #include "starlight\tripping_over\tripping_over.dm"
 #include "starlight\webhooks\webhook_message_ooc.dm"
 #include "~code\global_init.dm"
