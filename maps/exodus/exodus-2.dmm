@@ -54937,11 +54937,6 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -68961,6 +68956,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "dvY" = (
@@ -69329,6 +69327,9 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "otj" = (
@@ -69339,6 +69340,9 @@
 /obj/structure/window/reinforced{
 	dir = 1;
 	icon_state = "rwindow"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
@@ -69563,6 +69567,9 @@
 /obj/machinery/material_processing/stacker{
 	input_turf = 1;
 	output_turf = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
@@ -90022,7 +90029,7 @@ bla
 bdP
 biq
 tXh
-brd
+bsX
 buH
 bwg
 bxW
