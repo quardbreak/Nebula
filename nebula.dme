@@ -3272,6 +3272,7 @@
 #include "starlight\blindspot\blindspot.dm"
 #include "starlight\blindspot\living.dm"
 #include "starlight\blindspot\species.dm"
+#include "starlight\emoji\emoji_parse.dm"
 #include "starlight\hoard\hoard.dm"
 #include "starlight\music_player\_music_player.dm"
 #include "starlight\music_player\_music_tape.dm"
