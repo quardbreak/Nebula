@@ -15854,7 +15854,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	density = 0;
-	dir = 2;
+	dir = 4;
 	icon_state = "shutter0";
 	id_tag = "heads_meeting";
 	name = "Meeting Room Window Shutters";
@@ -15936,7 +15936,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	density = 0;
-	dir = 2;
+	dir = 4;
 	icon_state = "shutter0";
 	id_tag = "heads_meeting";
 	name = "Meeting Room Window Shutters";
@@ -15976,7 +15976,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	density = 0;
-	dir = 2;
+	dir = 4;
 	icon_state = "shutter0";
 	id_tag = "heads_meeting";
 	name = "Meeting Room Window Shutters";
@@ -17112,7 +17112,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/blast/shutters{
-	dir = 2;
+	dir = 4;
 	id_tag = "bar";
 	name = "Bar Shutters"
 	},
@@ -21897,6 +21897,7 @@
 "aPL" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "researchlockdown";
 	name = "Research Division Blast Doors";
@@ -22145,6 +22146,7 @@
 "aQp" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 8;
 	icon_state = "pdoor0";
 	id_tag = "researchlockdown";
 	name = "Research Division Blast Doors";
@@ -23516,6 +23518,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "researchlockdown";
 	name = "Research Division Blast Doors";
@@ -23534,6 +23537,7 @@
 "aTf" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "researchlockdown";
 	name = "Research Division Blast Doors";
@@ -25558,6 +25562,7 @@
 "aXx" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "researchlockdown";
 	name = "Research Division Blast Doors";
@@ -25696,15 +25701,10 @@
 /turf/simulated/floor/tiled,
 /area/rnd/mixing)
 "aXM" = (
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/effect/wallframe_spawn/reinforced/polarized,
-/turf/simulated/floor/plating,
-/area/crew_quarters/heads/chief)
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/mining/brace,
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "aXN" = (
 /obj/effect/landmark/start{
 	name = "Gardener"
@@ -26164,7 +26164,7 @@
 /obj/effect/floor_decal/corner/blue/three_quarters{
 	dir = 1
 	},
-/obj/machinery/computer/ship/sensors,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /turf/simulated/floor/tiled,
 /area/bridge)
 "aYK" = (
@@ -29970,6 +29970,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio3";
 	name = "Containment Blast Doors";
@@ -30726,16 +30727,15 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/captain)
 "bhG" = (
-/obj/structure/table/standard,
-/obj/machinery/cell_charger,
-/obj/item/radio/intercom{
-	dir = 2;
-	pixel_y = 22
+/obj/machinery/conveyor{
+	dir = 4;
+	id_tag = "cargo_mining_conveyor"
 	},
-/obj/machinery/camera/network/civilian_west{
-	c_tag = "Cargo Bay North"
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube_map"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/plating,
 /area/quartermaster/storage)
 "bhH" = (
 /obj/structure/disposalpipe/segment{
@@ -30804,15 +30804,21 @@
 /turf/simulated/wall/prepainted,
 /area/hallway/primary/starboard)
 "bhN" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/conveyor{
+	backwards = 8;
+	dir = 9;
+	forwards = 2;
+	icon_state = "conveyor1";
+	id_tag = "cargo_mining_conveyor";
+	movedir = 6
 	},
-/obj/machinery/alarm{
-	dir = 2;
-	pixel_y = 24
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/structure/closet/secure_closet/cargotech,
-/turf/simulated/floor/tiled,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
+/turf/simulated/floor/plating,
 /area/quartermaster/storage)
 "bhO" = (
 /obj/machinery/atmospherics/omni/mixer,
@@ -31133,11 +31139,12 @@
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "biq" = (
-/obj/machinery/status_display{
-	pixel_y = 32
+/obj/machinery/material_processing/smeltery{
+	input_turf = 8;
+	output_turf = 4
 	},
-/obj/structure/closet/secure_closet/cargotech,
-/turf/simulated/floor/tiled,
+/obj/machinery/camera/network/civilian_west,
+/turf/simulated/floor/plating,
 /area/quartermaster/storage)
 "bir" = (
 /obj/item/folder/red,
@@ -33284,6 +33291,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio3";
 	name = "Containment Blast Doors";
@@ -33794,6 +33802,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio2";
 	name = "Containment Blast Doors";
@@ -34712,28 +34721,21 @@
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai_upload)
 "bpd" = (
-/obj/structure/table/standard,
-/obj/item/hand_labeler,
-/obj/machinery/requests_console{
-	department = "Cargo Bay";
-	pixel_x = 0;
-	pixel_y = 30
+/obj/machinery/material_processing/unloader{
+	input_turf = 8;
+	output_turf = 4
 	},
-/obj/item/stamp/cargo{
-	pixel_x = 5;
-	pixel_y = 3
-	},
-/obj/item/hand_labeler,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/plating,
 /area/quartermaster/storage)
 "bpe" = (
-/obj/structure/table/standard,
-/obj/item/clothing/head/soft,
-/obj/item/stamp/cargo{
-	pixel_x = -3;
-	pixel_y = 3
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -22
 	},
-/obj/item/clothing/head/soft,
+/obj/machinery/requests_console{
+	department = "Cargo Bay";
+	pixel_y = 30
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bpf" = (
@@ -34814,6 +34816,7 @@
 /obj/machinery/vending/wallmed1{
 	pixel_y = -32
 	},
+/obj/item/hand_labeler,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "bpp" = (
@@ -35213,6 +35216,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio2";
 	name = "Containment Blast Doors";
@@ -35899,6 +35903,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio1";
 	name = "Containment Blast Doors";
@@ -36250,6 +36255,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio1";
 	name = "Containment Blast Doors";
@@ -38534,7 +38540,7 @@
 /obj/structure/cable/green,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio4";
 	name = "Containment Blast Doors";
@@ -38546,7 +38552,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio4";
 	name = "Containment Blast Doors";
@@ -38574,7 +38580,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio5";
 	name = "Containment Blast Doors";
@@ -38588,7 +38594,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio5";
 	name = "Containment Blast Doors";
@@ -38680,7 +38686,7 @@
 /obj/structure/cable/green,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio6";
 	name = "Containment Blast Doors";
@@ -38716,7 +38722,7 @@
 /obj/structure/cable/green,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio6";
 	name = "Containment Blast Doors";
@@ -39511,8 +39517,10 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bxX" = (
-/obj/machinery/light_switch{
-	pixel_x = 27
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 25;
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
@@ -41104,7 +41112,7 @@
 "bAP" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "EngineBlast";
 	name = "Engine Monitoring Room Blast Doors";
@@ -41252,7 +41260,6 @@
 "bBb" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "EngineBlast";
 	name = "Engine Monitoring Room Blast Doors";
@@ -41377,10 +41384,7 @@
 /area/quartermaster/storage)
 "bBn" = (
 /obj/machinery/navbeacon/QM1,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/mob/living/bot/mulebot{
-	suffix = "#1"
-	},
+/obj/structure/closet/secure_closet/cargotech,
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bBo" = (
@@ -41516,14 +41520,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai_server_room)
 "bBD" = (
-/obj/machinery/status_display{
-	pixel_y = -32
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/obj/effect/floor_decal/corner/brown/three_quarters,
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 1
-	},
+/obj/structure/mech_wreckage/powerloader,
+/obj/machinery/mech_recharger,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bBE" = (
@@ -41913,10 +41912,7 @@
 /area/rnd/research)
 "bCn" = (
 /obj/machinery/navbeacon/QM2,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/mob/living/bot/mulebot{
-	suffix = "#2"
-	},
+/obj/structure/closet/secure_closet/cargotech,
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bCo" = (
@@ -42171,6 +42167,7 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
+/obj/machinery/cell_charger,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "bCN" = (
@@ -42987,6 +42984,9 @@
 "bEm" = (
 /obj/machinery/navbeacon/QM3,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/mob/living/bot/mulebot{
+	suffix = "#1"
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bEn" = (
@@ -43046,6 +43046,7 @@
 /obj/effect/floor_decal/corner/brown{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/cargotech,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "bEt" = (
@@ -43171,7 +43172,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/teleporter)
 "bEF" = (
-/obj/machinery/computer/teleporter,
+/obj/machinery/computer/teleporter{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/teleporter)
 "bEG" = (
@@ -44575,6 +44578,9 @@
 "bHg" = (
 /obj/machinery/navbeacon/QM4,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/mob/living/bot/mulebot{
+	suffix = "#1"
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bHh" = (
@@ -47872,6 +47878,9 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/structure/bed/chair{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/ship/exodus_pod_mining)
@@ -52258,9 +52267,6 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "bVq" = (
-/obj/machinery/newscaster{
-	pixel_y = -27
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -53137,6 +53143,16 @@
 /area/engineering/break_room)
 "bXd" = (
 /obj/machinery/computer/modular/preset/engineering,
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Chief Engineer's Desk";
+	name = "Chief Engineer RC";
+	pixel_y = 34
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28;
+	pixel_y = 4
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
 "bXe" = (
@@ -55817,10 +55833,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/biostorage)
 "cbY" = (
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -22
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -55996,7 +56008,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 1;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Biohazard";
 	name = "Biohazard Blast Doors";
@@ -56267,20 +56279,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research_starboard)
 "ccN" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Chief Engineer's Desk";
-	name = "Chief Engineer RC";
-	pixel_x = 0;
-	pixel_y = -34
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/mining/drill,
 /turf/simulated/floor/tiled,
-/area/crew_quarters/heads/chief)
+/area/quartermaster/storage)
 "ccO" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -57910,6 +57912,9 @@
 /area/crew_quarters/sleep/bedrooms)
 "cfT" = (
 /obj/machinery/computer/modular/preset/cardslot/command,
+/obj/item/radio/intercom{
+	pixel_y = 22
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
 "cfU" = (
@@ -59063,7 +59068,7 @@
 "chT" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 1;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Biohazard";
 	name = "Biohazard Blast Doors";
@@ -62543,7 +62548,7 @@
 "cpb" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 1;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Biohazard";
 	name = "Biohazard Blast Doors";
@@ -62563,6 +62568,7 @@
 "cpd" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio3";
 	name = "Containment Blast Doors";
@@ -62890,7 +62896,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 1;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Biohazard";
 	name = "Biohazard Blast Doors";
@@ -64342,6 +64348,7 @@
 "ctS" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio2";
 	name = "Containment Blast Doors";
@@ -65700,6 +65707,7 @@
 "cxV" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "xenobio1";
 	name = "Containment Blast Doors";
@@ -66401,7 +66409,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio4";
 	name = "Containment Blast Doors";
@@ -66631,7 +66639,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio5";
 	name = "Containment Blast Doors";
@@ -67200,6 +67208,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+"cFY" = (
+/obj/machinery/computer/modular/preset/civilian{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/office)
 "cFZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -67299,7 +67313,7 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "xenobio6";
 	name = "Containment Blast Doors";
@@ -68931,6 +68945,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/engi_engine)
+"cMF" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id_tag = "cargo_mining_conveyor"
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/storage)
 "cQw" = (
 /obj/machinery/computer/ship/engines{
 	dir = 4;
@@ -68943,6 +68964,18 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/exodus_pod_engineering)
+"dkO" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/obj/machinery/conveyor_switch{
+	id_tag = "cargo_mining_conveyor"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "dvd" = (
 /obj/machinery/power/smes/buildable{
 	RCon_tag = "Engine - Main";
@@ -69006,6 +69039,27 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_research)
+"gdx" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4;
+	icon_state = "loadingarea"
+	},
+/obj/effect/floor_decal/corner/beige{
+	dir = 8;
+	icon_state = "corner_white"
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
+"gfJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/fabricator/industrial,
+/obj/item/stack/material/osmium/ten,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "gny" = (
 /obj/effect/shuttle_landmark/mining_pod_dock,
 /obj/structure/cable/green{
@@ -69015,6 +69069,10 @@
 /obj/machinery/power/terminal,
 /turf/simulated/floor/tiled,
 /area/ship/exodus_pod_mining)
+"gsd" = (
+/obj/structure/closet/secure_closet/cargotech,
+/turf/simulated/floor/tiled,
+/area/quartermaster/office)
 "gwY" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/structure/cable/green{
@@ -69045,8 +69103,16 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable/green,
+/obj/structure/bed/chair,
 /turf/simulated/floor/tiled,
 /area/ship/exodus_pod_mining)
+"hkD" = (
+/obj/machinery/light_switch{
+	pixel_x = 4;
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "hsk" = (
 /obj/machinery/power/smes/buildable{
 	RCon_tag = "Engine - Main";
@@ -69175,6 +69241,15 @@
 /obj/effect/shuttle_landmark/exodus_main_starboard,
 /turf/space,
 /area/space)
+"nIv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ore/iron,
+/obj/item/ore/coal{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "otj" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -69185,6 +69260,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/ship/exodus_pod_mining)
+"oxE" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "oDi" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -69250,6 +69332,19 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/docking)
+"tUa" = (
+/obj/machinery/conveyor{
+	id_tag = "cargo_mining_conveyor"
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/storage)
+"tXh" = (
+/obj/machinery/material_processing/compressor,
+/turf/simulated/floor/plating,
+/area/quartermaster/storage)
 "uGq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -69274,6 +69369,13 @@
 	},
 /turf/simulated/floor,
 /area/ship/exodus_pod_mining)
+"wAA" = (
+/obj/machinery/material_processing/stacker{
+	input_turf = 1;
+	output_turf = 8
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/storage)
 "xHt" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 1;
@@ -88959,7 +89061,7 @@ bmu
 bdP
 bpe
 blP
-bsX
+nIv
 buD
 bwe
 brd
@@ -89215,8 +89317,8 @@ blc
 bmt
 bdP
 bpd
-brd
-bsX
+bpd
+oxE
 buD
 bwe
 brd
@@ -89472,8 +89574,8 @@ bld
 bmt
 bdP
 bhG
-brd
-bsX
+cMF
+dkO
 buD
 bwe
 bxU
@@ -89729,8 +89831,8 @@ ble
 bla
 bdP
 biq
+tXh
 brd
-bsX
 buH
 bwg
 bxW
@@ -89986,8 +90088,8 @@ blf
 bdP
 bdP
 bhN
-brd
-bsX
+tUa
+wAA
 buF
 brf
 brf
@@ -90248,8 +90350,8 @@ bta
 buD
 brd
 bxX
-bzu
-bzu
+brd
+brd
 bzu
 bzu
 aLF
@@ -90503,7 +90605,7 @@ bpk
 brf
 bsZ
 buI
-brd
+hkD
 bdP
 bBn
 bCn
@@ -90749,7 +90851,7 @@ aVG
 baj
 bbT
 bdP
-bzu
+aXM
 bzo
 brd
 bfU
@@ -90775,7 +90877,7 @@ bGt
 bsK
 bDH
 bGt
-cLU
+bGt
 aaf
 aQh
 cLU
@@ -91006,7 +91108,7 @@ aVG
 bnZ
 blc
 bdP
-bzu
+aXM
 bzo
 bfU
 brd
@@ -91031,7 +91133,7 @@ bMh
 bNu
 bsJ
 bBD
-bGt
+gfJ
 bGt
 aaf
 apc
@@ -91263,7 +91365,7 @@ aVG
 aKh
 aKk
 bdP
-bzu
+ccN
 beL
 brd
 bfW
@@ -91288,7 +91390,7 @@ bMj
 bNr
 buo
 bKK
-bRV
+gdx
 aSC
 aaf
 cLU
@@ -92046,10 +92148,10 @@ brl
 aLL
 buO
 bwl
-cqb
+cFY
 bzw
 bga
-bga
+gsd
 bEs
 bGt
 bHC
@@ -92059,7 +92161,7 @@ bMk
 bNs
 bPi
 bCA
-bGt
+bRV
 bGt
 aaf
 cLU
@@ -92317,7 +92419,7 @@ bGv
 bGv
 bEU
 bGt
-cLU
+bGt
 aaf
 bSR
 bUu
@@ -96436,7 +96538,7 @@ aVv
 cfT
 cae
 cbC
-ccN
+ccF
 bno
 aYr
 chq
@@ -97463,8 +97565,8 @@ bTi
 aVv
 aWV
 cam
-aXM
-aXM
+bYI
+aWV
 bnp
 ccE
 chu
@@ -118248,7 +118350,7 @@ cbl
 cbl
 bdc
 cbl
-aUY
+cbl
 aUY
 biQ
 aSY
