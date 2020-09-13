@@ -24565,7 +24565,7 @@
 	dir = 9
 	},
 /obj/machinery/firealarm{
-	dir = 2;
+	dir = 1;
 	pixel_y = -24
 	},
 /turf/simulated/floor/tiled,
@@ -25117,9 +25117,6 @@
 "aWx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
-	},
-/obj/structure/bed/chair{
-	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
@@ -27089,6 +27086,9 @@
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/structure/bed/chair{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
@@ -29079,6 +29079,9 @@
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
 "bem" = (
@@ -29714,6 +29717,9 @@
 	},
 /obj/effect/floor_decal/corner/red{
 	dir = 1
+	},
+/obj/structure/bed/chair{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/exit)
@@ -57047,11 +57053,11 @@
 /turf/simulated/floor/plating,
 /area/hallway/secondary/entry/fore)
 "ced" = (
+/obj/effect/floor_decal/corner/yellow,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 24
 	},
-/obj/effect/floor_decal/corner/yellow,
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
 "cee" = (
@@ -62754,7 +62760,9 @@
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "cpE" = (
-/obj/machinery/computer/modular/preset/engineering,
+/obj/machinery/computer/modular/preset/engineering{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "cpF" = (
@@ -99002,7 +99010,7 @@ ccX
 aWT
 aWT
 bSU
-baI
+ciq
 cka
 clm
 baI
@@ -117981,9 +117989,9 @@ aWx
 aYd
 cxS
 cxS
+aZL
 cxS
-aZL
-aZL
+cxS
 aZL
 biR
 bkp
@@ -118239,7 +118247,7 @@ cbl
 cbl
 cbl
 bdc
-aUY
+cbl
 aUY
 aUY
 biQ
