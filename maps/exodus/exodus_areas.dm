@@ -465,12 +465,12 @@ area/rnd/test_area
 
 //Robotics
 
-/area/assembly/robotics
+/area/rnd/robotics
 	name = "\improper Robotics Lab"
 	icon_state = "robotics"
 	req_access = list(access_robotics)
 
-/area/assembly/chargebay
+/area/rnd/chargebay
 	name = "\improper Mech Bay"
 	icon_state = "mechbay"
 	req_access = list(access_robotics)
@@ -496,6 +496,7 @@ area/rnd/test_area
 /area/security/lobby
 	name = "\improper Security Lobby"
 	icon_state = "security"
+	req_access = list()
 
 //Main
 
@@ -575,6 +576,7 @@ area/rnd/test_area
 /area/security/vacantoffice
 	name = "\improper Vacant Office"
 	icon_state = "security"
+	req_access = list()
 
 /area/security/range
 	name = "\improper Security - Firing Range"

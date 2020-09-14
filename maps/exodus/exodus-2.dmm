@@ -7171,11 +7171,11 @@
 	},
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/tiled,
-/area/security/lobby)
+/area/security/brig)
 "anA" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/security/lobby)
+/area/security/brig)
 "anB" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -7617,7 +7617,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/tiled,
-/area/security/lobby)
+/area/security/brig)
 "aot" = (
 /obj/machinery/button/blast_door{
 	id_tag = "Cell 2";
@@ -16181,7 +16181,7 @@
 	name = "Mech Bay"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "aFc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -16466,7 +16466,7 @@
 	name = "Mech Bay"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "aFA" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -16806,7 +16806,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "aGd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -16847,7 +16847,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "aGf" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -19554,7 +19554,7 @@
 "aLr" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "aLs" = (
 /obj/machinery/light{
 	dir = 1
@@ -19771,7 +19771,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "aLO" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/status_display,
@@ -19830,7 +19830,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "aLV" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/tiled,
@@ -19948,7 +19948,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/walnut,
 /area/crew_quarters/captain)
 "aMj" = (
 /obj/machinery/light_switch{
@@ -19997,7 +19997,7 @@
 /obj/item/organ/internal/posibrain,
 /obj/item/robotanalyzer,
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "aMo" = (
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -29425,7 +29425,7 @@
 	name = "Diner"
 	},
 /turf/simulated/floor/tiled,
-/area/crew_quarters/bar)
+/area/hallway/primary/starboard)
 "beX" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass{
@@ -29434,7 +29434,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
-/area/crew_quarters/bar)
+/area/hallway/primary/starboard)
 "beY" = (
 /obj/machinery/light{
 	dir = 8;
@@ -33775,7 +33775,7 @@
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/utility,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bnf" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -33803,14 +33803,14 @@
 	name = "plastic table frame"
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bnh" = (
 /obj/machinery/fabricator/imprinter{
 	id_tag = "science"
 	},
 /obj/item/chems/glass/beaker/sulphuric,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bni" = (
 /turf/simulated/wall/prepainted,
 /area/medical/reception)
@@ -33987,7 +33987,7 @@
 	pixel_y = -1
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bny" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -34443,7 +34443,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "boA" = (
 /obj/item/stool,
 /turf/simulated/floor/plating,
@@ -34458,7 +34458,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "boC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -34483,7 +34483,7 @@
 /area/storage/emergency)
 "boE" = (
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "boF" = (
 /obj/machinery/photocopier/faxmachine{
 	department = "Captain's Office"
@@ -34496,17 +34496,17 @@
 "boG" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "boH" = (
 /obj/structure/reagent_dispensers/acid{
 	density = 0;
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boI" = (
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boJ" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/stack/material/plasteel{
@@ -34538,13 +34538,13 @@
 	name = "Roboticist"
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boL" = (
 /obj/effect/floor_decal/corner/purple{
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boM" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -34563,7 +34563,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boN" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/structure/extinguisher_cabinet{
@@ -34574,7 +34574,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boO" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/item/stool/padded,
@@ -34582,7 +34582,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "boP" = (
 /obj/machinery/door/airlock/research{
 	id_tag = "researchdoor";
@@ -34795,7 +34795,7 @@
 /area/maintenance/substation/command)
 "bpj" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bpk" = (
 /obj/machinery/button/blast_door{
 	id_tag = "qm_warehouse";
@@ -34812,7 +34812,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bpm" = (
 /obj/item/trash/candy,
 /obj/item/trash/popcorn,
@@ -34844,7 +34844,7 @@
 /area/quartermaster/office)
 "bpp" = (
 /turf/simulated/wall/prepainted,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bpq" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled,
@@ -35407,7 +35407,7 @@
 	},
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bqs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -35416,11 +35416,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bqt" = (
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bqu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -35430,7 +35430,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bqv" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass/research{
@@ -35443,7 +35443,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bqw" = (
 /obj/structure/table/woodentable,
 /obj/item/flashlight/lamp/green,
@@ -35460,7 +35460,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bqy" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -35536,7 +35536,7 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bqF" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/firealarm{
@@ -35574,7 +35574,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bqJ" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -35749,7 +35749,7 @@
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bra" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -35807,7 +35807,7 @@
 /area/ship/exodus_pod_research)
 "brh" = (
 /turf/simulated/wall/r_wall/prepainted,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bri" = (
 /obj/effect/floor_decal/corner/brown{
 	dir = 8
@@ -36371,7 +36371,7 @@
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bsf" = (
 /obj/item/radio/intercom{
 	dir = 4;
@@ -36383,7 +36383,7 @@
 	},
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bsg" = (
 /obj/item/stack/material/glass{
 	amount = 20;
@@ -36407,26 +36407,26 @@
 	},
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bsh" = (
 /obj/machinery/fabricator/robotics{
 	id_tag = "science"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bsi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
 /area/maintenance/arrivals)
 "bsj" = (
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bsk" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bsl" = (
 /obj/machinery/fabricator/robotics{
 	id_tag = "science"
@@ -36437,7 +36437,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bsm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -36460,12 +36460,12 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bso" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bsp" = (
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/captain)
@@ -37377,7 +37377,7 @@
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "btZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -37416,7 +37416,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bue" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -37425,7 +37425,7 @@
 	},
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "buf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -37440,7 +37440,7 @@
 /obj/item/flash,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bug" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -37448,7 +37448,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "buh" = (
 /obj/effect/landmark/start{
 	name = "Roboticist"
@@ -37460,7 +37460,7 @@
 	},
 /obj/item/stool/padded,
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bui" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -37472,7 +37472,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "buj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -37485,7 +37485,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "buk" = (
 /obj/item/radio/intercom{
 	dir = 8;
@@ -37503,7 +37503,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bum" = (
 /obj/structure/closet/firecloset,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -38349,7 +38349,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bvA" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
@@ -38359,14 +38359,14 @@
 	},
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bvB" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bvC" = (
 /obj/structure/table/standard,
 /obj/item/assembly/prox_sensor{
@@ -38391,7 +38391,7 @@
 	},
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bvD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -38401,7 +38401,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bvE" = (
 /obj/machinery/door/airlock/research{
 	id_tag = "researchdoor";
@@ -38798,7 +38798,7 @@
 "bwv" = (
 /obj/machinery/status_display,
 /turf/simulated/wall/r_wall/prepainted,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bww" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/rnd/research)
@@ -39327,7 +39327,7 @@
 	icon_state = "warning"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bxA" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -39340,7 +39340,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bxB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -39349,14 +39349,14 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bxC" = (
 /turf/simulated/wall/prepainted,
 /area/medical/medbay)
 "bxD" = (
 /obj/machinery/fabricator/bioprinter,
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bxE" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/empty,
@@ -39370,7 +39370,7 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bxF" = (
 /turf/simulated/wall/prepainted,
 /area/medical/medbay3)
@@ -40048,7 +40048,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "byW" = (
 /obj/machinery/light/small,
 /obj/structure/mopbucket,
@@ -40068,7 +40068,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "byY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -40080,7 +40080,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "byZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -40094,7 +40094,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bza" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -40103,7 +40103,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bzb" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -40122,7 +40122,7 @@
 /obj/item/hemostat,
 /obj/item/retractor,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bzd" = (
 /obj/machinery/camera/network/security{
 	c_tag = "Engineering Airlock Access";
@@ -40144,7 +40144,7 @@
 	},
 /obj/structure/closet/wardrobe/robotics_black,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bzf" = (
 /obj/machinery/light{
 	dir = 1
@@ -41043,11 +41043,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bAI" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bAJ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -41059,11 +41059,11 @@
 	pixel_y = -30
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bAK" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled,
-/area/assembly/chargebay)
+/area/rnd/chargebay)
 "bAL" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/bodybags{
@@ -41075,7 +41075,7 @@
 /obj/item/mmi,
 /obj/item/mmi,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bAM" = (
 /obj/machinery/computer/operating{
 	dir = 1;
@@ -41083,13 +41083,13 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bAN" = (
 /obj/machinery/optable{
 	name = "Robotics Operating Table"
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bAO" = (
 /obj/structure/table/standard,
 /obj/item/crowbar,
@@ -41109,7 +41109,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bAP" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -41133,7 +41133,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bAR" = (
 /obj/effect/floor_decal/corner/purple{
 	dir = 8
@@ -42833,7 +42833,7 @@
 	id_tag = "science"
 	},
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bDY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -46112,7 +46112,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "bJL" = (
 /obj/machinery/button/blast_door{
 	id_tag = "acute1";
@@ -57840,7 +57840,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "cfM" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -57849,7 +57849,7 @@
 "cfN" = (
 /obj/machinery/vending/robotics,
 /turf/simulated/floor/tiled,
-/area/assembly/robotics)
+/area/rnd/robotics)
 "cfO" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/powered/scrubber,
