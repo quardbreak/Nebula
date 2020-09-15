@@ -24,6 +24,8 @@ jobs:
       env: TEST=CODE
     - name: "Map - Exodus"
       env: TEST=MAP MAP_PATH=exodus
+    - name: "Map - Lowpop"
+      env: TEST=MAP MAP_PATH=lowpop
     - name: "Map - Example"
       env: TEST=MAP MAP_PATH=example
     - name: "Map - Tradeship"
