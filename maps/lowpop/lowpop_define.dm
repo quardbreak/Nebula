@@ -34,6 +34,3 @@
 
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
-
-/datum/map/lowpop/get_map_info()
-	return "<b>[station_name]</b> - a tiny space outpost located at the very frontier of explored space."
