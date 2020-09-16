@@ -23,9 +23,6 @@
 /turf/simulated/open,
 /area/lowpop/hall)
 "bD" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 1
 	},
@@ -33,7 +30,8 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/smelter)
 "cb" = (
 /obj/structure/lattice,
@@ -55,22 +53,36 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
-"eh" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 9
+"dk" = (
+/obj/machinery/light/small{
+	dir = 1
 	},
+/obj/structure/bed/chair/pew/left/mahogany,
+/turf/simulated/floor/wood/walnut,
+/area/lowpop/hall/kitchen)
+"eh" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/turf/simulated/floor/wood/mahogany,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "fa" = (
 /obj/effect/landmark/test/space_turf,
 /turf/space,
 /area/space)
+"fK" = (
+/obj/machinery/space_heater,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/lowpop/hall/kitchen)
 "gg" = (
 /obj/structure/table/marble,
 /obj/machinery/microwave,
@@ -83,10 +95,7 @@
 	pixel_y = 2
 	},
 /obj/structure/table/steel,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 10
-	},
-/turf/simulated/floor/wood/mahogany,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "gP" = (
 /obj/structure/table/marble,
@@ -100,18 +109,8 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
-"hg" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 6
-	},
-/turf/simulated/floor/wood/mahogany,
-/area/lowpop/hall/kitchen)
 "hq" = (
-/obj/machinery/material_processing/unloader{
-	input_turf = 8;
-	output_turf = 4
-	},
-/obj/structure/railing/mapped,
+/obj/machinery/material_processing/compressor,
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "iu" = (
@@ -141,6 +140,19 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
+"jT" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/structure/railing/mapped,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
 "lT" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
@@ -149,6 +161,9 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/machinery/computer/ship/navigation/telescreen{
+	pixel_x = -32
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/lowpop/hall)
@@ -170,6 +185,7 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "oC" = (
@@ -201,22 +217,13 @@
 	dir = 4;
 	icon_state = "bulb_map"
 	},
-/obj/effect/floor_decal/plaque,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "rf" = (
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb_map"
-	},
-/obj/machinery/conveyor{
-	backwards = 8;
-	dir = 9;
-	forwards = 2;
-	icon_state = "conveyor1";
-	id_tag = "con";
-	movedir = 6
-	},
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "rQ" = (
@@ -244,19 +251,6 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/lowpop/hall)
-"sk" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	icon_state = "conveyor0";
-	id_tag = "con"
-	},
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
-	},
-/turf/simulated/floor/plating,
-/area/lowpop/hall/smelter)
 "ti" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hall)
@@ -270,17 +264,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
-"tV" = (
-/obj/machinery/conveyor_switch{
-	id_tag = "con";
-	pixel_x = 0;
-	pixel_y = 0
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/lowpop/hall/smelter)
 "tX" = (
 /turf/simulated/open,
 /area/lowpop/hall)
@@ -291,17 +274,21 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall)
 "uq" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 8
-	},
 /obj/item/pickaxe/drill,
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "vG" = (
 /obj/machinery/cooker/oven,
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"vQ" = (
+/obj/item/storage/ore,
+/obj/structure/catwalk,
+/obj/item/scanner/mining,
+/turf/simulated/floor/plating,
+/area/lowpop/hall/smelter)
 "wm" = (
 /obj/structure/railing/mapped{
 	dir = 8;
@@ -312,32 +299,31 @@
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
 "wN" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 5
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/turf/simulated/floor/wood/mahogany,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
-"wX" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/obj/item/storage/ore,
-/turf/simulated/floor/tiled/techfloor,
-/area/lowpop/hall/smelter)
-"yk" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/lowpop/hall/smelter)
 "yS" = (
-/turf/simulated/floor/carpet,
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor,
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
+"zb" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/turf/simulated/floor/plating,
 /area/lowpop/hall/kitchen)
 "zW" = (
 /obj/machinery/light/small{
@@ -347,24 +333,17 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "Cg" = (
 /obj/machinery/light/small,
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 4
-	},
-/obj/effect/floor_decal/techfloor/corner{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "Cv" = (
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 4
-	},
 /obj/effect/landmark/test/safe_turf,
-/turf/simulated/floor/wood/mahogany,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "Ee" = (
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
@@ -383,9 +362,6 @@
 /area/lowpop/hall/kitchen)
 "Hg" = (
 /obj/structure/table/steel,
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 8;
 	icon_state = "bulb_map"
@@ -393,7 +369,7 @@
 /obj/item/stack/material/plastic/ten,
 /obj/item/stack/material/aluminium/ten,
 /obj/item/stack/material/glass/ten,
-/turf/simulated/floor/wood/mahogany,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "Hs" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -403,13 +379,24 @@
 "HA" = (
 /turf/space,
 /area/space)
+"HL" = (
+/obj/structure/sign/warning/fire{
+	pixel_x = -26
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
 "HW" = (
 /obj/structure/ladder,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/kitchen)
-"Ib" = (
-/obj/effect/wallframe_spawn/reinforced,
-/turf/simulated/floor/plating,
+"Iz" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/smelter)
+"JB" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/smelter)
 "JT" = (
 /obj/structure/bed/padded,
@@ -448,7 +435,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "Nj" = (
 /obj/structure/lattice,
@@ -459,7 +447,8 @@
 /turf/simulated/open,
 /area/lowpop/hall)
 "NM" = (
-/turf/simulated/floor/tiled/techfloor,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "Oz" = (
 /obj/structure/closet,
@@ -558,8 +547,13 @@
 "VC" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/smelter)
+"Wd" = (
+/obj/item/mop,
+/obj/item/chems/glass/bucket,
+/turf/simulated/floor/wood/walnut,
+/area/lowpop/hall/kitchen)
 "Wo" = (
 /obj/structure/railing/mapped{
 	dir = 8;
@@ -570,19 +564,39 @@
 	dir = 1;
 	icon_state = "railing0-1"
 	},
+/obj/item/chems/food/condiment/small/peppermill,
+/obj/item/chems/food/condiment/small/saltshaker,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"WL" = (
+/obj/machinery/network/router{
+	produces_heat = 0
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/hall/kitchen)
 "XK" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/machinery/light/small{
+	dir = 1;
+	icon_state = "bulb_map"
+	},
+/turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "Yo" = (
-/obj/structure/girder,
-/turf/simulated/floor/airless,
-/area/space)
+/obj/structure/bed/chair/pew/mahogany,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/turf/simulated/floor/wood/walnut,
+/area/lowpop/hall/kitchen)
 "Zm" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hall/smelter)
+"ZS" = (
+/obj/structure/hygiene/sink{
+	pixel_y = 23
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/lowpop/hall/kitchen)
 
 (1,1,1) = {"
 HA
@@ -3496,8 +3510,8 @@ HA
 HA
 HA
 Zm
-Ib
-Ib
+Zm
+Zm
 Zm
 HA
 HA
@@ -3579,7 +3593,7 @@ HA
 HA
 Zm
 VC
-VC
+NM
 Zm
 ti
 ti
@@ -3740,7 +3754,7 @@ HA
 HA
 Zm
 XK
-wX
+rf
 NM
 zW
 Mp
@@ -3822,8 +3836,8 @@ HA
 HA
 Zm
 hq
-tV
-NM
+jP
+vQ
 ti
 ti
 ti
@@ -3904,7 +3918,7 @@ HA
 HA
 Zm
 rf
-sk
+rf
 NM
 ti
 QO
@@ -3986,7 +4000,7 @@ HA
 HA
 Zm
 Zm
-jP
+Iz
 Cg
 ti
 Tl
@@ -4068,8 +4082,8 @@ HA
 HA
 HA
 Zm
-XK
-yk
+JB
+NM
 ti
 ti
 ti
@@ -4152,13 +4166,13 @@ HA
 Zm
 Zm
 Zm
-ti
+Uz
 Yo
-HA
+fK
 Uz
 nZ
+WL
 Uz
-HA
 HA
 HA
 HA
@@ -4234,13 +4248,13 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
 Uz
-nZ
+dk
+Wd
 Uz
-HA
+jT
+zb
+Uz
 HA
 HA
 HA
@@ -4318,7 +4332,7 @@ HA
 Uz
 Uz
 Uz
-Uz
+Hs
 Uz
 lW
 Uz
@@ -4399,7 +4413,7 @@ HA
 HA
 Uz
 iu
-Kv
+HL
 Sm
 HW
 eh
@@ -4486,7 +4500,7 @@ pN
 cZ
 wN
 Cv
-hg
+Kv
 Uz
 HA
 HA
@@ -4648,7 +4662,7 @@ JT
 yS
 JT
 Uz
-Gq
+ZS
 Gq
 gg
 Uz

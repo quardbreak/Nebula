@@ -10,11 +10,6 @@
 	id_tag = "eva_out"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/button/access/exterior{
-	id_tag = "eva";
-	pixel_x = 20;
-	pixel_y = 22
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring)
 "ao" = (
@@ -25,11 +20,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/button/access/interior{
-	id_tag = "eva";
-	pixel_x = -12;
-	pixel_y = 20
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring)
 "aF" = (
@@ -48,10 +38,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/lowpop/hab_ring/med)
-"ch" = (
-/obj/effect/floor_decal/corner/green/bordercee,
-/turf/simulated/floor/tiled,
-/area/lowpop/hab_ring)
 "eY" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -100,10 +86,8 @@
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "gF" = (
-/obj/structure/hygiene/shower{
-	dir = 8
-	},
-/obj/structure/curtain/shower,
+/obj/structure/curtain/open/shower,
+/obj/structure/hygiene/shower,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "gG" = (
@@ -186,17 +170,11 @@
 /turf/space,
 /area/space)
 "ml" = (
-/obj/structure/hygiene/toilet{
-	pixel_x = -5;
-	pixel_y = 1
-	},
+/obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "mn" = (
 /obj/structure/table/glass,
-/obj/item/towel/random,
-/obj/item/towel/random,
-/obj/item/towel/random,
 /obj/machinery/power/apc{
 	dir = 1
 	},
@@ -204,6 +182,9 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/item/towel,
+/obj/item/towel,
+/obj/item/towel,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "mT" = (
@@ -211,6 +192,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "mU" = (
@@ -246,8 +228,7 @@
 /turf/space,
 /area/space)
 "pz" = (
-/obj/machinery/reagent_temperature,
-/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "qL" = (
@@ -277,16 +258,10 @@
 	},
 /turf/simulated/open,
 /area/lowpop/hab_ring)
-"sF" = (
-/turf/space,
-/area/lowpop/hab_ring/sensor)
 "sY" = (
-/obj/structure/table/marble,
 /obj/machinery/light/small,
-/obj/random/drinkingglass,
-/obj/random/drinkingglass,
-/obj/random/drinkingglass,
-/obj/random/drinkingglass,
+/obj/machinery/media/jukebox/old,
+/obj/item/music_tape/custom,
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "ve" = (
@@ -305,6 +280,10 @@
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb_map"
+	},
+/obj/item/storage/mirror{
+	pixel_x = 26;
+	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
@@ -448,7 +427,16 @@
 /area/lowpop/hab_ring/sensor)
 "Bn" = (
 /obj/structure/table/steel,
+/obj/random/drinkingglass,
 /turf/simulated/floor/tiled/dark/monotile,
+/area/lowpop/hab_ring)
+"Cf" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	dir = 8;
+	id_tag = "space_lock"
+	},
+/turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "Cp" = (
 /obj/structure/table/glass,
@@ -495,11 +483,19 @@
 "Gk" = (
 /obj/item/scanner/reagent,
 /obj/structure/table/glass,
+/obj/item/storage/box/syringes,
+/obj/structure/closet/walllocker{
+	name = "wall locker";
+	pixel_x = -28
+	},
+/obj/item/roller,
+/obj/item/stack/medical/advanced/bruise_pack,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "GG" = (
 /obj/structure/table/steel,
 /obj/item/pen,
+/obj/random/drinkingglass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
 "GN" = (
@@ -535,6 +531,14 @@
 	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
+"Jh" = (
+/obj/machinery/button/blast_door{
+	id_tag = "space_lock";
+	name = "window shutters";
+	pixel_y = 24
+	},
+/turf/simulated/floor/lino,
+/area/lowpop/hab_ring)
 "Ju" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -551,9 +555,23 @@
 /obj/item/chems/glass/bucket,
 /turf/simulated/floor/tiled/monotile,
 /area/lowpop/hab_ring)
+"Kp" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/structure/railing/mapped,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hab_ring)
 "LL" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/simulated/floor/plating,
+/obj/structure/lattice,
+/turf/simulated/open,
 /area/lowpop/hab_ring)
 "Mv" = (
 /obj/machinery/light/navigation/delay5,
@@ -569,6 +587,9 @@
 /area/lowpop/hab_ring)
 "Nz" = (
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id_tag = "space_lock"
+	},
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "NA" = (
@@ -603,6 +624,11 @@
 /area/space)
 "PW" = (
 /obj/item/stool/padded,
+/obj/machinery/button/access/interior{
+	id_tag = "eva";
+	pixel_x = 23;
+	pixel_y = -6
+	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Qt" = (
@@ -628,7 +654,8 @@
 /area/lowpop/hab_ring)
 "Sq" = (
 /obj/structure/dispenser/oxygen,
-/turf/simulated/floor/plating,
+/obj/structure/lattice,
+/turf/simulated/open,
 /area/lowpop/hab_ring)
 "SE" = (
 /obj/structure/table/glass,
@@ -688,7 +715,7 @@
 "VY" = (
 /obj/machinery/shipsensors{
 	critical_heat = 300;
-	heat_reduction = 3;
+	heat_reduction = 30;
 	name = "long-range sensors suite"
 	},
 /obj/machinery/light/small{
@@ -708,6 +735,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/med)
+"WB" = (
+/obj/machinery/button/access/exterior{
+	id_tag = "eva";
+	pixel_x = 23;
+	pixel_y = -6
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "WJ" = (
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
@@ -3661,8 +3696,8 @@ mj
 XN
 XN
 hR
-Nz
-Nz
+Cf
+Cf
 hR
 oJ
 oJ
@@ -3825,7 +3860,7 @@ ve
 ve
 ve
 hR
-hw
+Jh
 hw
 gl
 US
@@ -3910,7 +3945,7 @@ hh
 IM
 IM
 eY
-ch
+QM
 QM
 Xv
 hR
@@ -4231,7 +4266,7 @@ mj
 mj
 mj
 mj
-sF
+wx
 Nz
 ii
 ad
@@ -4315,9 +4350,9 @@ mj
 Pg
 wx
 Nz
-Nz
-Nz
-Nz
+Cf
+Cf
+Cf
 hR
 FH
 hR
@@ -4398,12 +4433,12 @@ Pg
 VY
 gV
 mj
-mj
-mj
+XN
+WB
 ai
 ya
 hR
-yN
+Kp
 Sq
 hR
 AQ
@@ -5060,8 +5095,8 @@ fU
 fU
 fU
 XN
-XN
 Mv
+XN
 XN
 mU
 mj
