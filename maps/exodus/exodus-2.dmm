@@ -15211,7 +15211,7 @@
 "aDm" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aDn" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -15546,7 +15546,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aDW" = (
 /obj/effect/landmark{
 	name = "xeno_spawn";
@@ -15679,7 +15679,7 @@
 	c_tag = "Bar Backroom"
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aEi" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -15816,7 +15816,7 @@
 /obj/item/gun/projectile/shotgun/doublebarrel,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aEw" = (
 /obj/machinery/door/airlock{
 	name = "Unisex Showers"
@@ -16048,7 +16048,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aEQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -16058,7 +16058,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aER" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -16070,7 +16070,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aES" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -16529,7 +16529,7 @@
 "aFG" = (
 /obj/structure/closet/secure_closet/bar,
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aFH" = (
 /obj/machinery/requests_console{
 	department = "Security";
@@ -16778,7 +16778,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aGa" = (
 /turf/simulated/shuttle/wall{
 	dir = 1;
@@ -16961,11 +16961,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aGp" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aGq" = (
 /obj/machinery/light{
 	dir = 8;
@@ -17502,7 +17502,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aHu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -17657,7 +17657,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aHI" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -18446,7 +18446,7 @@
 	icon_state = "loadingarea"
 	},
 /turf/simulated/floor/tiled,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aJc" = (
 /obj/machinery/light{
 	dir = 4
@@ -18465,7 +18465,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/loading,
 /turf/simulated/floor/tiled,
-/area/maintenance/bar)
+/area/crew_quarters/kitchen)
 "aJe" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/hallway/primary/central_one)
@@ -18553,7 +18553,7 @@
 	pixel_y = 2
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aJs" = (
 /turf/simulated/floor/shuttle/blue,
 /turf/simulated/shuttle/wall{
@@ -19269,7 +19269,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/lino,
-/area/crew_quarters/bar)
+/area/crew_quarters/bar/cabin)
 "aKO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -19441,7 +19441,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/maintenance/bar)
+/area/crew_quarters/kitchen)
 "aLe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -29422,6 +29422,7 @@
 "beW" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass{
+	autoset_access = 0;
 	name = "Diner"
 	},
 /turf/simulated/floor/tiled,
@@ -29429,6 +29430,7 @@
 "beX" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/glass{
+	autoset_access = 0;
 	name = "Diner"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -41521,9 +41523,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai_server_room)
 "bBD" = (
-/obj/structure/mech_wreckage/powerloader,
 /obj/machinery/mech_recharger,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/mob/living/exosuit/premade/light/exploration,
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bBE" = (
@@ -69158,6 +69160,9 @@
 	pixel_x = 4;
 	pixel_y = -24
 	},
+/obj/machinery/mech_recharger,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/mob/living/exosuit/premade/powerloader,
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "hsk" = (
@@ -69217,6 +69222,9 @@
 /obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/aft)
+"jKq" = (
+/turf/simulated/wall/prepainted,
+/area/crew_quarters/bar/cabin)
 "klA" = (
 /turf/simulated/floor/plating,
 /area/bridge)
@@ -91340,7 +91348,7 @@ cLU
 apc
 aQh
 aQh
-aat
+apc
 aaf
 cLU
 cLU
@@ -103885,7 +103893,7 @@ aEP
 aGo
 aHH
 aJr
-aDp
+jKq
 aMj
 aOk
 aPI
@@ -104399,7 +104407,7 @@ aER
 aDV
 aFG
 aHt
-aDp
+jKq
 aKU
 aOl
 aPI
@@ -104651,12 +104659,12 @@ ayY
 aAc
 aBh
 atP
-aDp
+jKq
 aFZ
-aDp
-aDp
+jKq
+jKq
 aJb
-aDp
+jKq
 aKQ
 aOl
 aPI
@@ -105940,7 +105948,7 @@ atP
 aap
 aDs
 aHK
-aDs
+aKZ
 aKZ
 aKZ
 aKZ
@@ -106197,7 +106205,7 @@ atP
 aap
 aDs
 aHK
-aDs
+aKZ
 arT
 aMr
 aOn
@@ -106711,7 +106719,7 @@ anS
 aap
 aDs
 aHK
-aDs
+aKZ
 aBf
 aMs
 aOo
@@ -106968,7 +106976,7 @@ anS
 aap
 aDs
 aHK
-aDs
+aKZ
 azJ
 aMs
 aOo
@@ -107482,12 +107490,12 @@ anS
 aap
 aDs
 aHK
-aDs
-aLf
-aLf
-aLf
-aLf
-aLf
+aKZ
+aKZ
+aKZ
+aKZ
+aKZ
+aKZ
 aKZ
 aXf
 aKv

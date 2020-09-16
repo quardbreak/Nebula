@@ -668,6 +668,9 @@ area/rnd/test_area
 	name = "\improper Bar"
 	icon_state = "bar"
 	sound_env = LARGE_SOFTFLOOR
+
+/area/crew_quarters/bar/cabin
+	name = "\improper Bartender's Room"
 	req_access = list(access_bar)
 
 /area/janitor
@@ -792,6 +795,7 @@ area/rnd/test_area
 /area/maintenance/atmos_control
 	name = "\improper Atmospherics Maintenance"
 	icon_state = "fpmaint"
+	req_access = list(access_atmospherics)
 
 /area/maintenance/arrivals
 	name = "\improper Arrivals Maintenance"
@@ -800,10 +804,12 @@ area/rnd/test_area
 /area/maintenance/bar
 	name = "\improper Bar Maintenance"
 	icon_state = "maint_bar"
+	req_access = list(list(access_bar, access_kitchen))
 
 /area/maintenance/cargo
 	name = "\improper Cargo Maintenance"
 	icon_state = "maint_cargo"
+	req_access = list(access_cargo)
 
 /area/maintenance/engi_engine
 	name = "\improper Engine Maintenance"
@@ -820,6 +826,7 @@ area/rnd/test_area
 /area/maintenance/evahallway
 	name = "\improper EVA Maintenance"
 	icon_state = "maint_eva"
+	req_access = list(access_eva)
 
 /area/maintenance/dormitory
 	name = "\improper Dormitory Maintenance"
@@ -828,6 +835,7 @@ area/rnd/test_area
 /area/maintenance/library
 	name = "\improper Library Maintenance"
 	icon_state = "maint_library"
+	req_access = list(access_library)
 
 /area/maintenance/locker
 	name = "\improper Locker Room Maintenance"
@@ -836,6 +844,7 @@ area/rnd/test_area
 /area/maintenance/medbay
 	name = "\improper Medbay Maintenance"
 	icon_state = "maint_medbay"
+	req_access = list(access_medical)
 
 /area/maintenance/research_port
 	name = "\improper Research Maintenance - Port"
@@ -864,7 +873,7 @@ area/rnd/test_area
 	icon_state = "maint_security_starboard"
 	has_gravity = FALSE
 	turf_initializer = /decl/turf_initializer/maintenance/space
-	req_access = list(list(access_security,access_engine)) //whatever
+	req_access = list(list(access_security, access_engine)) //whatever
 
 /area/maintenance/disposal
 	name = "Waste Disposal"
@@ -1040,7 +1049,6 @@ area/rnd/test_area
 /area/gateway
 	name = "\improper Gateway"
 	icon_state = "teleporter"
-	req_access = list(access_teleporter)
 
 //CARGO SHUTTLE
 
