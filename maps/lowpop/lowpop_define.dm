@@ -17,7 +17,7 @@
 	company_short = "UE"
 
 	overmap_event_areas = 5
-	lobby_screens = list('starlight/icons/starlight-lobby.png')
+	lobby_screens = list('lowpop-lobby.png')
 	use_overmap = 1
 	num_exoplanets = 2
 

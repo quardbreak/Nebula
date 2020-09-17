@@ -31,6 +31,7 @@
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/smelter)
 "cb" = (
@@ -132,6 +133,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall)
+"jp" = (
+/turf/simulated/wall/prepainted,
+/area/space)
 "jP" = (
 /obj/machinery/material_processing/smeltery{
 	input_turf = 8;
@@ -290,10 +294,6 @@
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "wm" = (
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
-	},
 /obj/structure/table/marble,
 /obj/machinery/reagentgrinder/juicer,
 /turf/simulated/floor/tiled/freezer,
@@ -324,6 +324,16 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/plating,
+/area/lowpop/hall/kitchen)
+"zu" = (
+/turf/simulated/floor/airless,
+/area/space)
+"zM" = (
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/kitchen)
 "zW" = (
 /obj/machinery/light/small{
@@ -395,7 +405,7 @@
 /area/lowpop/hall/smelter)
 "JB" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate,
+/obj/structure/ladder,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/smelter)
 "JT" = (
@@ -555,15 +565,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/lowpop/hall/kitchen)
 "Wo" = (
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
-	},
 /obj/structure/table/marble,
-/obj/structure/railing/mapped{
-	dir = 1;
-	icon_state = "railing0-1"
-	},
 /obj/item/chems/food/condiment/small/peppermill,
 /obj/item/chems/food/condiment/small/saltshaker,
 /turf/simulated/floor/tiled/freezer,
@@ -3599,7 +3601,7 @@ ti
 ti
 ti
 ti
-HA
+jp
 HA
 HA
 HA
@@ -3681,7 +3683,7 @@ Ka
 Kn
 pp
 ti
-HA
+zu
 HA
 HA
 HA
@@ -4409,8 +4411,8 @@ HA
 HA
 HA
 HA
-HA
-HA
+jp
+zu
 Uz
 iu
 HL
@@ -4491,8 +4493,8 @@ HA
 HA
 HA
 HA
-HA
-HA
+jp
+zu
 Uz
 Gg
 Kv
@@ -4822,7 +4824,7 @@ HA
 HA
 HA
 Uz
-JT
+zM
 qT
 JT
 Uz

@@ -5,6 +5,7 @@
 	desc = "Sensors detect a small outpost."
 	icon_state = "object"
 	free_landing = TRUE
+	known = 1
 	initial_restricted_waypoints = list("Utility Shuttle" = list("nav_lowpop_dock"))
 
 //Utility shuttle

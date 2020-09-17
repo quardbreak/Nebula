@@ -440,7 +440,7 @@
 /area/lowpop/eng)
 "DR" = (
 /obj/machinery/mech_recharger,
-/mob/living/exosuit/premade/powerloader,
+/mob/living/exosuit/premade/light/exploration,
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
 "Fh" = (
@@ -623,7 +623,8 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
 "VR" = (
-/obj/machinery/power/shield_generator,
+/obj/structure/sealant_injector,
+/obj/item/gun/launcher/sealant/mapped,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
 "VW" = (

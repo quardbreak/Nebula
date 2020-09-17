@@ -1,10 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ad" = (
-/obj/effect/landmark/start{
-	name = "Sensor Technician"
-	},
-/turf/simulated/floor/lino,
-/area/lowpop/hab_ring)
 "ai" = (
 /obj/machinery/door/airlock/external/bolted{
 	id_tag = "eva_out"
@@ -132,10 +126,6 @@
 	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
-"ii" = (
-/obj/machinery/seed_storage/garden,
-/turf/simulated/floor/lino,
-/area/lowpop/hab_ring)
 "jH" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -150,10 +140,15 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
 "kh" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/space,
-/area/space)
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/structure/closet/crate/hydroponics/prespawned,
+/turf/simulated/floor/tiled,
+/area/lowpop/hab_ring)
 "kC" = (
 /obj/structure/table/marble,
 /obj/random/drinkbottle,
@@ -325,7 +320,7 @@
 	},
 /obj/structure/closet/walllocker{
 	name = "spacesuit storage";
-	pixel_y = -32
+	pixel_y = -30
 	},
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
@@ -372,6 +367,9 @@
 	},
 /obj/structure/closet/crate/hydroponics/prespawned,
 /obj/effect/floor_decal/corner/green/mono,
+/obj/machinery/seed_storage/garden{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/lowpop/hab_ring)
 "zz" = (
@@ -537,6 +535,9 @@
 	name = "window shutters";
 	pixel_y = 24
 	},
+/obj/effect/landmark/start{
+	name = "Sensor Technician"
+	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Ju" = (
@@ -601,6 +602,9 @@
 /obj/structure/hygiene/sink{
 	pixel_y = 23
 	},
+/obj/structure/iv_drip,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "NZ" = (
@@ -619,8 +623,9 @@
 /turf/simulated/wall/iron,
 /area/space)
 "PR" = (
-/obj/structure/railing/mapped,
-/turf/simulated/floor/reinforced/airless,
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/turf/space,
 /area/space)
 "PW" = (
 /obj/item/stool/padded,
@@ -631,6 +636,15 @@
 	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
+"Qa" = (
+/obj/structure/lattice,
+/obj/structure/catwalk,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped,
+/turf/space,
+/area/space)
 "Qt" = (
 /obj/structure/lattice,
 /obj/structure/railing/mapped{
@@ -3704,8 +3718,8 @@ oJ
 oJ
 oJ
 ht
-mj
-mj
+aF
+aF
 mj
 mj
 mj
@@ -3785,9 +3799,9 @@ hR
 hR
 hR
 hR
-mU
+XN
+XN
 aF
-mj
 mj
 mj
 mj
@@ -3867,11 +3881,11 @@ US
 YX
 US
 hR
-kh
-aF
-aF
-aF
-aF
+hR
+XN
+mU
+mj
+mj
 mj
 mj
 mj
@@ -3948,13 +3962,13 @@ eY
 QM
 QM
 Xv
+kh
 hR
-PR
-aF
+XN
+mU
 mj
 mj
-aF
-aF
+mj
 mj
 mj
 mj
@@ -4031,9 +4045,9 @@ Kd
 Ac
 zx
 hR
-PR
-mj
-mj
+hR
+XN
+mU
 mj
 mj
 mj
@@ -4113,9 +4127,9 @@ rZ
 SX
 OP
 hR
-PR
-mj
-mj
+gV
+XN
+mU
 GN
 mj
 mj
@@ -4195,9 +4209,9 @@ kP
 xp
 jH
 hR
-PR
-mj
-mj
+gV
+XN
+mU
 mj
 mj
 mj
@@ -4268,8 +4282,8 @@ mj
 mj
 wx
 Nz
-ii
-ad
+Xv
+hw
 hw
 hR
 ao
@@ -4278,8 +4292,8 @@ Zy
 hR
 hR
 XN
-ht
-mj
+PR
+Qa
 mj
 mj
 mj
@@ -4432,7 +4446,7 @@ mj
 Pg
 VY
 gV
-mj
+XN
 XN
 WB
 ai
@@ -4514,7 +4528,7 @@ mj
 Pg
 Pg
 Pg
-aF
+XN
 fU
 fU
 fU
@@ -4595,8 +4609,8 @@ mj
 mj
 mj
 mj
-mj
-mj
+XN
+XN
 fU
 ml
 WJ
@@ -4677,8 +4691,8 @@ mj
 mj
 mj
 mj
-mj
-mj
+XN
+XN
 fU
 wA
 gF
@@ -4760,7 +4774,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 fU
 fU
 fU
@@ -5084,7 +5098,7 @@ mj
 mj
 mj
 mj
-aF
+mj
 aF
 aF
 aF
@@ -5166,7 +5180,7 @@ mj
 mj
 mj
 mj
-mj
+aF
 aF
 aF
 aF

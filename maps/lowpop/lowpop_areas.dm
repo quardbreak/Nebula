@@ -7,22 +7,25 @@
 	name = "Main Hall"
 
 /area/lowpop/hall/smelter
-	name = "Smelter Installation"
+	name = "Smelter"
 
 /area/lowpop/hall/kitchen
-	name = "Kitchen"
+	name = "Habitation"
 
 /area/lowpop/eng
 	name = "Engineering"
 
+/*/area/lowpop/eng/atmos
+	name = "Atmospherics"*/
+
 /area/lowpop/hab_ring
-	name = "Habitation Ring"
+	name = "Upper Hall"
 
 /area/lowpop/hab_ring/med
 	name = "Medical Point"
 
 /area/lowpop/hab_ring/sensor
-	name = "Operations"
+	name = "Sensor Monitoring"
 
 /area/lowpop/dock
 	name = "Storage"
