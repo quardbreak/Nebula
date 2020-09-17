@@ -21929,8 +21929,10 @@
 /area/crew_quarters/bar)
 "aPK" = (
 /obj/machinery/door/window{
+	autoset_access = 0;
 	dir = 4;
-	name = "Bar"
+	name = "Bar";
+	req_access = list("ACCESS_BAR")
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34291,7 +34293,6 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	dir = 1;
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{

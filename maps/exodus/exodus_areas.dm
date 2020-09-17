@@ -70,6 +70,12 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 //Comments are for my own sanity. PLEASE DONT REMOVE THEM AS IT WAS VERY HARD TO SORT ALL THIS
 //Do not remove dots after comments
 
+/area
+	secure = TRUE
+
+/area/space
+	secure = FALSE
+
 //COMMAND.
 
 /area/bridge
@@ -209,7 +215,7 @@ var/const/NETWORK_ENGINEERING_OUTPOST = "Engineering Outpost"
 
 //ENGINEERING.
 
-/area/engineering/
+/area/engineering
 	name = "\improper Engineering"
 	icon_state = "engineering"
 	ambience = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
