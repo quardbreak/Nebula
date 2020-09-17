@@ -51,6 +51,7 @@
 
 	// - Starlight Edit -
 	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/blindspot/_blindspot.dme"
 
 #elif !defined(MAP_OVERRIDE)
 

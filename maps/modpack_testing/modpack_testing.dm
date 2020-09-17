@@ -17,6 +17,7 @@
 	// - Starlight Edit -
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/blindspot/_blindspot.dme"
 
 #elif !defined(MAP_OVERRIDE)
 
