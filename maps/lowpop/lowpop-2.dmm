@@ -365,7 +365,6 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/closet/crate/hydroponics/prespawned,
 /obj/effect/floor_decal/corner/green/mono,
 /obj/machinery/seed_storage/garden{
 	dir = 8

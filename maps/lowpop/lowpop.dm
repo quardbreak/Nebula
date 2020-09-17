@@ -12,6 +12,7 @@
 	#include "lowpop_setup.dm"
 	#include "lowpop_shuttles.dm"
 	#include "lowpop_unit_testing.dm"
+	#include "lowpop_antagonists.dm"
 
 #elif !defined(MAP_OVERRIDE)
 
