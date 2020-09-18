@@ -1599,6 +1599,7 @@
 /area/maintenance/security_port)
 "adf" = (
 /obj/machinery/door/blast/regular{
+	dir = 4;
 	id_tag = "Armoury";
 	name = "Emergency Access"
 	},
@@ -3567,7 +3568,7 @@
 /obj/structure/cable/green,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -4522,7 +4523,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
 	density = 0;
-	dir = 2;
+	dir = 4;
 	icon_state = "shutter0";
 	id_tag = "lawyer_blast";
 	name = "Privacy Shutters";
@@ -4600,7 +4601,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -4705,7 +4706,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -4721,7 +4722,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "brigobs";
 	name = "Security Blast Door";
@@ -4745,7 +4746,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "brigobs";
 	name = "Security Blast Door";
@@ -4777,7 +4778,6 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "brigobs";
 	name = "Security Blast Door";
@@ -4901,6 +4901,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -6022,6 +6023,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -6518,6 +6520,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -6709,6 +6712,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -6984,6 +6988,7 @@
 /area/security/lobby)
 "ank" = (
 /obj/machinery/door/blast/regular{
+	dir = 4;
 	id_tag = "Cell 2";
 	name = "Cell Door"
 	},
@@ -7076,7 +7081,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	dir = 4;
+	dir = 2;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -8833,7 +8838,7 @@
 "aqH" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
-	dir = 2;
+	dir = 4;
 	icon_state = "shutter0";
 	id_tag = "lawyer_blast";
 	name = "Privacy Shutters";
@@ -9427,6 +9432,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -9624,6 +9630,7 @@
 "asc" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -9675,6 +9682,7 @@
 /area/security/detectives_office)
 "asg" = (
 /obj/machinery/door/blast/regular{
+	dir = 4;
 	id_tag = "Cell 1";
 	name = "Cell Door"
 	},
@@ -10679,6 +10687,7 @@
 "aun" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -11151,6 +11160,7 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
@@ -11715,6 +11725,7 @@
 "awl" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
+	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "Secure Gate";
 	name = "Security Blast Door";
