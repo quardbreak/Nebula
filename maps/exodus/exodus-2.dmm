@@ -24220,7 +24220,9 @@
 /turf/simulated/floor/lino,
 /area/hydroponics/garden)
 "aUA" = (
-/obj/machinery/vending/bombresearch,
+/obj/machinery/vending/bombresearch{
+	dir = 1
+	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -26654,6 +26656,7 @@
 /area/chapel/main)
 "aZw" = (
 /obj/machinery/door/blast/regular{
+	dir = 4;
 	id_tag = "mixvent";
 	name = "Mixer Room Vent"
 	},
