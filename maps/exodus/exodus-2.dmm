@@ -22835,12 +22835,6 @@
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
-"aRG" = (
-/obj/structure/grille,
-/obj/structure/sign/warning/docking_area,
-/obj/structure/lattice,
-/turf/space,
-/area/space)
 "aRH" = (
 /obj/machinery/door/airlock/external/bolted{
 	id_tag = "arrivals_inner";
@@ -24480,20 +24474,6 @@
 	},
 /turf/simulated/floor/wood/walnut,
 /area/library)
-"aVe" = (
-/obj/machinery/door/airlock/external/bolted{
-	id_tag = "mining_dock_outer";
-	locked = 1;
-	name = "Mining Dock Airlock"
-	},
-/obj/machinery/shield_diffuser,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/quartermaster/miningdock)
 "aVf" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	id_tag = "nuke_shuttle_dock_airlock";
@@ -30780,15 +30760,11 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/captain)
 "bhG" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id_tag = "cargo_mining_conveyor"
+/obj/machinery/status_display{
+	pixel_y = 32
 	},
-/obj/machinery/light{
-	dir = 1;
-	icon_state = "tube_map"
-	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bhH" = (
 /obj/structure/disposalpipe/segment{
@@ -30857,21 +30833,11 @@
 /turf/simulated/wall/prepainted,
 /area/hallway/primary/starboard)
 "bhN" = (
-/obj/machinery/conveyor{
-	backwards = 8;
-	dir = 9;
-	forwards = 2;
-	icon_state = "conveyor1";
-	id_tag = "cargo_mining_conveyor";
-	movedir = 6
+/obj/machinery/camera/network/civilian_west{
+	c_tag = "Warehouse"
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/status_display{
-	pixel_y = 32
-	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bhO" = (
 /obj/machinery/atmospherics/omni/mixer,
@@ -31192,12 +31158,11 @@
 /turf/simulated/floor/wood/walnut,
 /area/bridge/meeting_room)
 "biq" = (
-/obj/machinery/material_processing/smeltery{
-	input_turf = 8;
-	output_turf = 4
+/obj/machinery/light{
+	dir = 1;
+	icon_state = "tube_map"
 	},
-/obj/machinery/camera/network/civilian_west,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bir" = (
 /obj/item/folder/red,
@@ -33058,6 +33023,7 @@
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "blQ" = (
@@ -34773,12 +34739,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai_upload)
 "bpd" = (
-/obj/machinery/material_processing/unloader{
-	input_turf = 8;
-	output_turf = 4
+/obj/machinery/status_display{
+	pixel_y = 32
 	},
-/turf/simulated/floor/plating,
-/area/quartermaster/storage)
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "bpe" = (
 /obj/item/radio/intercom{
 	dir = 4;
@@ -34788,6 +34756,7 @@
 	department = "Cargo Bay";
 	pixel_y = 30
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "bpf" = (
@@ -35739,33 +35708,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research_shuttle)
 "bqY" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 8
+/obj/structure/sign/warning/docking_area{
+	pixel_y = -32
 	},
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
-	id_tag = "mining_dock_airlock";
-	pixel_x = 25;
-	pixel_y = -5;
-	tag_airpump = "mining_dock_pump";
-	tag_chamber_sensor = "mining_dock_sensor";
-	tag_exterior_door = "mining_dock_outer";
-	tag_interior_door = "mining_dock_inner"
-	},
-/obj/machinery/airlock_sensor{
-	id_tag = "mining_dock_sensor";
-	pixel_x = 25;
-	pixel_y = 8
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10;
-	icon_state = "intact"
-	},
-/turf/simulated/floor,
-/area/quartermaster/miningdock)
+/turf/space,
+/area/space)
 "bqZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -36655,45 +36602,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/engineering)
-"bsJ" = (
-/obj/machinery/button/access/interior{
-	id_tag = "mining_dock_airlock";
-	name = "interior access button";
-	pixel_x = -25;
-	pixel_y = 25
-	},
-/obj/effect/floor_decal/corner/brown{
-	dir = 9
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/miningdock)
-"bsK" = (
-/obj/machinery/door/airlock/external/bolted{
-	id_tag = "mining_dock_inner";
-	locked = 1;
-	name = "Mining Dock Airlock"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/quartermaster/miningdock)
 "bsL" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -37943,8 +37851,8 @@
 /obj/structure/sign/warning/docking_area{
 	pixel_y = 32
 	},
-/turf/space,
-/area/space)
+/turf/simulated/wall/prepainted,
+/area/quartermaster/miningdock)
 "buR" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -40438,10 +40346,16 @@
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
 "bzL" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/obj/structure/sign/warning/docking_area,
-/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
+	},
+/obj/item/ore/coal{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/ore/iron,
+/turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bzM" = (
 /obj/machinery/power/apc{
@@ -41549,12 +41463,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/turret_protected/ai_server_room)
-"bBD" = (
-/obj/machinery/mech_recharger,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/mob/living/exosuit/premade/light/exploration,
-/turf/simulated/floor/tiled,
-/area/quartermaster/miningdock)
 "bBE" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -42056,18 +41964,14 @@
 /turf/simulated/floor/tiled,
 /area/rnd/storage)
 "bCx" = (
-/obj/structure/closet/emcloset,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
 /obj/machinery/camera/network/civilian_west{
-	c_tag = "Cargo Mining Dock Airlock";
-	dir = 8
+	c_tag = "Cargo Mining Dock";
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 6
+/obj/machinery/computer/shuttle_control/mining{
+	dir = 1
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bCy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -42701,8 +42605,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research_port)
 "bDH" = (
-/obj/structure/sign/warning/airlock,
-/turf/simulated/wall/prepainted,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/ore_box,
+/turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bDI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -44848,15 +44753,20 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bHB" = (
-/obj/structure/table/standard,
-/obj/item/paper_bin{
-	pixel_x = 1;
-	pixel_y = 9
+/obj/machinery/material_processing/unloader{
+	input_turf = 8;
+	output_turf = 4
 	},
-/turf/simulated/floor/tiled,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
 /area/quartermaster/miningdock)
 "bHC" = (
 /obj/structure/table/rack{
@@ -44865,9 +44775,6 @@
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
-	},
-/obj/machinery/light{
-	dir = 1
 	},
 /obj/machinery/light_switch{
 	pixel_y = 24
@@ -45634,33 +45541,25 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research_port)
 "bIZ" = (
-/obj/machinery/camera/network/civilian_west{
-	c_tag = "Cargo Mining Dock";
-	dir = 4
-	},
-/obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = -22
+/obj/effect/floor_decal/corner/brown/three_quarters{
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bJa" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 8
-	},
-/obj/effect/landmark/start{
-	name = "Shaft Miner"
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/miningdock)
-"bJb" = (
-/obj/structure/table/standard,
 /obj/item/folder/yellow,
+/obj/structure/table/standard,
 /obj/item/pen,
 /obj/machinery/requests_console{
 	department = "Cargo Bay";
 	pixel_x = -30;
 	pixel_y = 0
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
+"bJb" = (
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
@@ -46585,14 +46484,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
-"bKA" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/quartermaster/miningdock)
 "bKB" = (
 /obj/machinery/door/airlock/research{
 	name = "Xenoflora Research"
@@ -46640,26 +46531,24 @@
 /turf/simulated/floor/plating,
 /area/engineering/engineering_monitoring)
 "bKH" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/conveyor{
+	dir = 4;
+	id_tag = "cargo_mining_conveyor"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/ship/exodus_pod_mining)
+/area/quartermaster/miningdock)
 "bKI" = (
-/turf/simulated/wall/titanium,
-/area/ship/exodus_pod_mining)
-"bKJ" = (
-/obj/machinery/shipsensors/weak,
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/light{
+	dir = 8
 	},
-/turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "bKK" = (
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
@@ -47217,10 +47106,12 @@
 /turf/simulated/floor/plating,
 /area/maintenance/engineering)
 "bLX" = (
-/obj/effect/overmap/visitable/ship/landable/pod/mining,
-/obj/machinery/computer/ship/helm,
-/turf/simulated/floor/tiled,
-/area/ship/exodus_pod_mining)
+/obj/machinery/material_processing/smeltery{
+	input_turf = 8;
+	output_turf = 4
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "bLY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -47303,28 +47194,33 @@
 /turf/simulated/floor/plating,
 /area/engineering/sublevel_access)
 "bMg" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/plating,
-/area/ship/exodus_pod_mining)
-"bMh" = (
-/obj/machinery/computer/shuttle_control/mining,
-/obj/effect/floor_decal/corner/brown/three_quarters{
-	dir = 8
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
+"bMh" = (
+/obj/machinery/material_processing/stacker{
+	input_turf = 1;
+	output_turf = 8
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "bMi" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
+	},
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/obj/effect/landmark/start{
+	name = "Shaft Miner"
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bMj" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
 /area/quartermaster/miningdock)
 "bMk" = (
 /obj/structure/disposalpipe/segment{
@@ -47448,16 +47344,33 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/aft)
 "bMs" = (
-/obj/structure/bed/chair{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 8
 	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	id_tag = "mining_dock_airlock";
+	pixel_x = 25;
+	pixel_y = -5;
+	tag_airpump = "mining_dock_pump";
+	tag_chamber_sensor = "mining_dock_sensor";
+	tag_exterior_door = "mining_dock_outer";
+	tag_interior_door = "mining_dock_inner"
 	},
-/turf/simulated/floor/tiled,
-/area/ship/exodus_pod_mining)
+/obj/machinery/airlock_sensor{
+	id_tag = "mining_dock_sensor";
+	pixel_x = 25;
+	pixel_y = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10;
+	icon_state = "intact"
+	},
+/turf/simulated/floor,
+/area/quartermaster/miningdock)
 "bMt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -47898,21 +47811,15 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/hor)
 "bNg" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 4;
+	id_tag = "mining_dock_pump"
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 9
 	},
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/ship/exodus_pod_mining)
+/turf/simulated/floor,
+/area/quartermaster/miningdock)
 "bNh" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -47974,14 +47881,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/server)
 "bNo" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 4;
-	id_tag = "mining_dock_pump"
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
 	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 9
+/obj/machinery/door/firedoor{
+	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bNp" = (
 /obj/item/storage/mirror{
@@ -48006,11 +47912,8 @@
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology)
 "bNr" = (
-/obj/effect/landmark/start{
-	name = "Shaft Miner"
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/miningdock)
+/turf/simulated/wall/titanium,
+/area/ship/exodus_pod_mining)
 "bNs" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/firealarm{
@@ -48035,14 +47938,15 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bNu" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/effect/floor_decal/corner/brown{
-	dir = 9
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/miningdock)
+/turf/simulated/floor/plating,
+/area/ship/exodus_pod_mining)
 "bNv" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -48086,19 +47990,13 @@
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled,
 /area/quartermaster/qm)
-"bNA" = (
-/obj/machinery/computer/shuttle_control/explore/mining,
-/turf/simulated/floor/tiled,
-/area/ship/exodus_pod_mining)
 "bNB" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
+/obj/machinery/shipsensors/weak,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor,
 /area/ship/exodus_pod_mining)
 "bNC" = (
 /obj/structure/table/rack{
@@ -48871,29 +48769,38 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology)
 "bPb" = (
-/obj/machinery/door/airlock/external/bolted{
-	id_tag = "mining_shuttle_hatch";
-	locked = 1;
-	name = "Shuttle Hatch"
+/obj/machinery/button/access/interior{
+	id_tag = "mining_dock_airlock";
+	name = "interior access button";
+	pixel_x = -25;
+	pixel_y = 25
+	},
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "bPc" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8;
-	icon_state = "map"
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bPd" = (
 /obj/machinery/door/firedoor,
@@ -49642,20 +49549,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyaccess)
-"bQA" = (
-/obj/item/ore/silver,
-/obj/item/ore/silver,
-/obj/item/ore/iron,
-/obj/structure/closet/crate,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 4;
-	id_tag = "mining_dock_pump"
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 10
-	},
-/turf/simulated/floor,
-/area/quartermaster/miningdock)
 "bQB" = (
 /obj/machinery/cell_charger{
 	pixel_y = 5
@@ -51637,19 +51530,11 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
 "bUb" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/machinery/alarm{
-	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -22
-	},
-/turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/structure/sign/warning/docking_area,
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "bUc" = (
 /obj/machinery/atmospherics/binary/passive_gate{
 	dir = 8
@@ -51707,13 +51592,12 @@
 /turf/simulated/floor/tiled/airless,
 /area/rnd/test_area)
 "bUk" = (
-/obj/structure/catwalk,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 24
+/obj/machinery/material_processing/unloader{
+	input_turf = 8;
+	output_turf = 4
 	},
-/turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "bUl" = (
 /obj/machinery/light{
 	dir = 1
@@ -52750,14 +52634,12 @@
 /turf/simulated/floor/tiled,
 /area/rnd/mixing)
 "bWo" = (
-/obj/machinery/button/access/exterior{
-	id_tag = "mining_dock_airlock";
-	name = "exterior access button";
-	pixel_x = -5;
-	pixel_y = 25
+/obj/machinery/conveyor{
+	dir = 4;
+	id_tag = "cargo_mining_conveyor"
 	},
-/turf/space,
-/area/space)
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "bWp" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -68947,12 +68829,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/engi_engine)
 "cMF" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id_tag = "cargo_mining_conveyor"
-	},
+/obj/machinery/material_processing/compressor,
 /turf/simulated/floor/plating,
-/area/quartermaster/storage)
+/area/quartermaster/miningdock)
 "cQw" = (
 /obj/machinery/computer/ship/engines{
 	dir = 4;
@@ -68975,50 +68854,39 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/ship/exodus_pod_research)
-"dkO" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
-	},
-/obj/machinery/conveyor_switch{
-	id_tag = "cargo_mining_conveyor"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
+"cUO" = (
+/obj/machinery/light,
 /turf/simulated/floor/tiled,
-/area/quartermaster/storage)
+/area/quartermaster/miningdock)
+"dkO" = (
+/obj/machinery/computer/shuttle_control/explore/mining,
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
 "dvY" = (
 /obj/machinery/vending/snack{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/central_two)
+"dMi" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 4;
+	icon_state = "loadingarea"
+	},
+/obj/effect/floor_decal/corner/beige{
+	dir = 8;
+	icon_state = "corner_white"
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "dNS" = (
 /obj/effect/shuttle_landmark/exodus_main_port,
 /turf/space,
 /area/space)
 "dRD" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
+/obj/effect/overmap/visitable/ship/landable/pod/mining,
+/obj/machinery/computer/ship/helm,
+/turf/simulated/floor/tiled,
 /area/ship/exodus_pod_mining)
 "dTi" = (
 /obj/structure/table/woodentable,
@@ -69055,71 +68923,76 @@
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_mining)
 "fmR" = (
+/obj/machinery/door/airlock/external/bolted{
+	id_tag = "mining_dock_inner";
+	locked = 1;
+	name = "Mining Dock Airlock"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
 /turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/area/quartermaster/miningdock)
 "fyf" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_research)
 "fKm" = (
-/obj/machinery/computer/ship/engines{
-	dir = 1;
-	icon_state = "computer"
-	},
-/turf/simulated/floor/tiled,
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/plating,
 /area/ship/exodus_pod_mining)
 "fPv" = (
-/obj/structure/cable/green,
-/obj/machinery/ion_thruster{
-	dir = 1;
-	icon_state = "nozzle"
+/obj/effect/floor_decal/corner/brown{
+	dir = 5
 	},
-/turf/simulated/floor,
-/area/ship/exodus_pod_mining)
-"gdx" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 4;
-	icon_state = "loadingarea"
-	},
-/obj/effect/floor_decal/corner/beige{
-	dir = 8;
-	icon_state = "corner_white"
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
-"gfJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/fabricator/industrial,
-/obj/item/stack/material/osmium/ten,
+"fTj" = (
+/obj/machinery/mech_recharger,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/status_display{
-	pixel_y = -32
+/mob/living/exosuit/premade/light/exploration,
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
+"gdx" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "rwindow"
 	},
+/obj/machinery/conveyor_switch{
+	id_tag = "cargo_mining_conveyor"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "gny" = (
-/obj/effect/shuttle_landmark/mining_pod_dock,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 8;
+	icon_state = "map"
 	},
-/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/area/quartermaster/miningdock)
 "gsd" = (
 /obj/machinery/vending/cola{
 	dir = 4
@@ -69169,19 +69042,13 @@
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_research)
 "hbt" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "west bump";
-	pixel_x = -24
-	},
 /obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/cable/green,
-/obj/structure/catwalk,
 /turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/area/quartermaster/miningdock)
 "hkD" = (
 /obj/machinery/light_switch{
 	pixel_x = 4;
@@ -69211,6 +69078,14 @@
 "hLX" = (
 /turf/simulated/floor/wood/walnut,
 /area/library)
+"hWZ" = (
+/obj/structure/bed/chair,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
 "hZw" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -69222,26 +69097,58 @@
 /area/ship/exodus_pod_research)
 "idh" = (
 /obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/embedded_controller/radio/simple_docking_controller{
-	id_tag = "mining_shuttle";
-	pixel_x = 25;
-	pixel_y = -8;
-	tag_door = "mining_shuttle_hatch"
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/ship/exodus_pod_mining)
+"idY" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/green,
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
+"iKS" = (
+/obj/machinery/conveyor{
+	id_tag = "cargo_mining_conveyor"
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "iTt" = (
-/obj/structure/ore_box,
+/obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
+"jfD" = (
+/obj/effect/landmark/start{
+	name = "Shaft Miner"
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
+"jsn" = (
+/obj/item/radio/intercom{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/structure/table/standard,
+/obj/item/paper_bin{
+	pixel_x = 1;
+	pixel_y = 9
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "jFq" = (
@@ -69278,6 +69185,20 @@
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/wood/yew,
 /area/crew_quarters/bar)
+"lDi" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -22
+	},
+/turf/simulated/floor,
+/area/ship/exodus_pod_mining)
 "lFM" = (
 /obj/machinery/power/apc{
 	dir = 2;
@@ -69294,6 +69215,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/exodus_pod_engineering)
+"miB" = (
+/obj/structure/cable/green,
+/obj/machinery/ion_thruster{
+	dir = 1;
+	icon_state = "nozzle"
+	},
+/turf/simulated/floor,
+/area/ship/exodus_pod_mining)
 "mwu" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -69357,30 +69286,35 @@
 /area/space)
 "nIv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ore/iron,
-/obj/item/ore/coal{
-	pixel_x = 3;
-	pixel_y = 3
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "otj" = (
-/obj/structure/catwalk,
-/turf/simulated/floor,
-/area/ship/exodus_pod_mining)
+/obj/structure/sign/warning/airlock,
+/turf/simulated/wall/prepainted,
+/area/quartermaster/miningdock)
 "oxE" = (
-/obj/structure/window/reinforced{
-	dir = 1;
-	icon_state = "rwindow"
-	},
-/obj/structure/disposalpipe/segment{
+/obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	id_tag = "mining_shuttle";
+	pixel_x = 25;
+	pixel_y = -8;
+	tag_door = "mining_shuttle_hatch"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/bed/chair{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/storage)
+/area/ship/exodus_pod_mining)
 "oDi" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -69413,21 +69347,15 @@
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_research)
 "pGo" = (
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Engine - Main";
-	charge = 1e+007;
-	input_attempt = 1;
-	input_level = 1e+006;
-	output_attempt = 1;
-	output_level = 1e+006
+/obj/effect/floor_decal/corner/brown{
+	dir = 9
 	},
-/obj/effect/floor_decal/industrial/warning/full,
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
 	},
-/turf/simulated/floor/plating,
-/area/ship/exodus_pod_mining)
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "pWa" = (
 /obj/effect/shuttle_landmark/exodus_main_fore,
 /turf/space,
@@ -69442,6 +69370,50 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
+"rup" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/ship/exodus_pod_mining)
+"rPP" = (
+/obj/machinery/computer/ship/engines{
+	dir = 1;
+	icon_state = "computer"
+	},
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
+"rVT" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/bed/chair,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
+"sdB" = (
+/obj/structure/catwalk,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor,
+/area/ship/exodus_pod_mining)
 "sfM" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -69452,6 +69424,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/bridge)
+"sgI" = (
+/obj/machinery/conveyor{
+	backwards = 8;
+	dir = 9;
+	forwards = 2;
+	icon_state = "conveyor1";
+	id_tag = "cargo_mining_conveyor";
+	movedir = 6
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/quartermaster/miningdock)
 "sxY" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -69478,6 +69464,38 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/docking)
+"tpe" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/ship/exodus_pod_mining)
+"tzU" = (
+/obj/machinery/computer/ship/sensors{
+	dir = 1;
+	icon_state = "computer"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/ship/exodus_pod_mining)
 "tCN" = (
 /obj/machinery/computer/ship/sensors{
 	dir = 4;
@@ -69491,19 +69509,18 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/exodus_pod_research)
 "tGf" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/turf/simulated/floor/plating,
+/obj/structure/cable/green,
+/obj/structure/catwalk,
+/turf/simulated/floor,
 /area/ship/exodus_pod_mining)
 "tQY" = (
 /obj/structure/bed/chair{
@@ -69513,38 +69530,51 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/exodus_pod_research)
 "tUa" = (
-/obj/machinery/conveyor{
-	id_tag = "cargo_mining_conveyor"
+/obj/effect/shuttle_landmark/mining_pod_dock,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/storage)
+/obj/structure/catwalk,
+/turf/simulated/floor,
+/area/ship/exodus_pod_mining)
 "tXh" = (
-/obj/machinery/material_processing/compressor,
-/turf/simulated/floor/plating,
-/area/quartermaster/storage)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor,
+/area/ship/exodus_pod_mining)
 "ult" = (
-/obj/machinery/computer/ship/sensors{
-	dir = 1;
-	icon_state = "computer"
+/obj/machinery/door/airlock/external/bolted{
+	id_tag = "mining_shuttle_hatch";
+	locked = 1;
+	name = "Shuttle Hatch"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor,
 /area/ship/exodus_pod_mining)
 "uoa" = (
-/obj/structure/bed/chair,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+/obj/machinery/door/airlock/external/bolted{
+	id_tag = "mining_dock_outer";
+	locked = 1;
+	name = "Mining Dock Airlock"
 	},
-/turf/simulated/floor/tiled,
-/area/ship/exodus_pod_mining)
+/obj/machinery/shield_diffuser,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/quartermaster/miningdock)
 "uGq" = (
 /obj/machinery/door/blast/regular{
 	dir = 4;
@@ -69553,6 +69583,31 @@
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
+"uJB" = (
+/obj/machinery/button/access/exterior{
+	id_tag = "mining_dock_airlock";
+	name = "exterior access button";
+	pixel_x = -5;
+	pixel_y = 25
+	},
+/turf/space,
+/area/space)
+"uRH" = (
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/ship/exodus_pod_mining)
+"vHf" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "vKw" = (
 /obj/machinery/shipsensors,
 /obj/structure/cable/green{
@@ -69567,13 +69622,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/bed/chair,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
-/turf/simulated/floor/tiled,
+/obj/structure/catwalk,
+/turf/simulated/floor,
 /area/ship/exodus_pod_mining)
 "vVU" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -69585,29 +69635,47 @@
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_research)
 "wht" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable/green,
-/turf/simulated/floor/tiled,
-/area/ship/exodus_pod_mining)
-"wiC" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk,
 /turf/simulated/floor,
 /area/ship/exodus_pod_mining)
+"wiC" = (
+/obj/item/ore/silver,
+/obj/item/ore/silver,
+/obj/item/ore/iron,
+/obj/structure/closet/crate,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 4;
+	id_tag = "mining_dock_pump"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/turf/simulated/floor,
+/area/quartermaster/miningdock)
 "wAA" = (
-/obj/machinery/material_processing/stacker{
-	input_turf = 1;
-	output_turf = 8
+/obj/structure/closet/emcloset,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/camera/network/civilian_west{
+	c_tag = "Cargo Mining Dock Airlock";
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/quartermaster/storage)
+/obj/effect/floor_decal/industrial/warning{
+	dir = 6
+	},
+/turf/simulated/floor,
+/area/quartermaster/miningdock)
+"xpO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/fabricator/industrial,
+/obj/item/stack/material/osmium/ten,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/miningdock)
 "xHt" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 1;
@@ -69626,6 +69694,22 @@
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/docking)
+"xJn" = (
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Engine - Main";
+	charge = 1e+007;
+	input_attempt = 1;
+	input_level = 1e+006;
+	output_attempt = 1;
+	output_level = 1e+006
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
+/area/ship/exodus_pod_mining)
 
 (1,1,1) = {"
 cLU
@@ -86994,10 +87078,10 @@ cLU
 cLU
 cLU
 aQh
-cLU
-cLU
-cLU
-cLU
+aaf
+aaf
+aaf
+aaf
 crP
 cLU
 cLU
@@ -87247,20 +87331,20 @@ aRB
 aRF
 bpf
 cLU
-cLU
-cLU
-cLU
+bqY
+apc
 aQh
-aaf
-aaf
-ctn
-aaf
-crP
-cLU
-cLU
-cLU
-aaf
-cLU
+aQh
+aQh
+aQh
+aQh
+aQh
+aQh
+aQh
+aQh
+aQh
+aQh
+aIo
 cLU
 cLU
 cLU
@@ -87506,18 +87590,18 @@ aLF
 cLU
 cLU
 cLU
-aaf
+cLU
+cLU
+cLU
+cLU
+cLU
+cLU
+cLU
+cLU
+cLU
+cLU
+cLU
 aQh
-cLU
-cLU
-cLU
-cLU
-crP
-cLU
-cLU
-cLU
-aaf
-aac
 cLU
 cLU
 aaf
@@ -87762,19 +87846,19 @@ bFb
 aLF
 cLU
 cLU
+bNr
+bNr
+bNr
+bNr
+fKm
+bNr
+fKm
+bNr
+bNr
+bNr
+bNr
 cLU
-aaf
 aQh
-cLU
-cLU
-cLU
-cLU
-aaf
-aaf
-aaf
-aaf
-cLU
-cLU
 aaf
 aaf
 aaf
@@ -88019,19 +88103,19 @@ bEh
 bdP
 cLU
 cLU
+bNr
+dkO
+idh
+tGf
+vRS
+lDi
+vRS
+rVT
+tzU
+rup
+miB
 cLU
-aaf
-apc
-cLU
-cLU
-cLU
-cLU
-crP
-cLU
-cLU
-cLU
-cLU
-cLU
+aQh
 cLU
 cLU
 cLU
@@ -88276,19 +88360,19 @@ bDL
 bdP
 cLU
 cLU
+bNr
+dRD
+iTt
+tUa
+vRS
+vRS
+vRS
+idY
+xJn
+tpe
+miB
 cLU
-aaf
-cLU
-cLU
-cLU
-cLU
-cLU
-crP
-cLU
-cLU
-cLU
-cLU
-cLU
+aQh
 cLU
 cLU
 cLU
@@ -88533,19 +88617,19 @@ bEi
 aLF
 cLU
 cLU
-apc
+bNu
+fhb
+oxE
+tXh
+wht
+sdB
+wht
+hWZ
+rPP
+uRH
+miB
+cLU
 aQh
-aQh
-aQh
-aQh
-aQh
-aQh
-aQh
-aQh
-aQh
-aQh
-aQh
-aIo
 cLU
 cLU
 cLU
@@ -88790,17 +88874,17 @@ bEi
 aLF
 cLU
 cLU
-cLU
-cLU
-cLU
-cLU
-cLU
-cLU
-cLU
-cLU
-cLU
-cLU
-cLU
+bNB
+fKm
+bNr
+ult
+fKm
+bNr
+fKm
+bNr
+bNr
+bNr
+bNr
 cLU
 aQh
 cLU
@@ -89047,17 +89131,17 @@ bEi
 aLF
 cLU
 cLU
-bKI
-bKI
-bKI
-bKI
-bMg
-bKI
-bMg
-bKI
-bKI
-bKI
-bKI
+cLU
+aSC
+aSC
+uoa
+aSC
+aSC
+uJB
+cLU
+cLU
+cLU
+cLU
 cLU
 aQh
 cLU
@@ -89304,17 +89388,17 @@ bEi
 aLF
 cLU
 cLU
-bKI
-bNA
+cLU
+bUb
 bNg
 hbt
 wiC
 bUb
-wiC
-vRS
-ult
-tGf
-fPv
+aaf
+aaf
+cLU
+cLU
+cLU
 cLU
 aQh
 cLU
@@ -89548,9 +89632,9 @@ aTS
 blc
 bmt
 bdP
-bpd
-bpd
-oxE
+brd
+brd
+bsX
 buD
 bwe
 brd
@@ -89561,17 +89645,17 @@ bEi
 aLF
 cLU
 cLU
-bKI
-bLX
+cLU
+aSC
 bMs
 gny
-wiC
-wiC
-wiC
-wht
-pGo
-dRD
-fPv
+wAA
+aSC
+cLU
+aaf
+cLU
+cLU
+cLU
 cLU
 aQh
 cLU
@@ -89806,8 +89890,8 @@ bld
 bmt
 bdP
 bhG
-cMF
-dkO
+bzq
+bsX
 buD
 bwe
 bxU
@@ -89817,18 +89901,18 @@ bvU
 bEj
 bdP
 buQ
-cLU
-bKH
-bNB
-idh
+bGt
+bGt
+bGt
+bGt
 fmR
 otj
-bUk
-otj
-uoa
-fKm
-fhb
-fPv
+bGt
+bGt
+aaf
+cLU
+cLU
+cLU
 cLU
 aQh
 cLU
@@ -90063,7 +90147,7 @@ ble
 bla
 bdP
 biq
-tXh
+brd
 bsX
 buH
 bwg
@@ -90073,21 +90157,21 @@ bxW
 bxW
 bEl
 bdP
-aaf
-cLU
-bKJ
+bIZ
+pGo
+bMg
 bMg
 bKI
 bPb
-bMg
-bKI
-bMg
-bKI
-bKI
-bKI
-bKI
+vHf
+xpO
+bGt
 cLU
-aQh
+cLU
+cLU
+cLU
+cLU
+cLU
 cLU
 cLU
 cLU
@@ -90320,8 +90404,8 @@ blf
 bdP
 bdP
 bhN
-tUa
-wAA
+bzq
+bsX
 buF
 brf
 brf
@@ -90330,21 +90414,21 @@ brf
 brf
 bEk
 aLF
-aaf
-aRG
-cLU
-aSC
-aSC
-aVe
-aSC
-aSC
-bWo
-cLU
-cLU
+bJb
+bKK
+bKK
+bKK
+bKK
+bPc
+bKK
+dMi
+bGt
 cLU
 cLU
 cLU
-aQh
+cLU
+cLU
+cLU
 cLU
 cLU
 cLU
@@ -90587,21 +90671,21 @@ brd
 bzu
 bzu
 aLF
-cLU
-cLU
-cLU
+bJb
+bHB
+bUk
 bzL
-bNo
-bKA
-bQA
-bzL
-aaf
-aaf
+bKK
+bPc
+bKK
+fTj
+bGt
 cLU
 cLU
 cLU
 cLU
-aQh
+cLU
+cLU
 cLU
 cLU
 cLU
@@ -90844,21 +90928,21 @@ bCn
 bEm
 bHg
 aLF
-cLU
-cLU
-cLU
-aSC
-bqY
+bJb
+bKH
+bWo
+gdx
+jfD
 bPc
 bCx
-aSC
-cLU
-aaf
-cLU
+bGt
+bGt
 cLU
 cLU
 cLU
-aQh
+cLU
+cLU
+cLU
 cLU
 cLU
 cLU
@@ -91101,21 +91185,21 @@ bdP
 bdP
 bdP
 bdP
-cLU
-cLU
-bGt
-bGt
-bGt
-bsK
+bpd
+bLX
+cMF
+bKK
+bKK
+bPc
 bDH
-bGt
-bGt
+aSC
 aaf
 cLU
 cLU
 cLU
 cLU
-aQh
+cLU
+cLU
 cLU
 cLU
 cLU
@@ -91358,16 +91442,16 @@ bBq
 bCM
 bpo
 bGt
-bGt
-bGt
-bGt
+bNo
+sgI
+iKS
 bMh
-bNu
-bsJ
-bBD
-gfJ
-bGt
+bJb
+bPc
+bDH
+aSC
 aaf
+cLU
 cLU
 cLU
 cLU
@@ -91615,15 +91699,15 @@ bga
 bga
 bEq
 bGt
-bHB
-bJb
-bIZ
+fPv
+bGt
+bGt
 bMj
-bNr
+bJb
 buo
-bKK
-gdx
-aSC
+cUO
+bGt
+bGt
 aaf
 cLU
 cLU
@@ -91874,7 +91958,7 @@ bEp
 bGt
 bHA
 bJa
-bKK
+jsn
 bMi
 bKK
 btV
@@ -92388,7 +92472,7 @@ bEs
 bGt
 bHC
 bJc
-iTt
+bKK
 bMk
 bNs
 bPi

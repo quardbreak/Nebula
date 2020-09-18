@@ -598,6 +598,7 @@ area/rnd/test_area
 /area/quartermaster/office
 	name = "\improper Supply Office"
 	icon_state = "quartoffice"
+	req_access = list(list(access_cargo, access_mining))
 
 /area/quartermaster/storage
 	name = "\improper Warehouse"
@@ -607,6 +608,7 @@ area/rnd/test_area
 /area/quartermaster/miningdock
 	name = "\improper Cargo Mining Dock"
 	icon_state = "mining"
+	req_access = list(access_mining)
 
 //qm
 
