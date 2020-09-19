@@ -22,7 +22,7 @@
 	shuttle_called_message = "A public ferry to %dock_name% has been scheduled. It will arrive in approximately %ETA%"
 	shuttle_recall_message = "The scheduled ferry has been cancelled."
 
-	lobby_screens = list('starlight/icons/starlight-lobby.png')
+	lobby_screens = list('starlight/icons/starlight-lobby-exodus.jpg')
 	lobby_tracks = list(
 		/music_track/rainfall_over_parallel_ports,
 		/music_track/karlskar

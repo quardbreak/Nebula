@@ -5,6 +5,11 @@
 	#include "../../mods/ascent/_ascent.dme"
 	#include "../../mods/psionics/_psionics.dme"
 
+	// - Starlight Edit -
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
+	#include "../../starlight/mods/blindspot/_blindspot.dme"
+	#include "../../starlight/mods/booster/_booster.dme"
+
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"
 	#include "../../mods/corporate/away_sites/lar_maria/lar_maria.dm"
@@ -22,10 +27,6 @@
 	#include "../away/slavers/slavers_base.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/yacht/yacht.dm"
-
-	// - Starlight Edit -
-	#include "../../starlight/mods/booster/_booster.dme"
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 	#include "jobs/captain.dm"
 	#include "jobs/civilian.dm"
@@ -53,6 +54,7 @@
 	#include "exodus_setup.dm"
 	#include "exodus_shuttles.dm"
 	#include "exodus_unit_testing.dm"
+
 	#include "exodus-1.dmm"
 	#include "exodus-2.dmm"
 	#include "exodus-transit.dmm"

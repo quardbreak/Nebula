@@ -30,7 +30,9 @@
 		return FALSE
 	return TRUE
 
+
 /* Satchel subtypes */
+
 /obj/item/storage/backpack/satchel/pocketbook/navy
 	name = "navy pocketbook"
 	color = "#1c2133"
