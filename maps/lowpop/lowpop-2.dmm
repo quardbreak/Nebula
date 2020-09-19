@@ -811,9 +811,7 @@
 	pixel_x = 23;
 	pixel_y = -6
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Qa" = (
