@@ -12,11 +12,14 @@
 /area/lowpop/hall/kitchen
 	name = "Habitation"
 
+/area/lowpop/sci
+	name = "Science Lab"
+
 /area/lowpop/eng
 	name = "Engineering"
 
-/*/area/lowpop/eng/atmos
-	name = "Atmospherics"*/
+/area/lowpop/eng/atmos
+	name = "Atmospherics"
 
 /area/lowpop/hab_ring
 	name = "Upper Hall"

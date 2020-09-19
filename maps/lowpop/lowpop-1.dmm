@@ -14,6 +14,12 @@
 	dir = 8;
 	icon_state = "bulb_map"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /turf/simulated/open,
 /area/lowpop/hall)
 "aS" = (
@@ -22,6 +28,11 @@
 	},
 /turf/simulated/open,
 /area/lowpop/hall)
+"bx" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "bD" = (
 /obj/machinery/power/apc{
 	dir = 1
@@ -46,11 +57,19 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/open,
 /area/lowpop/hall)
 "cZ" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
@@ -59,6 +78,7 @@
 	dir = 1
 	},
 /obj/structure/bed/chair/pew/left/mahogany,
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/wood/walnut,
 /area/lowpop/hall/kitchen)
 "eh" = (
@@ -71,8 +91,19 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
+"eX" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/manifold4w/visible,
+/turf/simulated/open,
+/area/lowpop/eng/atmos)
 "fa" = (
 /obj/effect/landmark/test/space_turf,
 /turf/space,
@@ -82,6 +113,9 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
 "gg" = (
@@ -90,6 +124,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"gp" = (
+/obj/machinery/destructive_analyzer,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/sci)
 "gJ" = (
 /obj/machinery/fabricator/micro{
 	pixel_x = 3;
@@ -133,9 +171,62 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall)
+"iR" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
+"je" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner_techfloor_grid,
+/obj/effect/floor_decal/techfloor/corner,
+/turf/simulated/floor/tiled/techfloor,
+/area/lowpop/sci)
 "jp" = (
 /turf/simulated/wall/prepainted,
 /area/space)
+"ju" = (
+/obj/machinery/disposal/deliveryChute,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/lowpop/eng/atmos)
+"jx" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/zpipe/down{
+	dir = 1
+	},
+/obj/structure/disposalpipe/down{
+	dir = 2
+	},
+/obj/structure/ladder,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/lowpop/eng/atmos)
 "jP" = (
 /obj/machinery/material_processing/smeltery{
 	input_turf = 8;
@@ -144,19 +235,6 @@
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
-"jT" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_y = 0
-	},
-/obj/structure/railing/mapped,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/lowpop/hall/kitchen)
 "lT" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
@@ -180,7 +258,22 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/hall/kitchen)
+"nj" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
 "nZ" = (
 /obj/structure/cable{
@@ -189,9 +282,19 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/obj/structure/railing/mapped,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
+"oe" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "oC" = (
 /obj/structure/lattice,
 /obj/machinery/portable_atmospherics/canister/air,
@@ -214,8 +317,24 @@
 	dir = 4;
 	icon_state = "bulb_map"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
+"qi" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 1;
+	external_pressure_bound = 140;
+	external_pressure_bound_default = 140;
+	icon_state = "map_vent_out";
+	use_power = 1
+	},
+/turf/simulated/floor/airless,
+/area/lowpop/eng/atmos)
 "qT" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -225,6 +344,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "rf" = (
@@ -234,6 +356,8 @@
 /obj/machinery/atmospherics/pipe/zpipe/up{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/zpipe/up/supply,
+/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers,
 /turf/simulated/open,
 /area/lowpop/hall)
 "si" = (
@@ -241,8 +365,9 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped,
-/obj/structure/bed/chair/comfy/yellow,
-/obj/item/scanner/gas,
+/obj/structure/bed/chair/comfy/yellow{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 10
 	},
@@ -255,6 +380,9 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/lowpop/hall)
+"sS" = (
+/turf/simulated/wall/prepainted,
+/area/lowpop/eng/atmos)
 "ti" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hall)
@@ -266,7 +394,22 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/freezer,
+/area/lowpop/hall/kitchen)
+"tR" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/obj/machinery/light/small,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/lowpop/hall/kitchen)
 "tX" = (
 /turf/simulated/open,
@@ -282,6 +425,9 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
+"uF" = (
+/turf/simulated/open,
+/area/lowpop/eng/atmos)
 "vG" = (
 /obj/machinery/cooker/oven,
 /obj/structure/table/marble,
@@ -311,29 +457,43 @@
 /obj/effect/floor_decal/techfloor/corner{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
+"wU" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 5
+	},
+/obj/structure/lattice,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/open,
+/area/lowpop/eng/atmos)
 "yS" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
-/area/lowpop/hall/kitchen)
-"zb" = (
-/obj/structure/table/steel_reinforced,
-/obj/machinery/recharger,
-/turf/simulated/floor/plating,
 /area/lowpop/hall/kitchen)
 "zu" = (
 /turf/simulated/floor/airless,
 /area/space)
 "zM" = (
-/obj/machinery/portable_atmospherics/powered/scrubber,
-/obj/structure/railing/mapped{
-	dir = 8
+/obj/structure/closet,
+/obj/machinery/alarm{
+	pixel_y = 25
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/carpet,
 /area/lowpop/hall/kitchen)
 "zW" = (
 /obj/machinery/light/small{
@@ -346,6 +506,12 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
+"Am" = (
+/obj/machinery/atmospherics/unary/tank/air{
+	start_pressure = 10132.5
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "Cg" = (
 /obj/machinery/light/small,
 /obj/structure/catwalk,
@@ -353,6 +519,20 @@
 /area/lowpop/hall/smelter)
 "Cv" = (
 /obj/effect/landmark/test/safe_turf,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
+"DX" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "Ee" = (
@@ -363,13 +543,49 @@
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"Ga" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/hatch/autoname/general,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/hall)
 "Gg" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
 "Gq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"Gu" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/door/airlock/hatch/autoname/science,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/sci)
 "Hg" = (
 /obj/structure/table/steel,
 /obj/machinery/light/small{
@@ -384,6 +600,12 @@
 "Hs" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/hatch/autoname/general,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/kitchen)
 "HA" = (
@@ -397,6 +619,11 @@
 /area/lowpop/hall/kitchen)
 "HW" = (
 /obj/structure/ladder,
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/kitchen)
 "Iz" = (
@@ -437,8 +664,46 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall)
 "Kv" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
+"LB" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 9
+	},
+/obj/structure/lattice,
+/obj/machinery/atmospherics/pipe/zpipe/down/red,
+/turf/simulated/open,
+/area/lowpop/eng/atmos)
+"LF" = (
+/obj/structure/lattice,
+/obj/machinery/atmospherics/binary/pump/on{
+	target_pressure = 15000
+	},
+/turf/simulated/open,
+/area/lowpop/eng/atmos)
+"Mg" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/lowpop/sci)
 "Mp" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -448,6 +713,22 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
+"Mw" = (
+/obj/structure/reagent_dispensers/acid{
+	density = 0;
+	pixel_y = -32
+	},
+/obj/structure/lattice,
+/obj/structure/ladder,
+/turf/simulated/open,
+/area/lowpop/sci)
+"Nh" = (
+/obj/machinery/fabricator/protolathe,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/sci)
 "Nj" = (
 /obj/structure/lattice,
 /obj/structure/railing/mapped{
@@ -469,8 +750,33 @@
 	dir = 4;
 	icon_state = "bulb_map"
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"Pf" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/computer/design_console{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/sci)
+"Px" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
+"PU" = (
+/obj/effect/landmark/scorcher,
+/turf/simulated/floor/plating,
+/area/lowpop/hall/smelter)
 "QL" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/hatch/autoname/maintenance,
@@ -486,6 +792,20 @@
 /obj/machinery/merchant_pad,
 /turf/simulated/floor/plating,
 /area/lowpop/hall)
+"Rp" = (
+/obj/effect/floor_decal/techfloor,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/lowpop/sci)
 "RD" = (
 /obj/effect/landmark{
 	name = "JoinLateCryo"
@@ -504,6 +824,9 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall)
+"RS" = (
+/turf/simulated/wall/prepainted,
+/area/lowpop/sci)
 "Sa" = (
 /obj/structure/ladder,
 /obj/structure/lattice,
@@ -532,6 +855,8 @@
 	d2 = 0;
 	icon_state = "16-0"
 	},
+/obj/machinery/atmospherics/pipe/zpipe/down/supply,
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
 /turf/simulated/open,
 /area/lowpop/hall)
 "Sc" = (
@@ -540,6 +865,12 @@
 /area/lowpop/hall/kitchen)
 "Sm" = (
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "Tl" = (
@@ -551,6 +882,17 @@
 /obj/machinery/computer/modular/preset/merchant/orbital,
 /turf/simulated/floor/plating,
 /area/lowpop/hall)
+"Ub" = (
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/machinery/fabricator/imprinter,
+/obj/item/chems/glass/beaker/large,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/sci)
 "Uz" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hall/kitchen)
@@ -562,6 +904,12 @@
 "Wd" = (
 /obj/item/mop,
 /obj/item/chems/glass/bucket,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/wood/walnut,
 /area/lowpop/hall/kitchen)
 "Wo" = (
@@ -573,6 +921,12 @@
 "WL" = (
 /obj/machinery/network/router{
 	produces_heat = 0
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/lowpop/hall/kitchen)
@@ -588,14 +942,28 @@
 /obj/item/towel/random,
 /obj/item/towel/random,
 /obj/item/towel/random,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
 /turf/simulated/floor/wood/walnut,
 /area/lowpop/hall/kitchen)
+"YY" = (
+/obj/machinery/design_database,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/sci)
 "Zm" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hall/smelter)
 "ZS" = (
 /obj/structure/hygiene/sink{
 	pixel_y = 23
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
@@ -3268,11 +3636,11 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
+sS
+sS
+sS
+sS
+sS
 HA
 HA
 HA
@@ -3350,11 +3718,11 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
+sS
+Am
+wU
+uF
+sS
 HA
 HA
 HA
@@ -3432,12 +3800,12 @@ HA
 HA
 HA
 HA
-HA
-HA
-HA
-HA
-HA
-HA
+sS
+Am
+eX
+jx
+bx
+ju
 HA
 HA
 HA
@@ -3515,11 +3883,11 @@ Zm
 Zm
 Zm
 Zm
-HA
-HA
-HA
-HA
-HA
+Am
+LB
+LF
+oe
+qi
 HA
 HA
 HA
@@ -3601,7 +3969,7 @@ ti
 ti
 ti
 ti
-jp
+HA
 HA
 HA
 HA
@@ -3683,7 +4051,7 @@ Ka
 Kn
 pp
 ti
-zu
+HA
 HA
 HA
 HA
@@ -3920,7 +4288,7 @@ HA
 HA
 Zm
 rf
-rf
+PU
 NM
 ti
 QO
@@ -4090,7 +4458,7 @@ ti
 ti
 ti
 ti
-iv
+Ga
 ti
 ti
 ti
@@ -4174,8 +4542,8 @@ fK
 Uz
 nZ
 WL
+tR
 Uz
-HA
 HA
 HA
 HA
@@ -4254,10 +4622,10 @@ Uz
 dk
 Wd
 Uz
-jT
-zb
+nZ
+DX
+DX
 Uz
-HA
 HA
 HA
 HA
@@ -4339,11 +4707,11 @@ Uz
 lW
 Uz
 Uz
-Uz
-HA
-HA
-HA
-HA
+RS
+RS
+RS
+RS
+RS
 HA
 HA
 HA
@@ -4421,11 +4789,11 @@ HW
 eh
 Hg
 gJ
-Uz
-HA
-HA
-HA
-HA
+RS
+Ub
+Nh
+gp
+RS
 HA
 HA
 HA
@@ -4497,17 +4865,17 @@ jp
 zu
 Uz
 Gg
-Kv
+Px
 pN
 cZ
 wN
 Cv
 Kv
-Uz
-HA
-HA
-HA
-HA
+Gu
+je
+Mg
+Mw
+RS
 HA
 HA
 HA
@@ -4585,11 +4953,11 @@ Uz
 tE
 Wo
 wm
-Uz
-HA
-HA
-HA
-HA
+RS
+Rp
+Pf
+YY
+RS
 HA
 HA
 HA
@@ -4661,17 +5029,17 @@ HA
 HA
 Uz
 JT
-yS
+iR
 JT
 Uz
 ZS
-Gq
+nj
 gg
-Uz
-HA
-HA
-HA
-HA
+RS
+RS
+RS
+RS
+RS
 HA
 HA
 HA
@@ -4742,7 +5110,7 @@ HA
 HA
 HA
 Uz
-Oz
+zM
 yS
 Oz
 Uz
@@ -4824,7 +5192,7 @@ HA
 HA
 HA
 Uz
-zM
+JT
 qT
 JT
 Uz

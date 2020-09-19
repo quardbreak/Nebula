@@ -9,14 +9,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
 "bv" = (
-/obj/structure/bed/chair/shuttle/blue{
-	dir = 8
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb_map"
-	},
-/turf/simulated/floor/tiled/monotile,
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/lowpop_shuttle)
 "cf" = (
 /obj/machinery/button/blast_door{
@@ -34,17 +34,49 @@
 /obj/machinery/computer/ship/engines,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/lowpop_shuttle)
-"dG" = (
-/obj/machinery/ion_thruster{
+"ec" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/portables_connector{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced/airless,
-/area/ship/lowpop_shuttle)
-"ec" = (
-/obj/machinery/portable_atmospherics/powered/scrubber,
-/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/canister/air/airlock{
+	start_pressure = 730
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb_map"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/lowpop_shuttle)
+"eg" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch/autoname/engineering,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/eng/atmos)
+"fO" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 6
+	},
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "hn" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 5
@@ -65,6 +97,12 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
 "ic" = (
@@ -73,27 +111,44 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
 "iB" = (
-/obj/machinery/ion_thruster{
-	dir = 1
+/obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	id_tag = "babydonthurtme"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/ship/lowpop_shuttle)
 "jX" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/air/airlock{
-	start_pressure = 730
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
 "ko" = (
 /turf/space,
 /area/space)
+"kA" = (
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment/bent{
+	dir = 2
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "kE" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -105,6 +160,9 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
@@ -118,6 +176,7 @@
 /obj/effect/landmark/start{
 	name = "Engineer"
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
 "lC" = (
@@ -155,11 +214,35 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/lowpop/dock)
+"oL" = (
+/obj/machinery/light/small,
+/obj/machinery/constructable_frame/machine_frame,
+/turf/simulated/floor/plating,
+/area/lowpop/sci)
 "pj" = (
 /obj/random/junk,
 /obj/random/tool,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "pE" = (
@@ -168,6 +251,13 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
+"pP" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/item/scanner/gas,
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "pS" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "radaway"
@@ -188,6 +278,9 @@
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
@@ -211,6 +304,9 @@
 /obj/item/clothing/head/helmet/space/void/engineering/salvage,
 /obj/item/clothing/head/helmet/space/void/engineering/salvage,
 /obj/structure/cable,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/shoes/magboots,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "qO" = (
@@ -220,6 +316,12 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
@@ -243,6 +345,9 @@
 /obj/effect/landmark/start{
 	name = "Engineer"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
 "sY" = (
@@ -263,14 +368,16 @@
 	dir = 4;
 	id_tag = "utility_shuttle_pump"
 	},
-/obj/effect/catwalk_plated,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/ship/lowpop_shuttle)
 "td" = (
 /obj/effect/floor_decal/techfloor{
@@ -305,8 +412,28 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
+"uK" = (
+/obj/structure/closet/crate,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/glass/fifty,
+/obj/item/stack/material/aluminium/fifty,
+/turf/simulated/floor/plating,
+/area/lowpop/sci)
 "vb" = (
 /obj/machinery/light/small,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "wm" = (
@@ -317,15 +444,18 @@
 /obj/machinery/computer/ship/sensors{
 	dir = 1
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor/tiled/monotile,
 /area/ship/lowpop_shuttle)
 "ya" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "utility_shuttle_pump_out_internal"
 	},
-/obj/effect/catwalk_plated,
 /obj/machinery/light/small,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
 /area/ship/lowpop_shuttle)
 "yx" = (
 /obj/structure/closet/crate,
@@ -353,6 +483,9 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/dock)
+"Bb" = (
+/turf/simulated/wall/prepainted,
+/area/lowpop/sci)
 "BD" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
 /turf/simulated/wall/titanium,
@@ -381,9 +514,17 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/dock)
 "CA" = (
-/obj/machinery/atm{
-	desc = "For all your monetary needs! Wait, is it really needed here?..";
-	pixel_x = -28
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
@@ -418,10 +559,12 @@
 /turf/simulated/floor/plating,
 /area/lowpop/dock)
 "Ds" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 5
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "utility_shuttle_pump_out_external"
 	},
-/turf/simulated/floor/reinforced/airless,
+/obj/machinery/shipsensors,
+/turf/simulated/floor/airless,
 /area/ship/lowpop_shuttle)
 "Dz" = (
 /obj/machinery/power/apc{
@@ -439,14 +582,19 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
 "DR" = (
-/obj/machinery/mech_recharger,
-/mob/living/exosuit/premade/light/exploration,
-/turf/simulated/floor/tiled/steel_grid,
-/area/ship/lowpop_shuttle)
-"Fh" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 4
 	},
+/obj/effect/wallframe_spawn/reinforced,
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
+"Ed" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
+"Fh" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -456,6 +604,12 @@
 	id_tag = "utility_shuttle";
 	pixel_x = -28;
 	pixel_y = 25
+	},
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
@@ -467,10 +621,44 @@
 /obj/machinery/atmospherics/pipe/zpipe/up{
 	dir = 4
 	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
+"GC" = (
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/zpipe/up/red{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
+"GO" = (
+/turf/simulated/wall/prepainted,
+/area/lowpop/eng/atmos)
 "GS" = (
 /obj/effect/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "babydonthurtme"
+	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/ship/lowpop_shuttle)
 "Ia" = (
@@ -484,6 +672,9 @@
 /obj/effect/landmark/start{
 	name = "Engineer"
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
 "Jk" = (
@@ -492,6 +683,10 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/atm{
+	desc = "For all your monetary needs! Wait, is it really needed here?..";
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
@@ -535,6 +730,25 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/ship/lowpop_shuttle)
+"MB" = (
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 2;
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/machinery/atmospherics/pipe/zpipe/up{
+	dir = 1
+	},
+/obj/structure/disposalpipe/up{
+	dir = 1
+	},
+/obj/structure/ladder,
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "Ns" = (
 /obj/structure/ladder,
 /obj/machinery/light/small{
@@ -550,7 +764,14 @@
 	d2 = 0;
 	icon_state = "16-0"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/atmospherics/pipe/zpipe/up/supply{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
 /area/lowpop/dock)
 "PD" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -568,14 +789,40 @@
 /obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
+"Ri" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/powered/pump/filled,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "RQ" = (
-/turf/simulated/floor/reinforced/airless,
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 10
+	},
+/obj/machinery/mech_recharger,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/mob/living/exosuit/premade/light/exploration,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/lowpop_shuttle)
+"Sa" = (
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "Su" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/stack/material/deuterium/fifty,
 /obj/item/stack/material/deuterium/fifty,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "Tn" = (
@@ -583,10 +830,15 @@
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
+"TF" = (
+/obj/structure/ladder,
+/turf/simulated/floor/plating,
+/area/lowpop/sci)
 "Ui" = (
-/obj/machinery/light/small{
-	dir = 8;
-	icon_state = "bulb_map"
+/obj/machinery/button/blast_door{
+	id_tag = "babydonthurtme";
+	name = "Window Shutters";
+	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/lowpop_shuttle)
@@ -604,14 +856,24 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "Va" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 8;
-	id_tag = "utility_shuttle_pump_out_external"
+/obj/machinery/ion_thruster{
+	dir = 1
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/airless,
 /area/ship/lowpop_shuttle)
 "Vl" = (
 /obj/structure/cable{
@@ -632,8 +894,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "Wk" = (
-/obj/machinery/shipsensors/weak,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/external/bolted{
+	id_tag = "utility_shuttle_in"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/lowpop_shuttle)
 "WC" = (
 /turf/simulated/wall/prepainted,
@@ -655,6 +920,15 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	icon_state = "alarm0";
+	pixel_x = 0;
+	pixel_y = -24
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
@@ -684,6 +958,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
+"Yq" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/eng/atmos)
 "Zr" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -3366,11 +3648,11 @@ ko
 ko
 ko
 ko
-ko
-ko
-ko
-ko
-ko
+GO
+GO
+GO
+GO
+GO
 ko
 ko
 ko
@@ -3448,11 +3730,11 @@ ko
 ko
 ko
 ko
-ko
-ko
-ko
-ko
-ko
+GO
+fO
+Ed
+pP
+GO
 ko
 ko
 ko
@@ -3530,11 +3812,11 @@ ko
 ko
 ko
 ko
-ko
-ko
-ko
-ko
-ko
+GO
+kA
+Sa
+MB
+GO
 ko
 ko
 ko
@@ -3613,10 +3895,10 @@ cL
 cL
 cL
 cL
-ko
-ko
-ko
-ko
+Ri
+GC
+Yq
+GO
 ko
 ko
 ko
@@ -3695,10 +3977,10 @@ cL
 wm
 QT
 cL
-WC
-WC
-WC
-WC
+DR
+eg
+GO
+GO
 ko
 ko
 ko
@@ -4437,11 +4719,11 @@ Kd
 lC
 Kd
 Kd
-dG
+Kd
 ko
-ko
-ko
-ko
+Bb
+Bb
+Bb
 ko
 ko
 ko
@@ -4511,7 +4793,7 @@ ko
 ko
 ko
 ko
-Kd
+iB
 Kw
 Ui
 xo
@@ -4521,9 +4803,9 @@ ya
 BD
 Ds
 ko
-ko
-ko
-ko
+Bb
+uK
+Bb
 ko
 ko
 ko
@@ -4593,19 +4875,19 @@ ko
 ko
 ko
 ko
-Kd
+iB
 Ia
 pE
 Kh
 Kd
 tH
-Kd
+Wk
 Kd
 Va
 ko
-ko
-ko
-ko
+Bb
+TF
+Bb
 ko
 ko
 ko
@@ -4675,7 +4957,7 @@ ko
 ko
 ko
 ko
-Kd
+iB
 dF
 Fr
 Vl
@@ -4683,11 +4965,11 @@ ic
 Fh
 jX
 Kd
-dG
+Va
 ko
-ko
-ko
-ko
+Bb
+oL
+Bb
 ko
 ko
 ko
@@ -4762,14 +5044,14 @@ WS
 Md
 Md
 bv
-Md
+RQ
 ec
 Kd
-dG
+Va
 ko
-ko
-ko
-ko
+Bb
+Bb
+Bb
 ko
 ko
 ko
@@ -4844,7 +5126,7 @@ Kd
 GS
 GS
 Kd
-DR
+Kd
 Kd
 Kd
 Kd
@@ -4922,14 +5204,14 @@ ko
 ko
 ko
 ko
-Kd
-Wk
-RQ
-Kd
-Kd
-Kd
-dG
-RQ
+ko
+ko
+ko
+ko
+ko
+ko
+ko
+ko
 ko
 ko
 ko
@@ -5004,13 +5286,13 @@ ko
 ko
 ko
 ko
-Kd
-iB
-RQ
-RQ
-RQ
-RQ
-RQ
+ko
+ko
+ko
+ko
+ko
+ko
+ko
 ko
 ko
 ko

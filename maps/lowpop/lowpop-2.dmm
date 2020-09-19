@@ -30,6 +30,8 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/lowpop/hab_ring/med)
 "eY" = (
@@ -44,14 +46,21 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/hologram/holopad/longrange,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "fE" = (
 /obj/machinery/optable,
 /obj/item/scanner/health,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
+"fI" = (
+/obj/machinery/light/navigation/delay5,
+/turf/simulated/floor/airless,
+/area/lowpop/hab_ring/sensor)
 "fU" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hab_ring/med)
@@ -67,6 +76,10 @@
 /obj/effect/landmark/start{
 	name = "Sensor Technician"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/carpet/green,
 /area/lowpop/hab_ring/sensor)
 "gl" = (
@@ -77,17 +90,31 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "gF" = (
 /obj/structure/curtain/open/shower,
-/obj/structure/hygiene/shower,
+/obj/structure/hygiene/shower{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "gG" = (
 /obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
 	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
@@ -102,18 +129,29 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/sensor)
 "ht" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+/obj/item/stool/padded,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/space,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/turf/simulated/floor/lino,
+/area/lowpop/hab_ring)
 "hw" = (
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
@@ -123,6 +161,13 @@
 "if" = (
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1;
+	icon_state = "map-scrubbers"
 	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
@@ -134,9 +179,23 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
+"jM" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"jU" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/airless,
+/area/space)
 "jV" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin,
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
 "kh" = (
@@ -159,17 +218,26 @@
 /obj/machinery/atmospherics/pipe/zpipe/down{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/zpipe/down/supply,
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
 /turf/simulated/open,
 /area/lowpop/hab_ring)
+"lW" = (
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "mj" = (
 /turf/space,
 /area/space)
 "ml" = (
 /obj/structure/hygiene/toilet,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "mn" = (
-/obj/structure/table/glass,
 /obj/machinery/power/apc{
 	dir = 1
 	},
@@ -180,6 +248,7 @@
 /obj/item/towel,
 /obj/item/towel,
 /obj/item/towel,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "mT" = (
@@ -188,7 +257,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/reagent_temperature,
-/turf/simulated/floor/tiled/freezer,
+/turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "mU" = (
 /obj/structure/lattice,
@@ -197,7 +266,6 @@
 /turf/space,
 /area/space)
 "ne" = (
-/obj/structure/railing/mapped,
 /obj/item/chems/glass/beaker/large,
 /obj/item/chems/glass/beaker/large,
 /obj/item/chems/glass/beaker/large,
@@ -206,6 +274,9 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "nS" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/simulated/floor/carpet/green,
 /area/lowpop/hab_ring/sensor)
 "oj" = (
@@ -214,17 +285,22 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "oJ" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
-/turf/space,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/lowpop/hab_ring/med)
 "pz" = (
 /obj/machinery/reagentgrinder,
-/turf/simulated/floor/tiled/freezer,
+/turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "qL" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -251,6 +327,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/open,
 /area/lowpop/hab_ring)
 "sY" = (
@@ -259,9 +341,31 @@
 /obj/item/music_tape/custom,
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
+"tf" = (
+/obj/structure/railing/mapped,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
+"tn" = (
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/lowpop/hab_ring/med)
 "ve" = (
 /turf/simulated/wall/prepainted,
 /area/lowpop/hab_ring/sensor)
+"wj" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "wx" = (
 /turf/simulated/floor/airless,
 /area/lowpop/hab_ring/sensor)
@@ -280,13 +384,12 @@
 	pixel_x = 26;
 	pixel_y = 1
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "wG" = (
-/obj/structure/table/glass,
-/obj/item/defibrillator/loaded,
-/obj/item/roller,
 /obj/machinery/light,
+/obj/machinery/vitals_monitor,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "xp" = (
@@ -301,6 +404,8 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/open,
 /area/lowpop/hab_ring)
 "xq" = (
@@ -309,7 +414,6 @@
 /area/space)
 "xK" = (
 /obj/structure/bed/padded,
-/obj/item/bedsheet,
 /obj/structure/curtain/open/privacy,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
@@ -341,6 +445,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
+"yg" = (
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/lowpop/hab_ring)
 "yN" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -349,8 +465,21 @@
 	pixel_y = 0
 	},
 /obj/structure/railing/mapped,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hab_ring)
+"yR" = (
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/railing/mapped,
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "zp" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -374,6 +503,9 @@
 "zz" = (
 /obj/structure/table/steel,
 /obj/item/deck/cards,
+/obj/effect/landmark{
+	name = "Observer-Start"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
 "Ac" = (
@@ -398,6 +530,12 @@
 /obj/effect/landmark/start{
 	name = "Doctor"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/lowpop/hab_ring/med)
 "AF" = (
@@ -420,6 +558,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/carpet/green,
 /area/lowpop/hab_ring/sensor)
 "Bn" = (
@@ -438,8 +579,20 @@
 "Cp" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/surgery,
+/obj/machinery/alarm{
+	dir = 1;
+	icon_state = "alarm0";
+	pixel_x = 0;
+	pixel_y = -24
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
+"DY" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "Fl" = (
 /obj/structure/lattice,
 /obj/structure/catwalk,
@@ -475,6 +628,9 @@
 /obj/effect/landmark/start{
 	name = "Doctor"
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/lowpop/hab_ring/med)
 "Gk" = (
@@ -485,7 +641,6 @@
 	name = "wall locker";
 	pixel_x = -28
 	},
-/obj/item/roller,
 /obj/item/stack/medical/advanced/bruise_pack,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
@@ -495,6 +650,12 @@
 /obj/random/drinkingglass,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
+"GI" = (
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/airless,
+/area/space)
 "GN" = (
 /obj/effect/landmark/map_data{
 	height = 3
@@ -504,7 +665,7 @@
 "HB" = (
 /obj/machinery/reagent_temperature/cooler,
 /obj/structure/table/reinforced,
-/turf/simulated/floor/tiled/freezer,
+/turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "HR" = (
 /obj/effect/landmark/start{
@@ -526,6 +687,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Jh" = (
@@ -537,14 +704,17 @@
 /obj/effect/landmark/start{
 	name = "Sensor Technician"
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Ju" = (
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
-	},
-/obj/machinery/portable_atmospherics/powered/scrubber,
-/turf/simulated/floor/tiled/white,
+/obj/item/defibrillator/loaded,
+/obj/item/roller,
+/obj/item/roller,
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "Kd" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -566,6 +736,12 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hab_ring)
 "LL" = (
@@ -577,12 +753,18 @@
 /obj/machinery/light/navigation/delay5,
 /turf/simulated/floor/reinforced/airless,
 /area/lowpop/hab_ring/med)
+"MH" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/closet/crate,
+/turf/simulated/floor/airless,
+/area/space)
 "ML" = (
 /obj/machinery/light/small{
 	dir = 1;
 	icon_state = "bulb_map"
 	},
 /obj/item/stool/padded,
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Nz" = (
@@ -595,6 +777,12 @@
 "NA" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/hatch/autoname/general,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/med)
 "NF" = (
@@ -609,6 +797,9 @@
 "NZ" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/folder/blue,
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
 /turf/simulated/floor/carpet/green,
 /area/lowpop/hab_ring/sensor)
 "OP" = (
@@ -619,12 +810,19 @@
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "Pg" = (
-/turf/simulated/wall/iron,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/turf/simulated/floor/airless,
 /area/space)
 "PR" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
-/turf/space,
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/turf/simulated/floor/airless,
 /area/space)
 "PW" = (
 /obj/item/stool/padded,
@@ -633,16 +831,16 @@
 	pixel_x = 23;
 	pixel_y = -6
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "Qa" = (
-/obj/structure/lattice,
-/obj/structure/catwalk,
 /obj/structure/railing/mapped{
-	dir = 4
+	dir = 8
 	},
-/obj/structure/railing/mapped,
-/turf/space,
+/turf/simulated/floor/reinforced/airless,
 /area/space)
 "Qt" = (
 /obj/structure/lattice,
@@ -650,6 +848,12 @@
 	dir = 4
 	},
 /obj/structure/ladder,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/open,
 /area/lowpop/hab_ring/med)
 "QM" = (
@@ -659,25 +863,37 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/lowpop/hab_ring)
 "Rf" = (
 /obj/machinery/light/navigation/delay5,
 /turf/simulated/floor/reinforced/airless,
 /area/lowpop/hab_ring)
+"RU" = (
+/obj/structure/railing/mapped{
+	dir = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/space)
 "Sq" = (
 /obj/structure/dispenser/oxygen,
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/lowpop/hab_ring)
 "SE" = (
-/obj/structure/table/glass,
 /obj/item/storage/firstaid/regular,
 /obj/structure/hygiene/sink{
 	pixel_y = 23
 	},
 /obj/random/medical/lite,
 /obj/random/medical/lite,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "SX" = (
@@ -688,17 +904,27 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /turf/simulated/open,
 /area/lowpop/hab_ring)
 "Ti" = (
-/obj/effect/landmark{
-	name = "Observer-Start"
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/hologram/holopad/longrange,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
@@ -731,10 +957,6 @@
 	heat_reduction = 30;
 	name = "long-range sensors suite"
 	},
-/obj/machinery/light/small{
-	dir = 1;
-	icon_state = "bulb_map"
-	},
 /turf/simulated/floor/airless,
 /area/lowpop/hab_ring/sensor)
 "Wg" = (
@@ -745,6 +967,12 @@
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/med)
@@ -788,6 +1016,12 @@
 	d2 = 8;
 	icon_state = "4-8";
 	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring)
@@ -958,7 +1192,7 @@ mj
 mj
 mj
 mj
-mj
+GN
 mj
 "}
 (3,1,1) = {"
@@ -3465,11 +3699,11 @@ mj
 mj
 mj
 mj
-mj
-mj
-mj
-mj
-mj
+wj
+Qa
+Qa
+XN
+yR
 mj
 mj
 mj
@@ -3544,15 +3778,15 @@ mj
 mj
 mj
 mj
-mj
-mj
-mj
-mj
-mj
-mj
-mj
-mj
-mj
+RU
+Qa
+Qa
+XN
+XN
+XN
+XN
+XN
+lW
 mj
 mj
 mj
@@ -3625,17 +3859,17 @@ mj
 mj
 mj
 mj
-XN
+wj
 XN
 Rf
-mj
-mj
-mj
-mj
-mj
-mj
-mj
-mj
+XN
+XN
+XN
+MH
+jU
+jU
+XN
+yR
 mj
 mj
 mj
@@ -3706,19 +3940,19 @@ mj
 mj
 mj
 mj
-XN
+RU
 XN
 hR
 Cf
 Cf
 hR
-oJ
-oJ
-oJ
-oJ
-ht
-aF
-aF
+XN
+XN
+XN
+XN
+XN
+tf
+mj
 mj
 mj
 mj
@@ -3787,7 +4021,7 @@ mj
 mj
 mj
 mj
-XN
+Qa
 XN
 xq
 hR
@@ -3800,7 +4034,7 @@ hR
 hR
 XN
 XN
-aF
+lW
 mj
 mj
 mj
@@ -3868,7 +4102,7 @@ mj
 mj
 mj
 mj
-mj
+aF
 ve
 ve
 ve
@@ -3882,7 +4116,7 @@ US
 hR
 hR
 XN
-mU
+tf
 mj
 mj
 mj
@@ -3950,21 +4184,21 @@ mj
 mj
 mj
 mj
-mj
+aF
 ve
 WW
 fW
 hh
 IM
-IM
+ht
 eY
 QM
-QM
+yg
 Xv
 kh
 hR
 XN
-mU
+XN
 mj
 mj
 mj
@@ -4032,7 +4266,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 ve
 Tl
 AS
@@ -4046,7 +4280,7 @@ zx
 hR
 hR
 XN
-mU
+tf
 mj
 mj
 mj
@@ -4114,7 +4348,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 ve
 NZ
 nS
@@ -4126,10 +4360,10 @@ rZ
 SX
 OP
 hR
-gV
+jU
 XN
-mU
-GN
+tf
+mj
 mj
 mj
 mj
@@ -4196,7 +4430,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 ve
 ve
 ve
@@ -4208,9 +4442,9 @@ kP
 xp
 jH
 hR
-gV
+jU
 XN
-mU
+jM
 mj
 mj
 mj
@@ -4278,7 +4512,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 wx
 Nz
 Xv
@@ -4291,8 +4525,8 @@ Zy
 hR
 hR
 XN
-PR
-Qa
+XN
+mj
 mj
 mj
 mj
@@ -4361,7 +4595,7 @@ mj
 mj
 mj
 Pg
-wx
+fI
 Nz
 Cf
 Cf
@@ -4373,8 +4607,8 @@ yN
 LL
 hR
 Id
-mU
-mj
+tf
+gV
 mj
 mj
 mj
@@ -4455,9 +4689,9 @@ Kp
 Sq
 hR
 AQ
-mU
-mj
-mj
+tf
+gV
+gV
 mj
 mj
 mj
@@ -4524,9 +4758,9 @@ mj
 mj
 mj
 mj
-Pg
-Pg
-Pg
+PR
+GI
+gV
 XN
 fU
 fU
@@ -4537,10 +4771,10 @@ Wg
 fU
 fU
 UH
-mU
-mj
-mj
-mj
+XN
+Qa
+Qa
+Qa
 mj
 mj
 mj
@@ -4612,17 +4846,17 @@ XN
 XN
 fU
 ml
-WJ
+oJ
 NA
 Qt
 by
 xK
 fU
 oj
-mU
-mj
-mj
-mj
+XN
+DY
+DY
+tf
 mj
 mj
 mj
@@ -4701,10 +4935,10 @@ Ag
 wG
 fU
 oj
-mU
-mj
-mj
-mj
+tf
+XN
+XN
+tf
 mj
 mj
 mj
@@ -4779,14 +5013,14 @@ fU
 fU
 fU
 SE
-AF
+tn
 xK
 fU
 ZV
-mU
-mj
-mj
-mj
+tf
+XN
+gV
+tf
 mj
 mj
 mj
@@ -4865,10 +5099,10 @@ Gf
 Cp
 fU
 UH
-mU
-mj
-mj
-mj
+tf
+XN
+gV
+XN
 mj
 mj
 mj
@@ -4936,7 +5170,7 @@ mj
 mj
 mj
 mj
-aF
+mj
 aF
 fU
 NF
@@ -4947,9 +5181,9 @@ qL
 fE
 fU
 oj
-mU
-mj
-mj
+tf
+gV
+gV
 mj
 mj
 mj
@@ -5018,7 +5252,7 @@ mj
 mj
 mj
 mj
-aF
+mj
 aF
 fU
 pz
@@ -5029,8 +5263,8 @@ fU
 fU
 fU
 UH
-mU
-mj
+tf
+gV
 mj
 mj
 mj
@@ -5098,10 +5332,10 @@ mj
 mj
 mj
 mj
-aF
-aF
-aF
-aF
+mj
+mj
+mj
+mj
 fU
 fU
 fU
@@ -5112,7 +5346,7 @@ Mv
 XN
 XN
 mU
-mj
+gV
 mj
 mj
 mj
@@ -5179,10 +5413,10 @@ mj
 mj
 mj
 mj
-aF
-aF
-aF
-aF
+mj
+mj
+mj
+mj
 mj
 mj
 mj
