@@ -31,6 +31,10 @@
 "bx" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id_tag = "atmos_lock"
+	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/lowpop/eng/atmos)
 "bD" = (
@@ -47,7 +51,6 @@
 /area/lowpop/hall/smelter)
 "cb" = (
 /obj/structure/lattice,
-/obj/structure/railing/mapped,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
@@ -59,6 +62,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/lowpop/hall)
 "cZ" = (
@@ -130,6 +134,9 @@
 	pixel_y = 2
 	},
 /obj/structure/table/steel,
+/obj/machinery/light_switch/on{
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/kitchen)
 "gP" = (
@@ -142,6 +149,7 @@
 	name = "wall locker";
 	pixel_y = 28
 	},
+/obj/item/chems/food/condiment/enzyme,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
 "hq" = (
@@ -165,6 +173,7 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall)
 "iR" = (
@@ -260,6 +269,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/kitchen)
 "nj" = (
@@ -289,6 +299,10 @@
 "oe" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id_tag = "atmos_lock"
+	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/lowpop/eng/atmos)
 "oC" = (
@@ -401,7 +415,6 @@
 "tR" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
-/obj/machinery/light/small,
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -413,6 +426,11 @@
 "tZ" = (
 /obj/effect/landmark{
 	name = "JoinLateCryo"
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	icon_state = "alarm0";
+	pixel_x = 24
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall)
@@ -508,6 +526,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/lowpop/eng/atmos)
+"BR" = (
+/obj/structure/closet/secure_closet/guncabinet{
+	req_access = list()
+	},
+/obj/item/gun/energy/lasercannon,
+/obj/item/gun/energy/gun/small,
+/obj/item/gun/energy/gun/small,
+/obj/item/gun/energy/gun/small,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/techmaint,
+/area/lowpop/hall/kitchen)
 "Cg" = (
 /obj/machinery/light/small,
 /obj/structure/catwalk,
@@ -535,6 +564,14 @@
 /obj/item/storage/fancy/egg_box,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hall/kitchen)
+"EO" = (
+/obj/machinery/door/airlock/vault{
+	name = "Secure Storage"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/lowpop/hall/kitchen)
 "Ga" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/hatch/autoname/general,
@@ -550,6 +587,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall)
 "Gg" = (
@@ -572,6 +610,7 @@
 /obj/machinery/door/airlock/hatch/autoname/science,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/sci)
 "Hg" = (
@@ -594,6 +633,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/kitchen)
 "HA" = (
@@ -639,6 +679,9 @@
 /obj/machinery/computer/cryopod{
 	pixel_y = 32
 	},
+/obj/machinery/light_switch/on{
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall)
 "Kn" = (
@@ -674,6 +717,11 @@
 /obj/machinery/atmospherics/binary/pump/on{
 	target_pressure = 15000
 	},
+/obj/machinery/button/blast_door{
+	id_tag = "atmos_lock";
+	name = "window shutters";
+	pixel_x = 24
+	},
 /turf/simulated/open,
 /area/lowpop/eng/atmos)
 "Mg" = (
@@ -695,6 +743,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
+/obj/machinery/light_switch/on{
+	pixel_x = 24
+	},
 /turf/simulated/floor/plating,
 /area/lowpop/hall/smelter)
 "Mw" = (
@@ -769,6 +820,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hall/smelter)
 "QO" = (
@@ -787,6 +839,9 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/machinery/light_switch/on{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/sci)
@@ -885,6 +940,16 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/hall/smelter)
+"VS" = (
+/obj/structure/catwalk,
+/obj/machinery/alarm{
+	dir = 1;
+	icon_state = "alarm0";
+	pixel_x = 0;
+	pixel_y = -24
+	},
+/turf/simulated/floor/plating,
+/area/lowpop/hall/smelter)
 "Wd" = (
 /obj/item/mop,
 /obj/item/chems/glass/bucket,
@@ -911,6 +976,9 @@
 	},
 /obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/lowpop/hall/kitchen)
@@ -4273,7 +4341,7 @@ HA
 Zm
 rf
 PU
-NM
+VS
 ti
 QO
 lT
@@ -4528,8 +4596,8 @@ nZ
 WL
 tR
 Uz
-HA
-HA
+Uz
+Uz
 HA
 HA
 HA
@@ -4609,9 +4677,9 @@ Uz
 nZ
 DX
 DX
+EO
+BR
 Uz
-HA
-HA
 HA
 HA
 HA

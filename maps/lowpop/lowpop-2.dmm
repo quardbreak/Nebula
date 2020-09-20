@@ -80,6 +80,9 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/light_switch/on{
+	pixel_x = -24
+	},
 /turf/simulated/floor/carpet/green,
 /area/lowpop/hab_ring/sensor)
 "gl" = (
@@ -131,6 +134,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/sensor)
 "ht" = (
@@ -164,11 +168,11 @@
 /turf/simulated/floor/lino,
 /area/lowpop/hab_ring)
 "jH" = (
-/obj/machinery/light/small{
-	dir = 4;
-	icon_state = "bulb_map"
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/bar_coffee/full{
+	dir = 1
 	},
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "jM" = (
@@ -188,6 +192,7 @@
 /obj/machinery/alarm{
 	pixel_y = 25
 	},
+/obj/item/pen,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
 "kh" = (
@@ -202,6 +207,7 @@
 /area/lowpop/hab_ring)
 "kC" = (
 /obj/structure/table/marble,
+/obj/random/drinkbottle,
 /obj/random/drinkbottle,
 /obj/random/drinkbottle,
 /turf/simulated/floor/lino,
@@ -289,7 +295,7 @@
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "pz" = (
-/obj/machinery/reagentgrinder,
+/obj/machinery/chem_master,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "qL" = (
@@ -375,7 +381,10 @@
 /area/lowpop/hab_ring/med)
 "wG" = (
 /obj/machinery/light,
-/obj/machinery/vitals_monitor,
+/obj/structure/iv_drip,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "xp" = (
@@ -528,6 +537,12 @@
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
 	},
+/obj/structure/hygiene/sink{
+	dir = 4;
+	icon_state = "sink";
+	pixel_x = 11;
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/white,
 /area/lowpop/hab_ring/med)
 "AQ" = (
@@ -560,6 +575,7 @@
 	dir = 8;
 	id_tag = "space_lock"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "Cp" = (
@@ -632,8 +648,10 @@
 /area/lowpop/hab_ring/med)
 "GG" = (
 /obj/structure/table/steel,
-/obj/item/pen,
 /obj/random/drinkingglass,
+/obj/machinery/light_switch/on{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/lowpop/hab_ring)
 "GI" = (
@@ -733,10 +751,6 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/lowpop/hab_ring)
-"Mv" = (
-/obj/machinery/light/navigation/delay5,
-/turf/simulated/floor/reinforced/airless,
-/area/lowpop/hab_ring/med)
 "MH" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate,
@@ -756,6 +770,7 @@
 /obj/machinery/door/blast/regular{
 	id_tag = "space_lock"
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "NA" = (
@@ -763,15 +778,11 @@
 /obj/machinery/door/airlock/hatch/autoname/general,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/med)
 "NF" = (
-/obj/structure/hygiene/sink{
-	pixel_y = 23
-	},
-/obj/structure/iv_drip,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/machinery/reagentgrinder,
 /turf/simulated/floor/tiled/freezer,
 /area/lowpop/hab_ring/med)
 "NZ" = (
@@ -786,7 +797,8 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/obj/machinery/portable_atmospherics/canister/air,
+/obj/item/synthesized_instrument/synthesizer,
+/obj/structure/table/rack,
 /turf/simulated/floor/plating,
 /area/lowpop/hab_ring)
 "Pg" = (
@@ -843,7 +855,7 @@
 "Rf" = (
 /obj/machinery/light/navigation/delay5,
 /turf/simulated/floor/reinforced/airless,
-/area/lowpop/hab_ring)
+/area/space)
 "RU" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -860,12 +872,12 @@
 /area/lowpop/hab_ring)
 "SE" = (
 /obj/item/storage/firstaid/regular,
-/obj/structure/hygiene/sink{
-	pixel_y = 23
-	},
 /obj/random/medical/lite,
 /obj/random/medical/lite,
 /obj/structure/table/reinforced,
+/obj/machinery/light_switch/on{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/lowpop/hab_ring/med)
 "SX" = (
@@ -946,6 +958,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring/med)
 "WB" = (
@@ -995,6 +1008,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/hab_ring)
 "ZV" = (
@@ -4813,7 +4827,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 XN
 XN
 fU
@@ -4895,7 +4909,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 XN
 XN
 fU
@@ -4978,7 +4992,7 @@ mj
 mj
 mj
 mj
-mj
+XN
 XN
 fU
 fU
@@ -5060,8 +5074,8 @@ mj
 mj
 mj
 mj
-mj
-aF
+XN
+fU
 fU
 Zh
 Gk
@@ -5142,10 +5156,10 @@ mj
 mj
 mj
 mj
-mj
-aF
+XN
 fU
 NF
+WJ
 HR
 WJ
 AF
@@ -5224,8 +5238,8 @@ mj
 mj
 mj
 mj
-mj
-aF
+XN
+fU
 fU
 pz
 mT
@@ -5306,15 +5320,15 @@ mj
 mj
 mj
 mj
-mj
-mj
+XN
+XN
 fU
 fU
 fU
 fU
 fU
 XN
-Mv
+Rf
 XN
 XN
 mU
@@ -5389,11 +5403,11 @@ mj
 mj
 mj
 mj
-mj
-mj
-mj
-mj
-mj
+XN
+XN
+XN
+XN
+XN
 XN
 XN
 Fl
@@ -5472,11 +5486,11 @@ mj
 mj
 mj
 mj
-mj
-mj
-mj
-mj
-mj
+XN
+XN
+XN
+XN
+XN
 mj
 mj
 mj

@@ -60,6 +60,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/hatch/autoname/engineering,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng/atmos)
 "fO" = (
@@ -101,6 +102,9 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/light_switch/on{
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/lowpop/eng)
 "ic" = (
@@ -110,6 +114,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/light/small{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -315,6 +322,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/lowpop/eng)
 "rZ" = (
@@ -455,6 +463,9 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/tape_roll,
 /obj/item/storage/box/glowsticks,
+/obj/machinery/light_switch/on{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "Af" = (
@@ -578,11 +589,17 @@
 	dir = 4
 	},
 /obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/lowpop/eng/atmos)
 "Ed" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	icon_state = "alarm0";
+	pixel_x = -24
 	},
 /turf/simulated/floor/plating,
 /area/lowpop/eng/atmos)
@@ -789,6 +806,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 6
 	},
+/obj/machinery/light_switch/on{
+	pixel_y = 24
+	},
 /turf/simulated/floor/plating,
 /area/lowpop/eng/atmos)
 "RQ" = (
@@ -820,6 +840,9 @@
 "Tn" = (
 /obj/item/extinguisher,
 /obj/machinery/fabricator,
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/lowpop/dock)
 "TF" = (
