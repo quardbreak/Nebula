@@ -95,7 +95,7 @@ SUBSYSTEM_DEF(ticker)
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup() // Drafts antags who don't override jobs.
-		to_world("<FONT color='blue'><B>Enjoy the game!</B></FONT>")
+		to_world("<FONT color='blue'><B>Enjoy the pain!</B></FONT>")
 		sound_to(world, sound(GLOB.using_map.welcome_sound))
 		if(global.current_holiday)
 			to_world("<font color='blue'>and...</font>")
