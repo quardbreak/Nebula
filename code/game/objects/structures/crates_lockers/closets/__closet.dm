@@ -24,11 +24,24 @@
 	var/opened = FALSE
 	var/locked = FALSE
 
+	var/code1[8]
+	var/code2[8]
+	var/validate = 0
+	var/codelen
+	var/busy
+
 /obj/structure/closet/Initialize()
 	..()
 
 	if((setup & CLOSET_HAS_LOCK))
 		verbs += /obj/structure/closet/proc/togglelock_verb
+
+		codelen = rand(7,10)
+		code1.len = codelen
+		code2.len = codelen
+		for(var/i = 1 to codelen)
+			code1[i] = rand(0,9)
+			code2[i] = rand(0,9)
 
 	if(ispath(closet_appearance))
 		var/decl/closet_appearance/app = decls_repository.get_decl(closet_appearance)
@@ -94,7 +107,7 @@
 		stored_units += store_mobs(stored_units)
 	if(storage_types & CLOSET_STORAGE_STRUCTURES)
 		stored_units += store_structures(stored_units)
-		
+
 /obj/structure/closet/proc/open()
 	if(src.opened)
 		return 0
@@ -226,7 +239,7 @@
 		take_damage(proj_damage)
 
 /obj/structure/closet/attackby(obj/item/W, mob/user)
-	
+
 	if(user.a_intent == I_HURT && W.force)
 		return ..()
 
@@ -284,13 +297,19 @@
 			else
 				to_chat(user, "<span class='notice'>You need more welding fuel to complete this task.</span>")
 				return
-		src.welded = !src.welded
-		src.update_icon()
+		welded = !welded
+		update_icon()
 		user.visible_message("<span class='warning'>\The [src] has been [welded?"welded shut":"unwelded"] by \the [user].</span>", blind_message = "You hear welding.", range = 3)
 	else if(setup & CLOSET_HAS_LOCK)
-		src.togglelock(user, W)
+		if(isMultitool(W))
+			if(user.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT))
+				interact(usr)
+			else
+				to_chat(user,SPAN_NOTICE("You don't know how to interact with this lock."))
+		else
+			togglelock(user, W)
 	else
-		src.attack_hand(user)
+		attack_hand(user)
 
 /obj/structure/closet/proc/slice_into_parts(obj/W, mob/user)
 	new /obj/item/stack/material/steel(src.loc, 2)
@@ -521,3 +540,63 @@
 
 /obj/structure/closet/CanUseTopicPhysical(mob/user)
 	return CanUseTopic(user, GLOB.physical_no_access_state)
+
+/obj/structure/closet/interact(mob/user)
+	src.add_fingerprint(user)
+	var/dat = ""
+	dat += "<a href='?src=\ref[src];check=1'>Check lock</a><hr>"
+	for(var/i = 1 to codelen)
+		dat += "<a href='?src=\ref[src];inc=[i]'>+</a>"
+	dat += "<br>"
+	for(var/i = 1 to codelen)
+		dat += "[code2[i]]"
+	dat += "<br>"
+	for(var/i = 1 to codelen)
+		dat += "<a href='?src=\ref[src];dec=[i]'>-</a>"
+	user.set_machine(src)
+	var/datum/browser/popup = new(user, "closet", "[name]")
+	popup.set_content(dat)
+	popup.open(1)
+
+/obj/structure/closet/OnTopic(mob/user, list/href_list, state)
+	if(href_list["check"])
+		if(busy)
+			return TOPIC_NOACTION
+
+		busy = TRUE
+		validate = 0
+
+		to_chat(user, SPAN_NOTICE("Checking the lock..."))
+		var/obj/item/multitool/W = user.get_active_hand()
+		for(var/i = 1 to codelen)
+			if(do_after(user, 10, src))
+				if(code2[i] == code1[i])
+					validate++
+					to_chat(user, SPAN_NOTICE("Key match!"))
+					playsound(W, 'sound/machines/mbeep.ogg', 30, 1, frequency = rand(50000, 55000))
+				else
+					to_chat(user, SPAN_NOTICE("Key don't match."))
+
+		busy = FALSE
+
+		if(validate < codelen)
+			return
+
+		locked = !locked
+		update_icon()
+		user.visible_message(SPAN_WARNING("[user] has [locked ? "locked" : "hacked"] \the [src]!"))
+		return TOPIC_REFRESH
+
+	if(href_list["inc"])
+		var/inc = text2num(href_list["inc"])
+		code2[inc]++
+		if(code2[inc] > 9)
+			code2[inc] = 0
+		return TOPIC_REFRESH
+
+	if(href_list["dec"])
+		var/inc = text2num(href_list["dec"])
+		code2[inc]--
+		if(code2[inc] < 0)
+			code2[inc] = 9
+		return TOPIC_REFRESH
