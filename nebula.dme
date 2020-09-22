@@ -3268,7 +3268,6 @@
 #include "mods\_modpack.dm"
 #include "starlight\_global_vars\sound.dm"
 #include "starlight\_overrides\backpack.dm"
-#include "starlight\_overrides\footsteps.dm"
 #include "starlight\_overrides\jukebox.dm"
 #include "starlight\_overrides\map_overrides.dm"
 #include "starlight\_overrides\ooc.dm"

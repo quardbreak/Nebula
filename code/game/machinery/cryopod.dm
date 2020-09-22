@@ -476,7 +476,7 @@
 	if(usr.stat != 0)
 		return
 
-	icon_state = base_icon_state
+//	icon_state = base_icon_state
 
 	//Eject any items that aren't meant to be in the pod.
 	var/list/items = contents - component_parts
@@ -490,6 +490,7 @@
 	add_fingerprint(usr)
 
 	SetName(initial(name))
+	icon_state = base_icon_state
 	return
 
 /obj/machinery/cryopod/verb/move_inside()
