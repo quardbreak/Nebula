@@ -4,6 +4,9 @@
 		to_chat(src, "<div class=\"motd\">[join_motd]</div>")
 	to_chat(src, "<div class='info'>Game ID: <div class='danger'>[game_id]</div></div>")
 
+	if(GAME_STATE <= RUNLEVEL_LOBBY)
+		to_world(SPAN_NOTICE("LOBBY: [usr.key] has joined."))
+
 	if(!mind)
 		mind = new /datum/mind(key)
 		mind.active = 1
