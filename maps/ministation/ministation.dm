@@ -9,6 +9,14 @@ Now poorly imported for Nebula!
 	#include "../../mods/corporate/_corporate.dme"
 	#include "../../mods/ascent/_ascent.dme"
 
+	// - Starlight Edit -
+	#include "../../mods/dionaea/_dionaea.dme"
+
+	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/tajaran/_tajaran.dme"
+	#include "../../starlight/mods/tritonian/_tritonian.dme"
+	#include "../../starlight/mods/blindspot/_blindspot.dme"
+
 	#define USING_MAP_DATUM /datum/map/ministation
 
 	#include "ministation.dmm"
@@ -37,10 +45,6 @@ Now poorly imported for Nebula!
 	#include "outfits/medical.dm"
 	#include "outfits/science.dm"
 	#include "outfits/security.dm"
-
-	// - Starlight Edit -
-	#include "../../starlight/mods/booster/_booster.dme"
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 #elif !defined(MAP_OVERRIDE)
 

@@ -6,9 +6,13 @@
 	#include "../../mods/psionics/_psionics.dme"
 
 	// - Starlight Edit -
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
-	#include "../../starlight/mods/blindspot/_blindspot.dme"
+	#include "../../mods/dionaea/_dionaea.dme"
+
 	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/tajaran/_tajaran.dme"
+	#include "../../starlight/mods/tritonian/_tritonian.dme"
+	#include "../../starlight/mods/blindspot/_blindspot.dme"
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"

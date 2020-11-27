@@ -1,15 +1,12 @@
 #if !defined(USING_MAP_DATUM)
 
-	#define USING_MAP_DATUM /datum/map/lowpop
-
 	// - Starlight Edit -
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
-	#include "../../starlight/mods/blindspot/_blindspot.dme"
-	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../mods/dionaea/_dionaea.dme"
 
-	#include "lowpop-0.dmm"
-	#include "lowpop-1.dmm"
-	#include "lowpop-2.dmm"
+	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/tajaran/_tajaran.dme"
+	#include "../../starlight/mods/tritonian/_tritonian.dme"
+	#include "../../starlight/mods/blindspot/_blindspot.dme"
 
 	#include "lowpop_jobs.dm"
 	#include "lowpop_overrides.dm"
@@ -18,6 +15,12 @@
 	#include "lowpop_shuttles.dm"
 	#include "lowpop_unit_testing.dm"
 	#include "lowpop_antagonists.dm"
+
+	#include "lowpop-0.dmm"
+	#include "lowpop-1.dmm"
+	#include "lowpop-2.dmm"
+
+	#define USING_MAP_DATUM /datum/map/lowpop
 
 #elif !defined(MAP_OVERRIDE)
 

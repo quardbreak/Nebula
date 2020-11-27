@@ -12,14 +12,15 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
-	#define USING_MAP_DATUM /datum/map/modpack_testing
-
 	// - Starlight Edit -
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
-	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
+	#include "../../starlight/mods/tajaran/_tajaran.dme"
+	#include "../../starlight/mods/tritonian/_tritonian.dme"
 	#include "../../starlight/mods/blindspot/_blindspot.dme"
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
+
+	#define USING_MAP_DATUM /datum/map/modpack_testing
 
 #elif !defined(MAP_OVERRIDE)
 
