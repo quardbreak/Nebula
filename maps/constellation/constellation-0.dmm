@@ -1170,7 +1170,7 @@
 /turf/simulated/floor/bluegrid,
 /area/ship/trade/undercomms)
 "lA" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/disused)
 "lB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1435,7 +1435,7 @@
 /area/ship/trade/fore_port_underside_maint)
 "vn" = (
 /obj/structure/extinguisher_cabinet,
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/undercomms)
 "vP" = (
 /turf/simulated/floor/tiled/white,
@@ -1561,7 +1561,7 @@
 /turf/simulated/floor,
 /area/ship/trade/aft_port_underside_maint)
 "yO" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/loading_bay)
 "yQ" = (
 /turf/simulated/floor/tiled/techmaint,
@@ -1573,7 +1573,7 @@
 /turf/simulated/floor,
 /area/ship/trade/aft_port_underside_maint)
 "zb" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/livestock)
 "zi" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -1824,7 +1824,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/trade/loading_bay)
 "JQ" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/undercomms)
 "Ky" = (
 /obj/structure/cable{
@@ -2121,7 +2121,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/ship/trade/disused)
 "Xe" = (
-/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/fore_port_underside_maint)
 "Xo" = (
 /obj/structure/hygiene/drain,
