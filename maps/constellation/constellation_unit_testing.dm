@@ -19,3 +19,5 @@
 		/area/ship/trade/maintenance/atmos = NO_SCRUBBER
 	)
 
+	area_coherency_test_subarea_count = list(
+		/area/ship/trade/crew/hallway/port = 2)
