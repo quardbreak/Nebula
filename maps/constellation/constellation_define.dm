@@ -17,7 +17,7 @@
 	company_name  = "Legit Cargo Ltd."
 	company_short = "LC"
 	overmap_event_areas = 11
-	lobby_screens = list('maps/constellation/lobby/bloodmoney.png','maps/constellation/lobby/vapormoney.png')
+	lobby_screens = list('starlight/icons/starlight-lobby.png')
 	use_overmap = 1
 	num_exoplanets = 1
 	welcome_sound = 'sound/effects/cowboysting.ogg'
@@ -31,6 +31,11 @@
 	salary_modifier = 0.2
 
 	radiation_detected_message = "High levels of radiation have been detected in proximity of the %STATION_NAME%. Please move to a shielded area such as the cargo bay, dormitories or medbay until the radiation has passed."
+
+	lobby_tracks = list(
+		/music_track/rainfall_over_parallel_ports,
+		/music_track/karlskar
+	)
 
 /datum/map/constellation/get_map_info()
 	return "You're aboard the <b>[station_name],</b> a survey and mercantile vessel affiliated with the Free Trade Union. \
