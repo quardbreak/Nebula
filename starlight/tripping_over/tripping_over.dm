@@ -20,7 +20,7 @@
 		SPAN_NOTICE("You trip over \the [O]!"))
 
 // Pipes
-/obj/machinery/atmospherics
+/obj/machinery/atmospherics/pipe
 	trip_chance = 5
 
 /obj/machinery/atmospherics/pipe/trip_check(mob/user)
