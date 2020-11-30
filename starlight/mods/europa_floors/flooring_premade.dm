@@ -29,3 +29,6 @@
 
 /turf/simulated/floor/fixed
 	icon = ICON_PATH_TILES
+
+#undef ICON_PATH_PLATING
+#undef ICON_PATH_TILES
