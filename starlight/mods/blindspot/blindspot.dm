@@ -9,7 +9,7 @@
 
 /obj/screen/blindspot_overlay
 	name = ""
-	icon = 'blindspot.dmi'
+	icon = 'icons/blindspot.dmi'
 	icon_state = "combat"
 	screen_loc = "SOUTH, WEST"
 	mouse_opacity = FALSE

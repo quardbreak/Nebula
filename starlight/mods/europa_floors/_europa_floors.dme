@@ -2,8 +2,8 @@
 #define MODPACK_EUROPA_FLOORS
 // BEGIN_INCLUDE
 #include "europa_floors.dm"
-#include "turfs\flooring\flooring.dm"
-#include "turfs\flooring\flooring_premade.dm"
+#include "flooring.dm"
+#include "flooring_premade.dm"
 // END_INCLUDE
 #endif
 // BEGIN_INTERNALS
