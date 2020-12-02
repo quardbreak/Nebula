@@ -10,6 +10,7 @@
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
 	#include "../../starlight/mods/blindspot/_blindspot.dme"
+	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
 
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"

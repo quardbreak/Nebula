@@ -1,4 +1,4 @@
-#define FUSION_ENERGY_PER_K        20
+#define FUSION_ENERGY_PER_K        200 //Starlight edit, was 20. It's just nuclear fusion, you know.
 #define FUSION_INSTABILITY_DIVISOR 50000
 #define FUSION_RUPTURE_THRESHOLD   10000
 #define FUSION_REACTANT_CAP        10000

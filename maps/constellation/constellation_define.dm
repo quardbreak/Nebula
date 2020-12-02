@@ -16,10 +16,10 @@
 	boss_short    = "Merchant Admiral"
 	company_name  = "Legit Cargo Ltd."
 	company_short = "LC"
-	overmap_event_areas = 11
+	overmap_event_areas = 22
 	lobby_screens = list('starlight/icons/starlight-lobby.png')
 	use_overmap = 1
-	num_exoplanets = 1
+	num_exoplanets = 2
 	welcome_sound = 'sound/effects/cowboysting.ogg'
 	emergency_shuttle_leaving_dock = "Attention all hands: the escape pods have been launched, maintaining burn for %ETA%."
 	emergency_shuttle_called_message = "Attention all hands: emergency evacuation procedures are now in effect. Escape pods will launch in %ETA%"
@@ -30,7 +30,7 @@
 	department_money = 0
 	salary_modifier = 0.2
 
-	radiation_detected_message = "High levels of radiation have been detected in proximity of the %STATION_NAME%. Please move to a shielded area such as the cargo bay, dormitories or medbay until the radiation has passed."
+	radiation_detected_message = "High levels of radiation have been detected in proximity of the %STATION_NAME%. SHIELDED AREAS: Dormitories, Exploration Shuttle, Medical Bay, Cargo Hold, Brig, Elevator. Please move to a shielded area until the radiation has passed."
 
 	lobby_tracks = list(
 		/music_track/rainfall_over_parallel_ports,

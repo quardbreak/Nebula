@@ -1307,9 +1307,6 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled,
 /area/ship/trade/disused)
-"qK" = (
-/turf/simulated/wall/r_wall/hull,
-/area/ship/trade/loading_bay)
 "qQ" = (
 /obj/machinery/network/relay{
 	initial_network_id = "tradenet"
@@ -1426,7 +1423,7 @@
 /area/ship/trade/aft_port_underside_maint)
 "ux" = (
 /obj/structure/lattice,
-/turf/simulated/wall/r_wall/hull,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/disused)
 "vi" = (
 /obj/effect/fluid_mapped,
@@ -1468,7 +1465,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/ship/trade/livestock)
 "xc" = (
-/turf/simulated/wall/r_wall/hull,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/aft_port_underside_maint)
 "xy" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
@@ -1688,9 +1685,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/trade/loading_bay)
-"Gb" = (
-/turf/simulated/wall/r_wall/hull,
-/area/ship/trade/fore_port_underside_maint)
 "Gp" = (
 /obj/structure/table/standard,
 /obj/item/coin/iron{
@@ -1777,9 +1771,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/ship/trade/disused)
-"Iv" = (
-/turf/simulated/wall/r_wall/hull,
-/area/ship/trade/livestock)
 "IG" = (
 /obj/structure/bed/chair/comfy/green{
 	dir = 1
@@ -1861,9 +1852,6 @@
 /obj/item/taperoll/engineering/applied,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/loading_bay)
-"Lm" = (
-/turf/simulated/wall/r_wall/hull,
-/area/ship/trade/undercomms)
 "Lx" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -2056,9 +2044,6 @@
 /obj/effect/fluid_mapped,
 /turf/simulated/floor/reinforced,
 /area/ship/trade/fore_port_underside_maint)
-"SC" = (
-/turf/simulated/wall/r_wall/hull,
-/area/ship/trade/disused)
 "SE" = (
 /obj/machinery/door/airlock/hatch/autoname/general,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2151,7 +2136,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/disused)
 "Yc" = (
-/turf/simulated/wall/r_wall/hull,
+/turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/aft_starboard_underside_maint)
 "Yh" = (
 /obj/effect/decal/cleanable/generic,
@@ -4652,13 +4637,13 @@ aa
 aa
 aa
 aa
-Gb
-Gb
+Xe
+Xe
 ai
 ai
 ai
 ai
-Gb
+Xe
 xc
 aa
 aa
@@ -4729,12 +4714,12 @@ aa
 aa
 aa
 oX
-Gb
-Gb
-Gb
-Gb
-Gb
-Gb
+Xe
+Xe
+Xe
+Xe
+Xe
+Xe
 Xe
 Xe
 aj
@@ -4808,10 +4793,10 @@ aa
 aa
 aa
 aa
-SC
-SC
-SC
-Gb
+lA
+lA
+lA
+Xe
 fp
 ne
 ne
@@ -4890,7 +4875,7 @@ aa
 aa
 aa
 aa
-SC
+lA
 Ff
 Ux
 Xe
@@ -4972,7 +4957,7 @@ aa
 aa
 aa
 aa
-SC
+lA
 Qh
 IG
 Xe
@@ -5137,7 +5122,7 @@ aa
 aa
 aa
 ux
-SC
+lA
 ad
 lA
 XL
@@ -5218,7 +5203,7 @@ aa
 aa
 aa
 aa
-SC
+lA
 SS
 iY
 cX
@@ -5239,9 +5224,9 @@ bW
 bZ
 yO
 yO
-qK
-qK
-qK
+yO
+yO
+yO
 ai
 aa
 aa
@@ -5323,7 +5308,7 @@ yO
 aw
 aB
 aJ
-qK
+yO
 SK
 aa
 aa
@@ -5628,7 +5613,7 @@ aa
 aa
 aa
 aa
-SC
+lA
 rp
 Iu
 Iu
@@ -5649,9 +5634,9 @@ bE
 bR
 yO
 yO
-qK
-qK
-qK
+yO
+yO
+yO
 ai
 aa
 aa
@@ -5711,7 +5696,7 @@ aa
 aa
 aa
 ux
-SC
+lA
 Ug
 JQ
 JQ
@@ -5874,7 +5859,7 @@ aa
 aa
 aa
 aa
-SC
+lA
 lg
 Ho
 JQ
@@ -5956,7 +5941,7 @@ aa
 aa
 aa
 aa
-SC
+lA
 pU
 nU
 JQ
@@ -6038,10 +6023,10 @@ aa
 aa
 aa
 aa
-SC
-SC
-SC
-Lm
+lA
+lA
+lA
+JQ
 qQ
 HG
 JQ
@@ -6123,19 +6108,19 @@ aa
 aa
 aa
 aa
-Lm
-Lm
+JQ
+JQ
 ah
-Lm
+JQ
 at
-Iv
+zb
 aV
 zb
 zb
 nz
 nz
 nz
-Iv
+zb
 Yc
 Yc
 Yc
@@ -6210,14 +6195,14 @@ aa
 aa
 aa
 aa
-Iv
+zb
 HS
-Iv
-Iv
+zb
+zb
 jT
 jT
 jT
-Iv
+zb
 aa
 aa
 aa

@@ -14,25 +14,14 @@
 		/datum/job/constellation_researcher
 	)
 
-/obj/machinery/suit_cycler/constellation
-	boots = /obj/item/clothing/shoes/magboots
-	req_access = list()
+/obj/machinery/suit_cycler
+	initial_access = list() //TODO: re-check things on map for outdated access, since initial_access is used almost everywhere for now.
 
-/obj/machinery/suit_cycler/constellation/Initialize()
-	if(prob(75))
-		suit = pick(list(
-			/obj/item/clothing/suit/space/void/mining, 
-			/obj/item/clothing/suit/space/void/engineering, 
-			/obj/item/clothing/suit/space/void/pilot, 
-			/obj/item/clothing/suit/space/void/excavation, 
-			/obj/item/clothing/suit/space/void/engineering/salvage
-		))
-	if(prob(75))
-		helmet = pick(list(
-			/obj/item/clothing/head/helmet/space/void/mining, 
-			/obj/item/clothing/head/helmet/space/void/engineering, 
-			/obj/item/clothing/head/helmet/space/void/pilot, 
-			/obj/item/clothing/head/helmet/space/void/excavation, 
-			/obj/item/clothing/head/helmet/space/void/engineering/salvage
-		))
-	. = ..()
+/obj/machinery/suit_cycler/constellation
+	helmet = /obj/item/clothing/head/helmet/space/void/engineering
+	suit = /obj/item/clothing/suit/space/void/engineering
+	boots = /obj/item/clothing/shoes/magboots
+
+/obj/machinery/suit_cycler/constellation/salvage
+	helmet = /obj/item/clothing/head/helmet/space/void/engineering/salvage
+	suit = /obj/item/clothing/suit/space/void/engineering/salvage

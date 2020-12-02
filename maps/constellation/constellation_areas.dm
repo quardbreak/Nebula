@@ -1,252 +1,272 @@
 /area/ship/trade
-	name = "\improper Generic Ship"
+	name = "Generic Ship"
 	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambigen12.ogg')
 
+/*
+please do not remove my messages. they just look fancy to sort these areas. i rly dont like previous file. i know that it was sorted by area placement but..
+*/
+
+//Crew/Civilian
+
 /area/ship/trade/crew
-	name = "\improper Crew Compartements"
+	name = "Crew Compartments"
 	icon_state = "crew_quarters"
 
 /area/ship/trade/crew/hallway/port
-	name = "\improper Crew Hallway - Port"
+	name = "Crew Hallway - Port"
 
 /area/ship/trade/crew/hallway/starboard
-	name = "\improper Crew Hallway - Starboard"
+	name = "Crew Hallway - Starboard"
 
 /area/ship/trade/crew/kitchen
-	name = "\improper Galley"
+	name = "Kitchen"
 	icon_state = "kitchen"
 
+/area/ship/trade/crew/hydro
+	name = "Hydroponics"
+	icon_state = "green"
+
 /area/ship/trade/crew/dorms1
-	name = "\improper Crew Cabin #1"
+	name = "Crew Cabin #1"
 	icon_state = "green"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ship/trade/crew/dorms2
-	name = "\improper Crew Cabin #2"
+	name = "Crew Cabin #2"
 	icon_state = "purple"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ship/trade/crew/saloon
-	name = "\improper Saloon"
+	name = "Saloon"
 	icon_state = "conference"
 
+/area/ship/trade/crew/library
+	name = "Library"
+	icon_state = "yellow"
+
 /area/ship/trade/crew/toilets
-	name = "\improper Bathrooms"
+	name = "Bathrooms"
 	icon_state = "toilet"
-	turf_initializer = /decl/turf_initializer/maintenance
 
 /area/ship/trade/crew/wash
-	name = "\improper Washroom"
+	name = "Laundry"
 	icon_state = "locker"
 
-/area/ship/trade/crew/medbay
-	name = "\improper Medical Bay"
+//Docks
+
+/area/ship/trade/dock
+	name = "Docking Bay"
+	icon_state = "entry_1"
+
+/area/ship/trade/shuttle
+	name = "Exploration Shuttle"
+	icon_state = "tcomsatcham"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+//Escape Pods/Cryo
+
+/area/ship/trade/escape_port
+	name = "Port Escape Pods"
+	icon_state = "green"
+
+/area/ship/trade/escape_star
+	name = "Starboard Escape Pods"
+	icon_state = "yellow"
+
+//Command
+
+/area/ship/trade/command
+	req_access = list(access_heads)
+
+/area/ship/trade/command/hallway
+	name = "Command Deck"
+	icon_state = "centcom"
+	req_access = list()
+
+/area/ship/trade/command/bridge
+	name = "Bridge"
+	icon_state = "bridge"
+
+/area/ship/trade/command/bridge_upper
+	name = "Upper Bridge"
+	icon_state = "blue"
+
+/area/ship/trade/command/captain
+	name = "Captain's Quarters"
+	icon_state = "captain"
+	req_access = list(access_captain)
+
+/area/ship/trade/command/fmate
+	name = "First Mate's Office"
+	icon_state = "heads_hop"
+	req_access = list(access_hop)
+
+//Medical
+
+/area/ship/trade/medical
+	name = "Medical Bay"
 	icon_state = "medbay"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/ship/trade/medical/chemistry
+	name = "Chemistry Bay"
+	icon_state = "cave"
+	req_access = list(access_medical)
+
+//Science
+
+/area/ship/trade/science
+	name = "Research Bay"
+	icon_state = "green"
+	req_access = list(access_research)
+
+/area/ship/trade/science/fabricaton
+	name = "Fabrication Bay"
+	icon_state = "yellow"
+
+/area/ship/trade/science/artifact_storage
+	name = "Artifact Storage"
+	icon_state = "ai_cyborg"
+
+//Cargo
+
 /area/ship/trade/cargo
-	name = "\improper Cargo Hold"
+	name = "Cargo Hold"
 	icon_state = "quartstorage"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ship/trade/cargo/lower
 	name = "Loading Bay"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/ship/trade/dock
-	name = "\improper Docking Bay"
-	icon_state = "entry_1"
-
-/area/ship/trade/aft_port_underside_maint
-	name = "\improper Underside - Aft Port Maintenance"
-	icon_state = "medbay"
-
-/area/ship/trade/aft_starboard_underside_maint
-	name = "\improper Underside - Aft Starboard Maintenance"
-	icon_state = "toilet"
-
-/area/ship/trade/loading_bay
-	name = "\improper Underside - Loading Bay"
-	icon_state = "entry_1"
-
-/area/ship/trade/fore_port_underside_maint
-	name = "\improper Underside - Fore Port Maintenance"
-	icon_state = "green"
-
-/area/ship/trade/livestock
-	name = "\improper Underside - Livestock Handling"
-	icon_state = "red"
-	req_access = list(access_xenobiology)
-
-/area/ship/trade/fore_starboard_underside_maint
-	name = "\improper Underside - Fore Starboard Maintenance"
-	icon_state = "locker"
-
-/area/ship/trade/disused
-	name = "\improper Underside - Disused"
-	icon_state = "yellow"
-
-/area/ship/trade/undercomms
-	name = "\improper Underside - Communications Relay"
-	icon_state = "blue"
-
-/area/ship/trade/garden
-	name = "\improper Garden"
-	icon_state = "green"
-
-/area/ship/trade/unused
-	name = "\improper Compartment 2-B"
-	icon_state = "yellow"
-	turf_initializer = /decl/turf_initializer/maintenance
-	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
-
-/area/ship/trade/hidden
-	name = "\improper Unknown" //shielded compartment
-	icon_state = "auxstorage"
-
-/area/ship/trade/escape_port
-	name = "\improper Port Escape Pods"
-	icon_state = "green"
-
-/area/ship/trade/escape_star
-	name = "\improper Starboard Escape Pods"
-	icon_state = "yellow"
-
-/area/ship/trade/science
-	name = "\improper Research Bay"
-	icon_state = "green"
-	req_access = list(access_research)
-
-/area/ship/trade/science/fabricaton
-	name = "\improper Fabrication Bay"
-	icon_state = "yellow"
-	req_access = list(access_research)
-
-/area/ship/trade/crew/medbay/chemistry
-	name = "\improper Chemistry Bay"
-	icon_state = "cave"
-	req_access = list(access_medical)
+//Maint. and unused
 
 /area/ship/trade/maintenance
-	name = "\improper Maintenance Compartments"
+	name = "Maintenance Compartments"
 	icon_state = "amaint"
 
 /area/ship/trade/maintenance/hallway
-	name = "\improper Maintenance Corridors"
+	name = "Maintenance Corridors"
 
 /area/ship/trade/maintenance/lower
-	name = "\improper Lower Deck Maintenance Compartments"
+	name = "Lower Deck Maintenance Compartments"
 	icon_state = "sub_maint_aft"
-	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/ship/trade/maintenance/storage
-	name = "\improper Engineering Storage"
-	icon_state = "engineering_storage"
+/area/ship/trade/hidden
+	name = "Unknown"
+	icon_state = "auxstorage"
+
+/area/ship/trade/command/bridge_unused
+	name = "Bridge Starboard Storage"
+	icon_state = "armory"
+
+//Engineering
+
+/area/ship/trade/engineering
+	name = "Engineering Bay"
+	icon_state = "engineering_supply"
 	req_access = list(access_engine)
 
-/area/ship/trade/maintenance/techstorage
-	name = "\improper Parts Storage"
+	ambience = list('sound/ambience/ambigen3.ogg',
+					'sound/ambience/ambigen4.ogg',
+					'sound/ambience/ambigen5.ogg',
+					'sound/ambience/ambigen6.ogg',
+					'sound/ambience/ambigen7.ogg',
+					'sound/ambience/ambigen8.ogg',
+					'sound/ambience/ambigen9.ogg',
+					'sound/ambience/ambigen10.ogg',
+					'sound/ambience/ambigen11.ogg',
+					'sound/ambience/ambieng1.ogg')
+
+/area/ship/trade/engineering/storage
+	name = "Engineering Storage"
+	icon_state = "engineering_storage"
+
+/area/ship/trade/engineering/techstorage
+	name = "Parts Storage"
 	icon_state = "engineering_supply"
 
-/area/ship/trade/maintenance/eva
-	name = "\improper EVA Storage"
+/area/ship/trade/engineering/eva
+	name = "EVA Storage"
 	icon_state = "eva"
 	req_access = list(access_eva)
 
-/area/ship/trade/maintenance/engineering
-	name = "\improper Engineering Bay"
-	icon_state = "engineering_supply"
-	req_access = list(access_engine)
-
-/area/ship/trade/maintenance/atmos
-	name = "\improper Atmospherics Comparment"
+/area/ship/trade/engineering/atmos
+	name = "Atmospherics Comparment"
 	icon_state = "atmos"
-	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambiatm1.ogg')
-	req_access = list(access_engine)
 
-/area/ship/trade/maintenance/power
-	name = "\improper Power Compartment"
+/area/ship/trade/engineering/power
+	name = "Power Compartment"
 	icon_state = "engine_smes"
-	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambieng1.ogg')
-	req_access = list(access_engine)
 
-/area/ship/trade/maintenance/engine
+/area/ship/trade/engineering/engine
+	name = "Main Engine Bay"
 	icon_state = "engine"
-	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg','sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg','sound/ambience/ambieng1.ogg')
-	req_access = list(access_engine)
 
-/area/ship/trade/maintenance/engine/aft
-	name = "\improper Main Engine Bay"
-
-/area/ship/trade/maintenance/engine/port
-	name = "\improper Port Thruster"
-
-/area/ship/trade/maintenance/engine/starboard
-	name = "\improper Starboard Thruster"
-
-/area/ship/trade/command/hallway
-	name = "\improper Command Deck"
-	icon_state = "centcom"
-
-/area/ship/trade/command/bridge
-	name = "\improper Bridge"
-	icon_state = "bridge"
-	req_access = list(access_heads)
-
-/area/ship/trade/command/captain
-	name = "\improper Captain's Quarters"
-	icon_state = "captain"
-	req_access = list(access_captain)
-
-/area/ship/trade/command/fmate
-	name = "\improper First Mate's Office"
-	icon_state = "heads_hop"
-	req_access = list(access_hop)
-
-/area/ship/trade/shieldbay
-	name = "\improper Auxillary Shield Bay"
-	icon_state = "engine"
-	req_access = list(access_engine_equip)
-
-/area/ship/trade/command/bridge_upper
-	name = "\improper Upper Bridge"
-	icon_state = "blue"
-	req_access = list(access_heads)
-
-/area/ship/trade/comms
-	name = "\improper Communications Relay"
-	icon_state = "tcomsatcham"
-	ambience = list('sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg','sound/ambience/signal.ogg','sound/ambience/sonar.ogg')
-
-/area/ship/trade/bridge_unused
-	name = "\improper Bridge Starboard Storage"
-	icon_state = "armory"
-
-/area/ship/trade/shuttle
-	area_flags = AREA_FLAG_RAD_SHIELDED
-
-/area/ship/trade/shuttle/outgoing
-	name = "\improper Exploration Shuttle"
-	icon_state = "tcomsatcham"
-
-/area/ship/trade/maintenance/solars
-	name = "\improper Solar Array Access"
+/area/ship/trade/engineering/solars
+	name = "Solar Array Access"
 	icon_state = "SolarcontrolA"
-	req_access = list(access_engine)
 
-/area/ship/trade/artifact_storage
-	name = "\improper Artifact Storage"
-	icon_state = "ai_cyborg"
-	req_access = list(access_xenoarch)
+//Misc.
 
-/area/ship/trade/drunk_tank
-	name = "Drunk Tank"
+/area/ship/trade/brig
+	name = "Brig"
 	icon_state = "brig"
 	req_access = list(access_brig)
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/ship/trade/storage
+	name = "Secure Storage"
+	icon_state = "engine"
+	req_access = list(access_engine_equip)
+
+/area/ship/trade/comms
+	name = "Communications Relay"
+	icon_state = "tcomsatcham"
+	ambience = list('sound/ambience/ambigen3.ogg',
+					'sound/ambience/ambigen4.ogg',
+					'sound/ambience/signal.ogg',
+					'sound/ambience/sonar.ogg')
+	req_access = list(access_engine)
+
+//Underside. No bar for now T_T
+
+/area/ship/trade/aft_port_underside_maint
+	name = "Underside - Aft Port Maintenance"
+	icon_state = "medbay"
+
+/area/ship/trade/aft_starboard_underside_maint
+	name = "Underside - Aft Starboard Maintenance"
+	icon_state = "toilet"
+
+/area/ship/trade/loading_bay
+	name = "Underside - Loading Bay"
+	icon_state = "entry_1"
+
+/area/ship/trade/fore_port_underside_maint
+	name = "Underside - Fore Port Maintenance"
+	icon_state = "green"
+
+/area/ship/trade/livestock
+	name = "Underside - Livestock Handling"
+	icon_state = "red"
+	req_access = list(access_xenobiology)
+
+/area/ship/trade/fore_starboard_underside_maint
+	name = "Underside - Fore Starboard Maintenance"
+	icon_state = "locker"
+
+/area/ship/trade/disused
+	name = "Underside - Disused"
+	icon_state = "yellow"
+
+/area/ship/trade/undercomms
+	name = "Underside - Communications Relay"
+	icon_state = "blue"
+
+//Elevator
+
 /area/turbolift
-	name = "\improper Cargo Elevator"
+	name = "Cargo Elevator"
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
