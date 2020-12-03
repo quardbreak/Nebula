@@ -79,11 +79,11 @@
 	name = "small jumpsuit"
 	desc = "A small jumpsuit. Looks pretty much perfect to fit a resomi."
 
-	icon = 'icons/clothing/obj_under.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/obj_under.dmi'
 	icon_state = "jumpsuit"
 
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'icons/clothing/onmob_under.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_under.dmi')
 
 /obj/item/clothing/under/resomi/simple
 	name = "small smock"
@@ -208,11 +208,11 @@
 	name = "small glass helmet"
 	desc = "Small glass dome made of durable glass alloy. It's wearer surely will have a spectacular view."
 
-	icon = 'icons/clothing/obj_head.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/obj_head.dmi'
 	icon_state = "space_dome"
 
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'icons/clothing/onmob_head.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_head.dmi')
 
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_AIRTIGHT
 	flags_inv  = HIDEMASK | BLOCKHAIR
@@ -231,20 +231,20 @@
 
 /obj/item/clothing/head/helmet/space/void/engineering/resomi
 	name = "heavy resomi voidsuit helmet"
-	icon = 'icons/clothing/obj_head.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/obj_head.dmi'
 	icon_state = "heavy"
 
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'icons/clothing/onmob_head.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_head.dmi')
 	light_overlay = "heavy_light"
 
 /obj/item/clothing/suit/space/void/engineering/resomi
 	name = "heavy resomi voidsuit"
-	icon = 'icons/clothing/obj_suit.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/obj_suit.dmi'
 	icon_state = "heavy"
 
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'icons/clothing/onmob_suit.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_suit.dmi')
 
 /obj/item/clothing/suit/space/void/engineering/resomi/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering/resomi
@@ -254,20 +254,20 @@
 
 /obj/item/clothing/shoes/resomi
 	name = "small shoes"
-	icon = 'icons/clothing/shoes.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/shoes.dmi'
 	color = COLOR_GRAY
 	bodytype_restricted = list(BODYTYPE_RESOMI)
 
 /obj/item/clothing/shoes/magboots/resomi
 	name = "small magshoes"
-	icon = 'icons/clothing/shoes_mag.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/shoes_mag.dmi'
 	bodytype_restricted = list(BODYTYPE_RESOMI)
 	online_slowdown = -1.5
 
 /obj/item/clothing/gloves/thick/resomi
 	name = "small shielded gloves"
 	desc = "A small pair of thick insulated gloves."
-	icon = 'icons/clothing/gloves.dmi'
+	icon = 'starlight/mods/resomi/icons/clothing/gloves.dmi'
 	bodytype_restricted = list(BODYTYPE_RESOMI)
 	siemens_coefficient = 0
 

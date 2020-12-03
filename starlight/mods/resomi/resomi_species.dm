@@ -14,15 +14,15 @@
 	swap_flags        = MONKEY|SLIME|SIMPLE_ANIMAL
 	push_flags        = MONKEY|SLIME|SIMPLE_ANIMAL|ALIEN
 
-	icobase           = 'icons/body.dmi'
-	deform            = 'icons/body.dmi'
-	damage_overlays   = 'icons/damage_overlay.dmi'
-	damage_mask       = 'icons/damage_mask.dmi'
-	blood_mask        = 'icons/blood_mask.dmi'
-	preview_icon      = 'icons/preview.dmi'
-	husk_icon         = 'icons/husk.dmi'
-	tail_icon = 'icons/tail.dmi'
-	tail      = "tail"
+	icobase           = 'starlight/mods/resomi/icons/body.dmi'
+	deform            = 'starlight/mods/resomi/icons/body.dmi'
+	damage_overlays   = 'starlight/mods/resomi/icons/damage_overlay.dmi'
+	damage_mask       = 'starlight/mods/resomi/icons/damage_mask.dmi'
+	blood_mask        = 'starlight/mods/resomi/icons/blood_mask.dmi'
+	preview_icon      = 'starlight/mods/resomi/icons/preview.dmi'
+	husk_icon         = 'starlight/mods/resomi/icons/husk.dmi'
+	tail_icon         = 'starlight/mods/resomi/icons/tail.dmi'
+	tail              = "tail"
 
 	base_color        = "#001144"
 	flesh_color       = "#5f7bb0"
@@ -86,7 +86,7 @@
 		else			. = 8
 
 /datum/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
-	return 'icons/surgery.dmi'
+	return 'starlight/mods/resomi/icons/surgery.dmi'
 
 /obj/item/holder/human/resomi
 	w_class = ITEM_SIZE_NORMAL
@@ -98,5 +98,5 @@
 	parent_organ = BP_CHEST
 
 /obj/item/organ/internal/eyes/resomi
-	eye_icon = 'icons/eyes.dmi'
+	eye_icon = 'starlight/mods/resomi/icons/eyes.dmi'
 	icon_state = "eyes"

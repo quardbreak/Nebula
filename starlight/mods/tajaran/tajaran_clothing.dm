@@ -1,5 +1,5 @@
-#define TAJ_OBJ 'icons/clothing/obj.dmi'
-#define TAJ_MOB 'icons/clothing/onmob.dmi'
+#define TAJ_OBJ 'starlight/mods/tajaran/icons/clothing/obj.dmi'
+#define TAJ_MOB 'starlight/mods/tajaran/icons/clothing/onmob.dmi'
 
 //Clothing!//
 

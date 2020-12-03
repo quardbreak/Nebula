@@ -13,17 +13,17 @@
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 
-	icobase = 'icons/body.dmi'
-	deform =  'icons/deformed_body.dmi'
+	icobase = 'starlight/mods/tajaran/icons/body.dmi'
+	deform =  'starlight/mods/tajaran/icons/deformed_body.dmi'
 	bandages_icon = 'icons/mob/bandage.dmi'
-	preview_icon = 'icons/preview.dmi'
-	tail_animation = 'icons/tail.dmi'
+	preview_icon = 'starlight/mods/tajaran/icons/preview.dmi'
+	tail_animation = 'starlight/mods/tajaran/icons/tail.dmi'
 	tail = "tajtail"
 
 	flesh_color = "#afa59e"
 	base_color = "#333333"
 	blood_color = "#862a51"
-	organs_icon = 'icons/organs.dmi'
+	organs_icon = 'starlight/mods/tajaran/icons/organs.dmi'
 
 	default_h_style = "Tajaran Ears"
 
