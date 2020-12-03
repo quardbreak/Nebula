@@ -9,6 +9,7 @@
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
+	#include "../../starlight/mods/resomi/_resomi.dme"
 	#include "../../starlight/mods/blindspot/_blindspot.dme"
 	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
 

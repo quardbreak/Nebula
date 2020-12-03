@@ -272,6 +272,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/trade/loading_bay)
+"aD" = (
+/obj/random/maintenance,
+/obj/random/trash,
+/obj/item/stack/material/deuterium/fifty,
+/obj/item/stack/material/deuterium/fifty,
+/obj/structure/closet/crate,
+/turf/simulated/floor,
+/area/ship/trade/aft_starboard_underside_maint)
 "aE" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
@@ -693,7 +701,6 @@
 	pixel_x = 24
 	},
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/random/mre/sauce/crayon,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "bN" = (
@@ -788,6 +795,11 @@
 	pixel_y = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "bT" = (
@@ -812,10 +824,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/random/trash,
-/obj/item/haircomb/random,
-/obj/random/tech_supply,
-/obj/random/single/textbook,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "bV" = (
@@ -916,6 +924,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/item/clothing/suit/space/void/engineering/resomi/prepared,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "cb" = (
@@ -929,7 +938,11 @@
 /turf/simulated/floor,
 /area/ship/trade/aft_port_underside_maint)
 "cr" = (
-/obj/item/minihoe,
+/obj/random/maintenance,
+/obj/random/loot,
+/obj/random/junk,
+/obj/random/trash,
+/obj/machinery/portable_atmospherics/canister/empty/oxygen,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "cI" = (
@@ -1229,7 +1242,10 @@
 /turf/simulated/floor,
 /area/ship/trade/disused)
 "oo" = (
-/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/obj/random/junk,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "or" = (
@@ -1277,8 +1293,6 @@
 	dir = 1;
 	level = 2
 	},
-/obj/item/wrench,
-/obj/random/tool,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "oX" = (
@@ -1384,6 +1398,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/livestock)
+"sZ" = (
+/obj/machinery/door/airlock/hatch/autoname/general,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	pixel_y = 0
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/trade/loading_bay)
 "tD" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -1686,14 +1713,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/trade/loading_bay)
 "Gp" = (
-/obj/structure/table/standard,
-/obj/item/coin/iron{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/clothing/accessory/bracelet,
-/obj/random/lipstick,
-/obj/random/coin,
+/obj/structure/closet/crate,
+/obj/item/tank/oxygen/yellow,
+/obj/item/tank/oxygen/yellow,
+/obj/item/tank/oxygen/yellow,
+/obj/item/tank/oxygen/yellow,
+/obj/item/clothing/suit/space/void/engineering/resomi/prepared,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "GH" = (
@@ -1817,6 +1842,16 @@
 "JQ" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/ship/trade/undercomms)
+"Ks" = (
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/junk,
+/obj/random/junk,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor,
+/area/ship/trade/aft_starboard_underside_maint)
 "Ky" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -1992,7 +2027,6 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/obj/random/toy,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "Qh" = (
@@ -2150,10 +2184,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/closet/crate,
-/obj/item/clothing/accessory/medal/gold,
-/obj/item/clothing/accessory/locket,
-/obj/random_multi/single_item/captains_spare_id,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "YL" = (
@@ -2187,7 +2224,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/trade/loading_bay)
 "YZ" = (
-/obj/structure/hygiene/sink/puddle,
+/obj/structure/closet/wardrobe/resomi,
+/obj/item/clothing/suit/space/void/engineering/resomi/prepared,
+/obj/item/clothing/suit/space/void/engineering/resomi/prepared,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "Zz" = (
@@ -2201,10 +2240,8 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table/standard,
-/obj/item/stack/material/uranium,
-/obj/item/knife/table/plastic,
-/obj/item/clothing/accessory/bowtie/ugly,
-/obj/random/action_figure,
+/obj/random/junk,
+/obj/item/clothing/suit/space/void/engineering/resomi/prepared,
 /turf/simulated/floor,
 /area/ship/trade/aft_starboard_underside_maint)
 "ZA" = (
@@ -5794,7 +5831,7 @@ zb
 zb
 zb
 bB
-SE
+sZ
 bS
 PZ
 bU
@@ -6039,8 +6076,8 @@ ZA
 bp
 bp
 zb
-oo
-oo
+Ks
+aD
 KO
 oO
 bK

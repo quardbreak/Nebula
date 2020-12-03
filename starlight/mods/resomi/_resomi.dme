@@ -1,0 +1,18 @@
+#ifndef MODPACK_RESOMI
+#define MODPACK_RESOMI
+// BEGIN_INCLUDE
+#include "_resomi.dm"
+#include "resomi_accessory.dm"
+#include "resomi_clothing.dm"
+#include "resomi_culture.dm"
+#include "resomi_loadout.dm"
+#include "resomi_species.dm"
+// END_INCLUDE
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
