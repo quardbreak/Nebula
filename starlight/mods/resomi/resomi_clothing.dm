@@ -11,10 +11,10 @@
 /datum/species/resomi/New()
 	equip_adjust = list(
 		slot_head_str = list(
-			"[NORTH]" = list("x" = 0,  "y" = -5),
-			"[EAST]" =  list("x" = 0,  "y" = -5),
-			"[WEST]" =  list("x" = 0,  "y" = -5),
-			"[SOUTH]" = list("x" = 0,  "y" = -5)
+			"[NORTH]" = list("x" = 1, "y" = -6),
+			"[EAST]" =  list("x" = 0,  "y" = -6),
+			"[WEST]" =  list("x" = 0,  "y" = -6),
+			"[SOUTH]" = list("x" = 1,  "y" = -6)
 		),
 		slot_back_str = list(
 			"[NORTH]" = list("x" = 0,  "y" = -5),
@@ -29,22 +29,22 @@
 			"[SOUTH]" = list("x" = 0,  "y" = -3)
 		),
 		slot_glasses_str = list(
-			"[NORTH]" = list("x" = 0,  "y" = -4),
-			"[EAST]" =  list("x" = 0,  "y" = -4),
-			"[WEST]" =  list("x" = 0, "y" = -4),
-			"[SOUTH]" = list("x" = 0,  "y" = -4)
+			"[NORTH]" = list("x" = 1,  "y" = -6),
+			"[EAST]" =  list("x" = 0,  "y" = -6),
+			"[WEST]" =  list("x" = 0,  "y" = -6),
+			"[SOUTH]" = list("x" = 0,  "y" = -6)
 		),
 		slot_l_hand_str = list(
-			"[NORTH]" = list("x" = 2,  "y" = -3),
-			"[EAST]" =  list("x" = 2,  "y" = -3),
-			"[WEST]" =  list("x" = -2, "y" = -3),
-			"[SOUTH]" = list("x" = -2, "y" = -3)
+			"[NORTH]" = list("x" = 0,  "y" = -3),
+			"[EAST]" =  list("x" = 0,  "y" = -3),
+			"[WEST]" =  list("x" = 0, "y" = -3),
+			"[SOUTH]" = list("x" = 0, "y" = -3)
 		),
 		slot_r_hand_str = list(
-			"[NORTH]" = list("x" = -2, "y" = -3),
-			"[EAST]" =  list("x" = 2,  "y" = -3),
-			"[WEST]" =  list("x" = -2, "y" = -3),
-			"[SOUTH]" = list("x" = 2,  "y" = -3)
+			"[NORTH]" = list("x" = 0, "y" = -3),
+			"[EAST]" =  list("x" = 0,  "y" = -3),
+			"[WEST]" =  list("x" = 0, "y" = -3),
+			"[SOUTH]" = list("x" = 0,  "y" = -3)
 		),
 		slot_wear_mask_str = list(
 			"[NORTH]" = list("x" = 0,  "y" = -4),
