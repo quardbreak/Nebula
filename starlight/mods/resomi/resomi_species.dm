@@ -39,6 +39,7 @@
 	metabolism_mod    = 2.0
 	mob_size          = MOB_SIZE_SMALL
 	holder_type       = /obj/item/holder/human/resomi
+	breath_pressure   = 8
 
 	blood_volume      = 280
 	body_temperature  = 314.15
@@ -89,7 +90,8 @@
 	return 'starlight/mods/resomi/icons/surgery.dmi'
 
 /obj/item/holder/human/resomi
-	w_class = ITEM_SIZE_NORMAL
+	icon = 'starlight/mods/resomi/icons/holder.dmi'
+	w_class = ITEM_SIZE_LARGE
 
 /obj/item/organ/internal/kidneys/resomi
 	parent_organ = BP_CHEST
@@ -100,3 +102,20 @@
 /obj/item/organ/internal/eyes/resomi
 	eye_icon = 'starlight/mods/resomi/icons/eyes.dmi'
 	icon_state = "eyes"
+
+//some unexpected runtimes in observation.dm, turned this off a bit. todo: fix this later, it crashes at 110 (expecting atom/movable and getting turf)
+
+/*
+
+/obj/item/storage/MouseDrop_T(atom/dropping, mob/living/user)
+	if(dropping == user && usr == user && user.mob_size <= MOB_SIZE_SMALL && src.loc != user)
+		var/obj/item/holder/holder = new user.holder_type(get_turf(user))
+		holder.sync(user)
+		user.forceMove(holder)
+		if(can_be_inserted(holder))
+			handle_item_insertion(holder)
+			return
+		if(holder) holder.Destroy()
+	..()
+
+*/
