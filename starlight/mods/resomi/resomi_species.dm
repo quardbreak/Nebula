@@ -70,6 +70,11 @@
 		"You feel sluggish and cold.",
 		"Your feathers bristle against the cold.")
 
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/resomi_sonar_ping,
+		/mob/living/proc/toggle_pass_table
+		)
+
 	descriptors = list(
 		/datum/mob_descriptor/height = -8,
 		/datum/mob_descriptor/build = -8
