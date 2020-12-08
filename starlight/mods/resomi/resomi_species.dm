@@ -23,6 +23,7 @@
 	husk_icon         = 'starlight/mods/resomi/icons/husk.dmi'
 	tail_icon         = 'starlight/mods/resomi/icons/tail.dmi'
 	tail              = "tail"
+	tail_hair         = "feathers_s"
 
 	base_color        = "#001144"
 	flesh_color       = "#5f7bb0"
@@ -84,6 +85,11 @@
 								BP_KIDNEYS = /obj/item/organ/internal/kidneys/resomi,
 								BP_EYES = /obj/item/organ/internal/eyes/resomi)
 
+	override_limb_types = list(	BP_R_FOOT = /obj/item/organ/external/foot/right/resomi,
+								BP_L_FOOT = /obj/item/organ/external/foot/resomi,
+								BP_R_HAND = /obj/item/organ/external/hand/right/resomi,
+								BP_L_HAND = /obj/item/organ/external/hand/resomi)
+
 /datum/species/resomi/skills_from_age(age)
 	switch(age)
 		if(0 to 17)		. = -4
@@ -107,6 +113,20 @@
 /obj/item/organ/internal/eyes/resomi
 	eye_icon = 'starlight/mods/resomi/icons/eyes.dmi'
 	icon_state = "eyes"
+/obj/item/organ/internal/kidneys/resomi
+	parent_organ = BP_CHEST
+
+/obj/item/organ/external/foot/resomi
+	body_hair = "feathers"
+
+/obj/item/organ/external/foot/right/resomi
+	body_hair = "feathers"
+
+/obj/item/organ/external/hand/resomi
+	body_hair = "feathers"
+
+/obj/item/organ/external/hand/right/resomi
+	body_hair = "feathers"
 
 //some unexpected runtimes in observation.dm, turned this off a bit. todo: fix this later, it crashes at 110 (expecting atom/movable and getting turf)
 
