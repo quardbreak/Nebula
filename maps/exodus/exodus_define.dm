@@ -30,4 +30,4 @@
 	)
 
 /datum/map/exodus/get_map_info()
-	return "Welcome to Walkabout Station, one of the largest remaining stopovers between the core worlds and the rim. Once a corporate science station called the Exodus, it has been recently refurbished and rezoned for civilian use. Enjoy your stay!"
+	return "Welcome to Exodus Station, one of the largest remaining stopovers between the core worlds and the rim. Once a corporate science station called the Exodus, it has been recently refurbished and rezoned for civilian use. Enjoy your stay!"
