@@ -1,15 +1,16 @@
 /datum/map/exodus
-	name =                 "Walkabout"
-	full_name =            "Walkabout Station"
-	path =                 "exodus"
-	station_name  =        "Walkabout Station"
-	station_short =        "Walkabout"
-	dock_name     =        "New Gundagai"
-	boss_name     =        "Peregrine Group"
-	boss_short    =        "PG"
-	company_name  =        "Peregrine Group"
-	company_short =        "PG"
-	system_name =          "Tailem's Star"
+	name          = "Exodus"
+	full_name     = "NSS Exodus"
+	path          = "exodus"
+
+	station_name  = "NSS Exodus"
+	station_short = "Exodus"
+	dock_name     = "NAS Crescent"
+	boss_name     = "Central Command"
+	boss_short    = "Centcomm"
+	company_name  = "NanoTrasen"
+	company_short = "NT"
+	system_name   = "Nyx"
 
 	station_levels =       list(1,2)
 	contact_levels =       list(1,2)
