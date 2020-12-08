@@ -50382,6 +50382,7 @@
 /obj/effect/floor_decal/corner/brown{
 	dir = 10
 	},
+/obj/item/rig/industrial/equipped,
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
 "bRW" = (
