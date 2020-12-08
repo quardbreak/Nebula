@@ -3290,6 +3290,7 @@
 #include "starlight\music_tracks\liquidcontrol.dm"
 #include "starlight\music_tracks\rainfall_over_parallel_ports.dm"
 #include "starlight\noose\noose.dm"
+#include "starlight\pixel_shift\pixel_shift.dm"
 #include "starlight\sprite_accessory\hair.dm"
 #include "starlight\sprite_accessory\markings.dm"
 #include "starlight\tripping_over\tripping_over.dm"
