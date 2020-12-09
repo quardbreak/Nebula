@@ -14,7 +14,7 @@
 
 	// Visual and audio mods
 //	#include "../../starlight/mods/blindspot/_blindspot.dme"
-//	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
+	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"
