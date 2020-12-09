@@ -2,6 +2,7 @@
 	overmap_event_areas = 6
 	use_overmap = 1
 	num_exoplanets = 2
+	planet_size = list(129,129)
 
 /obj/effect/overmap/visitable/ship/exodus
 	name = "Exodus Station"
