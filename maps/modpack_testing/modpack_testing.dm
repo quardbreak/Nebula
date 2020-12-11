@@ -12,11 +12,17 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
-	// - Starlight Edit -
+	// - Starlight -
+	// General content mod
+	#include "../../starlight/mods/starlight/_starlight.dme"
+
+	// Species mods
 	#include "../../starlight/mods/resomi/_resomi.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
+
+	// Visual and audio mods
 	#include "../../starlight/mods/blindspot/_blindspot.dme"
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"

@@ -4,6 +4,9 @@
 	#include "../../mods/ascent/_ascent.dme"
 	#include "../../mods/dionaea/_dionaea.dme"
 
+	// General content mod
+	#include "../../starlight/mods/starlight/_starlight.dme"
+
 	// Species mods
 	#include "../../starlight/mods/resomi/_resomi.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
