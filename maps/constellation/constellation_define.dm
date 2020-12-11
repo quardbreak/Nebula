@@ -16,7 +16,6 @@
 	boss_short    = "Merchant Admiral"
 	company_name  = "Legit Cargo Ltd."
 	company_short = "LC"
-	lobby_screens = list('starlight/icons/starlight-lobby.png')
 
 	overmap_event_areas = 6
 	use_overmap = 1
@@ -34,11 +33,6 @@
 	salary_modifier = 0.2
 
 	radiation_detected_message = "High levels of radiation have been detected in proximity of the %STATION_NAME%. SHIELDED AREAS: Dormitories, Exploration Shuttle, Medical Bay, Cargo Hold, Brig, Elevator. Please move to a shielded area until the radiation has passed."
-
-	lobby_tracks = list(
-		/music_track/rainfall_over_parallel_ports,
-		/music_track/karlskar
-	)
 
 /datum/map/constellation/get_map_info()
 	return "You're aboard the <b>[station_name],</b> a survey and mercantile vessel affiliated with the Free Trade Union. \

@@ -4,6 +4,9 @@
 	#include "../../mods/ascent/_ascent.dme"
 	#include "../../mods/dionaea/_dionaea.dme"
 
+	// General content mod
+	#include "../../starlight/mods/starlight/_starlight.dme"
+
 	// Species mods
 	#include "../../starlight/mods/resomi/_resomi.dme"
 	#include "../../starlight/mods/booster/_booster.dme"
@@ -37,6 +40,7 @@
 	#include "constellation_documents.dm"
 	#include "constellation_jobs.dm"
 	#include "constellation_loadouts.dm"
+	#include "constellation_lobby.dm"
 	#include "constellation_overmap.dm"
 	#include "constellation_overrides.dm"
 	#include "constellation_shuttles.dm"
