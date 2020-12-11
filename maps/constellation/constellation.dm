@@ -40,6 +40,7 @@
 	#include "constellation_documents.dm"
 	#include "constellation_jobs.dm"
 	#include "constellation_loadouts.dm"
+	#include "constellation_lobby.dm"
 	#include "constellation_overmap.dm"
 	#include "constellation_overrides.dm"
 	#include "constellation_shuttles.dm"

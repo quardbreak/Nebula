@@ -23,11 +23,5 @@
 	shuttle_called_message = "A public ferry to %dock_name% has been scheduled. It will arrive in approximately %ETA%"
 	shuttle_recall_message = "The scheduled ferry has been cancelled."
 
-	lobby_screens = list('starlight/icons/starlight-lobby-exodus.jpg')
-	lobby_tracks = list(
-		/music_track/rainfall_over_parallel_ports,
-		/music_track/karlskar
-	)
-
 /datum/map/exodus/get_map_info()
 	return "Welcome to Exodus Station, one of the largest remaining stopovers between the core worlds and the rim. Once a corporate science station called the Exodus, it has been recently refurbished and rezoned for civilian use. Enjoy your stay!"

@@ -59,6 +59,7 @@
 	#include "exodus_elevator.dm"
 	#include "exodus_jobs.dm"
 	#include "exodus_loadout.dm"
+	#include "exodus_lobby.dm"
 	#include "exodus_overmap.dm"
 	#include "exodus_setup.dm"
 	#include "exodus_shuttles.dm"
