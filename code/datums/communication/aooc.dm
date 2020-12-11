@@ -23,7 +23,6 @@
 			return FALSE
 
 /decl/communication_channel/aooc/do_communicate(client/C, message)
-	message = emoji_parse(message)
 	var/datum/admins/holder = C.holder
 
 	for(var/client/target in GLOB.clients)

@@ -3271,6 +3271,5 @@
 #include "maps\~unit_tests\unit_testing.dm"
 #include "mods\_modpack.dm"
 #include "starlight\_global_vars\sound.dm"
-#include "starlight\emoji\emoji_parse.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE
