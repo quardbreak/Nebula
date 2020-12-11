@@ -1271,9 +1271,9 @@
 /area/security/armoury)
 "acB" = (
 /obj/machinery/power/solar_control{
+	dir = 4;
 	id_tag = "auxsolarnorth";
-	name = "Fore Solar Control";
-	track = 0
+	name = "Fore Solar Control"
 	},
 /obj/structure/cable/yellow,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -19263,7 +19263,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/sleep)
 "aKH" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/central_two)
 "aKI" = (
@@ -19869,7 +19871,9 @@
 /turf/simulated/floor/plating,
 /area/rnd/robotics)
 "aLV" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/central_two)
 "aLW" = (
@@ -22261,10 +22265,6 @@
 /obj/machinery/fabricator/book,
 /turf/simulated/floor/wood/walnut,
 /area/library)
-"aQv" = (
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/wood/walnut,
-/area/library)
 "aQw" = (
 /obj/machinery/photocopier,
 /obj/structure/table/woodentable,
@@ -22737,8 +22737,7 @@
 /area/crew_quarters/bar)
 "aRw" = (
 /obj/machinery/vending/cigarette{
-	pixel_x = 0;
-	pixel_y = 0
+	dir = 8
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/carpet,
@@ -22879,7 +22878,7 @@
 /area/library)
 "aRM" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/carpet,
 /area/library)
 "aRN" = (
 /obj/structure/bookcase{
@@ -28215,7 +28214,7 @@
 /obj/machinery/door/airlock/glass{
 	name = "Library"
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/starboard)
 "bcx" = (
 /obj/effect/wallframe_spawn/reinforced,
@@ -28780,7 +28779,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/tiled,
 /area/hallway/primary/starboard)
 "bdv" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -29074,7 +29073,9 @@
 /turf/simulated/floor/wood/yew,
 /area/crew_quarters/bar)
 "beg" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 1
+	},
 /turf/simulated/floor/wood/yew,
 /area/crew_quarters/bar)
 "beh" = (
@@ -33629,7 +33630,9 @@
 	icon_state = "alarm0";
 	pixel_y = -22
 	},
-/obj/machinery/computer/modular/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian{
+	dir = 1
+	},
 /turf/simulated/floor/wood/yew,
 /area/crew_quarters/bar)
 "bmR" = (
@@ -47416,7 +47419,9 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/central_three)
 "bMw" = (
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/central_two)
 "bMx" = (
@@ -50016,6 +50021,7 @@
 /area/engineering/foyer)
 "bRr" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/storage)
 "bRs" = (
@@ -51514,7 +51520,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/vending/cigarette{
-	pixel_x = 0;
+	dir = 1;
 	pixel_y = 2
 	},
 /turf/simulated/floor/tiled,
@@ -57762,7 +57768,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_eva)
 "cfN" = (
-/obj/machinery/vending/robotics,
+/obj/machinery/vending/robotics{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/robotics)
 "cfO" = (
@@ -62649,7 +62657,9 @@
 /turf/space,
 /area/space)
 "cpD" = (
-/obj/machinery/computer/modular/preset/engineering,
+/obj/machinery/computer/modular/preset/engineering{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "cpE" = (
@@ -66644,7 +66654,9 @@
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "cDA" = (
-/obj/machinery/computer/drone_control,
+/obj/machinery/computer/drone_control{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "cDB" = (
@@ -67034,7 +67046,9 @@
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "cFC" = (
-/obj/machinery/computer/shuttle_control/engineering,
+/obj/machinery/computer/shuttle_control/engineering{
+	dir = 1
+	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
@@ -67047,14 +67061,18 @@
 /turf/simulated/floor/plating,
 /area/maintenance/engi_shuttle)
 "cFH" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 4
+	},
 /obj/effect/floor_decal/corner/lime{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "cFI" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 8
+	},
 /obj/effect/floor_decal/corner/lime{
 	dir = 6
 	},
@@ -67338,7 +67356,9 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "cGZ" = (
-/obj/machinery/computer/drone_control,
+/obj/machinery/computer/drone_control{
+	dir = 4
+	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
@@ -69186,7 +69206,9 @@
 /turf/simulated/floor/tiled/white,
 /area/ship/exodus_pod_research)
 "kSt" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 1
+	},
 /turf/simulated/floor/wood/yew,
 /area/crew_quarters/bar)
 "lDi" = (
@@ -69611,7 +69633,7 @@
 	dir = 1
 	},
 /obj/machinery/computer/shuttle_control/mining{
-	dir = 1
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/miningdock)
@@ -113009,12 +113031,12 @@ aLi
 aLl
 aMR
 aNj
-hLX
-aON
-aON
-aON
-aON
-aON
+aRL
+aRL
+aRL
+aRL
+aRL
+aRL
 aZB
 bbH
 bdd
@@ -113266,7 +113288,7 @@ aJk
 aEF
 aOL
 aOf
-aQv
+aRM
 aRM
 aRM
 aRM
