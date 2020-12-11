@@ -9,14 +9,6 @@ Now poorly imported for Nebula!
 	#include "../../mods/corporate/_corporate.dme"
 	#include "../../mods/ascent/_ascent.dme"
 
-	// - Starlight Edit -
-	#include "../../mods/dionaea/_dionaea.dme"
-
-	#include "../../starlight/mods/booster/_booster.dme"
-	#include "../../starlight/mods/tajaran/_tajaran.dme"
-	#include "../../starlight/mods/tritonian/_tritonian.dme"
-	#include "../../starlight/mods/blindspot/_blindspot.dme"
-
 	#define USING_MAP_DATUM /datum/map/ministation
 
 	#include "ministation.dmm"
