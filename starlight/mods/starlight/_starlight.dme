@@ -2,7 +2,6 @@
 #define MODPACK_STARLIGHT
 // BEGIN_INCLUDE
 #include "_starlight.dm"
-#include "_global_vars\sound.dm"
 #include "_overrides\backpack.dm"
 #include "_overrides\footsteps.dm"
 #include "_overrides\jukebox.dm"
