@@ -12,7 +12,6 @@
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
 
-	// - Starlight -
 	// General content mod
 	#include "../../starlight/mods/starlight/_starlight.dme"
 
