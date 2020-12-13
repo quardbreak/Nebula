@@ -228,7 +228,7 @@ please do not remove my messages. they just look fancy to sort these areas. i rl
 					'sound/ambience/sonar.ogg')
 	req_access = list(access_engine)
 
-//Underside. No bar for now T_T
+//Underside.
 
 /area/ship/trade/aft_port_underside_maint
 	name = "Underside - Aft Port Maintenance"
@@ -255,8 +255,8 @@ please do not remove my messages. they just look fancy to sort these areas. i rl
 	name = "Underside - Fore Starboard Maintenance"
 	icon_state = "locker"
 
-/area/ship/trade/disused
-	name = "Underside - Disused"
+/area/ship/trade/bar
+	name = "Underside - Bar"
 	icon_state = "yellow"
 
 /area/ship/trade/undercomms
