@@ -544,9 +544,6 @@
 	if(!occupant)
 		return
 
-	if(!do_after(usr, 3 SECONDS, src))
-		return
-
 	if(occupant.client)
 		occupant.client.eye = src.occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
@@ -579,9 +576,9 @@
 
 	SetName("[name] ([occupant])")
 	icon_state = occupied_icon_state
-/*
+
 /obj/machinery/cryopod/relaymove(var/mob/user)
-	go_out()*/
+	go_out()
 
 //A prop version for away missions and such
 
