@@ -81,9 +81,6 @@
 /obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/ship/trade/undercomms)
-"ai" = (
-/turf/simulated/floor/airless,
-/area/space)
 "aj" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/regular{
@@ -1053,11 +1050,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/trade/loading_bay)
-"gf" = (
-/obj/structure/lattice,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
-/area/ship/trade/bar)
 "hf" = (
 /obj/structure/lattice,
 /obj/structure/cable{
@@ -1820,9 +1812,6 @@
 /turf/simulated/floor/tiled,
 /area/ship/trade/bar)
 "IG" = (
-/obj/structure/bed/chair/comfy/green{
-	dir = 1
-	},
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
@@ -4746,10 +4735,10 @@ aa
 aa
 Xe
 Xe
-ai
-ai
-ai
-ai
+JF
+JF
+JF
+JF
 Xe
 xc
 aa
@@ -5885,7 +5874,7 @@ aa
 aa
 aa
 ab
-gf
+Ho
 zw
 JQ
 Mb
