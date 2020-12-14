@@ -1,8 +1,11 @@
 #if !defined(USING_MAP_DATUM)
 
+	#include "../../mods/utility_frames/_utility_frames.dme"
 	#include "../../mods/corporate/_corporate.dme"
 	#include "../../mods/ascent/_ascent.dme"
 	#include "../../mods/dionaea/_dionaea.dme"
+
+// STARLIGHT MODS START
 
 	// General content mod
 	#include "../../starlight/mods/starlight/_starlight.dme"
@@ -16,6 +19,8 @@
 	// Visual and audio mods
 	#include "../../starlight/mods/blindspot/_blindspot.dme"
 	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
+
+// STARLIGHT MODS END
 
 	#include "../../mods/government/away_sites/icarus/icarus.dm"
 	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"
