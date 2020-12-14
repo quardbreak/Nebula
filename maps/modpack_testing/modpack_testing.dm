@@ -11,6 +11,7 @@
 	#include "..\..\mods\ascent\_ascent.dme"
 	#include "..\..\mods\modern_earth\_modern_earth.dme"
 	#include "..\..\mods\dionaea\_dionaea.dme"
+	#include "..\..\mods\utility_frames\_utility_frames.dme"
 
 	// General content mod
 	#include "../../starlight/mods/starlight/_starlight.dme"
