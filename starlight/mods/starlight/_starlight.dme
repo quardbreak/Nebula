@@ -4,7 +4,6 @@
 #include "_starlight.dm"
 #include "_overrides\backpack.dm"
 #include "_overrides\footsteps.dm"
-#include "_overrides\initialize.dm"
 #include "_overrides\jukebox.dm"
 #include "_overrides\admin\topic.dm"
 #include "_overrides\emotes\_species.dm"
@@ -22,6 +21,7 @@
 #include "pixel_shift\pixel_shift.dm"
 #include "sprite_accessory\hair.dm"
 #include "sprite_accessory\markings.dm"
+#include "synthetic_scanlines\synthetic_scanlines.dm"
 #include "tripping_over\tripping_over.dm"
 #include "webhooks\webhook_message_ooc.dm"
 // END_INCLUDE
