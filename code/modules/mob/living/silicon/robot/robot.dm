@@ -246,8 +246,9 @@
 				to_chat(src, "<span class='warning'>Custom Sprite Sheet does not contain a valid icon_state for [ckey]-[modtype]</span>")
 		else
 			icontype = module_sprites[1]
-		icon_state = module_sprites[icontype]
-	update_icon()
+
+		do_transform_animation(module_sprites[icontype])
+
 	return module_sprites
 
 /mob/living/silicon/robot/proc/reset_module(var/suppress_alert = null)
@@ -479,7 +480,7 @@
 
 /mob/living/silicon/robot/bullet_act(var/obj/item/projectile/Proj)
 	..(Proj)
-	if(prob(75) && Proj.damage > 0) 
+	if(prob(75) && Proj.damage > 0)
 		spark_system.start()
 	return 2
 
@@ -937,6 +938,7 @@
 
 	if(lockcharge != state)
 		lockcharge = state
+		anchored = state
 		UpdateLyingBuckledAndVerbStatus()
 		return 1
 	return 0
@@ -974,8 +976,7 @@
 	if(!icontype)
 		return
 
-	icon_state = module_sprites[icontype]
-	update_icon()
+	do_transform_animation(module_sprites[icontype])
 
 	icon_selected = TRUE
 	to_chat(src, "Your icon has been set. You now require a module reset to change it.")
@@ -1120,3 +1121,27 @@
 	if(.)
 		handle_selfinsert(W, user)
 		recalculate_synth_capacities()
+
+/mob/living/silicon/robot/proc/do_transform_animation(var/robo_icon)
+	if(!robo_icon)
+		return
+
+	var/obj/effect/fading/ANM = new /obj/effect/fading(loc, src)
+	ANM.layer = layer - 0.01
+	new /obj/effect/fading/smoke(loc)
+
+	alpha = 0
+	animate(src, icon_state = robo_icon, alpha = 255, time = 5 SECONDS)
+
+	var/cached_lockcharge = lockcharge
+	SetLockdown(1)
+
+	sleep(2)
+	for(var/i in 1 to 4)
+		playsound(src, pick('sound/items/drill_use.ogg', 'sound/items/jaws_cut.ogg', 'sound/items/jaws_pry.ogg', 'sound/items/Welder.ogg', 'sound/items/Ratchet.ogg'), 80, 1, -1)
+		sleep(12)
+
+	if(!cached_lockcharge)
+		SetLockdown(0)
+
+	update_icon()

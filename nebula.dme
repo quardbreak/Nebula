@@ -849,6 +849,7 @@
 #include "code\game\objects\effects\cig_smoke.dm"
 #include "code\game\objects\effects\effect_system.dm"
 #include "code\game\objects\effects\explosion_particles.dm"
+#include "code\game\objects\effects\fading.dm"
 #include "code\game\objects\effects\fake_fire.dm"
 #include "code\game\objects\effects\fluids.dm"
 #include "code\game\objects\effects\force_portal.dm"
