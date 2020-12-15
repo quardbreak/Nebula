@@ -4,6 +4,7 @@
 #include "_starlight.dm"
 #include "_overrides\backpack.dm"
 #include "_overrides\footsteps.dm"
+#include "_overrides\initialize.dm"
 #include "_overrides\jukebox.dm"
 #include "_overrides\admin\topic.dm"
 #include "_overrides\emotes\_species.dm"
