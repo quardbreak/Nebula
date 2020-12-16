@@ -8,6 +8,7 @@
 #include "_overrides\admin\topic.dm"
 #include "_overrides\emotes\_species.dm"
 #include "_overrides\emotes\audible.dm"
+#include "ghost\ghost.dm"
 #include "music_player\_music_player.dm"
 #include "music_player\_music_tape.dm"
 #include "music_player\music_player.dm"
