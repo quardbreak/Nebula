@@ -16,8 +16,6 @@
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
 
-	// Visual and audio mods
-	#include "../../starlight/mods/blindspot/_blindspot.dme"
 	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
 
 // STARLIGHT MODS END
