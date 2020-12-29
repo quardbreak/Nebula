@@ -1,14 +1,14 @@
-/datum/species/resomi
+/decl/species/resomi
 	bodytype = BODYTYPE_RESOMI
 
-/datum/species/resomi/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 1)
+/decl/species/resomi/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 1)
 	. = ..()
 	qdel(H.shoes)
 	H.shoes = null
 	H.equip_to_slot(new /obj/item/clothing/shoes/resomi,   slot_shoes_str)
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/resomi/work, slot_w_uniform_str)
 
-/datum/species/resomi/New()
+/decl/species/resomi/New()
 	equip_adjust = list(
 		slot_head_str = list(
 			"[NORTH]" = list("x" = 1, "y" = -6),

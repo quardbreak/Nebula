@@ -6,6 +6,7 @@
 #include "resomi_clothing.dm"
 #include "resomi_culture.dm"
 #include "resomi_loadout.dm"
+#include "resomi_markings.dm"
 #include "resomi_power.dm"
 #include "resomi_species.dm"
 // END_INCLUDE

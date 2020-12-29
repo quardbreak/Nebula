@@ -1,4 +1,4 @@
-/datum/species/tajaran
+/decl/species/tajaran
 	name = SPECIES_TAJARA
 	name_plural = "Tajaran"
 
@@ -75,6 +75,6 @@
 		)
 	autohiss_exempt = list(LANGUAGE_TAJARA)
 
-/datum/species/tajaran/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 1)
+/decl/species/tajaran/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 1)
 	. = ..()
 	H.equip_to_slot_or_del(new /obj/item/clothing/glasses/tajblind, slot_glasses_str)

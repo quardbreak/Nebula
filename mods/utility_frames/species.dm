@@ -1,4 +1,4 @@
-/datum/species/utility_frame
+/decl/species/utility_frame
 	name =                  SPECIES_FRAME
 	name_plural =           "Utility Frames"
 	description =           "Simple AI-driven robots are used for many menial or repetitive tasks in human space."
@@ -51,19 +51,26 @@
 		BP_EYES = /obj/item/organ/internal/eyes/robot
 	)
 
-/datum/species/utility_frame/post_organ_rejuvenate(obj/item/organ/org, mob/living/carbon/human/H)
+	exertion_effect_chance = 10
+	exertion_charge_scale = 1
+	exertion_emotes_synthetic = list(
+		/decl/emote/exertion/synthetic,
+		/decl/emote/exertion/synthetic/creak
+	)
+
+/decl/species/utility_frame/post_organ_rejuvenate(obj/item/organ/org, mob/living/carbon/human/H)
 	var/obj/item/organ/external/E = org
 	if(istype(E) && !BP_IS_PROSTHETIC(E))
 		E.robotize(SPECIES_FRAME)
-	var/obj/item/organ/external/head/head = H.organs_by_name[BP_HEAD]
+	var/obj/item/organ/external/head/head = org
 	if(istype(head))
 		head.glowing_eyes = TRUE
-	var/obj/item/organ/internal/eyes/eyes = H.internal_organs_by_name[vision_organ || BP_EYES]
+	var/obj/item/organ/internal/eyes/eyes = org
 	if(istype(eyes))
 		eyes.eye_icon = 'mods/utility_frames/icons/eyes.dmi'
 	H.regenerate_icons()
 
-/datum/species/utility_frame/handle_post_species_pref_set(var/datum/preferences/pref)
+/decl/species/utility_frame/handle_post_species_pref_set(var/datum/preferences/pref)
 	if(pref)
 		LAZYINITLIST(pref.body_markings)
 		for(var/marking in list("Frame Body Plating", "Frame Leg Plating", "Frame Head Plating"))
@@ -72,8 +79,8 @@
 		pref.skin_colour = "#333355"
 		pref.eye_colour = "#00ccff"
 
-/datum/species/utility_frame/get_blood_name()
+/decl/species/utility_frame/get_blood_name()
 	. = "coolant"
 
-/datum/species/utility_frame/disfigure_msg(var/mob/living/carbon/human/H)
+/decl/species/utility_frame/disfigure_msg(var/mob/living/carbon/human/H)
 	. = SPAN_DANGER("The faceplate is dented and cracked!\n")

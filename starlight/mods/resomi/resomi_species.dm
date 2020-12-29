@@ -1,4 +1,4 @@
-/datum/species/resomi
+/decl/species/resomi
 	name              = SPECIES_RESOMI
 	name_plural       = "Resomii"
 	description       = "A tiny creature prone to make RYAAAAAAAAAAAAAAAAAAAAAA."
@@ -85,19 +85,14 @@
 								BP_KIDNEYS = /obj/item/organ/internal/kidneys/resomi,
 								BP_EYES = /obj/item/organ/internal/eyes/resomi)
 
-	override_limb_types = list(	BP_R_FOOT = /obj/item/organ/external/foot/right/resomi,
-								BP_L_FOOT = /obj/item/organ/external/foot/resomi,
-								BP_R_HAND = /obj/item/organ/external/hand/right/resomi,
-								BP_L_HAND = /obj/item/organ/external/hand/resomi)
-
-/datum/species/resomi/skills_from_age(age)
+/decl/species/resomi/skills_from_age(age)
 	switch(age)
 		if(0 to 17)		. = -4
 		if(18 to 25)	. = 0
 		if(26 to 35)	. = 4
 		else			. = 8
 
-/datum/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
+/decl/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
 	return 'starlight/mods/resomi/icons/surgery.dmi'
 
 /obj/item/holder/human/resomi
@@ -113,20 +108,9 @@
 /obj/item/organ/internal/eyes/resomi
 	eye_icon = 'starlight/mods/resomi/icons/eyes.dmi'
 	icon_state = "eyes"
+
 /obj/item/organ/internal/kidneys/resomi
 	parent_organ = BP_CHEST
-
-/obj/item/organ/external/foot/resomi
-	body_hair = "feathers"
-
-/obj/item/organ/external/foot/right/resomi
-	body_hair = "feathers"
-
-/obj/item/organ/external/hand/resomi
-	body_hair = "feathers"
-
-/obj/item/organ/external/hand/right/resomi
-	body_hair = "feathers"
 
 //some unexpected runtimes in observation.dm, turned this off a bit. todo: fix this later, it crashes at 110 (expecting atom/movable and getting turf)
 

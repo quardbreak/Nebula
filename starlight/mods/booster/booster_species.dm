@@ -1,4 +1,4 @@
-/datum/species/human/booster
+/decl/species/human/booster
 	name = SPECIES_BOOSTER
 	name_plural = "Boosters"
 	description = "The self-proclaimed 'boosters' are a loosely affiliated group of self-modifying \
@@ -12,7 +12,7 @@
 
 #define MOD_BASE     0.85
 #define MOD_VARIANCE 0.35
-/datum/species/human/booster/proc/get_mod(mob/living/carbon/human/booster, mod_type)
+/decl/species/human/booster/proc/get_mod(mob/living/carbon/human/booster, mod_type)
 	if(istype(booster) && !booster.isSynthetic())
 		var/mob_ref = booster.ckey || "\ref[booster]"
 		if(!islist(mods[mob_ref]))
@@ -28,27 +28,27 @@
 #undef MOD_BASE
 #undef MOD_VARIANCE
 
-/datum/species/human/booster/get_brute_mod(mob/living/carbon/human/H)
+/decl/species/human/booster/get_brute_mod(mob/living/carbon/human/H)
 	. = get_mod(H, "brute")
 	if(isnull(.))
 		. = ..()
 
-/datum/species/human/booster/get_burn_mod(mob/living/carbon/human/H)
+/decl/species/human/booster/get_burn_mod(mob/living/carbon/human/H)
 	. = get_mod(H, "burn")
 	if(isnull(.))
 		. = ..()
 
-/datum/species/human/booster/get_toxins_mod(mob/living/carbon/human/H)
+/decl/species/human/booster/get_toxins_mod(mob/living/carbon/human/H)
 	. = get_mod(H, "toxins")
 	if(isnull(.))
 		. = ..()
 
-/datum/species/human/booster/get_radiation_mod(mob/living/carbon/human/H)
+/decl/species/human/booster/get_radiation_mod(mob/living/carbon/human/H)
 	. = get_mod(H, "radiation")
 	if(isnull(.))
 		. = ..()
 
-/datum/species/human/booster/get_slowdown(mob/living/carbon/human/H)
+/decl/species/human/booster/get_slowdown(mob/living/carbon/human/H)
 	. = get_mod(H, "slowdown")
 	if(isnull(.))
 		. = ..()
