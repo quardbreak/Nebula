@@ -24,6 +24,7 @@
 #include "sprite_accessory\markings.dm"
 #include "synthetic_scanlines\synthetic_scanlines.dm"
 #include "tripping_over\tripping_over.dm"
+#include "verbs\fix_preferences.dm"
 #include "webhooks\webhook_message_ooc.dm"
 // END_INCLUDE
 #endif
