@@ -1,4 +1,4 @@
-/datum/species/human/tritonian
+/decl/species/human/tritonian
 	name = SPECIES_TRITONIAN
 	name_plural = "Tritonians"
 	description = "Of all human gene-adapts, the Tritonian genotype is probably the most wildly divergent from \

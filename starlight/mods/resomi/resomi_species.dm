@@ -1,4 +1,4 @@
-/datum/species/resomi
+/decl/species/resomi
 	name              = SPECIES_RESOMI
 	name_plural       = "Resomii"
 	description       = "A tiny creature prone to make RYAAAAAAAAAAAAAAAAAAAAAA."
@@ -90,14 +90,14 @@
 								BP_R_HAND = /obj/item/organ/external/hand/right/resomi,
 								BP_L_HAND = /obj/item/organ/external/hand/resomi)
 
-/datum/species/resomi/skills_from_age(age)
+/decl/species/resomi/skills_from_age(age)
 	switch(age)
 		if(0 to 17)		. = -4
 		if(18 to 25)	. = 0
 		if(26 to 35)	. = 4
 		else			. = 8
 
-/datum/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
+/decl/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
 	return 'starlight/mods/resomi/icons/surgery.dmi'
 
 /obj/item/holder/human/resomi

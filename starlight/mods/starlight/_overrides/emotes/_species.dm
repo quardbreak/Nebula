@@ -1,4 +1,4 @@
-/datum/species/human
+/decl/species/human
 	default_emotes = list(
 		/decl/emote/audible/gasp/human,
 		/decl/emote/audible/whistle/human,
@@ -14,7 +14,7 @@
 		/decl/emote/audible/scream/human
 		)
 
-/datum/species/monkey
+/decl/species/monkey
 	default_emotes = list(
 		/decl/emote/audible/scream/monkey
 		)

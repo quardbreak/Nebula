@@ -1,4 +1,4 @@
-/datum/species
+/decl/species
 	var/have_blindspot = TRUE
 
 /mob/living/carbon/human/Initialize(mapload, new_species = null)

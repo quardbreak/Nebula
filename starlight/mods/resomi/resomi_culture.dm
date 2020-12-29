@@ -1,6 +1,6 @@
 //Culture
 
-/datum/species/resomi
+/decl/species/resomi
 	available_cultural_info = list(
 		TAG_CULTURE = list(
 			CULTURE_RESOMI
