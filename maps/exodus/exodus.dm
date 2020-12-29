@@ -19,7 +19,6 @@
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
 
 	// Visual and audio mods
-//	#include "../../starlight/mods/blindspot/_blindspot.dme"
 //	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 // STARLIGHT MODS END
