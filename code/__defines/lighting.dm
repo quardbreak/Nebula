@@ -5,7 +5,7 @@
 
 #define END_FOR_DVIEW GLOB.dview_mob.loc = null
 
-#define LIGHTING_ICON 'starlight/icons/effects/lighting_overlay_tiled.dmi' // icon used for lighting shading effects
+#define LIGHTING_ICON 'icons/effects/lighting_overlay.dmi' // icon used for lighting shading effects
 #define LIGHTING_ICON_STATE_DARK "dark" // Change between "soft_dark" and "dark" to swap soft darkvision
 
 #define LIGHTING_ROUND_VALUE (1 / 64) // Value used to round lumcounts, values smaller than 1/69 don't matter (if they do, thanks sinking points), greater values will make lighting less precise, but in turn increase performance, VERY SLIGHTLY.
