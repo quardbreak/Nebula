@@ -21,9 +21,6 @@
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/content/psionics/_psionics.dme"
 
-	#include "../../mods/content/corporate/_corporate.dme"
-	#include "../../mods/species/utility_frames/_utility_frames.dme"
-
 	#include "../random_ruins/exoplanet_ruins/playablecolony/playablecolony.dm"
 
 	#include "../../mods/content/government/away_sites/icarus/icarus.dm"
