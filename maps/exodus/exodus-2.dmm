@@ -2434,7 +2434,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/door/blast/shutters{
-	dir = 2;
+	dir = 4;
 	id_tag = "subarmory";
 	name = "Sub-Armory Storage"
 	},
@@ -45945,7 +45945,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/rnd/xenobiology)
+/area/maintenance/research_port)
 "bJG" = (
 /obj/machinery/navbeacon/CHE,
 /obj/structure/cable{
@@ -53755,7 +53755,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/effect/floor_decal/corner/purple{
 	dir = 9
 	},
@@ -61631,7 +61633,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/storage)
 "cnv" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
@@ -69476,6 +69480,22 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
+"roQ" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/research_starboard)
 "rup" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -116556,7 +116576,7 @@ aVq
 aVq
 bww
 bww
-bJF
+roQ
 cdO
 cdO
 aZP
