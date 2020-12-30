@@ -4053,7 +4053,7 @@
 	},
 /obj/item/radio/headset/headset_eng,
 /obj/item/paint_sprayer,
-/obj/machinery/requests_console{
+/obj/machinery/network/requests_console{
 	department = "Atmospherics";
 	name = "Atmos RC";
 	pixel_x = 0;
@@ -6617,7 +6617,7 @@
 /area/maintenance/telecomms)
 "Jv" = (
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/message_server,
+/obj/machinery/network/message_server,
 /turf/simulated/floor/bluegrid,
 /area/maintenance/telecomms)
 "JP" = (

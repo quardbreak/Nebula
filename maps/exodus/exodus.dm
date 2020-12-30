@@ -1,12 +1,5 @@
 #if !defined(USING_MAP_DATUM)
 
-	#include "../../mods/misc/mundane.dm"
-	#include "../../mods/utility_frames/_utility_frames.dme"
-	#include "../../mods/corporate/_corporate.dme"
-	#include "../../mods/ascent/_ascent.dme"
-	#include "../../mods/psionics/_psionics.dme"
-	#include "../../mods/dionaea/_dionaea.dme"
-
 // STARLIGHT MODS START
 
 	// General content mod
@@ -18,17 +11,22 @@
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
 
-	// Visual and audio mods
 //	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 
 // STARLIGHT MODS END
 
+	#include "../../mods/content/mundane.dm"
+	#include "../../mods/content/corporate/_corporate.dme"
+	#include "../../mods/species/utility_frames/_utility_frames.dme"
+	#include "../../mods/mobs/dionaea/_dionaea.dme"
+	#include "../../mods/content/psionics/_psionics.dme"
+
 	#include "../random_ruins/exoplanet_ruins/playablecolony/playablecolony.dm"
 
-	#include "../../mods/government/away_sites/icarus/icarus.dm"
-	#include "../../mods/government/ruins/ec_old_crash/ec_old_crash.dm"
-	#include "../../mods/corporate/away_sites/lar_maria/lar_maria.dm"
-	#include "../../mods/ascent/away_sites/ascent/ascent.dm"
+	#include "../../mods/content/government/away_sites/icarus/icarus.dm"
+	#include "../../mods/content/government/ruins/ec_old_crash/ec_old_crash.dm"
+	#include "../../mods/content/corporate/away_sites/lar_maria/lar_maria.dm"
+	#include "../../mods/species/ascent/away_sites/ascent/ascent.dm"
 
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/casino/casino.dm"

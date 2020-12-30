@@ -751,7 +751,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/trade/engineering/solars)
 "Jo" = (
-/obj/machinery/message_server,
+/obj/machinery/network/message_server{
+	initial_network_id = "tradenet"
+	},
 /turf/simulated/floor/bluegrid,
 /area/ship/trade/comms)
 "Ko" = (
