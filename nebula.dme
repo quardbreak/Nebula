@@ -3269,6 +3269,5 @@
 #include "maps\~mapsystem\maps_unit_testing.dm"
 #include "maps\~unit_tests\unit_testing.dm"
 #include "mods\_modpack.dm"
-#include "starlight\_global_vars\sound.dm"
 #include "~code\global_init.dm"
 // END_INCLUDE

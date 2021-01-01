@@ -16,15 +16,14 @@
 // STARLIGHT MODS START
 
 	// General content mod
-	#include "../../starlight/mods/starlight/_starlight.dme"
+	#include "../../starlight/mods/content/starlight/_starlight.dme"
 
 	// Species mods
 	#include "../../starlight/mods/species/resomi/_resomi.dme"
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
 
 	// Visual and audio mods
-	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
-	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
+	#include "../../starlight/mods/content/europa_floors/_europa_floors.dme"
 
 // STARLIGHT MODS END
 

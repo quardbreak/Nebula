@@ -1,0 +1,37 @@
+#ifndef MODPACK_STARLIGHT
+#define MODPACK_STARLIGHT
+// BEGIN_INCLUDE
+#include "_starlight.dm"
+#include "fix_preferences.dm"
+#include "ghost.dm"
+#include "pixel_shift.dm"
+#include "synthetic_scanlines.dm"
+#include "tripping_over.dm"
+#include "webhook_message_ooc.dm"
+#include "_overrides\backpack.dm"
+#include "_overrides\footsteps.dm"
+#include "_overrides\jukebox.dm"
+#include "_overrides\admin\topic.dm"
+#include "_overrides\emotes\_species.dm"
+#include "_overrides\emotes\audible.dm"
+#include "music_player\_music_player.dm"
+#include "music_player\_music_tape.dm"
+#include "music_player\music_player.dm"
+#include "music_player\music_tape.dm"
+#include "music_tracks\darkspace1.dm"
+#include "music_tracks\intermissi0n.dm"
+#include "music_tracks\karlskar.dm"
+#include "music_tracks\liquidcontrol.dm"
+#include "music_tracks\rainfall_over_parallel_ports.dm"
+#include "noose\noose.dm"
+#include "sprite_accessory\hair.dm"
+#include "sprite_accessory\markings.dm"
+// END_INCLUDE
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES

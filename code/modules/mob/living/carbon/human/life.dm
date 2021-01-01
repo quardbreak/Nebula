@@ -284,10 +284,6 @@
 /mob/living/carbon/human/get_breath_from_internal(volume_needed=STD_BREATH_VOLUME)
 	if(internal)
 
-		// - Starlight Edit -
-		if((head && (head.item_flags & ITEM_FLAG_AIRTIGHT)))
-			playsound(src, pick(GLOB.rig_breath_sound), 50, 1)
-
 		var/obj/item/tank/rig_supply
 		if(istype(back,/obj/item/rig))
 			var/obj/item/rig/rig = back

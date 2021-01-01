@@ -3,13 +3,11 @@
 // STARLIGHT MODS START
 
 	// General content mod
-	#include "../../starlight/mods/starlight/_starlight.dme"
+	#include "../../starlight/mods/content/starlight/_starlight.dme"
 
 	// Species mods
 	#include "../../starlight/mods/species/resomi/_resomi.dme"
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
-
-	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
 
 // STARLIGHT MODS END
 

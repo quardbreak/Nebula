@@ -98,7 +98,7 @@
 
 	user.visible_message("<span class='danger'>\The [user] has put [cuff_type] on \the [H]!</span>")
 
-	playsound(loc, 'starlight/sound/items/handcuffs_finish.ogg', 30, 1, -2)
+	playsound(loc, 'starlight/mods/content/starlight/sound/items/handcuffs_finish.ogg', 30, 1, -2)
 
 	// Apply cuffs.
 	target.equip_to_slot(cuffs,slot_handcuffed_str)
