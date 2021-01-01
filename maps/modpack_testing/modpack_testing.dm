@@ -21,6 +21,7 @@
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
+	#include "../../starlight/mods/vatgrown/_vatgrown.dme"
 
 	// Visual and audio mods
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
