@@ -31,10 +31,3 @@
 /datum/gear/resomi/space
 	display_name = "resomi pressure suit"
 	path         = /obj/item/clothing/under/resomi/space
-
-//Gloves
-
-/datum/gear/resomi/gloves
-	display_name = "resomi gloves"
-	path = /obj/item/clothing/gloves/thick/resomi
-	slot = slot_gloves_str

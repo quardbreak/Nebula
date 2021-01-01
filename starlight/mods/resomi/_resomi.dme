@@ -5,6 +5,7 @@
 #include "resomi_accessory.dm"
 #include "resomi_clothing.dm"
 #include "resomi_culture.dm"
+#include "resomi_equipment.dm"
 #include "resomi_loadout.dm"
 #include "resomi_markings.dm"
 #include "resomi_power.dm"
