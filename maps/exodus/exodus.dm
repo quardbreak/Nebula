@@ -6,7 +6,7 @@
 	#include "../../starlight/mods/starlight/_starlight.dme"
 
 	// Species mods
-	#include "../../starlight/mods/resomi/_resomi.dme"
+	#include "../../starlight/mods/species/resomi/_resomi.dme"
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
 
 //	#include "../../starlight/mods/europa_floors/_europa_floors.dme"

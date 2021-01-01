@@ -4,4 +4,4 @@
 #define BODYTYPE_RESOMI "Resomi Body"
 
 /decl/modpack/resomi
-	name = "Species Modpack - Resomi"
+	name = "Resomi"

@@ -1,6 +1,6 @@
 /datum/sprite_accessory/marking/resomi
 	species_allowed = list(SPECIES_RESOMI)
-	icon            = 'starlight/mods/resomi/icons/markings.dmi'
+	icon            = 'starlight/mods/species/resomi/icons/markings.dmi'
 
 /datum/sprite_accessory/marking/resomi/feathers
 	name       = "Feathers"

@@ -1,7 +1,7 @@
 /datum/sprite_accessory/hair/resomi
 	name = "Resomi Plumage"
 	icon_state = "resomi_default"
-	icon = 'starlight/mods/resomi/icons/hair.dmi'
+	icon = 'starlight/mods/species/resomi/icons/hair.dmi'
 	species_allowed = list(SPECIES_RESOMI)
 
 /datum/sprite_accessory/hair/resomi/ears
@@ -75,7 +75,7 @@
 // MARKINGS
 
 /datum/sprite_accessory/marking/resomi
-	icon = 'starlight/mods/resomi/icons/markings.dmi'
+	icon = 'starlight/mods/species/resomi/icons/markings.dmi'
 	species_allowed = list(SPECIES_RESOMI)
 	do_colouration = 1
 

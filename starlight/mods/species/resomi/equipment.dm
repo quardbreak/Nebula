@@ -3,10 +3,10 @@
 /obj/item/clothing/under/resomi
 	name = "small jumpsuit"
 	desc = "A small jumpsuit. Looks pretty much perfect to fit a resomi."
-	icon       = 'starlight/mods/resomi/icons/clothing/obj_under.dmi'
+	icon       = 'starlight/mods/species/resomi/icons/clothing/obj_under.dmi'
 	icon_state = "jumpsuit"
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_under.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/species/resomi/icons/clothing/onmob_under.dmi')
 
 /obj/item/clothing/under/resomi/simple
 	name = "small smock"
@@ -69,7 +69,7 @@
 
 /obj/item/clothing/shoes/resomi
 	name = "small shoes"
-	icon = 'starlight/mods/resomi/icons/clothing/exp/shoes.dmi'
+	icon = 'starlight/mods/species/resomi/icons/clothing/exp/shoes.dmi'
 	color = COLOR_GRAY
 	bodytype_restricted = list(BODYTYPE_RESOMI)
 
@@ -129,10 +129,10 @@
 /obj/item/clothing/head/resomi_space
 	name       = "small glass helmet"
 	desc       = "Small glass dome made of durable glass alloy. It's wearer surely will have a spectacular view."
-	icon       = 'starlight/mods/resomi/icons/clothing/obj_head.dmi'
+	icon       = 'starlight/mods/species/resomi/icons/clothing/obj_head.dmi'
 	icon_state = "space_dome"
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_head.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/species/resomi/icons/clothing/onmob_head.dmi')
 	item_flags          = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_AIRTIGHT
 	flags_inv           = HIDEMASK | BLOCKHAIR
 	body_parts_covered  = SLOT_HEAD|SLOT_FACE|SLOT_EYES
@@ -146,19 +146,19 @@
 
 /obj/item/clothing/head/helmet/space/void/engineering/resomi
 	name = "heavy resomi voidsuit helmet"
-	icon = 'starlight/mods/resomi/icons/clothing/obj_head.dmi'
+	icon = 'starlight/mods/species/resomi/icons/clothing/obj_head.dmi'
 	icon_state = "heavy"
 
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_head.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/species/resomi/icons/clothing/onmob_head.dmi')
 
 /obj/item/clothing/suit/space/void/engineering/resomi
 	name = "heavy resomi voidsuit"
-	icon = 'starlight/mods/resomi/icons/clothing/obj_suit.dmi'
+	icon = 'starlight/mods/species/resomi/icons/clothing/obj_suit.dmi'
 	icon_state = "heavy"
 
 	bodytype_restricted = list(BODYTYPE_RESOMI)
-	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/resomi/icons/clothing/onmob_suit.dmi')
+	sprite_sheets       = list(BODYTYPE_RESOMI = 'starlight/mods/species/resomi/icons/clothing/onmob_suit.dmi')
 
 /obj/item/clothing/suit/space/void/engineering/resomi/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/engineering/resomi
