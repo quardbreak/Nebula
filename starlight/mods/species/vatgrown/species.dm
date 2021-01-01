@@ -14,8 +14,8 @@
 	Vat-grown humans have no appendix and fewer inherited genetic disabilities but have a weakened
 	metabolism."}
 
-	icobase      = 'icons/vatgrown_body.dmi'
-	preview_icon = 'icons/vatgrown_preview.dmi'
+	icobase      = 'starlight/mods/species/vatgrown/icons/vatgrown_body.dmi'
+	preview_icon = 'starlight/mods/species/vatgrown/icons/vatgrown_preview.dmi'
 
 	toxins_mod =   1.1
 	has_organ = list(
@@ -27,3 +27,10 @@
 		BP_BRAIN =    /obj/item/organ/internal/brain,
 		BP_EYES =     /obj/item/organ/internal/eyes
 		)
+
+	additional_available_cultural_info = list(
+		TAG_CULTURE = list(CULTURE_HUMAN_VATGROWN)
+	)
+	default_cultural_info = list(
+		TAG_CULTURE = CULTURE_HUMAN_VATGROWN
+	)

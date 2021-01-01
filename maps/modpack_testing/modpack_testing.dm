@@ -13,6 +13,8 @@
 	#include "..\..\mods\species\ascent\_ascent.dme"
 	#include "..\..\mods\species\utility_frames\_utility_frames.dme"
 
+// STARLIGHT MODS START
+
 	// General content mod
 	#include "../../starlight/mods/starlight/_starlight.dme"
 
@@ -21,11 +23,13 @@
 	#include "../../starlight/mods/booster/_booster.dme"
 	#include "../../starlight/mods/tajaran/_tajaran.dme"
 	#include "../../starlight/mods/tritonian/_tritonian.dme"
-	#include "../../starlight/mods/vatgrown/_vatgrown.dme"
+	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
 
 	// Visual and audio mods
 	#include "../../starlight/mods/europa_floors/_europa_floors.dme"
 	#include "../../starlight/mods/interpost_sounds/_interpost_sounds.dme"
+
+// STARLIGHT MODS END
 
 	#define USING_MAP_DATUM /datum/map/modpack_testing
 
