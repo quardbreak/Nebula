@@ -33047,15 +33047,15 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "blV" = (
-/obj/item/chems/dropper,
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/table/glass,
+/obj/machinery/chemical_dispenser/full,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "blW" = (
 /obj/structure/table/glass,
+/obj/machinery/reagent_temperature/cooler,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "blX" = (
@@ -33063,10 +33063,11 @@
 	pixel_x = 0;
 	pixel_y = 30
 	},
-/obj/machinery/chem_master,
 /obj/machinery/camera/network/medbay{
 	c_tag = "Medbay - Chemistry"
 	},
+/obj/structure/table/glass,
+/obj/machinery/reagent_temperature,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "blY" = (
@@ -69253,6 +69254,12 @@
 	},
 /turf/simulated/floor/wood/yew,
 /area/crew_quarters/bar)
+"lbI" = (
+/obj/item/chems/glass/beaker/large,
+/obj/structure/table/glass,
+/obj/item/chems/dropper,
+/turf/simulated/floor/tiled/white,
+/area/medical/chemistry)
 "lfJ" = (
 /obj/item/radio/beacon,
 /obj/effect/floor_decal/corner/white{
@@ -103700,7 +103707,7 @@ bic
 bjq
 aZz
 blV
-bnL
+lbI
 bpS
 bnL
 bts
@@ -103956,7 +103963,7 @@ bdV
 bid
 bbn
 aZz
-blU
+btu
 bnK
 bpQ
 bnK
