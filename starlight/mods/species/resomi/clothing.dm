@@ -56,20 +56,24 @@
 
 /obj/item/clothing/Initialize()
 	. = ..()
-	if(sprite_sheets ? sprite_sheets[BODYTYPE_RESOMI] : FALSE) bodytype_restricted += BODYTYPE_RESOMI
+	LAZYINITLIST(bodytype_restricted)
+	if((sprite_sheets ? sprite_sheets[BODYTYPE_RESOMI] : FALSE) && bodytype_restricted.len) bodytype_restricted += BODYTYPE_RESOMI
 
 //Head, Glasses, Masks
 
 /obj/item/clothing/head/Initialize()
-	bodytype_restricted += BODYTYPE_RESOMI
+	LAZYINITLIST(bodytype_restricted)
+	if(bodytype_restricted.len) bodytype_restricted |= BODYTYPE_RESOMI
 	. = ..()
 
 /obj/item/clothing/glasses/Initialize()
-	bodytype_restricted += BODYTYPE_RESOMI
+	LAZYINITLIST(bodytype_restricted)
+	if(bodytype_restricted.len) bodytype_restricted |= BODYTYPE_RESOMI
 	. = ..()
 
 /obj/item/clothing/mask/Initialize()
-	bodytype_restricted += BODYTYPE_RESOMI
+	LAZYINITLIST(bodytype_restricted)
+	if(bodytype_restricted.len) bodytype_restricted |= BODYTYPE_RESOMI
 	. = ..()
 
 //COOOULD probably make a macro for this
