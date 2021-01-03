@@ -1,0 +1,6 @@
+#ifndef MODPACK_BOOSTER
+#define MODPACK_BOOSTER
+#include "_booster.dm"
+#include "accessory.dm"
+#include "species.dm"
+#endif
