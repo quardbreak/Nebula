@@ -233,12 +233,12 @@
 		child.show_decay_status(user)
 
 /obj/item/organ/external/attackby(obj/item/W, mob/user)
-	
+
 	var/obj/item/organ/external/E = W
 	if(BP_IS_PROSTHETIC(src) && istype(E) && BP_IS_PROSTHETIC(E))
-		
+
 		var/combined = FALSE
-		if(E.organ_tag == parent_organ) 
+		if(E.organ_tag == parent_organ)
 
 			if(length(E.children))
 				to_chat(usr, SPAN_WARNING("You cannot connect additional limbs to \the [E]."))
@@ -250,7 +250,7 @@
 			else
 				dropInto(loc)
 				forceMove(E)
-	
+
 			if(loc != E)
 				return
 
@@ -964,11 +964,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 				set_dir(SOUTH, TRUE)
 
 			// Starlight Edit - Start
-			if(!clean) playsound(victim, pick(
-				'starlight/sound/effects/gore/chop2.ogg',
-				'starlight/sound/effects/gore/chop3.ogg',
-				'starlight/sound/effects/gore/chop4.ogg'), 100, 0)
-			else playsound(victim, 'starlight/sound/effects/gore/severed.ogg', 100, 0)
+			if(!clean)
+				playsound(victim, pick(
+					'starlight/mods/content/starlight/sound/effects/gore/chop2.ogg',
+					'starlight/mods/content/starlight/sound/effects/gore/chop3.ogg',
+					'starlight/mods/content/starlight/sound/effects/gore/chop4.ogg'), 100, 0)
+			else
+				playsound(victim, 'starlight/mods/content/starlight/sound/effects/gore/severed.ogg', 100, 0)
 			// Starlight Edit - End
 
 		if(DROPLIMB_BURN)
@@ -995,7 +997,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 					G.update_icon()
 
 				// Starlight Edit
-				playsound(victim, 'starlight/sound/effects/gore/chop6.ogg', 100 , 0)
+				playsound(victim, 'starlight/mods/content/starlight/sound/effects/gore/chop6.ogg', 100 , 0)
 				if(victim.can_feel_pain() && prob(50)) victim.emote("scream")
 
 			gore.throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),rand(1,3),30)
@@ -1123,7 +1125,10 @@ obj/item/organ/external/proc/remove_clamps()
 		if(can_feel_pain())
 			owner.emote("scream")
 
-	playsound(src.loc, pick(GLOB.trauma_sound), 100, 1, -2) // - Starlight Edit -
+	playsound(src.loc, pick(list(
+		'starlight/mods/content/starlight/sound/effects/gore/trauma1.ogg',
+		'starlight/mods/content/starlight/sound/effects/gore/trauma2.ogg',
+		'starlight/mods/content/starlight/sound/effects/gore/trauma3.ogg')), 100, 1, -2) // - Starlight Edit -
 //	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")

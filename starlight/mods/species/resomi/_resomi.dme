@@ -1,0 +1,12 @@
+#ifndef MODPACK_RESOMI
+#define MODPACK_RESOMI
+#include "_resomi.dm"
+#include "accessory.dm"
+#include "clothing.dm"
+#include "culture.dm"
+#include "equipment.dm"
+#include "loadout.dm"
+#include "markings.dm"
+#include "powers.dm"
+#include "species.dm"
+#endif

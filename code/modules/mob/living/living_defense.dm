@@ -210,7 +210,11 @@
 	apply_damage(speed*5, BRUTE)
 
 	// - Starlight Edit -
-	playsound(T, pick(GLOB.smash_sound), 50, 1, 1)
+	playsound(T, pick(list(
+		'starlight/mods/content/starlight/sound/effects/gore/smash1.ogg',
+		'starlight/mods/content/starlight/sound/effects/gore/smash2.ogg',
+		'starlight/mods/content/starlight/sound/effects/gore/smash3.ogg',
+		'starlight/mods/content/starlight/sound/effects/gore/trauma1.ogg')), 50, 1, 1)
 	if(client) shake_camera(src, 7, 1)
 
 /mob/living/proc/near_wall(var/direction,var/distance=1)
