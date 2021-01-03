@@ -10,6 +10,8 @@
 	#include "../../starlight/mods/species/resomi/_resomi.dme"
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
 
+	#include "../../starlight/mods/species/tajaran/_tajaran.dme" //temp
+
 // STARLIGHT MODS END
 
 	#include "../antag_spawn/heist/heist.dm"
