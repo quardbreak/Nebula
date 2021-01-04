@@ -49,7 +49,7 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
 "an" = (
-/obj/machinery/computer/shuttle_control/emergency,
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
 "ao" = (
@@ -62,9 +62,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/escape)
 "ap" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/escape)
 "aq" = (
@@ -111,7 +109,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/escape)
 "aw" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/shuttle/black{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -143,16 +141,15 @@
 /turf/simulated/wall/titanium,
 /area/shuttle/escape)
 "aD" = (
-/obj/structure/window/shuttle,
-/obj/structure/grille,
-/turf/simulated/floor/plating,
+/obj/machinery/computer/shuttle_control/emergency,
+/turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
 "aE" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/escape)
@@ -163,9 +160,6 @@
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/escape)
 "aG" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -173,13 +167,16 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/escape)
 "aH" = (
 /turf/simulated/wall/titanium,
 /area/supply)
 "aI" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/shuttle/black{
 	dir = 4
 	},
 /turf/simulated/floor/shuttle/red,
@@ -189,7 +186,7 @@
 /turf/simulated/floor/shuttle/red,
 /area/shuttle/escape)
 "aK" = (
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/shuttle/black{
 	dir = 8
 	},
 /turf/simulated/floor/shuttle/red,
@@ -291,9 +288,6 @@
 /turf/simulated/floor,
 /area/supply)
 "aY" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/camera/network/crescent{
 	c_tag = "Shuttle West";
 	dir = 4
@@ -306,6 +300,9 @@
 /obj/item/radio/intercom{
 	dir = 4;
 	pixel_x = -22
+	},
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
@@ -338,15 +335,15 @@
 	c_tag = "Shuttle East";
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/shuttle/black{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
 "be" = (
 /obj/machinery/light{
-	icon_state = "tube1";
-	dir = 4
+	dir = 4;
+	icon_state = "tube1"
 	},
 /obj/machinery/cryopod{
 	time_till_despawn = 150
@@ -373,9 +370,6 @@
 /turf/simulated/floor,
 /area/supply)
 "bh" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_x = -28
 	},
@@ -383,6 +377,9 @@
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
+	},
+/obj/structure/bed/chair/shuttle/black{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
@@ -541,7 +538,7 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/structure/bed/chair{
+/obj/structure/bed/chair/shuttle/black{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -589,11 +586,12 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/escape)
 "bJ" = (
-/obj/structure/bed/roller,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/bed/chair/shuttle/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
 /area/shuttle/escape)
 "bK" = (
-/obj/structure/bed/roller,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -618,6 +616,22 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/monotile,
+/area/shuttle/escape)
+"fM" = (
+/obj/structure/bed/roller,
+/turf/simulated/floor/tiled/white/monotile,
+/area/shuttle/escape)
+"gp" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/shuttle/escape)
+"yR" = (
+/obj/structure/bed/chair/shuttle/black{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
 
 (1,1,1) = {"
@@ -47575,18 +47589,18 @@ aj
 aj
 ao
 aq
-aw
+al
 ak
-az
-az
-az
-az
+yR
+yR
+yR
+yR
 aq
-az
-az
-az
-az
-az
+yR
+yR
+yR
+yR
+yR
 bj
 aj
 aj
@@ -47829,10 +47843,10 @@ aa
 aa
 aa
 ak
-al
+an
 ap
 aq
-al
+gp
 aj
 aj
 ak
@@ -48087,7 +48101,7 @@ aa
 aa
 ak
 am
-aq
+bJ
 as
 aj
 aj
@@ -48106,7 +48120,7 @@ ak
 bt
 bu
 bH
-bH
+fM
 bF
 aa
 aa
@@ -48344,7 +48358,7 @@ aa
 aa
 ak
 an
-ap
+bJ
 at
 ax
 aC
@@ -48363,7 +48377,7 @@ bm
 bu
 bu
 bI
-bH
+fM
 bF
 aa
 aa
@@ -48600,8 +48614,8 @@ aa
 aa
 aa
 ak
-al
-aq
+aD
+bJ
 au
 aj
 aj
@@ -48610,17 +48624,17 @@ aK
 aK
 ak
 aq
-az
-az
-az
-az
-az
+yR
+yR
+yR
+yR
+yR
 aq
 ak
 bv
 bu
-bJ
 bH
+fM
 bF
 aa
 aa
@@ -48857,7 +48871,7 @@ aa
 aa
 aa
 ak
-al
+an
 ap
 aq
 al
@@ -49117,8 +49131,8 @@ aj
 aj
 ar
 aq
-az
-aD
+al
+ak
 aw
 aw
 aw
