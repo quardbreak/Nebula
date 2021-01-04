@@ -118,12 +118,6 @@
 /obj/structure/aicore/deactivated,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/shuttle/escape)
-"az" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monotile,
-/area/shuttle/escape)
 "aA" = (
 /obj/machinery/light{
 	dir = 4
@@ -49651,7 +49645,7 @@ aj
 ak
 aj
 aR
-az
+yR
 aj
 bb
 be
