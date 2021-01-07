@@ -54560,7 +54560,7 @@
 /turf/simulated/floor/tiled,
 /area/medical/sleeper)
 "bZP" = (
-/obj/effect/shuttle_landmark/escape/station,
+/obj/effect/shuttle_landmark/escape_shuttle/station,
 /turf/space,
 /area/space)
 "bZQ" = (

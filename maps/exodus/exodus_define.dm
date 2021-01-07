@@ -15,7 +15,7 @@
 	station_levels = list(1,2)
 	contact_levels = list(1,2)
 	player_levels =  list(1,2)
-	admin_levels =   list(3)
+	admin_levels =   list(3,4)
 
 	evac_controller_type = /datum/evacuation_controller/shuttle
 
