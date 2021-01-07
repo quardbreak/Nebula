@@ -9,8 +9,7 @@
 	#include "../../starlight/mods/species/booster/_booster.dme"
 	#include "../../starlight/mods/species/resomi/_resomi.dme"
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
-
-	#include "../../starlight/mods/species/tajaran/_tajaran.dme" //temp
+	#include "../../mods/species/tajaran/_tajaran.dme"
 
 // STARLIGHT MODS END
 
