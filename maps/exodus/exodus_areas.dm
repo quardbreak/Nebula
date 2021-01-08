@@ -1114,9 +1114,6 @@ area/rnd/test_area
 /area/centcom/creed
 	name = "Creed's Office"
 
-/area/centcom/evac
-	name = "\improper Centcom Emergency Shuttle"
-
 /area/centcom/ferry
 	name = "\improper Centcom Transport Shuttle"
 
@@ -1130,9 +1127,3 @@ area/rnd/test_area
 	name = "Solitary Confinement"
 	icon_state = "brig"
 	req_access = list(access_brig)
-
-/area/supply/dock
-	name = "Supply Shuttle"
-	icon_state = "shuttle3"
-	requires_power = 0
-	req_access = list(access_cent_storage)
