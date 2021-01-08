@@ -13,8 +13,6 @@
 
 // STARLIGHT MODS END
 
-	#include "../antag_spawn/heist/heist.dm"
-
 	#include "../../mods/content/corporate/_corporate.dme"
 	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
