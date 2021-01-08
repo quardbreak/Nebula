@@ -8,7 +8,7 @@
 	name = "Tajaran Ears"
 	icon_state = "ears_plain"
 	species_allowed = list(SPECIES_TAJARA)
-	icon = 'starlight/mods/species/tajaran/icons/hair.dmi'
+	icon = 'mods/species/tajaran/icons/hair.dmi'
 
 /datum/sprite_accessory/hair/taj/ears_clean
 	name = "Tajara Clean"
@@ -200,7 +200,7 @@
 	name = "Tajara Sideburns"
 	icon_state = "facial_sideburns"
 	species_allowed = list(SPECIES_TAJARA)
-	icon = 'starlight/mods/species/tajaran/icons/facial.dmi'
+	icon = 'mods/species/tajaran/icons/facial.dmi'
 
 /datum/sprite_accessory/facial_hair/taj/mutton
 	name = "Tajara Mutton"
@@ -226,7 +226,7 @@
 
 /datum/sprite_accessory/marking/taj
 	name = "Socks Coloration (Taj)"
-	icon = 'starlight/mods/species/tajaran/icons/markings.dmi'
+	icon = 'mods/species/tajaran/icons/markings.dmi'
 	icon_state = "taj_pawsocks"
 	species_allowed = list(SPECIES_TAJARA)
 	body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND)
@@ -341,5 +341,5 @@
 /datum/sprite_accessory/skin/tajaran
 	name = "Default tajaran skin"
 	icon_state = "default"
-	icon = 'starlight/mods/species/tajaran/icons/body.dmi'
+	icon = 'mods/species/tajaran/icons/body.dmi'
 	species_allowed = list(SPECIES_TAJARA)

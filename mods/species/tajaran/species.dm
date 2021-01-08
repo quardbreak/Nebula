@@ -13,17 +13,17 @@
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 
-	icobase = 'starlight/mods/species/tajaran/icons/body.dmi'
-	deform =  'starlight/mods/species/tajaran/icons/deformed_body.dmi'
+	icobase = 'mods/species/tajaran/icons/body.dmi'
+	deform =  'mods/species/tajaran/icons/deformed_body.dmi'
 	bandages_icon = 'icons/mob/bandage.dmi'
-	preview_icon = 'starlight/mods/species/tajaran/icons/preview.dmi'
-	tail_animation = 'starlight/mods/species/tajaran/icons/tail.dmi'
+	preview_icon = 'mods/species/tajaran/icons/preview.dmi'
+	tail_animation = 'mods/species/tajaran/icons/tail.dmi'
 	tail = "tajtail"
 
 	flesh_color = "#afa59e"
 	base_color = "#333333"
 	blood_color = "#862a51"
-	organs_icon = 'starlight/mods/species/tajaran/icons/organs.dmi'
+	organs_icon = 'mods/species/tajaran/icons/organs.dmi'
 
 	default_h_style = "Tajaran Ears"
 
@@ -33,9 +33,9 @@
 	flash_mod = 2
 
 	unarmed_attacks = list(
-		/decl/natural_attack/stomp,
-		/decl/natural_attack/kick,
-		/decl/natural_attack/punch,
+		/decl/natural_attack/stomp, 
+		/decl/natural_attack/kick, 
+		/decl/natural_attack/punch, 
 		/decl/natural_attack/bite/sharp
 	)
 

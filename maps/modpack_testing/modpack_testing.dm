@@ -12,6 +12,8 @@
 	#include "..\..\mods\content\psionics\_psionics.dme"
 	#include "..\..\mods\species\ascent\_ascent.dme"
 	#include "..\..\mods\species\utility_frames\_utility_frames.dme"
+	#include "..\..\mods\species\tajaran\_tajaran.dme"
+	#include "..\..\mods\species\tritonian\_tritonian.dme"
 
 // STARLIGHT MODS START
 
@@ -22,8 +24,6 @@
 	#include "../../starlight/mods/species/booster/_booster.dme"
 	#include "../../starlight/mods/species/resomi/_resomi.dme"
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
-
-	#include "../../starlight/mods/species/tajaran/_tajaran.dme" //temp
 
 	// Other
 	#include "../../starlight/mods/content/europa_floors/_europa_floors.dme"
