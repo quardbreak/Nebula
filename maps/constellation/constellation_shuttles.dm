@@ -2,6 +2,10 @@
 	name = "exploration shuttle console"
 	shuttle_tag = "Exploration Shuttle"
 
+/obj/effect/overmap/visitable/ship/landable/exploration
+	name    = "Exploration Shuttle"
+	shuttle = "Exploration Shuttle"
+
 /datum/shuttle/autodock/overmap/exploration
 	name = "Exploration Shuttle"
 	shuttle_area = /area/ship/trade/shuttle

@@ -13,7 +13,6 @@
 		/area/ship/trade/maintenance/lower = NO_SCRUBBER|NO_VENT,
 		/area/ship/trade/escape_port = NO_SCRUBBER|NO_VENT,
 		/area/ship/trade/escape_star = NO_SCRUBBER|NO_VENT,
-		/area/ship/trade/shuttle = NO_SCRUBBER,
 		/area/ship/trade/engineering/atmos = NO_SCRUBBER
 	)
 
