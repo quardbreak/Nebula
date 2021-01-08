@@ -34,6 +34,29 @@
 /obj/effect/shuttle_landmark/escape_pod/transit/pod4,
 /turf/space,
 /area/space)
+"rv" = (
+/obj/effect/step_trigger/teleporter/random{
+	affect_ghosts = 1;
+	name = "escapeshuttle_leave";
+	teleport_x = 25;
+	teleport_x_offset = 245;
+	teleport_y = 25;
+	teleport_y_offset = 245;
+	teleport_z = 6;
+	teleport_z_offset = 6
+	},
+/obj/effect/step_trigger/thrower{
+	affect_ghosts = 1;
+	direction = 2;
+	name = "thrower_throwdown";
+	tiles = 0
+	},
+/turf/space,
+/area/space)
+"yM" = (
+/obj/effect/shuttle_landmark/escape_shuttle/transit,
+/turf/space,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -48773,22 +48796,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
 aa
 aa
 aa
@@ -49024,6 +49047,13 @@ aa
 aa
 aa
 aa
+rv
+rv
+rv
+rv
+rv
+rv
+rv
 aa
 aa
 aa
@@ -49038,14 +49068,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -49280,6 +49303,8 @@ aa
 aa
 aa
 aa
+rv
+rv
 aa
 aa
 aa
@@ -49300,9 +49325,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -49536,6 +49559,8 @@ aa
 aa
 aa
 aa
+rv
+rv
 aa
 aa
 aa
@@ -49557,10 +49582,8 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+rv
+rv
 aa
 aa
 aa
@@ -49793,6 +49816,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -49816,8 +49840,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -50050,6 +50073,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -50073,8 +50097,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -50307,6 +50330,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -50330,8 +50354,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -50564,6 +50587,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -50577,6 +50601,7 @@ aa
 aa
 aa
 aa
+yM
 aa
 aa
 aa
@@ -50586,9 +50611,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -50821,6 +50844,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -50844,8 +50868,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -51078,6 +51101,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -51101,8 +51125,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -51335,6 +51358,7 @@ aa
 aa
 aa
 aa
+rv
 aa
 aa
 aa
@@ -51358,8 +51382,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -51592,6 +51615,8 @@ aa
 aa
 aa
 aa
+rv
+rv
 aa
 aa
 aa
@@ -51613,10 +51638,8 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+rv
+rv
 aa
 aa
 aa
@@ -51850,6 +51873,8 @@ aa
 aa
 aa
 aa
+rv
+rv
 aa
 aa
 aa
@@ -51870,9 +51895,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -52108,6 +52131,13 @@ aa
 aa
 aa
 aa
+rv
+rv
+rv
+rv
+rv
+rv
+rv
 aa
 aa
 aa
@@ -52122,14 +52152,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rv
 aa
 aa
 aa
@@ -52371,22 +52394,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
+rv
 aa
 aa
 aa

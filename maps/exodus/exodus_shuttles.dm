@@ -91,15 +91,19 @@ ESCAPE_POD(4)
 	location = 1
 	dock_target = "escape_shuttle"
 	shuttle_area = /area/shuttle/escape
-	waypoint_offsite = "nav_escape_start"
-	waypoint_station = "nav_escape_station"
+	waypoint_offsite = "nav_escape_shuttle_start"
+	waypoint_station = "nav_escape_shuttle_station"
+	landmark_transition = "nav_escape_shuttle_transit"
 
 /obj/effect/shuttle_landmark/escape_shuttle/start
-	landmark_tag = "nav_escape_start"
+	landmark_tag = "nav_escape_shuttle_start"
 	docking_controller = "escape_dock_centcom"
 
+/obj/effect/shuttle_landmark/escape_shuttle/transit
+	landmark_tag = "nav_escape_shuttle_transit"
+
 /obj/effect/shuttle_landmark/escape_shuttle/station
-	landmark_tag = "nav_escape_station"
+	landmark_tag = "nav_escape_shuttle_station"
 	docking_controller = "escape_dock"
 
 /datum/shuttle/autodock/ferry/supply/cargo
@@ -118,22 +122,3 @@ ESCAPE_POD(4)
 	landmark_tag = "nav_cargo_station"
 	docking_controller = "cargo_bay"
 
-//Merchant
-
-/datum/shuttle/autodock/ferry/merchant
-	name = "Merchant"
-	warmup_time = 10
-	shuttle_area = /area/shuttle/merchant/home
-	waypoint_station = "nav_merchant_start"
-	waypoint_offsite = "nav_merchant_out"
-	dock_target = "merchant_ship_dock"
-
-/obj/effect/shuttle_landmark/merchant/start
-	name = "Merchant Base"
-	landmark_tag = "nav_merchant_start"
-	docking_controller = "merchant_station_dock"
-
-/obj/effect/shuttle_landmark/merchant/out
-	name = "Docking Bay"
-	landmark_tag = "nav_merchant_out"
-	docking_controller = "merchant_shuttle_station_dock"

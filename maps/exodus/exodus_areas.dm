@@ -1065,19 +1065,6 @@ area/rnd/test_area
 	icon_state = "shuttle3"
 	requires_power = 0
 
-//Merchant
-
-/area/merchant_station
-	name = "\improper Merchant Station"
-	icon_state = "LP"
-	req_access = list(access_merchant)
-
-/area/shuttle/merchant/home
-	name = "\improper Merchant Vessel"
-	icon_state = "shuttlegrn"
-	req_access = list(access_merchant)
-	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
-
 // ACTORS GUILD
 /area/acting
 	name = "\improper Centcom Acting Guild"
@@ -1138,9 +1125,6 @@ area/rnd/test_area
 
 /area/centcom/suppy
 	name = "\improper Centcom Supply Shuttle"
-
-/area/centcom/test
-	name = "\improper Centcom Testing Facility"
 
 /area/prison/solitary
 	name = "Solitary Confinement"
