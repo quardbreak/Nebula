@@ -12,11 +12,12 @@
 	company_short = "NT"
 	system_name   = "Nyx"
 
-	station_levels =       list(1,2)
-	contact_levels =       list(1,2)
-	player_levels =        list(1,2)
-	admin_levels =         list(3)
-	evac_controller_type = /datum/evacuation_controller/starship
+	station_levels = list(1,2)
+	contact_levels = list(1,2)
+	player_levels =  list(1,2)
+	admin_levels =   list(3,4)
+
+	evac_controller_type = /datum/evacuation_controller/shuttle
 
 	shuttle_docked_message = "The public ferry to %dock_name% has docked with the station. It will depart in approximately %ETD%"
 	shuttle_leaving_dock =   "The public ferry has left the station. Estimate %ETA% until the ferry docks at %dock_name%."

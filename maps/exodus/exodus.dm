@@ -71,6 +71,7 @@
 
 	#include "exodus-1.dmm"
 	#include "exodus-2.dmm"
+	#include "exodus-admin.dmm"
 	#include "exodus-transit.dmm"
 
 	#define USING_MAP_DATUM /datum/map/exodus

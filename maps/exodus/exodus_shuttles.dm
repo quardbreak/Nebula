@@ -85,14 +85,25 @@ ESCAPE_POD(4)
 	landmark_tag = "nav_exodus_engineering_pod_dock"
 	docking_controller = "engineering_dock_airlock"
 
-/obj/effect/shuttle_landmark/escape/start
-	landmark_tag = "nav_escape_start"
+/datum/shuttle/autodock/ferry/emergency/centcom
+	name = "Escape Shuttle"
+	warmup_time = 10
+	location = 1
+	dock_target = "escape_shuttle"
+	shuttle_area = /area/shuttle/escape
+	waypoint_offsite = "nav_escape_shuttle_start"
+	waypoint_station = "nav_escape_shuttle_station"
+	landmark_transition = "nav_escape_shuttle_transit"
 
-/obj/effect/shuttle_landmark/escape/transit
-	landmark_tag = "nav_escape_transit"
+/obj/effect/shuttle_landmark/escape_shuttle/start
+	landmark_tag = "nav_escape_shuttle_start"
+	docking_controller = "centcom_escape_dock"
 
-/obj/effect/shuttle_landmark/escape/station
-	landmark_tag = "nav_escape_station"
+/obj/effect/shuttle_landmark/escape_shuttle/transit
+	landmark_tag = "nav_escape_shuttle_transit"
+
+/obj/effect/shuttle_landmark/escape_shuttle/station
+	landmark_tag = "nav_escape_shuttle_station"
 	docking_controller = "escape_dock"
 
 /datum/shuttle/autodock/ferry/supply/cargo
@@ -110,3 +121,4 @@ ESCAPE_POD(4)
 /obj/effect/shuttle_landmark/supply/station
 	landmark_tag = "nav_cargo_station"
 	docking_controller = "cargo_bay"
+

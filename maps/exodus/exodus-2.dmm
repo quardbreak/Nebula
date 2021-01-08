@@ -44131,10 +44131,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay)
-"bGH" = (
-/obj/machinery/vending/medical,
-/turf/simulated/wall/prepainted,
-/area/medical/medbay)
 "bGI" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -46117,6 +46113,9 @@
 	dir = 9
 	},
 /obj/machinery/light,
+/obj/machinery/vending/medical{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/cryo)
 "bJW" = (
@@ -49046,7 +49045,9 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "bPE" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
 	name = "Acute Treatment"
@@ -49760,10 +49761,12 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "bRb" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/machinery/door/blast/shutters{
 	density = 0;
-	dir = 2;
+	dir = 4;
 	icon_state = "shutter0";
 	id_tag = "acute2";
 	name = "Acute Privacy Shutters";
@@ -52505,7 +52508,9 @@
 /turf/simulated/floor/tiled,
 /area/medical/sleeper)
 "bWf" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -53146,7 +53151,9 @@
 /turf/simulated/floor/tiled,
 /area/maintenance/incinerator)
 "bXt" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 4;
@@ -54247,7 +54254,9 @@
 /turf/simulated/floor/tiled,
 /area/medical/sleeper)
 "bZl" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -54551,7 +54560,7 @@
 /turf/simulated/floor/tiled,
 /area/medical/sleeper)
 "bZP" = (
-/obj/effect/shuttle_landmark/escape/station,
+/obj/effect/shuttle_landmark/escape_shuttle/station,
 /turf/space,
 /area/space)
 "bZQ" = (
@@ -54939,7 +54948,9 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/ward)
 "cay" = (
-/obj/machinery/door/firedoor,
+/obj/machinery/door/firedoor{
+	dir = 4
+	},
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
 	name = "Diagnostics Room"
@@ -57368,7 +57379,9 @@
 /turf/simulated/floor/carpet/blue,
 /area/medical/psych)
 "ceY" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_wing)
 "ceZ" = (
@@ -105005,7 +105018,7 @@ bDy
 bEO
 bGD
 bxC
-bGH
+bxC
 bLt
 bxC
 cBI
