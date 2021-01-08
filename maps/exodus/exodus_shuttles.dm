@@ -97,7 +97,7 @@ ESCAPE_POD(4)
 
 /obj/effect/shuttle_landmark/escape_shuttle/start
 	landmark_tag = "nav_escape_shuttle_start"
-	docking_controller = "escape_dock_centcom"
+	docking_controller = "centcom_escape_dock"
 
 /obj/effect/shuttle_landmark/escape_shuttle/transit
 	landmark_tag = "nav_escape_shuttle_transit"
