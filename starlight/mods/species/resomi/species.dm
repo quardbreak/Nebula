@@ -81,7 +81,8 @@
 		/datum/mob_descriptor/build = -8
 		)
 
-	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/resomi)
+	override_organ_types = list(BP_EYES     = /obj/item/organ/internal/eyes/resomi,
+								BP_APPENDIX = null)
 
 /decl/species/resomi/skills_from_age(age)
 	switch(age)
