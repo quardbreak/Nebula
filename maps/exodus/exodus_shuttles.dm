@@ -85,7 +85,7 @@ ESCAPE_POD(4)
 	landmark_tag = "nav_exodus_engineering_pod_dock"
 	docking_controller = "engineering_dock_airlock"
 
-/datum/shuttle/autodock/ferry/emergency/centcom
+/datum/shuttle/autodock/ferry/emergency/escape_shuttle
 	name = "Escape Shuttle"
 	warmup_time = 10
 	location = 1

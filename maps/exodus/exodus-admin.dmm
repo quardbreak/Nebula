@@ -3593,12 +3593,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/escape)
 "aKb" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/green{
-	dir = 4
-	},
+/obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -3691,16 +3686,18 @@
 /area/centcom/holding)
 "aKD" = (
 /obj/machinery/porta_turret/crescent,
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/unsimulated/floor{
 	icon_state = "grass0";
 	name = "grass"
 	},
 /area/centcom/holding)
 "aKE" = (
-/obj/machinery/porta_turret/crescent,
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/wingrille_spawn/reinforced/crescent,
+/obj/machinery/status_display,
 /turf/unsimulated/floor{
-	icon_state = "steel"
+	icon_state = "plating";
+	name = "plating"
 	},
 /area/centcom/holding)
 "aKV" = (
@@ -3990,11 +3987,11 @@
 	},
 /area/centcom/holding)
 "aLz" = (
-/obj/machinery/status_display,
-/obj/effect/wingrille_spawn/reinforced/crescent,
+/obj/structure/bed/chair{
+	dir = 4
+	},
 /turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
+	icon_state = "steel"
 	},
 /area/centcom/holding)
 "aLB" = (
@@ -5063,6 +5060,13 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/shuttle/escape)
+"fRC" = (
+/obj/machinery/porta_turret/crescent,
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
 "fUy" = (
 /obj/structure/disposalpipe/segment,
 /turf/unsimulated/floor{
@@ -5205,6 +5209,14 @@
 	icon_state = "dark"
 	},
 /area/tdome)
+"iqx" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
 "itR" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
@@ -5617,6 +5629,17 @@
 	name = "plating"
 	},
 /area/tdome)
+"vTe" = (
+/obj/effect/floor_decal/corner/green{
+	dir = 9
+	},
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/holding)
 "wjz" = (
 /obj/effect/forcefield{
 	desc = "You can't get in. Heh.";
@@ -19655,8 +19678,8 @@ aFM
 aFM
 aLD
 aMr
-aGu
-aGu
+vTe
+vTe
 aGa
 aab
 aab
@@ -20455,9 +20478,9 @@ aHy
 aGR
 aFM
 aFM
-aGB
-aJE
-aKb
+aFM
+aFM
+aFM
 aFM
 aFM
 aLx
@@ -20655,13 +20678,13 @@ aGa
 aGa
 aGa
 aGa
-aKu
-aKu
-aGR
-aGR
-aGR
-aKu
-aKu
+aKb
+aKb
+iqx
+iqx
+iqx
+aFM
+aFM
 aGa
 aGa
 aGa
@@ -20857,13 +20880,13 @@ ack
 aHm
 aHm
 aGa
-aFM
-aFM
+fRC
+aGR
 aGR
 aKE
 aGR
-aFM
-aFM
+aKu
+aKu
 aGa
 aab
 aab
@@ -21059,11 +21082,11 @@ ack
 ack
 ack
 aHG
-aFM
-aFM
-aGR
+aKb
+aKb
 aLz
-aGR
+aLz
+aLz
 aFM
 aNB
 aGa
@@ -21672,7 +21695,7 @@ aLK
 aMp
 acj
 acm
-aGR
+aGa
 aab
 aab
 aab
@@ -21874,7 +21897,7 @@ aLV
 aMq
 aGR
 aNC
-aGR
+aGa
 aab
 aab
 aab
@@ -22076,8 +22099,8 @@ aGR
 aGR
 aGR
 aNI
-aGR
-aab
+aGa
+ach
 aab
 aab
 aab
@@ -22268,8 +22291,8 @@ aab
 aab
 aab
 aab
-aab
-aab
+ach
+ach
 aGR
 aIA
 aGR
@@ -22471,7 +22494,7 @@ aab
 aab
 aab
 aab
-aab
+ach
 ghj
 aJu
 aGR
@@ -22481,7 +22504,7 @@ ach
 aGR
 aNK
 ghj
-aab
+ach
 aab
 aab
 aab
