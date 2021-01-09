@@ -4,15 +4,12 @@
 /area/space)
 "ab" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/ship/trade/bar)
 "ac" = (
@@ -73,30 +70,15 @@
 /area/ship/trade/bar)
 "ah" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/ship/trade/undercomms)
-"aj" = (
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/door/firedoor/autoset,
-/turf/simulated/floor/plating,
-/area/ship/trade/fore_port_underside_maint)
 "ak" = (
 /turf/simulated/floor,
 /area/ship/trade/fore_port_underside_maint)
@@ -131,6 +113,9 @@
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/corner/beige,
+/obj/machinery/light_switch{
+	pixel_x = -24
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ship/trade/bar)
 "ar" = (
@@ -154,15 +139,13 @@
 /area/ship/trade/loading_bay)
 "at" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/ship/trade/livestock)
 "au" = (
@@ -170,18 +153,15 @@
 	id_tag = "lower_cargo_in";
 	name = "Internal Cargo Airlock"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
-	icon_state = "pdoor0";
-	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
 /obj/machinery/button/access/interior{
 	id_tag = "lower_cargo";
 	pixel_x = -24;
 	pixel_y = 10
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "scraplock";
+	name = "EXTERNAL LOCKDOWN"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/loading_bay)
@@ -191,13 +171,10 @@
 	id_tag = "lower_cargo_in";
 	name = "Internal Cargo Airlock"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/loading_bay)
@@ -350,13 +327,10 @@
 	id_tag = "lower_cargo_out";
 	name = "External Cargo Airlock"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/loading_bay)
@@ -416,18 +390,16 @@
 /area/ship/trade/bar)
 "aV" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 4;
-	icon_state = "pdoor0";
-	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	icon_state = "pdoor0";
+	id_tag = "scraplock";
+	name = "EXTERNAL LOCKDOWN"
+	},
 /turf/simulated/floor/plating,
 /area/ship/trade/livestock)
 "aW" = (
@@ -439,40 +411,31 @@
 "aX" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/firedoor/autoset,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
 /turf/simulated/floor/plating,
 /area/ship/trade/loading_bay)
 "aY" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/ship/trade/aft_port_underside_maint)
 "aZ" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
+/obj/machinery/door/firedoor/autoset,
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/machinery/door/firedoor/autoset,
 /turf/simulated/floor/plating,
 /area/ship/trade/aft_starboard_underside_maint)
 "bg" = (
@@ -968,18 +931,15 @@
 	id_tag = "lower_cargo_out";
 	name = "External Cargo Airlock"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	dir = 2;
-	icon_state = "pdoor0";
-	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
 /obj/machinery/button/access/exterior{
 	id_tag = "lower_cargo";
 	pixel_x = -24;
 	pixel_y = -10
+	},
+/obj/machinery/door/blast/regular/open{
+	icon_state = "pdoor0";
+	id_tag = "scraplock";
+	name = "EXTERNAL LOCKDOWN"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/loading_bay)
@@ -1113,9 +1073,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/light_switch{
-	pixel_y = -24
-	},
 /turf/simulated/floor/wood/walnut,
 /area/ship/trade/bar)
 "hg" = (
@@ -1247,6 +1204,9 @@
 /turf/simulated/floor,
 /area/ship/trade/aft_port_underside_maint)
 "lv" = (
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/undercomms)
 "lA" = (
@@ -2122,10 +2082,8 @@
 /area/ship/trade/bar)
 "Mb" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/alarm{
-	dir = 4;
-	icon_state = "alarm0";
-	pixel_x = -24
+/obj/machinery/light_switch{
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/trade/undercomms)
@@ -5008,8 +4966,8 @@ Xe
 Xe
 Xe
 Xe
-aj
-aj
+Xe
+Xe
 Xe
 Xe
 xc

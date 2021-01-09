@@ -128,15 +128,13 @@
 /area/ship/trade/engineering/solars)
 "au" = (
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/ship/trade/engineering/solars)
 "av" = (
@@ -518,7 +516,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor,
 /area/ship/trade/comms)
 "tJ" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -634,6 +632,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/structure/table/rack,
+/obj/item/storage/toolbox/electrical,
+/obj/item/multitool,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/comms)
 "yQ" = (
@@ -886,13 +887,11 @@
 "Nv" = (
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
 /turf/simulated/floor/plating,
 /area/ship/trade/command/bridge_upper)
@@ -938,18 +937,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/trade/engineering/solars)
-"PJ" = (
-/obj/machinery/door/firedoor,
-/obj/effect/wallframe_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
-	},
-/turf/simulated/floor/plating,
-/area/ship/trade/command/bridge_upper)
 "PP" = (
 /obj/structure/closet/coffin,
 /turf/simulated/floor/reinforced/airless,
@@ -1032,14 +1019,12 @@
 /area/ship/trade/engineering/solars)
 "SQ" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/effect/wallframe_spawn/reinforced,
+/obj/machinery/door/blast/regular/open{
 	icon_state = "pdoor0";
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	opacity = 0
+	name = "EXTERNAL LOCKDOWN"
 	},
-/obj/effect/wallframe_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/ship/trade/command/bridge_upper)
 "Tt" = (
@@ -1167,6 +1152,20 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/structure/closet/crate,
+/obj/item/stock_parts/computer/hard_drive/cluster/fullhouse{
+	name = "cluster hard drive (BACKUP)"
+	},
+/obj/item/stock_parts/computer/hard_drive/portable/merchant,
+/obj/item/stock_parts/computer/hard_drive/portable,
+/obj/item/stock_parts/computer/hard_drive/portable,
+/obj/item/stock_parts/computer/network_card/advanced,
+/obj/item/stock_parts/computer/drive_slot,
+/obj/item/stock_parts/computer/hard_drive/advanced,
+/obj/item/stock_parts/computer/processor_unit,
+/obj/item/stock_parts/computer/processor_unit,
+/obj/item/stock_parts/computer/hard_drive/small,
+/obj/item/stock_parts/computer/hard_drive/small,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/ship/trade/comms)
 "ZT" = (
@@ -1195,6 +1194,9 @@
 	icon_state = "alarm0";
 	pixel_x = 0;
 	pixel_y = -32
+	},
+/obj/machinery/computer/modular/preset/full{
+	dir = 4
 	},
 /turf/simulated/floor/bluegrid,
 /area/ship/trade/comms)
@@ -4421,7 +4423,7 @@ rl
 fi
 PZ
 DP
-PJ
+SQ
 ax
 ax
 ax

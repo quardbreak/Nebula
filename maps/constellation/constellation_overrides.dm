@@ -1,9 +1,23 @@
-/datum/computer_file/program/merchant/constellation
+//evac
+
+/datum/map/constellation
+	evac_controller_type             = /datum/evacuation_controller/starship
+	emergency_shuttle_leaving_dock   = "Attention all hands: the escape pods have been launched, maintaining burn for %ETA%."
+	emergency_shuttle_called_message = "Attention all hands: emergency evacuation procedures are now in effect. Escape pods will launch in %ETA%"
+	emergency_shuttle_recall_message = "Attention all hands: emergency evacuation sequence aborted. Return to normal operating conditions."
+
+/datum/evacuation_option/abandon_ship
+	abandon_ship = FALSE
+
+//merch prog
+
+/datum/computer_file/program/merchant/New()
+	..()
 	required_access = null
 
 /obj/machinery/computer/modular/preset/merchant/constellation
 	default_software = list(
-		/datum/computer_file/program/merchant/constellation,
+		/datum/computer_file/program/merchant,
 		/datum/computer_file/program/email_client,
 		/datum/computer_file/program/wordprocessor
 	)
@@ -65,7 +79,7 @@
 
 /obj/machinery/power/supermatter/energy/examine(var/mob/user)
 	. = ..()
-	to_chat(user,SPAN_NOTICE("It is of [(thermal_release_modifier > 0) ? FONT_COLORED(COLOR_RED, "heating") : FONT_COLORED(COLOR_CYAN, "cooling")] type."))
+	to_chat(user,SPAN_NOTICE("It is [(thermal_release_modifier > 0) ? FONT_COLORED(COLOR_RED, "heating") : FONT_COLORED(COLOR_CYAN, "cooling")] type."))
 
 /obj/machinery/power/supermatter/energy/attack_hand(var/mob/user)
 	visible_message(SPAN_NOTICE("[user] gently taps \the [src]."))
@@ -79,11 +93,9 @@
 //hot-cold
 
 /obj/machinery/power/supermatter/energy/hot
-	name                     = "heating energy crystal"
 	color                    = COLOR_ORANGE
 	thermal_release_modifier =  8000
 
 /obj/machinery/power/supermatter/energy/cold
-	name                     = "cooling energy crystal"
 	color                    = COLOR_CYAN
 	thermal_release_modifier = -8000

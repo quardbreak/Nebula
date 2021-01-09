@@ -27,12 +27,12 @@ please do not remove my messages. they just look fancy to sort these areas. i rl
 	icon_state = "green"
 
 /area/ship/trade/crew/dorms1
-	name = "Crew Cabin #1"
+	name = "Sleep Capsule"
 	icon_state = "green"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ship/trade/crew/dorms2
-	name = "Crew Cabin #2"
+	name = "Crew Cabin"
 	icon_state = "purple"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
@@ -162,9 +162,10 @@ please do not remove my messages. they just look fancy to sort these areas. i rl
 //Engineering
 
 /area/ship/trade/engineering
-	name = "Engineering Bay"
+	name       = "Engineering Bay"
 	icon_state = "engineering_supply"
 	req_access = list(access_engine)
+	secure     = 1
 
 	ambience = list('sound/ambience/ambigen3.ogg',
 					'sound/ambience/ambigen4.ogg',
@@ -212,6 +213,7 @@ please do not remove my messages. they just look fancy to sort these areas. i rl
 	name = "Brig"
 	icon_state = "brig"
 	req_access = list(access_brig)
+	secure     = 1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/ship/trade/storage
