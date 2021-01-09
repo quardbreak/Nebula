@@ -81,9 +81,7 @@
 		/datum/mob_descriptor/build = -8
 		)
 
-	override_organ_types = list(BP_LIVER = /obj/item/organ/internal/liver/resomi,
-								BP_KIDNEYS = /obj/item/organ/internal/kidneys/resomi,
-								BP_EYES = /obj/item/organ/internal/eyes/resomi)
+	override_organ_types = list(BP_EYES = /obj/item/organ/internal/eyes/resomi)
 
 /decl/species/resomi/skills_from_age(age)
 	switch(age)
@@ -99,18 +97,9 @@
 	icon = 'starlight/mods/species/resomi/icons/holder.dmi'
 	w_class = ITEM_SIZE_LARGE
 
-/obj/item/organ/internal/kidneys/resomi
-	parent_organ = BP_CHEST
-
-/obj/item/organ/internal/liver/resomi
-	parent_organ = BP_CHEST
-
 /obj/item/organ/internal/eyes/resomi
 	eye_icon = 'starlight/mods/species/resomi/icons/eyes.dmi'
 	icon_state = "eyes"
-
-/obj/item/organ/internal/kidneys/resomi
-	parent_organ = BP_CHEST
 
 //some unexpected runtimes in observation.dm, turned this off a bit. todo: fix this later, it crashes at 110 (expecting atom/movable and getting turf)
 
