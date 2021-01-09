@@ -1,7 +1,7 @@
 /decl/species/resomi
 	name              = SPECIES_RESOMI
 	name_plural       = "Resomii"
-	description       = "A tiny creature prone to make RYAAAAAAAAAAAAAAAAAAAAAA."
+	description       = "A tiny birdy creature."
 	hidden_from_codex = FALSE
 
 	sexybits_location = BP_GROIN
@@ -50,7 +50,8 @@
 		/decl/natural_attack/claws,
 		/decl/natural_attack/punch,
 		/decl/natural_attack/stomp/weak
-		)
+	)
+
 	move_trail        = /obj/effect/decal/cleanable/blood/tracks/paw
 
 	cold_level_1      = 180
@@ -64,32 +65,44 @@
 	heat_discomfort_strings = list(
 		"Your feathers prickle in the heat.",
 		"You feel uncomfortably warm.",
-		)
+	)
 	cold_discomfort_level = 200
 	cold_discomfort_strings = list(
 		"You can't feel your paws because of the cold.",
 		"You feel sluggish and cold.",
-		"Your feathers bristle against the cold.")
+		"Your feathers bristle against the cold."
+	)
 
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/resomi_sonar_ping,
 		/mob/living/proc/toggle_pass_table
-		)
+	)
 
 	descriptors = list(
 		/datum/mob_descriptor/height = -8,
 		/datum/mob_descriptor/build = -8
-		)
+	)
 
-	override_organ_types = list(BP_EYES     = /obj/item/organ/internal/eyes/resomi,
-								BP_APPENDIX = null)
+	has_organ = list(
+		BP_HEART =    /obj/item/organ/internal/heart,
+		BP_STOMACH =  /obj/item/organ/internal/stomach,
+		BP_LUNGS =    /obj/item/organ/internal/lungs,
+		BP_LIVER =    /obj/item/organ/internal/liver,
+		BP_KIDNEYS =  /obj/item/organ/internal/kidneys,
+		BP_BRAIN =    /obj/item/organ/internal/brain,
+		BP_EYES =     /obj/item/organ/internal/eyes
+	)
+
+	override_organ_types = list(
+		BP_EYES = /obj/item/organ/internal/eyes/resomi
+	)
 
 /decl/species/resomi/skills_from_age(age)
 	switch(age)
-		if(0 to 17)		. = -4
-		if(18 to 25)	. = 0
-		if(26 to 35)	. = 4
-		else			. = 8
+		if(0 to 17)  . = -4
+		if(18 to 25) . = 0
+		if(26 to 35) . = 4
+		else		 . = 8
 
 /decl/species/resomi/get_surgery_overlay_icon(var/mob/living/carbon/human/H)
 	return 'starlight/mods/species/resomi/icons/surgery.dmi'
@@ -101,20 +114,3 @@
 /obj/item/organ/internal/eyes/resomi
 	eye_icon = 'starlight/mods/species/resomi/icons/eyes.dmi'
 	icon_state = "eyes"
-
-//some unexpected runtimes in observation.dm, turned this off a bit. todo: fix this later, it crashes at 110 (expecting atom/movable and getting turf)
-
-/*
-
-/obj/item/storage/MouseDrop_T(atom/dropping, mob/living/user)
-	if(dropping == user && usr == user && user.mob_size <= MOB_SIZE_SMALL && src.loc != user)
-		var/obj/item/holder/holder = new user.holder_type(get_turf(user))
-		holder.sync(user)
-		user.forceMove(holder)
-		if(can_be_inserted(holder))
-			handle_item_insertion(holder)
-			return
-		if(holder) holder.Destroy()
-	..()
-
-*/
