@@ -1,11 +1,5 @@
 //evac
 
-/datum/map/constellation
-	evac_controller_type             = /datum/evacuation_controller/starship
-	emergency_shuttle_leaving_dock   = "Attention all hands: the escape pods have been launched, maintaining burn for %ETA%."
-	emergency_shuttle_called_message = "Attention all hands: emergency evacuation procedures are now in effect. Escape pods will launch in %ETA%"
-	emergency_shuttle_recall_message = "Attention all hands: emergency evacuation sequence aborted. Return to normal operating conditions."
-
 /datum/evacuation_option/abandon_ship
 	abandon_ship = FALSE
 
