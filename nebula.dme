@@ -3237,6 +3237,7 @@
 #include "maps\away_sites_testing\away_sites_testing_define.dm"
 #include "maps\constellation\constellation.dm"
 #include "maps\constellation\constellation_define.dm"
+#include "maps\constellation\jobs\_goals.dm"
 #include "maps\example\example_define.dm"
 #include "maps\exodus\exodus_define.dm"
 #include "maps\ministation\ministation_define.dm"
