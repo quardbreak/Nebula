@@ -53,6 +53,7 @@
 	#include "constellation-2.dmm"
 	#include "constellation-3.dmm"
 
+	#include "jobs/_goals.dm"
 	#include "jobs/_jobs.dm"
 	#include "jobs/command.dm"
 	#include "jobs/engineering.dm"
