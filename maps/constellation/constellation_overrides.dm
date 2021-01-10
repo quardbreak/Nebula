@@ -23,6 +23,7 @@
 	desc            = "Comfortable capsule fitted with high-power stasis field generators."
 	icon_state      = "pod"
 	stasis_power    = 100
+	base_type       = /obj/machinery/sleeper/stasis
 
 /obj/machinery/sleeper/stasis/add_reagent_canister(var/mob/user, var/obj/item/chems/chem_disp_cartridge/canister)
 	to_chat(user, SPAN_WARNING("\The [src] can't be loaded with chemical canisters!"))
