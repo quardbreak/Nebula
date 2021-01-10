@@ -147,3 +147,8 @@
 	LAZYINITLIST(sprite_sheets)
 	sprite_sheets[BODYTYPE_RESOMI] = 'starlight/mods/species/resomi/icons/clothing/exp/rad_suit.dmi'
 	. = ..()
+
+/obj/item/clothing/accessory/cloak/hide/Initialize()
+	LAZYINITLIST(sprite_sheets)
+	sprite_sheets[BODYTYPE_RESOMI] = 'starlight/mods/species/resomi/icons/clothing/exp/cloak_hide.dmi'
+	. = ..()

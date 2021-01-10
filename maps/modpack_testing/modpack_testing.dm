@@ -26,7 +26,7 @@
 	#include "../../starlight/mods/species/vatgrown/_vatgrown.dme"
 
 	// Other
-	#include "../../starlight/mods/content/europa_floors/_europa_floors.dme"
+	#include "../../starlight/mods/content/europa_tileset/_europa_tileset.dme"
 
 // STARLIGHT MODS END
 
