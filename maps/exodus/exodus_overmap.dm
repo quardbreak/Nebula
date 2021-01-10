@@ -26,6 +26,13 @@
 		"nav_exodus_research_pod_dock"
 	)
 
+	start_x = 4
+	start_y = 5
+
+/obj/effect/overmap/visitable/sector/exoplanet
+	start_x = 4
+	start_y = 5
+
 /obj/effect/overmap/visitable/ship/landable/pod
 	name = "Generic Pod"
 	desc = "A single-seater short-range pod."
