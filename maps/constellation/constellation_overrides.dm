@@ -51,7 +51,7 @@
 	req_components = list(/obj/item/stock_parts/scanning_module = 2, /obj/item/stock_parts/manipulator = 2)
 
 /datum/fabricator_recipe/imprinter/circuit/stasis
-	/obj/item/stock_parts/circuitboard/sleeper/stasis
+	path = /obj/item/stock_parts/circuitboard/sleeper/stasis
 
 //Safe supermatter
 
