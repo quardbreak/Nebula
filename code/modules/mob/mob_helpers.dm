@@ -336,7 +336,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	sleep(TICKS_PER_RECOIL_ANIM)
 	if(steps)
 		for(var/i = 1 to steps)
-			animate(M.client, pixel_x = (M.client?.default_pixel_x || 0) + rand(-(strength), strength), pixel_y = (M.client?.default_pixel_y || 0) + rand(-(strength), strength), time = TICKS_PER_RECOIL_ANIM)
+			animate(M.client, pixel_x = (M.client?.default_pixel_x || 0) + rand(-(strength), strength), pixel_y = (M.client?.default_pixel_y || 0) + rand(-(strength), strength), time = TICKS_PER_RECOIL_ANIM, flags = ANIMATION_PARALLEL)
 			sleep(TICKS_PER_RECOIL_ANIM)
 	if(M)
 		if(M.client)

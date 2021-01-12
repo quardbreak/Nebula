@@ -12,7 +12,7 @@
 	speed /= 3      //Gives us 3 equal time segments for our three turns.
 	                //Why not one turn? Because byond will see that the start and finish are the same place and do nothing
 	                //Why not two turns? Because byond will do a flip instead of a turn
-	animate(src, transform = m120, time = speed, loops)
+	animate(src, transform = m120, time = speed, loops, flags = ANIMATION_PARALLEL)
 	animate(transform = m240, time = speed)
 	animate(transform = m360, time = speed)
 
@@ -20,7 +20,7 @@
 	var/init_px = pixel_x
 	var/shake_dir = pick(-1, 1)
 	animate(src, transform=turn(matrix(), intensity*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
-	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
+	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING, flags = ANIMATION_PARALLEL)
 
 //The X pixel offset of this matrix
 /matrix/proc/get_x_shift()
