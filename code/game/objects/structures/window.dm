@@ -1,5 +1,5 @@
 /obj/structure/window
-	name = "window"
+	name = "window fart"
 	desc = "A window."
 	icon = 'icons/obj/structures/window.dmi'
 	density = 1
@@ -25,7 +25,7 @@
 	var/reinf_basestate = "rwindow"
 	var/list/connections
 	var/list/other_connections
-	
+
 /obj/structure/window/clear_connections()
 	connections = null
 	other_connections = null
