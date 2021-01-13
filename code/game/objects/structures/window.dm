@@ -1,5 +1,5 @@
 /obj/structure/window
-	name = "window fart"
+	name = "window fart fart"
 	desc = "A window."
 	icon = 'icons/obj/structures/window.dmi'
 	density = 1
