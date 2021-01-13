@@ -1,5 +1,5 @@
 /obj/item/stock_parts/circuitboard/smes
-	name = T_BOARD("superconductive magnetic energy storage")
+	name = T_BOARD("superconductive magnetic energy storage fart")
 	build_path = /obj/machinery/power/smes/buildable
 	board_type = "machine"
 	origin_tech = "{'powerstorage':6,'engineering':4}"
