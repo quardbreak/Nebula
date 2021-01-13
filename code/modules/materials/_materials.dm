@@ -1,6 +1,6 @@
 /obj/effect/gas_overlay
 	name = "gas"
-	desc = "You shouldn't be clicking this."
+	desc = "You shouldn't be clicking this fart."
 	icon = 'icons/effects/tile_effects.dmi'
 	icon_state = "generic"
 	layer = FIRE_LAYER
@@ -566,10 +566,10 @@
 	M.adjustToxLoss(REM)
 
 /decl/material/proc/initialize_data(var/newdata) // Called when the reagent is created.
-	if(newdata) 
+	if(newdata)
 		. = newdata
 
-/decl/material/proc/mix_data(var/datum/reagents/reagents, var/list/newdata, var/amount)	
+/decl/material/proc/mix_data(var/datum/reagents/reagents, var/list/newdata, var/amount)
 	. = REAGENT_DATA(reagents, type)
 
 /decl/material/proc/explosion_act(obj/item/chems/holder, severity)
