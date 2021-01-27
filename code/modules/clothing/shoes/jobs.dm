@@ -36,6 +36,7 @@
 	var/artificail_shine = 20
 	matter = list(/decl/material/solid/metal/steel = MATTER_AMOUNT_REINFORCEMENT)
 	origin_tech = "{'materials':2,'engineering':2}"
+	footstep_type = /decl/footsteps/gear
 
 /obj/item/clothing/shoes/jackboots/set_material(var/new_material)
 	..()

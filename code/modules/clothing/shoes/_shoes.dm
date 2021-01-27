@@ -21,6 +21,7 @@
 	var/shine = -1 // if material should apply shine overlay. Set to -1 for it to not do that
 	material = /decl/material/solid/leather
 	origin_tech = "{'materials':1,'engineering':1}"
+	var/footstep_type = /decl/footsteps/blank
 
 /obj/item/clothing/shoes/Destroy()
 	. = ..()

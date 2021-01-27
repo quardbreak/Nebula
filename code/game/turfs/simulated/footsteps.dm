@@ -69,3 +69,7 @@
 				volume -= 60
 				range -= 0.333
 			playsound(T, footsound, volume, 1, range)
+			
+			if(shoes)
+				var/obj/item/clothing/shoes/S = shoes
+				playsound(T, get_footstep(S.footstep_type), volume, 1, range)
