@@ -46,6 +46,17 @@
 
 	var/current_mode = null
 
+	var/sound_id
+	var/datum/sound_token/sound_token
+
+/obj/machinery/light/proc/update_enviroment_sound()
+	if(!sound_id)
+		sound_id = "[sequential_id("[type]_z[z]")]"
+	if(powered() && lightbulb?.enviroment_sound && !lightbulb.status)
+		sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, lightbulb.enviroment_sound, volume = lightbulb.enviroment_sound_volume, range = lightbulb.enviroment_sound_range, falloff = 3, prefer_mute = TRUE)
+	else
+		QDEL_NULL(sound_token)
+
 /obj/machinery/light/get_color()
 	return lightbulb ? lightbulb.get_color() : null
 
@@ -167,6 +178,7 @@
 		update_use_power(POWER_USE_OFF)
 		set_light(0)
 	change_power_consumption((light_outer_range * light_max_bright) * LIGHTING_POWER_FACTOR, POWER_USE_ACTIVE)
+	update_enviroment_sound()
 
 /obj/machinery/light/proc/get_status()
 	if(!lightbulb)
@@ -472,6 +484,8 @@
 /obj/machinery/light/navigation/powered()
 	return TRUE
 
+/obj/machinery/light/xenon
+	light_type = /obj/item/light/tube/large/xenon
 
 // the light item
 // can be tube or bulb subtypes
@@ -504,6 +518,10 @@
 		"#e0fefe",
 		"#fefefe",
 	)
+
+	var/enviroment_sound
+	var/enviroment_sound_range = 3
+	var/enviroment_sound_volume = 10
 
 /obj/item/light/Initialize()
 	. = ..()
@@ -545,6 +563,18 @@
 	b_inner_range = 2
 	b_outer_range = 8
 	b_curve = 2.5
+
+/obj/item/light/tube/large/xenon
+	name = "xenon light tube"
+	desc = "A xenon light which is really very bright."
+
+	color = LIGHT_COLOR_XENON
+	b_colour = LIGHT_COLOR_XENON
+
+	random_tone = FALSE
+
+	enviroment_sound_range = 4
+	enviroment_sound = 'sound/ambience/neon_hum.ogg'
 
 /obj/item/light/tube/large/party/Initialize() //Randomly colored light tubes. Mostly for testing, but maybe someone will find a use for them.
 	. = ..()
