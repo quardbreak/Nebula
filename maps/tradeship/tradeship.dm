@@ -12,6 +12,7 @@
 	#include "../../mods/species/tajaran/_tajaran.dme"
 	#include "../../mods/species/neocorvids/_neocorvids.dme"
 
+	#include "../away/verne/verne.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"
