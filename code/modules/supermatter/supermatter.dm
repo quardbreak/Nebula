@@ -309,7 +309,7 @@ var/list/supermatter_final_thoughts = list(
 
 /obj/machinery/power/supermatter/examine(mob/user)
 	. = ..()
-	if(user.skill_check(SKILL_ENGINES, SKILL_EXPERT))
+	if(user.skill_check(SKILL_ENGINES, SKILL_EXPERIENCED))
 		var/integrity_message
 		switch(get_integrity())
 			if(0 to 30)
@@ -319,7 +319,7 @@ var/list/supermatter_final_thoughts = list(
 			else
 				integrity_message = "At a glance, it seems to be in sound shape."
 		to_chat(user, integrity_message)
-		if(user.skill_check(SKILL_ENGINES, SKILL_PROF))
+		if(user.skill_check(SKILL_ENGINES, SKILL_MASTER))
 			var/display_power = power
 			display_power *= (0.85 + 0.3 * rand())
 			display_power = round(display_power, 20)

@@ -175,7 +175,7 @@
 			return SURGERY_SKILLS_ROBOTIC_ON_MEAT
 	else
 		return ..()
-	
+
 /decl/surgery_step/internal/remove_organ/begin_step(mob/user, mob/living/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message("\The [user] starts removing [target]'s [LAZYACCESS(global.surgeries_in_progress["\ref[target]"], target_zone)] with \the [tool].", \
@@ -258,7 +258,7 @@
 				to_chat(user, SPAN_WARNING("\The [O.name] [G.is] in no state to be transplanted."))
 			else if(O.w_class > affected.cavity_max_w_class)
 				to_chat(user, SPAN_WARNING("\The [O.name] [G.is] too big for [affected.cavity_name] cavity!"))
-			else 
+			else
 				var/obj/item/organ/internal/I = target.get_internal_organ(O.organ_tag)
 				if(I && (I.parent_organ == affected.organ_tag))
 					to_chat(user, SPAN_WARNING("\The [target] already has \a [O.name]."))
@@ -283,7 +283,7 @@
 			log_debug("[user] ([user.ckey]) replaced organ [O], which didn't have ORGAN_CUT_AWAY set, in [target] ([target.ckey])")
 			O.status |= ORGAN_CUT_AWAY
 		playsound(target.loc, 'sound/effects/squelch1.ogg', 15, 1)
-		if(BP_IS_PROSTHETIC(O) && prob(user.skill_fail_chance(SKILL_DEVICES, 50, SKILL_ADEPT)))
+		if(BP_IS_PROSTHETIC(O) && prob(user.skill_fail_chance(SKILL_DEVICES, 50, SKILL_TRAINED)))
 			O.add_random_ailment()
 
 /decl/surgery_step/internal/replace_organ/fail_step(mob/living/user, mob/living/target, target_zone, obj/item/tool)

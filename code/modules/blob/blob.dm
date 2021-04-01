@@ -163,7 +163,7 @@
 	user.do_attack_animation(src)
 	playsound(loc, 'sound/effects/attackblob.ogg', 50, 1)
 	if(isWirecutter(W))
-		if(prob(user.skill_fail_chance(SKILL_SCIENCE, 90, SKILL_EXPERT)))
+		if(prob(user.skill_fail_chance(SKILL_SCIENCE, 90, SKILL_EXPERIENCED)))
 			to_chat(user, SPAN_WARNING("You fail to collect a sample from \the [src]."))
 			return
 		else
@@ -214,7 +214,7 @@ the master core becomes more vulnereable to damage as it weakens,
 but it also becomes more aggressive, and channels more of its energy into regenerating rather than spreading
 regen() will cover update_icon() for this proc
 */
-/obj/effect/blob/core/proc/process_core_health() 
+/obj/effect/blob/core/proc/process_core_health()
 	switch(get_health_percent())
 		if(75 to INFINITY)
 			brute_resist = 3.5

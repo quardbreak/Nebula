@@ -42,7 +42,7 @@
 	if(!affecting)
 		return
 
-	if(!assailant.skill_check(SKILL_COMBAT, SKILL_ADEPT))
+	if(!assailant.skill_check(SKILL_COMBAT, SKILL_TRAINED))
 		return
 
 	var/obj/item/organ/external/O = G.get_targeted_organ()
@@ -70,7 +70,7 @@
 	var/mob/living/assailant = G.assailant
 	if(!affecting)
 		return
-	if(!assailant.skill_check(SKILL_COMBAT, SKILL_ADEPT))
+	if(!assailant.skill_check(SKILL_COMBAT, SKILL_TRAINED))
 		return
 
 	var/obj/item/organ/external/O = G.get_targeted_organ()
@@ -265,7 +265,7 @@
 	var/mob/living/affecting = G.get_affecting_mob()
 	if(!affecting)
 		return
-	if(!user.skill_check(SKILL_COMBAT, SKILL_ADEPT))
+	if(!user.skill_check(SKILL_COMBAT, SKILL_TRAINED))
 		return
 	if(user.a_intent != I_HURT)
 		return 0 // Not trying to hurt them.

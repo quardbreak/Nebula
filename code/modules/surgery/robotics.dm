@@ -23,11 +23,11 @@
 	. = ..()
 	//Compensating for anatomy skill req in base proc
 	. += 10
-	if(!user.skill_check(SKILL_DEVICES, SKILL_ADEPT))
+	if(!user.skill_check(SKILL_DEVICES, SKILL_TRAINED))
 		. -= 20
 	if(user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 		. += 10
-	if(user.skill_check(SKILL_DEVICES, SKILL_PROF))
+	if(user.skill_check(SKILL_DEVICES, SKILL_MASTER))
 		. += 20
 
 //////////////////////////////////////////////////////////////////
@@ -354,9 +354,9 @@
 
 /decl/surgery_step/robotics/fix_organ_robotic/get_skill_reqs(mob/living/user, mob/living/target, obj/item/tool)
 	if(target.isSynthetic())
-		return SURGERY_SKILLS_ROBOTIC 
+		return SURGERY_SKILLS_ROBOTIC
 	else
-		return SURGERY_SKILLS_ROBOTIC_ON_MEAT 
+		return SURGERY_SKILLS_ROBOTIC_ON_MEAT
 
 /decl/surgery_step/robotics/fix_organ_robotic/assess_bodypart(mob/living/user, mob/living/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = ..()

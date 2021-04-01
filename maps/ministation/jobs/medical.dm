@@ -9,9 +9,9 @@
 	skill_points = 24
 	hud_icon = "hudmedicaldoctor"
 	min_skill = list(
-		SKILL_LITERACY  = SKILL_ADEPT,
-		SKILL_MEDICAL   = SKILL_EXPERT,
-		SKILL_ANATOMY   = SKILL_EXPERT,
+		SKILL_LITERACY  = SKILL_TRAINED,
+		SKILL_MEDICAL   = SKILL_EXPERIENCED,
+		SKILL_ANATOMY   = SKILL_EXPERIENCED,
 		SKILL_CHEMISTRY = SKILL_BASIC
 	)
 	max_skill = list(

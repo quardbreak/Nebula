@@ -81,7 +81,7 @@
 
 		var/input_x = linked_core.shunt_x
 		var/input_y = linked_core.shunt_y
-		var/fumble = user.skill_check(SKILL_PILOT, SKILL_ADEPT) ? 0 : rand(-2, 2)
+		var/fumble = user.skill_check(SKILL_PILOT, SKILL_TRAINED) ? 0 : rand(-2, 2)
 
 		if(href_list["set_shunt_x"])
 			input_x = input(user, "Enter Destination X Coordinates", "FTL Computer", input_x) as num|null

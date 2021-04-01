@@ -29,12 +29,12 @@ GLOBAL_LIST_INIT(random_chem_interaction_blacklist, list(
 		shuffle(effects_to_get)
 		effects_to_get.Cut(max_effect_number + 1)
 	effects_to_get += subtypesof(/decl/random_chem_effect/general_properties)
-	
+
 	var/list/decls = decls_repository.get_decls_unassociated(effects_to_get)
 	for(var/item in decls)
 		var/decl/random_chem_effect/effect = item
 		effect.prototype_process(src, temperature)
-	
+
 	var/whitelist = subtypesof(/decl/material)
 	for(var/bad_type in GLOB.random_chem_interaction_blacklist)
 		whitelist -= typesof(bad_type)
@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(random_chem_interaction_blacklist, list(
 	var/chem_skill = user.get_skill_value(SKILL_CHEMISTRY)
 	if(chem_skill < SKILL_BASIC)
 		dat += "You analyze the strange liquid. The readings are confusing; could it maybe be juice?"
-	else if(chem_skill < SKILL_ADEPT)
+	else if(chem_skill < SKILL_TRAINED)
 		dat += "You analyze the strange liquid. Based on the readings, you are skeptical that this is safe to drink."
 	else
 		dat += "The readings are very unsual and intriguing. You suspect it may be of alien origin."
@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(random_chem_interaction_blacklist, list(
 				harmful = 1
 			if(effect.desc)
 				effect_descs += effect.desc
-		if(sci_skill <= SKILL_ADEPT)
+		if(sci_skill <= SKILL_TRAINED)
 			if(beneficial)
 				dat += "The scan suggests that the chemical has some potentially beneficial effects!"
 			if(harmful)

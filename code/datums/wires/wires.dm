@@ -98,7 +98,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 
 	var/list/wires_used = list()
 	for(var/colour in wires)
-		wires_used += prob(user.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_ADEPT)) ? pick(wires) : colour
+		wires_used += prob(user.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_TRAINED)) ? pick(wires) : colour
 	if(!user.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
 		wires_used = shuffle(wires_used)
 
@@ -137,7 +137,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 				if(isWirecutter(I) || isWirecutter(offhand_item))
 					var/colour = href_list["cut"]
 					CutWireColour(colour)
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_ADEPT)))
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 20, SKILL_TRAINED)))
 						RandomCut()
 						to_chat(L, "<span class='danger'>You accidentally nick another wire!</span>")
 					else if(!L.skill_check(SKILL_ELECTRICAL, SKILL_BASIC))
@@ -148,7 +148,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 			else if(href_list["pulse"])
 				if(isMultitool(I) || isMultitool(offhand_item))
 					var/colour = href_list["pulse"]
-					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_ADEPT)))
+					if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 30, SKILL_TRAINED)))
 						RandomPulse()
 						to_chat(L, "<span class='danger'>You accidentally pulse another wire!</span>")
 						if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 60, SKILL_BASIC)))
@@ -162,7 +162,7 @@ var/list/wireColours = list("red", "blue", "green", "darkred", "orange", "brown"
 					to_chat(L, "<span class='error'>You need a multitool!</span>")
 			else if(href_list["attach"])
 				var/colour = href_list["attach"]
-				if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 80, SKILL_EXPERT)))
+				if(prob(L.skill_fail_chance(SKILL_ELECTRICAL, 80, SKILL_EXPERIENCED)))
 					colour = pick(wires)
 					to_chat(L, "<span class='danger'>Are you sure you got the right wire?</span>")
 				// Detach

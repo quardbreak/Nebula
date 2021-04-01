@@ -144,7 +144,7 @@ var/const/NO_EMAG_ACT = -50
 
 /obj/item/card/emag/examine(mob/user)
 	. = ..()
-	if(user.skill_check(SKILL_DEVICES,SKILL_ADEPT))
+	if(user.skill_check(SKILL_DEVICES,SKILL_TRAINED))
 		to_chat(user, SPAN_WARNING("This ID card has some form of non-standard modifications."))
 
 /obj/item/card/id
@@ -492,7 +492,7 @@ var/const/NO_EMAG_ACT = -50
 
 	var/datum/computer_network/network = D.get_network()
 	if(!network)
-		if(usr.skill_check(SKILL_DEVICES, SKILL_EXPERT))
+		if(usr.skill_check(SKILL_DEVICES, SKILL_EXPERIENCED))
 			to_chat(usr, SPAN_NOTICE("The red LED on the card flashes once, signaling it has no network."))
 		else
 			to_chat(usr, "Pressing the synchronization button on the card causes a red LED to flash once.")
@@ -500,7 +500,7 @@ var/const/NO_EMAG_ACT = -50
 	if(refresh_access_record(network))
 		to_chat(usr, "A green light flashes as the card is synchronized with its network.")
 		return
-	if(usr.skill_check(SKILL_DEVICES, SKILL_EXPERT))
+	if(usr.skill_check(SKILL_DEVICES, SKILL_EXPERIENCED))
 		to_chat(usr, SPAN_NOTICE("The red LED on the card flashes three times, signaling it failed to synchronize the card with the network."))
 	else
 		to_chat(usr, SPAN_WARNING("Pressing the synchronization button on the card causes a red LED to flash three times."))

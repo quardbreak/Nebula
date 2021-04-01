@@ -5,9 +5,9 @@
 
 /datum/wires/apc
 	holder_type = /obj/machinery/power/apc
-	wire_count = 4	
+	wire_count = 4
 	descriptions = list(
-		new /datum/wire_description(APC_WIRE_IDSCAN, "This wire is connected to the ID scanning panel.", SKILL_EXPERT),
+		new /datum/wire_description(APC_WIRE_IDSCAN, "This wire is connected to the ID scanning panel.", SKILL_EXPERIENCED),
 		new /datum/wire_description(APC_WIRE_MAIN_POWER1, "This wire seems to be carrying a heavy current."),
 		new /datum/wire_description(APC_WIRE_MAIN_POWER2, "This wire seems to be carrying a heavy current."),
 		new /datum/wire_description(APC_WIRE_AI_CONTROL, "This wire connects to automated control systems.")
@@ -54,7 +54,7 @@
 			if(A.shorted == 0)
 				A.shorted = 1
 				addtimer(CALLBACK(src, .proc/reset_shorted), 2 MINUTES)
-	
+
 		if (APC_WIRE_AI_CONTROL)
 			if (A.aidisabled == 0)
 				A.aidisabled = 1

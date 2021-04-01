@@ -14,7 +14,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 	//More variables below.
 	var/list/grants = list()	// List of weakrefs to grant files.
 	var/user_id					// A unique identifier linking a mob/player/user to this access record and their grants.
-	
+
 /datum/computer_file/report/crew_record/New()
 	..()
 	filename = "record[random_id(type, 100,999)]"
@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(arrest_security_status, "Arrest")
 		var/skills = list()
 		for(var/decl/hierarchy/skill/S in GLOB.skills)
 			var/level = H.get_skill_value(S.type)
-			if(level > SKILL_NONE)
+			if(level > SKILL_UNSKILLED)
 				skills += "[S.name], [S.levels[level]]"
 
 		set_skillset(jointext(skills,"\n"))

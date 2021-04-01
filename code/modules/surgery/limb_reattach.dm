@@ -104,7 +104,7 @@
 	else
 		E.status |= ORGAN_CUT_AWAY
 
-	if(BP_IS_PROSTHETIC(E) && prob(user.skill_fail_chance(SKILL_DEVICES, 50, SKILL_ADEPT)))
+	if(BP_IS_PROSTHETIC(E) && prob(user.skill_fail_chance(SKILL_DEVICES, 50, SKILL_TRAINED)))
 		E.add_random_ailment()
 
 	target.update_body()

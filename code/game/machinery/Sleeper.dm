@@ -35,7 +35,7 @@
 
 /obj/machinery/sleeper/standard/Initialize(mapload, d, populate_parts)
 	. = ..()
-	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/stabilizer()) 
+	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/stabilizer())
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/sedatives())
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/painkillers())
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/antitoxins())
@@ -91,7 +91,7 @@
 			to_chat(user, SPAN_NOTICE("It is loaded with a beaker."))
 		if(occupant)
 			occupant.examine(arglist(args))
-		if(emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERT))
+		if(emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERIENCED))
 			to_chat(user, SPAN_NOTICE("The chemical input system looks like it has been tampered with."))
 		if(length(loaded_canisters))
 			to_chat(user, SPAN_NOTICE("There are [length(loaded_canisters)] chemical canister\s loaded:"))
@@ -166,7 +166,7 @@
 	data["empty_canisters"] = empties
 
 	if(istype(occupant))
-		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_ADEPT) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
+		var/scan = user.skill_check(SKILL_MEDICAL, SKILL_TRAINED) ? medical_scan_results(occupant) : "<span class='white'><b>Contains: \the [occupant]</b></span>"
 		scan = replacetext(scan,"'scan_notice'","'white'")
 		scan = replacetext(scan,"'scan_warning'","'average'")
 		scan = replacetext(scan,"'scan_danger'","'bad'")
@@ -263,7 +263,7 @@
 			to_chat(user, SPAN_WARNING("Unbuckle the subject before attempting to move them."))
 		else if(panel_open)
 			to_chat(user, SPAN_WARNING("Close the maintenance panel before attempting to place the subject in the sleeper."))
-		else 
+		else
 			go_in(target, user)
 		return TRUE
 

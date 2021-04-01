@@ -90,7 +90,7 @@
 /obj/machinery/ftl_shunt/core/examine(mob/user)
 	. = ..()
 	if(sabotaged)
-		if(user.skill_check(SKILL_ENGINES, SKILL_ADEPT))
+		if(user.skill_check(SKILL_ENGINES, SKILL_TRAINED))
 			switch(sabotaged)
 				if(SHUNT_SABOTAGE_MINOR)
 					to_chat(user, SPAN_WARNING("It looks like it's been tampered with in some way, and the accelerator vanes seem out of place."))
@@ -227,7 +227,7 @@
 		for(var/mob/living/carbon/human/H in GLOB.living_mob_list_) //Give engineers a hint that something might be very, very wrong.
 			if(!(H.z in ftl_computer.linked.map_z))
 				continue
-			if(H.skill_check(SKILL_ENGINES, SKILL_EXPERT))
+			if(H.skill_check(SKILL_ENGINES, SKILL_EXPERIENCED))
 				to_chat(H, SPAN_DANGER("The deck vibrates with a harmonic that sets your teeth on edge and fills you with dread."))
 
 	ftl_announcement.Announce(announcetxt, "FTL Shunt Management System", new_sound = sound('sound/misc/notice2.ogg'))

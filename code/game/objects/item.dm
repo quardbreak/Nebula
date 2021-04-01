@@ -81,7 +81,7 @@
 	var/pickup_sound
 	///Sound uses when dropping the item, or when its thrown.
 	var/drop_sound
-	
+
 	var/datum/reagents/coating // reagent container for coating things like blood/oil, used for overlays and tracks
 
 /obj/item/proc/get_origin_tech()
@@ -575,7 +575,7 @@ var/list/slot_flags_enumeration = list(
 /obj/item/proc/get_parry_chance(mob/user)
 	. = base_parry_chance
 	if(user)
-		if(base_parry_chance || user.skill_check(SKILL_COMBAT, SKILL_ADEPT))
+		if(base_parry_chance || user.skill_check(SKILL_COMBAT, SKILL_TRAINED))
 			. += 10 * (user.get_skill_value(SKILL_COMBAT) - SKILL_BASIC)
 
 /obj/item/proc/on_disarm_attempt(mob/target, mob/living/attacker)
@@ -674,7 +674,7 @@ var/list/slot_flags_enumeration = list(
 		return
 
 	if(!blood_data && istype(M))
-		blood_data = M.vessel.reagent_data[/decl/material/liquid/blood]		
+		blood_data = M.vessel.reagent_data[/decl/material/liquid/blood]
 	var/datum/extension/forensic_evidence/forensics = get_or_create_extension(src, /datum/extension/forensic_evidence)
 	forensics.add_data(/datum/forensics/blood_dna, blood_data["blood_DNA"])
 	add_coating(/decl/material/liquid/blood, amount, blood_data)
@@ -882,7 +882,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		icon = citem.item_icon
 	if(citem.item_state)
 		set_icon_state(citem.item_state)
-	
+
 /obj/item/proc/is_special_cutting_tool(var/high_power)
 	return FALSE
 

@@ -51,7 +51,7 @@
 		if(!landing_eye)
 			to_chat(user, SPAN_WARNING("Could not begin landing procedure!"))
 			return
-		if(user.skill_check(SKILL_PILOT, SKILL_EXPERT))
+		if(user.skill_check(SKILL_PILOT, SKILL_EXPERIENCED))
 			if(landing_eye.current_looker && landing_eye.current_looker != user)
 				to_chat(user, SPAN_WARNING("Someone is already performing a landing maneuver!"))
 				return TOPIC_HANDLED
@@ -87,7 +87,7 @@
 			if(landing_eye.look(user, list(shuttle_tag, target_sector))) // Placement of the eye was successful
 				landing_eye.extension_eye.forceMove(eye_turf)
 				return
-	
+
 	to_chat(user, SPAN_WARNING("You are unable to land!"))
 	return
 
@@ -116,7 +116,7 @@
 		else
 			qdel(lz)
 	to_chat(user, SPAN_WARNING("Invalid landing zone!"))
-	
+
 /obj/machinery/computer/shuttle_control/proc/end_landing()
 	var/datum/extension/eye/landing_eye = get_extension(src, /datum/extension/eye/)
 	if(landing_eye)

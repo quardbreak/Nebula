@@ -1396,9 +1396,9 @@
 	if(!current_limb || !S || !U)
 		return
 
-	var/fail_prob = U.skill_fail_chance(SKILL_MEDICAL, 60, SKILL_ADEPT, 3)
+	var/fail_prob = U.skill_fail_chance(SKILL_MEDICAL, 60, SKILL_TRAINED, 3)
 	if(self)
-		fail_prob += U.skill_fail_chance(SKILL_MEDICAL, 20, SKILL_EXPERT, 1)
+		fail_prob += U.skill_fail_chance(SKILL_MEDICAL, 20, SKILL_EXPERIENCED, 1)
 	var/decl/pronouns/G = get_pronouns()
 	if(prob(fail_prob))
 		visible_message( \
@@ -1650,7 +1650,7 @@
 
 /mob/living/carbon/human/ranged_accuracy_mods()
 	. = ..()
-	if(get_shock() > 10 && !skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+	if(get_shock() > 10 && !skill_check(SKILL_WEAPONS, SKILL_TRAINED))
 		. -= 1
 	if(get_shock() > 50)
 		. -= 1
@@ -1658,11 +1658,11 @@
 		. -= 1
 	if(shock_stage > 30)
 		. -= 1
-	if(skill_check(SKILL_WEAPONS, SKILL_ADEPT))
+	if(skill_check(SKILL_WEAPONS, SKILL_TRAINED))
 		. += 1
-	if(skill_check(SKILL_WEAPONS, SKILL_EXPERT))
+	if(skill_check(SKILL_WEAPONS, SKILL_EXPERIENCED))
 		. += 1
-	if(skill_check(SKILL_WEAPONS, SKILL_PROF))
+	if(skill_check(SKILL_WEAPONS, SKILL_MASTER))
 		. += 2
 
 /mob/living/carbon/human/can_drown()
@@ -1802,7 +1802,7 @@
 
 /mob/living/carbon/human/proc/get_hands_organs()
 	. = list()
-	for(var/bp in held_item_slots) 
+	for(var/bp in held_item_slots)
 		if(organs_by_name[bp])
 			. |= organs_by_name[bp]
 

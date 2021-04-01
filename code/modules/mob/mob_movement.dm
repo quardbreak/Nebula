@@ -138,7 +138,7 @@
 		src.m_flag = 1
 		if ((A != src.loc && A && A.z == src.z))
 			src.last_move = get_dir(A, src.loc)
-	
+
 	if(!inertia_moving)
 		inertia_next_move = world.time + inertia_move_delay
 		space_drift(direct ? direct : last_move)
@@ -161,7 +161,7 @@
 			return backup
 		return -1
 
-/mob/proc/space_do_move(var/allow_move, var/direction)	
+/mob/proc/space_do_move(var/allow_move, var/direction)
 	if(ismovable(allow_move))//push off things in space
 		handle_space_pushoff(allow_move, direction)
 		allow_move = -1
@@ -227,7 +227,7 @@
 
 //return 1 if slipped, 0 otherwise
 /mob/proc/handle_spaceslipping()
-	if(prob(skill_fail_chance(SKILL_EVA, slip_chance(10), SKILL_EXPERT)))
+	if(prob(skill_fail_chance(SKILL_EVA, slip_chance(10), SKILL_EXPERIENCED)))
 		to_chat(src, "<span class='warning'>You slipped!</span>")
 		step(src,turn(last_move, pick(45,-45)))
 		return 1

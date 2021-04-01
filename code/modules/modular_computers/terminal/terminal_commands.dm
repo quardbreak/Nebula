@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(terminal_commands, init_subtypes(/datum/terminal_command))
 	var/regex_flags                       // Used in the regex
 	var/regex/regex                       // The actual regex, produced from above.
 	var/core_skill = SKILL_COMPUTER       // The skill which is checked
-	var/skill_needed = SKILL_ADEPT        // How much skill the user needs to use this. This is not for critical failure effects at unskilled; those are handled globally.
+	var/skill_needed = SKILL_TRAINED        // How much skill the user needs to use this. This is not for critical failure effects at unskilled; those are handled globally.
 	var/req_access = list()               // Stores access needed, if any
 	var/needs_network					  // If this command fails if computer running terminal isn't connected to a network
 
@@ -90,7 +90,7 @@ Subtypes
 	var/list/manargs = get_arguments(text)
 	if(!length(manargs) || isnum(text2num(manargs[1])))
 		var/selected_page = (length(manargs)) ? text2num(manargs[1]) : 1
-		
+
 		var/list/valid_commands = list()
 		for(var/comm in GLOB.terminal_commands)
 			var/datum/terminal_command/command_datum = comm
@@ -171,7 +171,7 @@ Subtypes
 	man_entry = list("Format: locate nid", "Attempts to locate the device with the given nid by triangulating via relays.")
 	pattern = @"locate"
 	req_access = list(access_network)
-	skill_needed = SKILL_PROF
+	skill_needed = SKILL_MASTER
 	needs_network = TRUE
 
 /datum/terminal_command/locate/proper_input_entered(text, mob/user, datum/terminal/terminal)
@@ -307,7 +307,7 @@ Subtypes
 /datum/terminal_command/ls/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(!terminal.current_disk || ispath(terminal.current_disk))
 		return "ls: No disk selected."
-	
+
 	var/list/ls_args = get_arguments(text)
 
 	var/selected_page = (length(ls_args)) ? text2num(ls_args[1]) : 1
@@ -318,7 +318,7 @@ Subtypes
 	var/list/file_data = list()
 	for(var/datum/computer_file/F in files)
 		file_data += "[F.filename].[F.filetype] - [F.size] GQ"
-	
+
 	return print_as_page(file_data, "file", selected_page, terminal.history_max_length - 1)
 
 /datum/terminal_command/remove
@@ -329,7 +329,7 @@ Subtypes
 /datum/terminal_command/remove/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(!terminal.current_disk)
 		return "rm: No disk selected."
-	
+
 	var/file_name = copytext(text, 4)
 
 	var/deleted = terminal.current_disk.delete_file(file_name)
@@ -346,7 +346,7 @@ Subtypes
 /datum/terminal_command/move/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(!terminal.current_disk)
 		return "mv: No disk selected."
-	
+
 	var/list/mv_args = get_arguments(text)
 	if(length(mv_args) < 2)
 		return "mv: Improper syntax, use mv \[file name\] \[destination\]."
@@ -393,7 +393,7 @@ Subtypes
 
 	if(!dest)
 		return "mv: Could not locate file destination."
-	
+
 	terminal.current_move = new(terminal.current_disk, dest, F)
 	return "mv: Beginning file move..."
 
@@ -405,7 +405,7 @@ Subtypes
 /datum/terminal_command/copy/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	if(!terminal.current_disk)
 		return "cp: No disk selected."
-	
+
 	if(length(text) < 4)
 		return "cp: Improper syntax, use copy \[file name\]."
 
@@ -436,7 +436,7 @@ Subtypes
 	var/datum/computer_file/F = terminal.current_disk.get_file(rename_args[1])
 	if(!F)
 		return "rename: Could not find file with name [rename_args[1]]."
-	
+
 	var/new_name = sanitize(rename_args[2])
 
 	if(length(new_name))
@@ -454,7 +454,7 @@ Subtypes
 	var/list/target_args = get_arguments(text)
 	if(!length(target_args))
 		return "target: The current target network tag is [terminal.network_target]."
-	
+
 	terminal.network_target = uppertext(target_args[1])
 	return "target: Changed network target to [terminal.network_target]."
 
@@ -467,7 +467,7 @@ Subtypes
 
 /datum/terminal_command/com/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	// If the user is unskilled, call a random method
-	if(!user.skill_check(core_skill, SKILL_EXPERT))
+	if(!user.skill_check(core_skill, SKILL_EXPERIENCED))
 		var/target_tag = terminal.network_target
 		if(!target_tag)
 			return "com: No network target set. Use 'target' to set a network target."
@@ -486,17 +486,17 @@ Subtypes
 	var/list/com_args = get_arguments(text)
 	if(!length(com_args))
 		return "com: Improper syntax, use com \[variable\] \[value\]."
-	
+
 	var/target_tag = terminal.network_target
 	if(!target_tag)
 		return "com: No network target set. Use 'target' to set a network target."
 
 	var/datum/computer_network/network = terminal.computer.get_network()
 	var/datum/extension/network_device/D = network.get_device_by_tag(target_tag)
-	
+
 	if(!istype(D))
 		return "com: Could not find target device with network tag [target_tag]."
-	
+
 	if(!D.has_commands)
 		return "com: Target device cannot receive commmands."
 
@@ -514,9 +514,9 @@ Subtypes
 	man_entry = list("Format: listcom \[pg number / command\]", "Lists commands available on the current network target.", "If a command is given as an argument, provides information about that command.")
 	pattern = @"^listcom"
 	needs_network = TRUE
-	skill_needed = SKILL_EXPERT
+	skill_needed = SKILL_EXPERIENCED
 
-/datum/terminal_command/listcom/proper_input_entered(text, mob/user, datum/terminal/terminal)	
+/datum/terminal_command/listcom/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/target_tag = terminal.network_target
 	if(!target_tag)
 		return "listcom: No network target set. Use 'target' to set a network target."
@@ -551,7 +551,7 @@ Subtypes
 		selected_ref = D.command_and_write[selected_alias]
 	else
 		return "listcom: No command with alias '[selected_alias]' found."
-	
+
 	. = list()
 	. += "[selected_ref.name]: [selected_ref.desc]"
 	if(istype(selected_ref, /decl/public_access/public_variable))
@@ -568,13 +568,13 @@ Subtypes
 	man_entry = list("Format: addcom \[type\] \[alias\]", "Adds a command on the current network target. Accepts types 'METHOD' or 'VARIABLE'")
 	pattern = @"^addcom"
 	needs_network = TRUE
-	skill_needed = SKILL_EXPERT
+	skill_needed = SKILL_EXPERIENCED
 
 /datum/terminal_command/addcom/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/addcom_args = get_arguments(text)
 	if(!length(addcom_args))
 		return "addcom: Improper syntax, use addcom \[type\] \[alias\]. Accepts types 'METHOD' or 'VARIABLE'"
-	
+
 	var/target_tag = terminal.network_target
 	if(!target_tag)
 		return "addcom: No network target set. Use 'target' to set a network target."
@@ -602,13 +602,13 @@ Subtypes
 	man_entry = list("Format: modcom \[alias\] \[index\]", "Modifies a command on the current network target. Leave index blank to return a list of possible references")
 	pattern = @"^modcom"
 	needs_network = TRUE
-	skill_needed = SKILL_PROF // addcom only adds a randomly chosen command to the device - you need to be significantly more skilled to select a specific one remotely.
+	skill_needed = SKILL_MASTER // addcom only adds a randomly chosen command to the device - you need to be significantly more skilled to select a specific one remotely.
 
 /datum/terminal_command/modcom/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/modcom_args = get_arguments(text)
 	if(!length(modcom_args))
 		return "modcom: Improper syntax, use modcom \[alias\] \[index\].'"
-	
+
 	var/target_tag = terminal.network_target
 	if(!target_tag)
 		return "modcom: No network target set. Use 'target' to set a network target."
@@ -625,7 +625,7 @@ Subtypes
 	var/alias = modcom_args[1]
 	var/list/valid_commands = list()
 	var/list/device_command_list
-	// Find the valid methods or variables this command can reference 
+	// Find the valid methods or variables this command can reference
 	if(alias in D.command_and_call)
 		device_command_list = D.command_and_call
 		valid_commands = D.get_public_methods()
@@ -634,7 +634,7 @@ Subtypes
 		valid_commands = D.get_public_variables()
 	else
 		return "modcom: No command with [alias] found."
-	
+
 	var/selected_index = (length(modcom_args) >= 2) ? modcom_args[2] : null
 
 	// If there is no given index, return a list of available indexes.
@@ -647,7 +647,7 @@ Subtypes
 			options += "([index] - [reference.name])"
 			index++
 		return options
-	
+
 	selected_index = text2num(selected_index)
 	if(selected_index > length(valid_commands))
 		return "modcom: Invalid index."
@@ -663,17 +663,17 @@ Subtypes
 	man_entry = list("Format: namecom \[old alias\] \[new alias\]", "Renames a command with the given alias on the current network target.")
 	pattern = @"^namecom"
 	needs_network = TRUE
-	skill_needed = SKILL_EXPERT
+	skill_needed = SKILL_EXPERIENCED
 
 /datum/terminal_command/namecom/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/namecom_args = get_arguments(text)
 	if(length(namecom_args) < 2)
 		return "namecom: Improper syntax, use namecom \[old alias\] \[new alias\]."
-	
+
 	var/target_tag = terminal.network_target
 	if(!target_tag)
 		return "namecom: No network target set. Use 'target' to set a network target."
-	
+
 	var/datum/computer_network/network = terminal.computer.get_network()
 	var/datum/extension/network_device/D = network.get_device_by_tag(target_tag)
 
@@ -693,17 +693,17 @@ Subtypes
 	man_entry = list("Format: rmcom \[alias\]", "Removes a command with the given alias on the current network target.")
 	pattern = @"^rmcom"
 	needs_network = TRUE
-	skill_needed = SKILL_EXPERT
+	skill_needed = SKILL_EXPERIENCED
 
 /datum/terminal_command/rmcom/proper_input_entered(text, mob/user, datum/terminal/terminal)
 	var/list/rmcom_args = get_arguments(text)
 	if(!length(rmcom_args))
 		return "rmcom: Improper syntax, use rmcom \[alias\]."
-	
+
 	var/target_tag = terminal.network_target
 	if(!target_tag)
 		return "rmcom: No network target set. Use 'target' to set a network target."
-	
+
 	var/datum/computer_network/network = terminal.computer.get_network()
 	var/datum/extension/network_device/D = network.get_device_by_tag(target_tag)
 
