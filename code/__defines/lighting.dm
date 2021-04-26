@@ -71,3 +71,10 @@
 #define LIGHT_SEMI 180
 #define LIGHT_WIDE 90
 #define LIGHT_NARROW 45
+
+// Lightmode defines
+#define LIGHTMODE_EMERGENCY "emergency_lighting"
+#define LIGHTMODE_EVACUATION "evacuation_lighting"
+#define LIGHTMODE_ALARM "alarm"
+#define LIGHTMODE_READY "ready"
+#define LIGHTMODE_RADSTORM "radiation_storm"

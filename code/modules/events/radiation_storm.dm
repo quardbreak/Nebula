@@ -25,6 +25,10 @@
 	..()
 	global.using_map.make_maint_all_access(1)
 
+	for(var/area/A in global.areas)
+		if(istype(A) && (A.area_flags & AREA_FLAG_HALLWAY))
+			A.set_lighting_mode(LIGHTMODE_RADSTORM, TRUE)
+
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
 		command_announcement.Announce("The [location_name()] has entered the radiation belt. Please remain in a sheltered area until the all clear is given.", "[location_name()] Sensor Array", zlevels = affecting_z)
@@ -39,6 +43,10 @@
 
 	else if(activeFor == leaveBelt)
 		command_announcement.Announce("The [location_name()] has passed the radiation belt. Please allow for up to one minute while radiation levels dissipate, and report to the infirmary if you experience any unusual symptoms. Maintenance will return to normal access parameters shortly.", "[location_name()] Sensor Array", zlevels = affecting_z)
+
+		for(var/area/A in global.areas)
+			if(istype(A) && (A.area_flags & AREA_FLAG_HALLWAY))
+				A.set_lighting_mode(LIGHTMODE_RADSTORM, FALSE)
 
 /datum/event/radiation_storm/proc/radiate()
 	var/radiation_level = rand(15, 35)

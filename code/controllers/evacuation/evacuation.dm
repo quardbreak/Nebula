@@ -86,9 +86,7 @@
 	state = EVAC_PREPPING
 
 	if(emergency_evacuation)
-		for(var/area/A in global.areas)
-			if(istype(A) && (A.area_flags & AREA_FLAG_HALLWAY))
-				A.readyalert()
+		toggle_emergency_light(TRUE)
 		if(!skip_announce)
 			global.using_map.emergency_shuttle_called_announcement()
 	else
@@ -114,9 +112,7 @@
 
 	if(emergency_evacuation)
 		evac_recalled.Announce(global.using_map.emergency_shuttle_recall_message)
-		for(var/area/A in global.areas)
-			if(istype(A) && (A.area_flags & AREA_FLAG_HALLWAY))
-				A.readyreset()
+		toggle_emergency_light(FALSE)
 		emergency_evacuation = 0
 	else
 		priority_announcement.Announce(global.using_map.shuttle_recall_message)
@@ -184,3 +180,9 @@
 
 /datum/evacuation_controller/proc/should_call_autotransfer_vote()
 	return (state == EVAC_IDLE)
+
+/datum/evacuation_controller/proc/toggle_emergency_light(state)
+	for(var/area/A in global.areas)
+		if(istype(A) && (A.area_flags & AREA_FLAG_HALLWAY))
+			A.set_lighting_mode(LIGHTMODE_EVACUATION, state)
+			state == TRUE ? A.readyalert() : A.readyreset()

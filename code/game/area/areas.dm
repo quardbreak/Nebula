@@ -54,6 +54,9 @@ var/global/list/areas = list()
 	var/list/air_vent_info = list()
 	var/list/air_scrub_info = list()
 
+	var/lighting_mode = ""
+	var/list/enabled_lighting_modes = list()
+
 /area/New()
 	icon_state = ""
 	uid = ++global_uid
@@ -76,7 +79,7 @@ var/global/list/areas = list()
 /area/Del()
 	global.areas -= src
 	. = ..()
-	
+
 /area/Destroy()
 	global.areas -= src
 	..()
@@ -283,10 +286,32 @@ var/global/list/areas = list()
 		update_icon()
 		power_change()
 
-/area/proc/set_emergency_lighting(var/enable)
-	for(var/obj/machinery/light/M in src)
-		M.set_emergency_lighting(enable)
+/area/proc/set_lighting_mode(mode, state)
+	if(!mode)
+		CRASH("Missing 'mode' arg.")
+	if(state)
+		enabled_lighting_modes |= mode
+	else if(mode in enabled_lighting_modes)
+		enabled_lighting_modes -= mode
 
+	var/power_channel = LIGHT
+	var/old_lighting_mode = lighting_mode
+	if(LIGHTMODE_EMERGENCY in enabled_lighting_modes)
+		lighting_mode = LIGHTMODE_EMERGENCY
+		power_channel = ENVIRON
+	else if(LIGHTMODE_RADSTORM in enabled_lighting_modes)
+		lighting_mode = LIGHTMODE_RADSTORM
+	else if(LIGHTMODE_EVACUATION in enabled_lighting_modes)
+		lighting_mode = LIGHTMODE_EVACUATION
+	else if(LIGHTMODE_ALARM in enabled_lighting_modes)
+		lighting_mode = LIGHTMODE_ALARM
+	else
+		lighting_mode = null
+	if(old_lighting_mode == lighting_mode)
+		return
+	for(var/obj/machinery/light/L in src)
+		L.set_mode(lighting_mode)
+		L.update_power_channel(power_channel)
 
 var/global/list/mob/living/forced_ambiance_list = new
 

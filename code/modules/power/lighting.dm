@@ -12,10 +12,6 @@
 #define LIGHT_BULB_TEMPERATURE 400 //K - used value for a 60W bulb
 #define LIGHTING_POWER_FACTOR 5		//5W per luminosity * range
 
-
-#define LIGHTMODE_EMERGENCY "emergency_lighting"
-#define LIGHTMODE_READY "ready"
-
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
@@ -190,28 +186,21 @@
 		set_light(0)
 
 /obj/machinery/light/proc/set_mode(var/new_mode)
-	if(current_mode != new_mode)
+	if(current_mode == new_mode || !lightbulb)
+		return
+
+	if(new_mode in lightbulb.lighting_modes)
 		current_mode = new_mode
-		update_icon(0)
+	else if(new_mode == null)
+		current_mode = null
+
+	update_icon(0)
 
 /obj/machinery/light/proc/get_mode_color()
 	if (current_mode && (current_mode in lightbulb.lighting_modes))
 		return lightbulb.lighting_modes[current_mode]["l_color"]
 	else
 		return lightbulb.b_color
-
-/obj/machinery/light/proc/set_emergency_lighting(var/enable)
-	if(!lightbulb)
-		return
-
-	if(enable)
-		if(LIGHTMODE_EMERGENCY in lightbulb.lighting_modes)
-			set_mode(LIGHTMODE_EMERGENCY)
-			update_power_channel(ENVIRON)
-	else
-		if(current_mode == LIGHTMODE_EMERGENCY)
-			set_mode(null)
-			update_power_channel(initial(power_channel))
 
 // attempt to set the light's on/off status
 // will not switch on if broken/burned/empty
@@ -243,6 +232,10 @@
 	L.forceMove(src)
 	lightbulb = L
 
+	var/area/A = get_area(src)
+	if(A && (A.lighting_mode in lightbulb.lighting_modes))
+		current_mode = A.lighting_mode
+
 	on = powered()
 	update_icon()
 
@@ -251,6 +244,7 @@
 	lightbulb.dropInto(loc)
 	lightbulb.update_icon()
 	lightbulb = null
+	current_mode = null
 	update_icon()
 
 /obj/machinery/light/cannot_transition_to(state_path, mob/user)
@@ -527,6 +521,9 @@
 	b_color = LIGHT_COLOR_HALOGEN
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_range = 4, l_power = 1, l_color = LIGHT_COLOR_EMERGENCY),
+		LIGHTMODE_EVACUATION = list(l_range = 7, l_power = 6, l_color = "#bf0000"),
+		LIGHTMODE_ALARM = list(l_range = 7, l_power = 6, l_color = "#ff3333"),
+		LIGHTMODE_RADSTORM = list(l_range = 7, l_power = 3, l_color = COLOR_PAKISTAN_GREEN)
 	)
 	sound_on = 'sound/machines/lightson.ogg'
 
@@ -558,6 +555,9 @@
 	b_color = LIGHT_COLOR_TUNGSTEN
 	lighting_modes = list(
 		LIGHTMODE_EMERGENCY = list(l_range = 3, l_power = 1, l_color = LIGHT_COLOR_EMERGENCY),
+		LIGHTMODE_EVACUATION = list(l_range = 4, l_power = 4, l_color = "#bf0000"),
+		LIGHTMODE_ALARM = list(l_range = 4, l_power = 4, l_color = "#ff3333"),
+		LIGHTMODE_RADSTORM = list(l_range = 4, l_power = 2, l_color = COLOR_PAKISTAN_GREEN)
 	)
 
 /obj/item/light/bulb/red
