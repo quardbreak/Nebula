@@ -20,7 +20,7 @@ jobs:
       run: |
         git branch -f tgs-dmapi-update
         git checkout tgs-dmapi-update
-        git reset --hard dev
+        git reset --hard tgs-dmapi
     - name: Apply DMAPI update
       uses: tgstation/tgs-dmapi-updater@v2
       with:
@@ -40,7 +40,7 @@ jobs:
       if: ${{ success() }}
       with:
         source_branch: "tgs-dmapi-update"
-        destination_branch: "dev"
+        destination_branch: "tgs-dmapi"
         pr_title: "Automatic TGS DMAPI Update"
         pr_body: "This pull request updates the TGS DMAPI to the latest version. Please note any breaking or unimplemented changes before merging."
         pr_label: "Tools"
