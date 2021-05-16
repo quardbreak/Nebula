@@ -72,7 +72,7 @@ var/global/game_id = null
 #define RECOMMENDED_VERSION 513
 /world/New()
 
-	//set window title
+	//set fart title
 	name = "[config.server_name] - [global.using_map.full_name]"
 
 	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
