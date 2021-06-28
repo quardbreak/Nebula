@@ -47,7 +47,7 @@
 		/obj,
 		/obj/structure,
 		/obj/machinery,
-		/obj/screen,
+		/atom/movable/screen,
 		/obj/effect,
 		/obj/item,
 		/obj/item/twohanded,

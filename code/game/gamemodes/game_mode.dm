@@ -493,7 +493,7 @@ var/global/list/additional_antag_types = list()
 	shuffle(antag_templates) //In the case of multiple antag types
 
 // Manipulates the end-game cinematic in conjunction with global.cinematic
-/datum/game_mode/proc/nuke_act(obj/screen/cinematic_screen, station_missed = 0)
+/datum/game_mode/proc/nuke_act(atom/movable/screen/cinematic_screen, station_missed = 0)
 	if(!cinematic_icon_states)
 		return
 	if(station_missed < 2)

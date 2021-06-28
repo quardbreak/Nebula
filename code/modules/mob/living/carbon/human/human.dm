@@ -577,7 +577,7 @@
 		return FLASH_PROTECTION_MAJOR
 	return total_protection
 
-/mob/living/carbon/human/flash_eyes(var/intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/carbon/human/flash_eyes(var/intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(species.has_organ[species.vision_organ])
 		var/obj/item/organ/internal/eyes/I = get_internal_organ(species.vision_organ)
 		if(!isnull(I))

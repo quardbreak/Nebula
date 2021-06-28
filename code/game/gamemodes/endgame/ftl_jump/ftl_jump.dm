@@ -52,7 +52,7 @@
 	duplicated += M
 	if(M.client)
 		to_chat(M,"<span class='notice'>You feel oddly light, and somewhat disoriented as everything around you shimmers and warps ever so slightly.</span>")
-		M.overlay_fullscreen("wormhole", /obj/screen/fullscreen/wormhole_overlay)
+		M.overlay_fullscreen("wormhole", /atom/movable/screen/fullscreen/wormhole_overlay)
 	M.set_status(STAT_CONFUSE, 20)
 	bluegoasts += new/obj/effect/bluegoast/(get_turf(M),M)
 
@@ -131,7 +131,7 @@
 	daddy.dust()
 	qdel(src)
 
-/obj/screen/fullscreen/wormhole_overlay
+/atom/movable/screen/fullscreen/wormhole_overlay
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mfoam"
 	screen_loc = ui_entire_screen

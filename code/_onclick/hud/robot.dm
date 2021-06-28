@@ -1,6 +1,6 @@
-var/global/obj/screen/robot_inventory
+var/global/atom/movable/screen/robot_inventory
 
-/obj/screen/robot_drop_grab
+/atom/movable/screen/robot_drop_grab
 	name = "drop grab"
 	icon = 'icons/mob/screen1_robot.dmi'
 	icon_state = "drop_grab"
@@ -8,7 +8,7 @@ var/global/obj/screen/robot_inventory
 	invisibility = INVISIBILITY_MAXIMUM
 	alpha = 0
 
-/obj/screen/robot_drop_grab/Click(location, control, params)
+/atom/movable/screen/robot_drop_grab/Click(location, control, params)
 	. = ..()
 	if(isrobot(usr) && !usr.incapacitated())
 		var/mob/living/silicon/robot/R = usr
@@ -29,10 +29,10 @@ var/global/obj/screen/robot_inventory
 	adding = list()
 	other = list()
 
-	var/obj/screen/using
+	var/atom/movable/screen/using
 
 	//Radio
-	using = new /obj/screen()
+	using = new /atom/movable/screen()
 	using.SetName("radio")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
@@ -42,7 +42,7 @@ var/global/obj/screen/robot_inventory
 
 	//Module select
 
-	using = new /obj/screen()
+	using = new /atom/movable/screen()
 	using.SetName("module1")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
@@ -51,7 +51,7 @@ var/global/obj/screen/robot_inventory
 	adding += using
 	R.inv1 = using
 
-	using = new /obj/screen()
+	using = new /atom/movable/screen()
 	using.SetName("module2")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
@@ -60,7 +60,7 @@ var/global/obj/screen/robot_inventory
 	adding += using
 	R.inv2 = using
 
-	using = new /obj/screen()
+	using = new /atom/movable/screen()
 	using.SetName("module3")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
@@ -76,7 +76,7 @@ var/global/obj/screen/robot_inventory
 	adding += R.ui_drop_grab
 
 	//Intent
-	using = new /obj/screen()
+	using = new /atom/movable/screen()
 	using.SetName("act_intent")
 	using.set_dir(SOUTHWEST)
 	using.icon = 'icons/mob/screen1_robot.dmi'
@@ -86,28 +86,28 @@ var/global/obj/screen/robot_inventory
 	action_intent = using
 
 	//Cell
-	R.cells = new /obj/screen()
+	R.cells = new /atom/movable/screen()
 	R.cells.icon = 'icons/mob/screen1_robot.dmi'
 	R.cells.icon_state = "charge-empty"
 	R.cells.SetName("cell")
 	R.cells.screen_loc = ui_toxin
 
 	//Health
-	R.healths = new /obj/screen()
+	R.healths = new /atom/movable/screen()
 	R.healths.icon = 'icons/mob/screen1_robot.dmi'
 	R.healths.icon_state = "health0"
 	R.healths.SetName("health")
 	R.healths.screen_loc = ui_borg_health
 
 	//Installed Module
-	R.hands = new /obj/screen()
+	R.hands = new /atom/movable/screen()
 	R.hands.icon = 'icons/mob/screen1_robot.dmi'
 	R.hands.icon_state = "nomod"
 	R.hands.SetName("module")
 	R.hands.screen_loc = ui_borg_module
 
 	//Module Panel
-	using = new /obj/screen()
+	using = new /atom/movable/screen()
 	using.SetName("panel")
 	using.icon = 'icons/mob/screen1_robot.dmi'
 	using.icon_state = "panel"
@@ -115,55 +115,55 @@ var/global/obj/screen/robot_inventory
 	adding += using
 
 	//Store
-	R.throw_icon = new /obj/screen()
+	R.throw_icon = new /atom/movable/screen()
 	R.throw_icon.icon = 'icons/mob/screen1_robot.dmi'
 	R.throw_icon.icon_state = "store"
 	R.throw_icon.SetName("store")
 	R.throw_icon.screen_loc = ui_borg_store
 
 	//Inventory
-	robot_inventory = new /obj/screen()
+	robot_inventory = new /atom/movable/screen()
 	robot_inventory.SetName("inventory")
 	robot_inventory.icon = 'icons/mob/screen1_robot.dmi'
 	robot_inventory.icon_state = "inventory"
 	robot_inventory.screen_loc = ui_borg_inventory
 
 	//Temp
-	R.bodytemp = new /obj/screen()
+	R.bodytemp = new /atom/movable/screen()
 	R.bodytemp.icon = 'icons/mob/status_indicators.dmi'
 	R.bodytemp.icon_state = "temp0"
 	R.bodytemp.SetName("body temperature")
 	R.bodytemp.screen_loc = ui_temp
 
 
-	R.oxygen = new /obj/screen()
+	R.oxygen = new /atom/movable/screen()
 	R.oxygen.icon = 'icons/mob/screen1_robot.dmi'
 	R.oxygen.icon_state = "oxy0"
 	R.oxygen.SetName("oxygen")
 	R.oxygen.screen_loc = ui_oxygen
 
-	R.fire = new /obj/screen()
+	R.fire = new /atom/movable/screen()
 	R.fire.icon = 'icons/mob/screen1_robot.dmi'
 	R.fire.icon_state = "fire0"
 	R.fire.SetName("fire")
 	R.fire.screen_loc = ui_fire
 
-	R.up_hint = new /obj/screen()
+	R.up_hint = new /atom/movable/screen()
 	R.up_hint.icon = 'icons/mob/screen1_robot.dmi'
 	R.up_hint.icon_state = "uphint0"
 	R.up_hint.SetName("up hint")
 	R.up_hint.screen_loc = ui_up_hint
 
-	R.zone_sel = new /obj/screen/zone_sel()
+	R.zone_sel = new /atom/movable/screen/zone_sel()
 	R.zone_sel.icon = 'icons/mob/screen1_robot.dmi'
 	R.zone_sel.overlays.Cut()
 	R.zone_sel.overlays += image('icons/mob/zone_sel.dmi', "[R.zone_sel.selecting]")
 
 	//Handle the gun settings buttons
-	R.gun_setting_icon = new /obj/screen/gun/mode(null)
-	R.item_use_icon = new /obj/screen/gun/item(null)
-	R.gun_move_icon = new /obj/screen/gun/move(null)
-	R.radio_use_icon = new /obj/screen/gun/radio(null)
+	R.gun_setting_icon = new /atom/movable/screen/gun/mode(null)
+	R.item_use_icon = new /atom/movable/screen/gun/item(null)
+	R.gun_move_icon = new /atom/movable/screen/gun/move(null)
+	R.radio_use_icon = new /atom/movable/screen/gun/radio(null)
 
 	R.client.screen = list()
 	R.client.screen += list(R.throw_icon, R.zone_sel, R.oxygen, R.fire, R.up_hint, R.hands, R.healths, R.cells, robot_inventory, R.gun_setting_icon)

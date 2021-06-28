@@ -25,8 +25,8 @@
 		desc += " It's made of [material.use_name]."
 
 /obj/item/clipboard/handle_mouse_drop(atom/over, mob/user)
-	if(ishuman(user) && istype(over, /obj/screen/inventory))
-		var/obj/screen/inventory/inv = over
+	if(ishuman(user) && istype(over, /atom/movable/screen/inventory))
+		var/atom/movable/screen/inventory/inv = over
 		add_fingerprint(user)
 		if(user.unEquip(src))
 			user.equip_to_slot_if_possible(src, inv.slot_id)

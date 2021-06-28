@@ -35,7 +35,7 @@
 			src.open(user)
 			return 0
 
-		if (!( istype(over_object, /obj/screen/inventory) ))
+		if (!( istype(over_object, /atom/movable/screen/inventory) ))
 			return 1
 
 		//makes sure master_item is equipped before putting it in hand, so that we can't drag it into our hand from miles away.
@@ -44,7 +44,7 @@
 			return 0
 
 		if (!( user.restrained() ) && !( user.stat ))
-			var/obj/screen/inventory/inv = over_object
+			var/atom/movable/screen/inventory/inv = over_object
 			master_item.add_fingerprint(user)
 			if(user.unEquip(master_item))
 				user.equip_to_slot_if_possible(master_item, inv.slot_id)

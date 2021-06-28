@@ -110,7 +110,7 @@
 	assembly.examine(user)
 
 /obj/item/modular_computer/handle_mouse_drop(atom/over, mob/user)
-	. = (!istype(over, /obj/screen) && attack_self(user)) || ..()
+	. = (!istype(over, /atom/movable/screen) && attack_self(user)) || ..()
 
 /obj/item/modular_computer/afterattack(atom/target, mob/user, proximity)
 	. = ..()

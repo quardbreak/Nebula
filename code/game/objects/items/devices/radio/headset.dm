@@ -305,7 +305,7 @@
 			recalculateChannels(1)
 
 /obj/item/radio/headset/handle_mouse_drop(var/atom/over, var/mob/user)
-	if(!istype(over, /obj/screen) && loc == user && CanUseTopic(user) && attack_self(user))
+	if(!istype(over, /atom/movable/screen) && loc == user && CanUseTopic(user) && attack_self(user))
 		return TRUE
 	. = ..()
 

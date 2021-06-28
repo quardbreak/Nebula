@@ -131,7 +131,7 @@
 	if (SSevac.evacuation_controller && SSevac.evacuation_controller.cancel_evacuation())
 		log_and_message_admins("[key_name(user)] has cancelled the FTL jump.")
 
-/obj/screen/fullscreen/jump_overlay
+/atom/movable/screen/fullscreen/jump_overlay
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "mfoam"
 	screen_loc = ui_entire_screen

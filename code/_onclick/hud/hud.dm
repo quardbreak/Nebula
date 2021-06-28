@@ -24,17 +24,17 @@
 	var/show_intent_icons = 0
 	var/hotkey_ui_hidden = 0	//This is to hide the buttons that can be used via hotkeys. (hotkeybuttons list of buttons)
 
-	var/obj/screen/lingchemdisplay
+	var/atom/movable/screen/lingchemdisplay
 	var/list/hand_hud_objects
-	var/obj/screen/action_intent
-	var/obj/screen/move_intent
-	var/obj/screen/stamina/stamina_bar
+	var/atom/movable/screen/action_intent
+	var/atom/movable/screen/move_intent
+	var/atom/movable/screen/stamina/stamina_bar
 
 	var/list/adding
 	var/list/other
-	var/list/obj/screen/hotkeybuttons
+	var/list/atom/movable/screen/hotkeybuttons
 
-	var/obj/screen/movable/action_button/hide_toggle/hide_actions_toggle
+	var/atom/movable/screen/movable/action_button/hide_toggle/hide_actions_toggle
 	var/action_buttons_hidden = 0
 
 /datum/hud/New(mob/owner)
@@ -167,7 +167,7 @@
 		QDEL_NULL_LIST(hand_hud_objects)
 	else
 		for(var/bp in removing)
-			for(var/obj/screen/inventory/inv_box in hand_hud_objects)
+			for(var/atom/movable/screen/inventory/inv_box in hand_hud_objects)
 				if(inv_box.slot_id == bp)
 					if(mymob.client)
 						mymob.client.screen -= inv_box
@@ -185,13 +185,13 @@
 	var/ui_color = mymob.client?.prefs?.UI_style_color
 	var/ui_alpha = mymob.client?.prefs?.UI_style_alpha || 255
 	for(var/bp in adding)
-		var/obj/screen/inventory/inv_box
-		for(var/obj/screen/inventory/existing_box in hand_hud_objects)
+		var/atom/movable/screen/inventory/inv_box
+		for(var/atom/movable/screen/inventory/existing_box in hand_hud_objects)
 			if(existing_box.slot_id == bp)
 				inv_box = existing_box
 				break
 		if(!inv_box)
-			inv_box = new /obj/screen/inventory()
+			inv_box = new /atom/movable/screen/inventory()
 		var/datum/inventory_slot/inv_slot = target.held_item_slots[bp]
 		inv_box.SetName(bp)
 		inv_box.icon = ui_style
@@ -318,7 +318,7 @@
 /mob/new_player/add_click_catcher()
 	return
 
-/obj/screen/stamina
+/atom/movable/screen/stamina
 	name = "stamina"
 	icon = 'icons/effects/progressbar.dmi'
 	icon_state = "prog_bar_100"

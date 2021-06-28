@@ -6,24 +6,23 @@
 	They are used with the client/screen list and the screen_loc var.
 	For more information, see the byond documentation on the screen_loc and screen vars.
 */
-/obj/screen
+/atom/movable/screen
 	name = ""
 	icon = 'icons/mob/screen1.dmi'
 	plane = HUD_PLANE
 	layer = HUD_BASE_LAYER
 	appearance_flags = NO_CLIENT_COLOR
-	unacidable = 1
 	var/obj/master = null    //A reference to the object in the slot. Grabs or items, generally.
 	var/globalscreen = FALSE //Global screens are not qdeled when the holding mob is destroyed.
 
-/obj/screen/receive_mouse_drop(atom/dropping, mob/user)
+/atom/movable/screen/receive_mouse_drop(atom/dropping, mob/user)
 	return TRUE
 
-/obj/screen/Destroy()
+/atom/movable/screen/Destroy()
 	master = null
 	return ..()
 
-/obj/screen/text
+/atom/movable/screen/text
 	icon = null
 	icon_state = null
 	mouse_opacity = 0
@@ -32,28 +31,28 @@
 	maptext_width = 480
 
 
-/obj/screen/inventory
+/atom/movable/screen/inventory
 	var/slot_id	//The indentifier for the slot. It has nothing to do with ID cards.
 
 
-/obj/screen/close
+/atom/movable/screen/close
 	name = "close"
 
-/obj/screen/close/Click()
+/atom/movable/screen/close/Click()
 	if(master)
 		if(istype(master, /obj/item/storage))
 			var/obj/item/storage/S = master
 			S.close(usr)
 	return 1
 
-/obj/screen/default_attack_selector
+/atom/movable/screen/default_attack_selector
 	name = "default attack selector"
 	icon_state = "attack_selector"
 	screen_loc = ui_attack_selector
 	maptext_y = 5
 	var/mob/living/carbon/human/owner
 
-/obj/screen/default_attack_selector/Click(location, control, params)
+/atom/movable/screen/default_attack_selector/Click(location, control, params)
 	if(!owner || usr != owner || owner.incapacitated())
 		return FALSE
 
@@ -71,35 +70,35 @@
 	owner.set_default_unarmed_attack()
 	return TRUE
 
-/obj/screen/default_attack_selector/Destroy()
+/atom/movable/screen/default_attack_selector/Destroy()
 	if(owner)
 		if(owner.attack_selector == src)
 			owner.attack_selector = null
 		owner = null
 	. = ..()
 
-/obj/screen/default_attack_selector/proc/set_owner(var/mob/living/carbon/human/_owner)
+/atom/movable/screen/default_attack_selector/proc/set_owner(var/mob/living/carbon/human/_owner)
 	owner = _owner
 	if(!owner)
 		qdel(src)
 	else
 		update_icon()
 
-/obj/screen/default_attack_selector/on_update_icon()
+/atom/movable/screen/default_attack_selector/on_update_icon()
 	var/decl/natural_attack/attack = owner?.get_unarmed_attack()
 	if(!attack)
 		maptext = "<center>[STYLE_SMALLFONTS_OUTLINE("NONE", 5, COLOR_WHITE, COLOR_BLACK)]</center>"
 	else
 		maptext = "<center>[STYLE_SMALLFONTS_OUTLINE("[uppertext(attack.name)]", 5, COLOR_WHITE, COLOR_BLACK)]</center>"
 
-/obj/screen/item_action
+/atom/movable/screen/item_action
 	var/obj/item/owner
 
-/obj/screen/item_action/Destroy()
+/atom/movable/screen/item_action/Destroy()
 	owner = null
 	. = ..()
 
-/obj/screen/item_action/Click()
+/atom/movable/screen/item_action/Click()
 	if(!usr || !owner)
 		return 1
 	if(!usr.canClick())
@@ -114,10 +113,10 @@
 	owner.ui_action_click()
 	return 1
 
-/obj/screen/storage
+/atom/movable/screen/storage
 	name = "storage"
 
-/obj/screen/storage/Click()
+/atom/movable/screen/storage/Click()
 	if(!usr.canClick())
 		return 1
 	if(usr.incapacitated(INCAPACITATION_DISRUPTED))
@@ -128,13 +127,13 @@
 			usr.ClickOn(master)
 	return 1
 
-/obj/screen/zone_sel
+/atom/movable/screen/zone_sel
 	name = "damage zone"
 	icon_state = "zone_sel"
 	screen_loc = ui_zonesel
 	var/selecting = BP_CHEST
 
-/obj/screen/zone_sel/Click(location, control,params)
+/atom/movable/screen/zone_sel/Click(location, control,params)
 	var/list/PL = params2list(params)
 	var/icon_x = text2num(PL["icon-x"])
 	var/icon_y = text2num(PL["icon-y"])
@@ -194,25 +193,25 @@
 	set_selected_zone(new_selecting)
 	return 1
 
-/obj/screen/zone_sel/proc/set_selected_zone(bodypart)
+/atom/movable/screen/zone_sel/proc/set_selected_zone(bodypart)
 	var/old_selecting = selecting
 	selecting = bodypart
 	if(old_selecting != selecting)
 		update_icon()
 		return TRUE
 
-/obj/screen/zone_sel/on_update_icon()
+/atom/movable/screen/zone_sel/on_update_icon()
 	overlays.Cut()
 	overlays += image('icons/mob/zone_sel.dmi', "[selecting]")
 
-/obj/screen/intent
+/atom/movable/screen/intent
 	name = "intent"
 	icon = 'icons/mob/screen/white.dmi'
 	icon_state = "intent_help"
 	screen_loc = ui_acti
 	var/intent = I_HELP
 
-/obj/screen/intent/Click(var/location, var/control, var/params)
+/atom/movable/screen/intent/Click(var/location, var/control, var/params)
 	var/list/P = params2list(params)
 	var/icon_x = text2num(P["icon-x"])
 	var/icon_y = text2num(P["icon-y"])
@@ -227,10 +226,10 @@
 	update_icon()
 	usr.a_intent = intent
 
-/obj/screen/intent/on_update_icon()
+/atom/movable/screen/intent/on_update_icon()
 	icon_state = "intent_[intent]"
 
-/obj/screen/Click(location, control, params)
+/atom/movable/screen/Click(location, control, params)
 	if(!usr)	return 1
 	switch(name)
 		if("toggle")
@@ -324,7 +323,7 @@
 			return 0
 	return 1
 
-/obj/screen/inventory/Click()
+/atom/movable/screen/inventory/Click()
 	// At this point in client Click() code we have passed the 1/10 sec check and little else
 	// We don't even know if it's a middle click
 	if(!usr.canClick())
@@ -351,22 +350,22 @@
 	return 1
 
 // Character setup stuff
-/obj/screen/setup_preview
+/atom/movable/screen/setup_preview
 	plane = DEFAULT_PLANE
 	layer = MOB_LAYER
 
 	var/datum/preferences/pref
 
-/obj/screen/setup_preview/Destroy()
+/atom/movable/screen/setup_preview/Destroy()
 	pref = null
 	return ..()
 
 // Background 'floor'
-/obj/screen/setup_preview/bg
+/atom/movable/screen/setup_preview/bg
 	layer = TURF_LAYER
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
-/obj/screen/setup_preview/bg/Click(params)
+/atom/movable/screen/setup_preview/bg/Click(params)
 	if(pref)
 		pref.bgstate = next_in_list(pref.bgstate, pref.bgstate_options)
 		pref.update_preview_icon()

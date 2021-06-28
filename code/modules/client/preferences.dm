@@ -38,7 +38,7 @@ var/global/list/time_prefs_fixed = list()
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
 
 	//Mob preview
-	var/list/char_render_holders		//Should only be a key-value list of north/south/east/west = obj/screen.
+	var/list/char_render_holders		//Should only be a key-value list of north/south/east/west = atom/movable/screen.
 	var/static/list/preview_screen_locs = list(
 		"1" = "character_preview_map:1,5:-12",
 		"2" = "character_preview_map:1,3:15",
@@ -201,7 +201,7 @@ var/global/list/time_prefs_fixed = list()
 	if(!client)
 		return
 
-	var/obj/screen/setup_preview/bg/BG = LAZYACCESS(char_render_holders, "BG")
+	var/atom/movable/screen/setup_preview/bg/BG = LAZYACCESS(char_render_holders, "BG")
 	if(!BG)
 		BG = new
 		BG.icon = 'icons/effects/32x32.dmi'
@@ -212,7 +212,7 @@ var/global/list/time_prefs_fixed = list()
 	BG.screen_loc = preview_screen_locs["BG"]
 
 	for(var/D in global.cardinal)
-		var/obj/screen/setup_preview/O = LAZYACCESS(char_render_holders, "[D]")
+		var/atom/movable/screen/setup_preview/O = LAZYACCESS(char_render_holders, "[D]")
 		if(!O)
 			O = new
 			O.pref = src
@@ -231,7 +231,7 @@ var/global/list/time_prefs_fixed = list()
 
 /datum/preferences/proc/clear_character_previews()
 	for(var/index in char_render_holders)
-		var/obj/screen/S = char_render_holders[index]
+		var/atom/movable/screen/S = char_render_holders[index]
 		client?.screen -= S
 		qdel(S)
 	char_render_holders = null

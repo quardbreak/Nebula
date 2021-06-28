@@ -228,7 +228,7 @@
 		dragged_onto(over)
 		return TRUE
 
-	var/obj/screen/inventory/inv = over
+	var/atom/movable/screen/inventory/inv = over
 	if(user.client && istype(inv) && inv.slot_id && (over in user.client.screen))
 		if(istype(loc, /obj/item/storage))
 			var/obj/item/storage/bag = loc

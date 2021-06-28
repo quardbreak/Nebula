@@ -10,14 +10,14 @@ var/global/datum/global_hud/hud
 	return global.hud
 
 /datum/global_hud
-	var/obj/screen/nvg
-	var/obj/screen/thermal
-	var/obj/screen/meson
-	var/obj/screen/science
+	var/atom/movable/screen/nvg
+	var/atom/movable/screen/thermal
+	var/atom/movable/screen/meson
+	var/atom/movable/screen/science
 
 // makes custom colored overlay, can also generate scanline
 /datum/global_hud/proc/setup_overlay(icon_state, color)
-	var/obj/screen/screen = new /obj/screen()
+	var/atom/movable/screen/screen = new /atom/movable/screen()
 	screen.screen_loc = ui_entire_screen
 	screen.icon = 'icons/effects/hud_full.dmi'
 	screen.icon_state = icon_state

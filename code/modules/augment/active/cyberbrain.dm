@@ -55,7 +55,7 @@
 	return ..()
 
 /obj/item/organ/internal/augment/active/cyberbrain/handle_mouse_drop(atom/over, mob/user)
-	if(!istype(over, /obj/screen))
+	if(!istype(over, /atom/movable/screen))
 		attack_self(user)
 		return TRUE
 	. = ..()

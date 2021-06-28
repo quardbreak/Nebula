@@ -357,14 +357,14 @@ var/global/list/click_catchers
 		global.click_catchers = create_click_catcher()
 	return global.click_catchers
 
-/obj/screen/click_catcher
+/atom/movable/screen/click_catcher
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "click_catcher"
 	plane = CLICKCATCHER_PLANE
 	mouse_opacity = 2
 	screen_loc = "CENTER-7,CENTER-7"
 
-/obj/screen/click_catcher/Destroy()
+/atom/movable/screen/click_catcher/Destroy()
 	SHOULD_CALL_PARENT(FALSE)
 	return QDEL_HINT_LETMELIVE
 
@@ -372,11 +372,11 @@ var/global/list/click_catchers
 	. = list()
 	for(var/i = 0, i<15, i++)
 		for(var/j = 0, j<15, j++)
-			var/obj/screen/click_catcher/CC = new()
+			var/atom/movable/screen/click_catcher/CC = new()
 			CC.screen_loc = "TOP-[i],RIGHT-[j]"
 			. += CC
 
-/obj/screen/click_catcher/Click(location, control, params)
+/atom/movable/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)
 	if(modifiers["middle"] && istype(usr, /mob/living/carbon))
 		var/mob/living/carbon/C = usr

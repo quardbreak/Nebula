@@ -1,9 +1,9 @@
-/obj/screen/intent/ascent_nymph
+/atom/movable/screen/intent/ascent_nymph
 	icon = 'mods/species/ascent/icons/species/nymph.dmi'
 	icon_state = "intent_devour"
 	screen_loc = ANYMPH_SCREEN_LOC_INTENT
 
-/obj/screen/intent/ascent_nymph/on_update_icon()
+/atom/movable/screen/intent/ascent_nymph/on_update_icon()
 	if(intent == I_HURT || intent == I_GRAB)
 		intent = I_GRAB
 		icon_state = "intent_expel"
@@ -11,33 +11,33 @@
 		intent = I_DISARM
 		icon_state = "intent_devour"
 
-/obj/screen/ascent_nymph
+/atom/movable/screen/ascent_nymph
 	icon = 'mods/species/ascent/icons/species/nymph.dmi'
 
-/obj/screen/ascent_nymph/held
+/atom/movable/screen/ascent_nymph/held
 	name = "held item"
 	screen_loc =  ANYMPH_SCREEN_LOC_HELD
 	icon_state = "held"
 
-/obj/screen/ascent_nymph/held/Click()
+/atom/movable/screen/ascent_nymph/held/Click()
 	var/mob/living/carbon/alien/ascent_nymph/nymph = usr
 	if(istype(nymph) && nymph.holding_item) nymph.unEquip(nymph.holding_item)
 
-/obj/screen/ascent_nymph/molt
+/atom/movable/screen/ascent_nymph/molt
 	name = "molt"
 	icon = 'icons/obj/action_buttons/organs.dmi'
 	screen_loc =  ANYMPH_SCREEN_LOC_MOLT
 	icon_state = "molt-on"
 
-/obj/screen/ascent_nymph/molt/Click()
+/atom/movable/screen/ascent_nymph/molt/Click()
 	var/mob/living/carbon/alien/ascent_nymph/nymph = usr
 	if(istype(nymph)) nymph.molt()
 
 /datum/hud/ascent_nymph
-	var/obj/screen/ascent_nymph/held/held
-	var/obj/screen/ascent_nymph/molt/molt
-	var/obj/screen/food/food
-	var/obj/screen/drink/drink
+	var/atom/movable/screen/ascent_nymph/held/held
+	var/atom/movable/screen/ascent_nymph/molt/molt
+	var/atom/movable/screen/food/food
+	var/atom/movable/screen/drink/drink
 
 /datum/hud/ascent_nymph/FinalizeInstantiation()
 
@@ -65,10 +65,10 @@
 	drink.screen_loc = ui_nutrition_small
 	adding += drink
 
-	action_intent = new /obj/screen/intent/ascent_nymph()
+	action_intent = new /atom/movable/screen/intent/ascent_nymph()
 	adding += action_intent
 
-	mymob.healths = new /obj/screen()
+	mymob.healths = new /atom/movable/screen()
 	mymob.healths.SetName("health")
 	mymob.healths.screen_loc = ANYMPH_SCREEN_LOC_HEALTH
 

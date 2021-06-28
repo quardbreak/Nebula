@@ -599,7 +599,7 @@ default behaviour is:
 		to_chat(src, SPAN_NOTICE("You are now [resting ? "resting" : "getting up"]."))
 
 //called when the mob receives a bright flash
-/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(override_blindness_check || !(disabilities & BLINDED))
 		..()
 		overlay_fullscreen("flash", type)

@@ -48,11 +48,11 @@
 	return ..()
 
 /obj/item/clothing/check_mousedrop_adjacency(var/atom/over, var/mob/user)
-	. = (loc == user && istype(over, /obj/screen)) || ..()
+	. = (loc == user && istype(over, /atom/movable/screen)) || ..()
 
 /obj/item/clothing/handle_mouse_drop(atom/over, mob/user)
-	if(ishuman(user) && loc == user && istype(over, /obj/screen/inventory))
-		var/obj/screen/inventory/inv = over
+	if(ishuman(user) && loc == user && istype(over, /atom/movable/screen/inventory))
+		var/atom/movable/screen/inventory/inv = over
 		add_fingerprint(user)
 		if(user.unEquip(src))
 			user.equip_to_slot_if_possible(src, inv.slot_id)

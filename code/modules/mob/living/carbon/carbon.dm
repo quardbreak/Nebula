@@ -203,7 +203,7 @@
 
 			playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
-/mob/living/carbon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
+/mob/living/carbon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /atom/movable/screen/fullscreen/flash)
 	if(eyecheck() < intensity || override_blindness_check)
 		return ..()
 
@@ -226,7 +226,7 @@
 	src.throw_mode_off()
 	if(src.stat || !target)
 		return
-	if(target.type == /obj/screen) 
+	if(target.type == /atom/movable/screen) 
 		return
 
 	if(!item)

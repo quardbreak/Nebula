@@ -111,8 +111,8 @@ var/global/photo_count = 0
 	can_hold = list(/obj/item/photo)
 
 /obj/item/storage/photo_album/handle_mouse_drop(atom/over, mob/user)
-	if(istype(over, /obj/screen/inventory))
-		var/obj/screen/inventory/inv = over
+	if(istype(over, /atom/movable/screen/inventory))
+		var/atom/movable/screen/inventory/inv = over
 		playsound(loc, "rustle", 50, 1, -5)
 		if(user.back == src)
 			add_fingerprint(user)

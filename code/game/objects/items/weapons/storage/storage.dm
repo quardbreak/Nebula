@@ -35,15 +35,15 @@
 	. = ..()
 
 /obj/item/storage/check_mousedrop_adjacency(var/atom/over, var/mob/user)
-	. = (loc == user && istype(over, /obj/screen)) || ..()
+	. = (loc == user && istype(over, /atom/movable/screen)) || ..()
 
 /obj/item/storage/handle_mouse_drop(var/atom/over, var/mob/user)
 	if(canremove && (ishuman(user) || isrobot(user)))
 		if(over == user)
 			open(user)
 			return TRUE
-		if(istype(over, /obj/screen/inventory) && loc == user)
-			var/obj/screen/inventory/inv = over
+		if(istype(over, /atom/movable/screen/inventory) && loc == user)
+			var/atom/movable/screen/inventory/inv = over
 			add_fingerprint(usr)
 			if(user.unEquip(src))
 				user.equip_to_slot_if_possible(src, inv.slot_id)

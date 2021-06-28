@@ -18,7 +18,7 @@
 /mob/living/deity/proc/silence(var/amount)
 	if(!silenced)
 		to_chat(src, "<span class='warning'>You've been silenced! Your phenomenas are disabled!</span>")
-		var/obj/screen/intent/deity/SD = hud_used.action_intent
+		var/atom/movable/screen/intent/deity/SD = hud_used.action_intent
 		SD.color = "#ff0000"
 	silenced += amount
 	for(var/phenom in phenomenas) //Also make it so that you don't do cooldowns.
@@ -33,7 +33,7 @@
 			silenced--
 			if(!silenced)
 				to_chat(src, "<span class='notice'>You are no longer silenced.</span>")
-				var/obj/screen/intent/deity/SD = hud_used.action_intent
+				var/atom/movable/screen/intent/deity/SD = hud_used.action_intent
 				SD.color = null
 		if(power_per_regen < 0 || power < power_min)
 			adjust_power(power_per_regen)
@@ -67,7 +67,7 @@
 		for(var/mod in intent_list)
 			if(intent_list[mod] == P)
 				intent_list[mod] = null
-	var/obj/screen/intent/deity/SD = hud_used.action_intent
+	var/atom/movable/screen/intent/deity/SD = hud_used.action_intent
 	SD.update_text()
 	update_phenomenas()
 	update_phenomena_bindings()
