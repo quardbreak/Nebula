@@ -8,12 +8,13 @@
 	icon_state = "term"
 	desc = "It's an underfloor wiring terminal for power equipment."
 	level = 1
-	layer = EXPOSED_WIRE_TERMINAL_LAYER
-	var/obj/item/stock_parts/power/terminal/master
-	anchored = 1
+	layer = WIRE_TERMINAL_LAYER
+	anchored = TRUE
 
 	uncreated_component_parts = null
 	construct_state = /decl/machine_construction/noninteractive // Axiliary entity; all interactions pass through owner machine part instead.
+
+	var/obj/item/stock_parts/power/terminal/master
 
 /obj/machinery/power/terminal/Initialize()
 	. = ..()
