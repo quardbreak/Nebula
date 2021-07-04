@@ -1019,32 +1019,32 @@ window "mapwindow"
 		text = ""
 		align = left
 
-window "outputwindow"
-	elem "outputwindow"
+window "chat"
+	elem "chat_tabs"
 		type = MAIN
 		pos = 281,-30
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Chat Tabs"
 		titlebar = false
 		statusbar = false
 		can-close = false
 		can-minimize = false
 		can-resize = false
 		is-pane = true
-		outer-size = 654x494
-	elem "output"
-		type = OUTPUT
+	elem "tab"
+		type = TAB
 		pos = 0,0
-		size = 640x456
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
-		is-default = true
-		saved-params = "max-lines"
-		style = ".system {color:#ff0000;}"
-		max-lines = 0
+		font-family = "Arial Narrow"
+		font-size = 10
+		saved-params = ""
+		tabs = "chat_all,chat_pm,chat_ooc,chat_looc"
+		current-tab = "chat_all"
 	elem "saybutton"
 		type = BUTTON
 		pos = 519,460
@@ -1078,6 +1078,107 @@ window "outputwindow"
 		command = ".winset \"mainwindow.macro!=macro ? mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true : mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true\""
 		button-type = pushbox
 
+window "chat_all"
+	elem "chat_all"
+		type = MAIN
+		pos = 281,-30
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "All"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "output"
+		type = OUTPUT
+		pos = 0,0
+		size = 640x456
+		anchor1 = 0,0
+		anchor2 = 100,100
+		is-default = true
+		saved-params = "max-lines"
+		style = ".system {color:#ff0000;}"
+		max-lines = 0
+
+window "chat_pm"
+	elem "chat_looc"
+		type = MAIN
+		pos = 281,-30
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "PM"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "output"
+		type = OUTPUT
+		pos = 0,0
+		size = 640x456
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "max-lines"
+		style = ".system {color:#ff0000;}"
+		max-lines = 0
+
+window "chat_ooc"
+	elem "chat_ooc"
+		type = MAIN
+		pos = 281,-30
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "OOC"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "output"
+		type = OUTPUT
+		pos = 0,0
+		size = 640x456
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "max-lines"
+		style = ".system {color:#ff0000;}"
+		max-lines = 0
+
+window "chat_looc"
+	elem "chat_looc"
+		type = MAIN
+		pos = 281,-30
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "LOOC"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "output"
+		type = OUTPUT
+		pos = 0,0
+		size = 640x456
+		anchor1 = 0,0
+		anchor2 = 100,100
+		saved-params = "max-lines"
+		style = ".system {color:#ff0000;}"
+		max-lines = 0
+
 window "rpane"
 	elem "rpane"
 		type = MAIN
@@ -1094,7 +1195,7 @@ window "rpane"
 		anchor1 = 0,0
 		anchor2 = 100,100
 		saved-params = "splitter"
-		right = "outputwindow"
+		right = "chat"
 		is-vert = false
 	elem "github"
 		type = BUTTON

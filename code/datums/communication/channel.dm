@@ -8,6 +8,7 @@
 	var/log_proc
 	var/mute_setting
 	var/show_preference_setting
+	var/chat_type
 
 /decl/communication_channel/proc/can_ignore(var/client/C)
 	if (!C)
@@ -97,7 +98,7 @@
 	return TRUE
 
 /decl/communication_channel/proc/do_receive_communication(var/datum/communicator, var/datum/receiver, var/message)
-	to_chat(receiver, message)
+	to_chat(receiver, message, chat_type)
 
 
 /*
@@ -131,7 +132,7 @@
 
 
 /decl/communication_channel/proc/do_receive_broadcast(datum/receiver, message)
-	to_chat(receiver, message)
+	to_chat(receiver, message, chat_type)
 
 
 // Misc. helpers

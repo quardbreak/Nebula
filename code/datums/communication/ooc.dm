@@ -6,6 +6,7 @@
 	log_proc = /proc/log_ooc
 	mute_setting = MUTE_OOC
 	show_preference_setting = /datum/client_preference/show_ooc
+	chat_type = CHAT_TYPE_OOC
 
 /decl/communication_channel/ooc/can_communicate(var/client/C, var/message)
 	. = ..()
