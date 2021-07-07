@@ -90,6 +90,7 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	var/flags = 0
 	var/evac_controller_type = /datum/evacuation_controller
+	var/overmap_generator_type = /datum/overmap_generator/random
 	var/use_overmap = 0		//If overmap should be used (including overmap space travel override)
 	var/overmap_size = 20		//Dimensions of overmap zlevel if overmap is used.
 	var/overmap_z = 0		//If 0 will generate overmap zlevel on init. Otherwise will populate the zlevel provided.

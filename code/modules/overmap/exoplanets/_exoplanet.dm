@@ -120,7 +120,7 @@
 	select_strata()
 	generate_flora()
 	generate_map()
-	generate_landing(2)
+	generate_landing()
 	generate_features()
 	for(var/datum/exoplanet_theme/T in themes)
 		T.after_map_generation(src)
@@ -212,10 +212,10 @@
 	var/places = list()
 	var/attempts = 10*landing_points_to_place
 	var/border_padding = shuttle_size / 2 + 3
-
+	var/new_type = landmark_type
 	while(landing_points_to_place)
 		attempts--
-		var/turf/T = locate(rand(x_origin + border_padding, x_origin + x_size - border_padding), rand(y_origin + border_padding, y_origin + y_size - border_padding), map_z[1])
+		var/turf/T = locate(rand(x_origin + border_padding, x_origin + x_size - border_padding), rand(y_origin + border_padding, y_origin + y_size - border_padding), map_z[map_z.len])
 
 		if(!T || (T in places)) // Two landmarks on one turf is forbidden as the landmark code doesn't work with it.
 			continue
@@ -230,13 +230,15 @@
 			if(attempts >= 10)
 				if(check_collision(T.loc, block_to_check)) //While we have lots of patience, ensure landability
 					valid = 0
+			else //Running out of patience, but would rather not clear ruins, so switch to clearing landmarks and bypass landability check
+				new_type = /obj/effect/shuttle_landmark/automatic/clearing
 
 			if(!valid)
 				continue
 
 		landing_points_to_place--
 		places += T
-		new /obj/effect/shuttle_landmark/automatic/clearing(T)
+		new new_type(T)
 
 /obj/effect/overmap/visitable/sector/exoplanet/get_scan_data(mob/user)
 	. = ..()

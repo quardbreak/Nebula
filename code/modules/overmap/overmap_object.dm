@@ -33,7 +33,7 @@
 /obj/effect/overmap/Initialize()
 	. = ..()
 
-	if(!global.using_map.use_overmap)
+	if(!IS_OVERMAP_INITIALIZED)
 		return INITIALIZE_HINT_QDEL
 
 	if(requires_contact)

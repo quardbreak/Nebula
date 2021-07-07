@@ -71,17 +71,13 @@ var/global/list/known_overmap_sectors
 	find_z_levels()     // This populates map_z and assigns z levels to the ship.
 	register_z_levels() // This makes external calls to update global z level information.
 
-	if(!global.using_map.overmap_z)
-		build_overmap()
-
 	move_to_starting_location()
 
 	docking_codes = "[ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))][ascii2text(rand(65,90))]"
 
-	testing("Located sector \"[name]\" at [start_x],[start_y], containing Z [english_list(map_z)]")
-
 	LAZYADD(SSshuttle.sectors_to_initialize, src) //Queued for further init. Will populate the waypoint lists; waypoints not spawned yet will be added in as they spawn.
 	SSshuttle.clear_init_queue()
+
 
 /obj/effect/overmap/visitable/modify_mapped_vars(map_hash)
 	..()
@@ -99,9 +95,12 @@ var/global/list/known_overmap_sectors
 			initial_restricted_waypoints[shuttle_type] = new_restricted
 
 /obj/effect/overmap/visitable/proc/move_to_starting_location()
-	start_x = start_x || rand(OVERMAP_EDGE, global.using_map.overmap_size - OVERMAP_EDGE)
-	start_y = start_y || rand(OVERMAP_EDGE, global.using_map.overmap_size - OVERMAP_EDGE)
-	forceMove(locate(start_x, start_y, global.using_map.overmap_z))
+	if (start_x && start_y)
+		global.overmap_generator.place_overmap_item_at(src, start_x, start_y)
+	else
+		global.overmap_generator.place_overmap_item(src)
+
+	testing("Located sector \"[name]\" at [src.x],[src.y], containing Z [english_list(map_z)]")
 
 //This is called later in the init order by SSshuttle to populate sector objects. Importantly for subtypes, shuttles will be created by then.
 /obj/effect/overmap/visitable/proc/populate_sector_objects()
@@ -111,6 +110,7 @@ var/global/list/known_overmap_sectors
 
 /obj/effect/overmap/visitable/proc/find_z_levels()
 	map_z = GetConnectedZlevels(z)
+	world.log << map_z.len
 
 /obj/effect/overmap/visitable/proc/register_z_levels()
 	for(var/zlevel in map_z)
@@ -196,30 +196,6 @@ var/global/list/known_overmap_sectors
 // Because of the way these are spawned, they will potentially have their invisibility adjusted by the turfs they are mapped on
 // prior to being moved to the overmap. This blocks that. Use set_invisibility to adjust invisibility as needed instead.
 /obj/effect/overmap/visitable/sector/hide()
-
-/proc/build_overmap()
-	if(!global.using_map.use_overmap)
-		return 1
-
-	testing("Building overmap...")
-	INCREMENT_WORLD_Z_SIZE
-	global.using_map.overmap_z = world.maxz
-
-
-	testing("Putting overmap on [global.using_map.overmap_z]")
-	var/area/overmap/A = new
-	for (var/square in block(locate(1,1,global.using_map.overmap_z), locate(global.using_map.overmap_size,global.using_map.overmap_size,global.using_map.overmap_z)))
-		var/turf/T = square
-		if(T.x == global.using_map.overmap_size || T.y == global.using_map.overmap_size)
-			T = T.ChangeTurf(/turf/unsimulated/map/edge)
-		else
-			T = T.ChangeTurf(/turf/unsimulated/map)
-		ChangeArea(T, A)
-
-	global.using_map.sealed_levels |= global.using_map.overmap_z
-
-	testing("Overmap build complete.")
-	return 1
 
 /obj/effect/overmap/visitable/proc/allow_free_landing(var/datum/shuttle/landing_shuttle)
 	return free_landing

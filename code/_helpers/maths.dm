@@ -1,9 +1,3 @@
-// Macro functions.
-#define RAND_F(LOW, HIGH) (rand()*(HIGH-LOW) + LOW)
-#define ceil(x) (-round(-(x)))
-#define CEILING(x, y) ( -round(-(x) / (y)) * (y) )
-#define MULT_BY_RANDOM_COEF(VAR,LO,HI) VAR =  round((VAR * rand(LO * 100, HI * 100))/100, 0.1)
-
 // min is inclusive, max is exclusive
 /proc/Wrap(val, min, max)
 	var/d = max - min
@@ -30,12 +24,6 @@
 	if(!x && !y) return 0
 	var/a = arccos(x / sqrt(x*x + y*y))
 	return y >= 0 ? a : -a
-
-/proc/Floor(x)
-	return round(x)
-
-/proc/Ceiling(x)
-	return -round(-x)
 
 // Greatest Common Divisor: Euclid's algorithm.
 /proc/Gcd(a, b)
