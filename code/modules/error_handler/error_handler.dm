@@ -3,6 +3,10 @@ var/global/total_runtimes_skipped = 0
 var/global/regex/actual_error_file_line
 
 #ifdef DEBUG
+
+#define CAT_COOLDOWN 20 SECONDS
+#define CAT_MAX_NUMBER 10
+
 /world/Error(exception/E)
 	if(!istype(E)) //Something threw an unusual exception
 		log_world("\[[time_stamp()]] Uncaught exception: [E]")
@@ -82,6 +86,11 @@ var/global/regex/actual_error_file_line
 		locinfo = log_info_line(usr.loc)
 		if(locinfo)
 			usrinfo += "  usr.loc: [locinfo]"
+		// Create a Dusty at the runtime location
+		var/static/cat_teleport = 0
+		if(usr.loc && prob(10) && (world.time - cat_teleport > CAT_COOLDOWN) && (global.cat_number < CAT_MAX_NUMBER)) // Avoid runtime spam spawning lots of Dusty
+			new /mob/living/simple_animal/cat/dusty(get_turf(usr), E.line)
+			cat_teleport = world.time
 	// The proceeding mess will almost definitely break if error messages are ever changed
 	var/list/splitlines = splittext(E.desc, "\n")
 	var/list/desclines = list()
@@ -112,4 +121,8 @@ var/global/regex/actual_error_file_line
 
 /proc/error_write_log(msg)
 	to_world_log(msg)
+
+#undef CAT_COOLDOWN
+#undef CAT_MAX_NUMBER
+
 #endif

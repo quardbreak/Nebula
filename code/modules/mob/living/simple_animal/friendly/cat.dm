@@ -247,6 +247,127 @@
 	icon_dead = "cat2_dead"
 	holder_type = /obj/item/holder/runtime
 
+// Runtime cat
+
+var/global/cat_number = 0
+
+/mob/living/simple_animal/cat/dusty
+	name = "Dusty"
+	desc = "A quantum denizen that purrs its way into our dimension when the very fabric of reality is teared apart."
+	icon_state = "dusty"
+	item_state = "dusty"
+	density = FALSE
+	universal_speak = TRUE
+
+	a_intent = I_HURT
+
+	status_flags = GODMODE // Bluespace cat
+	min_gas = list(/decl/material/gas/oxygen = 0)
+	minbodytemp = 0
+	maxbodytemp = INFINITY
+
+	response_harm = "slashed"
+
+	// So that people cannot put Dusty in lockers to move it
+	mob_size = MOB_SIZE_LARGE
+
+	var/cat_life_duration = 1 MINUTES
+
+/mob/living/simple_animal/cat/dusty/Initialize(mapload, runtime_line)
+	. = ..(mapload)
+	add_language(/decl/language/human/common)
+	set_default_language(/decl/language/human/common)
+	cat_number += 1
+	playsound(src, 'sound/effects/teleport.ogg', 50, 1)
+
+	QDEL_IN(src, cat_life_duration)
+	addtimer(CALLBACK(src, .proc/say_runtime, runtime_line), 5 SECONDS)
+
+	for(var/i in rand(1, 3))
+		step(src, pick(global.alldirs))
+
+/mob/living/simple_animal/cat/dusty/Destroy()
+	// We teleport Dusty in the corner of one of the ship zlevel for stylish disparition
+	playsound(src, 'sound/effects/teleport.ogg', 50, 1)
+	do_teleport(src, get_turf(locate(1, 1, pick(global.using_map.station_levels))))
+	cat_number -= 1
+	return ..()
+
+/mob/living/simple_animal/cat/dusty/attackby(var/obj/item/O, var/mob/user)
+	. = ..()
+	if(.)
+		visible_message(SPAN_DANGER("\The [user]'s [O.name] harmlessly passes through \the [src]."))
+		strike_back(user)
+
+/mob/living/simple_animal/cat/dusty/attack_hand(mob/living/carbon/human/M as mob)
+	switch(M.a_intent)
+
+		if(I_HELP)  // Pet the cat
+			M.visible_message(SPAN_NOTICE("\The [M] pets \the [src]."))
+
+		if(I_DISARM)
+			M.visible_message(SPAN_NOTICE("\The [M]'s hand passes through \the [src]."))
+			M.do_attack_animation(src)
+
+		if(I_GRAB)
+			if (M == src)
+				return
+
+			if (!(status_flags & CANPUSH))
+				return
+
+			M.visible_message(SPAN_NOTICE("\The [M]'s hand passes through \the [src]."))
+			M.do_attack_animation(src)
+
+		if(I_HURT)
+			var/decl/pronouns/P = M.get_pronouns()
+			M.visible_message(SPAN_WARNING("\The [M] tries to kick \the [src] but [P.his] foot passes through."))
+			M.do_attack_animation(src)
+			visible_message(SPAN_WARNING("\The [src] hisses."))
+			strike_back(M)
+
+/mob/living/simple_animal/cat/dusty/proc/say_runtime(runtime_line)
+	if(!runtime_line)
+		return
+
+	say("An anomaly was detected #'[runtime_line]'. Please step away.")
+
+/mob/living/simple_animal/cat/dusty/proc/strike_back(var/mob/target_mob)
+	if(!Adjacent(target_mob))
+		return
+
+	if(isliving(target_mob))
+		var/mob/living/L = target_mob
+		L.attackby(get_natural_weapon(), src)
+		return L
+
+	if(istype(target_mob, /mob/living/exosuit))
+		var/mob/living/exosuit/M = target_mob
+		M.attackby(get_natural_weapon(), src)
+		return M
+
+	if(istype(target_mob, /mob/living/bot))
+		var/mob/living/bot/B = target_mob
+		B.attackby(get_natural_weapon(), src)
+		return B
+
+/mob/living/simple_animal/cat/dusty/set_flee_target(atom/A)
+	return
+
+/mob/living/simple_animal/cat/dusty/bullet_act(var/obj/item/projectile/proj)
+	return PROJECTILE_FORCE_MISS
+
+/mob/living/simple_animal/cat/dusty/explosion_act(severity)
+	SHOULD_CALL_PARENT(FALSE)
+	return
+
+/mob/living/simple_animal/cat/dusty/singularity_act()
+	return
+
+/mob/living/simple_animal/cat/dusty/can_grab(var/atom/movable/target, var/target_zone)
+	to_chat(src, SPAN_WARNING("Your hand passes through \the [src]."))
+	return FALSE
+
 /mob/living/simple_animal/cat/harvest_skin()
 	. = ..()
 	. += new/obj/item/cat_hide(get_turf(src))
