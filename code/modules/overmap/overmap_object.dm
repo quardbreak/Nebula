@@ -33,8 +33,11 @@
 /obj/effect/overmap/Initialize()
 	. = ..()
 
-	if(!IS_OVERMAP_INITIALIZED)
+	if(!global.using_map.use_overmap)
 		return INITIALIZE_HINT_QDEL
+
+	if(!IS_OVERMAP_INITIALIZED)
+		overmap_initialize()
 
 	if(requires_contact)
 		invisibility = INVISIBILITY_OVERMAP // Effects that require identification have their images cast to the client via sensors.
