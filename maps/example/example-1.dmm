@@ -15,6 +15,9 @@
 /turf/simulated/floor/plating,
 /area/shuttle/escape)
 "dI" = (
+/obj/machinery/door/airlock/external/bolted{
+	id_tag = "cycle_test_exterior"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/constructionsite)
 "eg" = (
@@ -74,6 +77,12 @@
 	},
 /turf/simulated/floor,
 /area/constructionsite)
+"hM" = (
+/obj/machinery/button/access/exterior{
+	id_tag = "cycle_test"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/constructionsite)
 "iM" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -116,7 +125,21 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/constructionsite)
+"lQ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/button/access/interior{
+	id_tag = "cycle_test"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/constructionsite)
 "mC" = (
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	id_tag = "cycle_test";
+	tag_exterior_door = "cycle_test_exterior";
+	tag_interior_door = "cycle_test_interior"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/constructionsite)
 "oZ" = (
@@ -241,6 +264,12 @@
 /obj/machinery/portable_atmospherics/canister/empty,
 /obj/effect/floor_decal/corner/orange/mono,
 /turf/simulated/floor/tiled/monotile,
+/area/constructionsite)
+"Cb" = (
+/obj/machinery/door/airlock/external/bolted{
+	id_tag = "cycle_test_interior"
+	},
+/turf/simulated/floor/tiled/steel_grid,
 /area/constructionsite)
 "EO" = (
 /obj/effect/floor_decal/corner/orange{
@@ -1098,14 +1127,14 @@ fU
 fU
 eg
 EO
-mC
-mC
-mC
+qJ
+qJ
+qJ
+qJ
+qJ
 dI
-dI
-dI
-dI
-dI
+hM
+qJ
 us
 us
 us
@@ -1132,12 +1161,12 @@ fU
 fU
 eg
 EO
-mC
-mC
-mC
+qJ
+qJ
+qJ
 vd
 WF
-dI
+mC
 fT
 iM
 us
@@ -1166,14 +1195,14 @@ fU
 fU
 eg
 RW
-mC
-mC
-mC
-dI
+qJ
+qJ
+qJ
+qJ
 wB
-dI
-wB
-dI
+Cb
+lQ
+qJ
 us
 us
 us
@@ -1205,12 +1234,12 @@ tE
 jV
 PA
 wB
-dI
+qJ
 wB
-dI
-dI
-dI
-dI
+qJ
+qJ
+qJ
+qJ
 Zi
 eg
 fU
@@ -1239,11 +1268,11 @@ Vt
 xF
 Sv
 wB
-dI
+qJ
 wB
-dI
-dI
-dI
+qJ
+qJ
+qJ
 gO
 Zi
 eg
@@ -1275,9 +1304,9 @@ Sv
 wB
 Bv
 wB
-dI
-dI
-dI
+qJ
+qJ
+qJ
 cS
 Zi
 eg
@@ -1307,11 +1336,11 @@ Vt
 Vt
 Sv
 wB
-dI
+qJ
 wB
-dI
-dI
-dI
+qJ
+qJ
+qJ
 ck
 Zi
 eg
@@ -1341,11 +1370,11 @@ Wr
 Wr
 jO
 wB
-dI
+qJ
 wB
-dI
-dI
-dI
+qJ
+qJ
+qJ
 jB
 Zi
 eg
@@ -1373,13 +1402,13 @@ RW
 qJ
 qJ
 qJ
-dI
+qJ
 wB
-dI
+qJ
 wB
-dI
-dI
-dI
+qJ
+qJ
+qJ
 tq
 ZW
 eg
@@ -1409,11 +1438,11 @@ qJ
 qJ
 vd
 Af
-dI
+qJ
 Yo
 iM
-dI
-dI
+qJ
+qJ
 se
 Zi
 eg
@@ -1443,11 +1472,11 @@ qJ
 qJ
 wj
 wB
-dI
+qJ
 wB
-dI
-dI
-dI
+qJ
+qJ
+qJ
 Nu
 Zi
 eg
