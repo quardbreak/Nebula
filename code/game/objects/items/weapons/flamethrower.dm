@@ -103,6 +103,10 @@
 
 	// Make sure our user is still holding us
 	if(user && user.get_active_hand() == src)
+		if(user.a_intent == I_HELP) //don't shoot if we're on help intent
+			to_chat(user, SPAN_WARNING("You refrain from firing \the [src] as your intent is set to help."))
+			return
+
 		var/turf/target_turf = get_turf(target)
 		if(target_turf)
 			var/turflist = getline(user, target_turf)
@@ -113,7 +117,7 @@
 
 /obj/item/flamethrower/attackby(obj/item/W, mob/user)
 	if(user.incapacitated())
-		return
+		return TRUE
 	
 	if(isWrench(W) && !secured)//Taking this apart
 		var/turf/T = get_turf(src)
@@ -131,51 +135,51 @@
 
 		SSmaterials.create_object(/decl/material/solid/metal/steel, get_turf(src), 1, /obj/item/stack/material/rods)
 		qdel(src)
-		return
+		return TRUE
 
-	else if(isScrewdriver(W) && igniter && !lit)
+	if(isScrewdriver(W) && igniter && !lit)
 		secured = !secured
 		to_chat(user, SPAN_NOTICE("\The [igniter] is now [secured ? "secured" : "unsecured"]!"))
 		update_icon()
-		return
+		return TRUE
 
-	else if(isigniter(W))
+	if(isigniter(W))
 		var/obj/item/assembly/igniter/I = W
 		if(I.secured)
 			to_chat(user, SPAN_WARNING("\The [I] is not ready to attach yet! Use a screwdriver on it first."))
-			return
+			return TRUE
 
 		if(igniter)
 			to_chat(user, SPAN_WARNING("\The [src] already has an igniter installed."))
-			return
+			return TRUE
 
 		user.drop_from_inventory(I, src)
 		igniter = I
 		update_icon()
-		return
+		return TRUE
 
-	else if(istype(W, /obj/item/tank))
+	if(istype(W, /obj/item/tank))
 		if(tank)
 			to_chat(user, SPAN_WARNING("There appears to already be a tank loaded in \the [src]!"))
-			return
+			return TRUE
 	
 		user.drop_from_inventory(W, src)
 		tank = W
 		update_icon()
-		return
+		return TRUE
 
 	if(istype(W, /obj/item/scanner/gas))
 		var/obj/item/scanner/gas/A = W
 		A.analyze_gases(src, user)
-		return
+		return TRUE
 
 
-	else if(W.isflamesource()) // you can light it with external input, even without an igniter
+	if(W.isflamesource()) // you can light it with external input, even without an igniter
 		attempt_lighting(user, TRUE)
 		update_icon()
-		return
+		return TRUE
 
-	..()
+	. = ..()
 
 /obj/item/flamethrower/attack_self(mob/user)
 	if(user.incapacitated())
@@ -204,6 +208,7 @@
 			user.put_in_hands(tank)
 			tank = null
 			lit = FALSE
+			update_icon()
 
 		if("Light")
 			attempt_lighting(user)
@@ -216,8 +221,6 @@
 		else
 			return
 
-	update_icon()
-
 /obj/item/flamethrower/return_air()
 	return tank?.return_air()
 
@@ -226,6 +229,7 @@
 		if(lit) // you can extinguish the flamethrower without an igniter
 			lit = FALSE
 			to_chat(user, SPAN_NOTICE("You extinguish \the [src]."))
+			update_icon()
 			return
 
 		if(!secured) // can't light via the flamethrower unless we have an igniter secured
@@ -243,12 +247,13 @@
 		to_chat(user, SPAN_WARNING("\The [src] doesn't have a tank installed."))
 		return
 
-	if(tank.air_contents.get_by_flag(XGM_GAS_FUEL) < 1)
+	if(tank.air_contents?.get_by_flag(XGM_GAS_FUEL) < 1)
 		to_chat(user, SPAN_WARNING("\The [src] doesn't have any flammable fuel to light!"))
 		return
 
 	lit = TRUE
 	to_chat(user, SPAN_NOTICE("You light \the [src]."))
+	update_icon()
 
 	if(lit)
 		START_PROCESSING(SSprocessing, src)
@@ -262,6 +267,8 @@
 
 	if(ismob(user))
 		to_chat(user, SPAN_NOTICE("Pressure has been adjusted to [throw_amount] kPa."))
+
+	update_icon()
 
 //Called from turf.dm turf/dblclick
 /obj/item/flamethrower/proc/flame_turf(turflist)
@@ -292,11 +299,7 @@
 /obj/item/flamethrower/proc/ignite_turf(turf/target)
 	var/datum/gas_mixture/air_transfer = tank.air_contents.remove_ratio(0.02 * (throw_amount / 100))
 	
-	var/obj/effect/fluid/F = locate() in target
-	if(!F) 
-		F = new(target)
-	
-	F.reagents.add_reagent(/decl/material/liquid/fuel, air_transfer.get_by_flag(XGM_GAS_FUEL))
+	target.add_fluid(/decl/material/liquid/fuel, air_transfer.get_by_flag(XGM_GAS_FUEL))
 
 	air_transfer.remove_by_flag(XGM_GAS_FUEL, 0)
 	target.assume_air(air_transfer)
