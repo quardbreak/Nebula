@@ -17,6 +17,8 @@ var/global/const/GHOST_IMAGE_ALL = ~GHOST_IMAGE_NONE
 	var/ghost_image_flag = GHOST_IMAGE_DARKNESS
 	var/image/ghost_image = null //this mobs ghost image, for deleting and stuff
 
+	shift_to_open_context_menu = FALSE
+
 /mob/observer/Initialize()
 	. = ..()
 	ghost_image = image(src.icon,src)

@@ -9,6 +9,8 @@
 
 	virtual_mob = /mob/observer/virtual/mob
 
+	var/shift_to_open_context_menu = FALSE
+
 	movement_handlers = list(
 		/datum/movement_handler/mob/relayed_movement,
 		/datum/movement_handler/mob/death,
