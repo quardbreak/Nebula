@@ -142,8 +142,9 @@ About the new airlock wires panel:
 				return
 	..(user)
 
-/obj/machinery/door/airlock/bumpopen(mob/living/simple_animal/user)
-	..(user)
+
+/obj/machinery/door/airlock/CanAStarPass(obj/item/card/id/ID, to_dir, caller)
+	return !density || (check_access(ID) && !locked && !isAllPowerLoss())
 
 /obj/machinery/door/airlock/proc/isElectrified()
 	if(src.electrified_until != 0)

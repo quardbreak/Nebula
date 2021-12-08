@@ -256,38 +256,26 @@ var/global/const/enterloopsanity = 100
 	for(var/obj/O in src)
 		O.hide(O.hides_under_flooring() && !is_plating())
 
-/turf/proc/AdjacentTurfs(var/check_blockage = TRUE)
-	. = list()
-	for(var/turf/t in (RANGE_TURFS(src, 1) - src))
-		if(check_blockage)
-			if(!t.density)
-				if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
-					. += t
-		else
-			. += t
+////////////////
+//Distance procs
+////////////////
 
-/turf/proc/CardinalTurfs(var/check_blockage = TRUE)
-	. = list()
-	for(var/ad in AdjacentTurfs(check_blockage))
-		var/turf/T = ad
-		if(T.x == src.x || T.y == src.y)
-			. += T
+/**
+ * Distance associates with all directions movement
+ */
+/turf/proc/Distance(var/turf/T)
+	return get_dist(src,T)
 
-/turf/proc/Distance(turf/t)
-	if(get_dist(src,t) == 1)
-		var/cost = (src.x - t.x) * (src.x - t.x) + (src.y - t.y) * (src.y - t.y)
-		cost *= (pathweight+t.pathweight)/2
-		return cost
-	else
-		return get_dist(src,t)
+/**
+ * This Distance proc assumes that only cardinal movement is possible.
+ * It results in more efficient (CPU-wise) pathing
+ * for bots and anything else that only moves in cardinal dirs.
+ */
+/turf/proc/Distance_cardinal(turf/T)
+	if(!src || !T) return 0
+	return abs(src.x - T.x) + abs(src.y - T.y)
 
-/turf/proc/AdjacentTurfsSpace()
-	var/L[] = new()
-	for(var/turf/t in oview(src,1))
-		if(!t.density)
-			if(!LinkBlocked(src, t) && !TurfBlockedNonWindow(t))
-				L.Add(t)
-	return L
+////////////////
 
 /turf/proc/contains_dense_objects()
 	if(density)

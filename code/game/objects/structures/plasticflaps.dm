@@ -39,6 +39,17 @@
 
 	return ..()
 
+/obj/structure/plasticflaps/CanAStarPass(obj/item/card/id/ID, to_dir, caller)
+	if(istype(caller, /mob/living/bot/mulebot))
+		return TRUE
+
+	if(isliving(caller))
+		var/mob/living/M = caller
+		if(!M.lying)
+			return FALSE
+
+	return TRUE
+
 /obj/structure/plasticflaps/attackby(obj/item/W, mob/user)
 	if(isCrowbar(W) && !anchored)
 		user.visible_message("<span class='notice'>\The [user] begins deconstructing \the [src].</span>", "<span class='notice'>You start deconstructing \the [src].</span>")

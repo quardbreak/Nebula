@@ -288,7 +288,7 @@
 			previous_turf = get_turf(src)
 			continue	//so we don't burn the tile we be standin on
 		
-		if(previous_turf && LinkBlocked(previous_turf, T))
+		if(previous_turf && !in_range(previous_turf, T))
 			break
 	
 		ignite_turf(T)

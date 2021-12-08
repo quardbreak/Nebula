@@ -86,6 +86,9 @@
 	else
 		return 1
 
+/obj/machinery/door/window/CanAStarPass(obj/item/card/id/ID, to_dir, caller)
+	return !density || (dir != to_dir) || (check_access(ID) && !inoperable())
+
 /obj/machinery/door/window/CheckExit(atom/movable/mover, turf/target)
 	if(istype(mover) && mover.checkpass(PASS_FLAG_GLASS))
 		return 1

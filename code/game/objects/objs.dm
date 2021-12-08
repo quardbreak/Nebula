@@ -198,6 +198,9 @@
 /obj/proc/after_wounding(obj/item/organ/external/organ, datum/wound)
 	return
 
+/obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, caller)
+	return !density
+
 /obj/can_be_injected_by(var/atom/injector)
 	. = ATOM_IS_OPEN_CONTAINER(src) && ..()
 
