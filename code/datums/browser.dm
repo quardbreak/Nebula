@@ -101,27 +101,15 @@
 	"}
 
 /datum/browser/proc/get_footer()
-	return {"
-			</div>
-		</div>
-	</body>
-</html>"}
+	return "</div></div></body></html>"
 
 /datum/browser/proc/get_content()
-	. = {"
-	[get_header()]
-	[content]
-	[get_footer()]
-	"}
+	. = "[get_header()][content][get_footer()]"
 	if(written_text != WRITTEN_SKIP)
 		. = user.handle_reading_literacy(user, ., digital = (written_text == WRITTEN_DIGITAL))
 
 /datum/browser/proc/open(use_onclose = TRUE)
-	var/window_size = ""
-	if(width && height)
-		window_size = "size=[width||0]x[height||0];"
-
-	show_browser(user, get_content(), "window=[window_id];[window_size][window_options]")
+	show_browser(user, get_content(), "window=[window_id];size=[width||0]x[height||0];")
 
 	if(use_onclose)
 		onclose(user, window_id, ref)
