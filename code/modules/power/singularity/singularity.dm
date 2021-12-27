@@ -1,34 +1,46 @@
 var/global/list/singularities = list()
+
 /obj/singularity
 	name = "gravitational singularity"
 	desc = "A gravitational singularity."
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "singularity_s1"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	layer = SINGULARITY_LAYER
 	light_range = 6
-	unacidable = 1 //Don't comment this out.
 
+	// Don't comment this out.
+	unacidable = TRUE
+
+	/// Current sinlularity size.
 	var/current_size = 1
+	/// A size which allowed.
 	var/allowed_size = 1
-	var/contained = 1 //Are we going to move around?
-	var/energy = 100 //How strong are we?
-	var/dissipate = 1 //Do we lose energy over time?
+	/// How strong singularity are.
+	var/energy = 100
+	/// Does singularity lose energy over time.
+	var/dissipate = 1
+	/// Delay between losing energy.
 	var/dissipate_delay = 10
 	var/dissipate_track = 0
-	var/dissipate_strength = 1 //How much energy do we lose?
-	var/move_self = 1 //Do we move on our own?
-	var/grav_pull = 4 //How many tiles out do we pull?
-	var/consume_range = 0 //How many tiles out do we eat.
-	var/event_chance = 15 //Prob for event each tick.
-	var/target = null //Its target. Moves towards the target if it has one.
-	var/last_failed_movement = 0 //Will not move in the same dir if it couldnt before, will help with the getting stuck on fields thing.
+	/// How much enenrgy singularity will lose.
+	var/dissipate_strength = 1
+	/// Does singularity move on its own.
+	var/move_self = 1
+	/// How many tiles out do singularity pull.
+	var/grav_pull = 4
+	/// How many tiles out do singularity eat.
+	var/consume_range = 0
+	/// Brobability for event each tick.
+	var/event_chance = 15
+	/// Singularity target. Moves towards the target if it has one.
+	var/target = null
+	/// Will not move in the same dir if it couldnt before, will help with the getting stuck on fields thing.
+	var/last_failed_movement = 0
 	var/last_warning
 
-	var/chained = 0//Adminbus chain-grab
-
-/obj/singularity/Initialize(mapload, var/starting_energy = 50, var/temp = 0)
+/obj/singularity/Initialize(mapload, starting_energy = 50, temp = 0)
 	. = ..(mapload)
 
 	//CARN: admin-alert for chuckle-fuckery.
@@ -462,35 +474,14 @@ var/global/list/singularities = list()
 
 /obj/singularity/proc/pulse()
 	for(var/obj/machinery/power/rad_collector/R in rad_collectors)
-		if (get_dist(R, src) <= 15) //Better than using orange() every process.
+		// Better than using orange() every process.
+		if (get_dist(R, src) <= 15)
 			R.receive_pulse(energy)
-
-/obj/singularity/proc/on_capture()
-	chained = 1
-	overlays.Cut()
-	move_self = 0
-	switch (current_size)
-		if(1)
-			overlays += image('icons/obj/singularity.dmi',"chain_s1")
-		if(3)
-			overlays += image('icons/effects/96x96.dmi',"chain_s3")
-		if(5)
-			overlays += image('icons/effects/160x160.dmi',"chain_s5")
-		if(7)
-			overlays += image('icons/effects/224x224.dmi',"chain_s7")
-		if(9)
-			overlays += image('icons/effects/288x288.dmi',"chain_s9")
-
-/obj/singularity/proc/on_release()
-	chained = 0
-	overlays.Cut()
-	move_self = 1
 
 /obj/singularity/singularity_act(S, size)
 	if(current_size <= size)
 		var/gain = (energy/2)
 		var/dist = max((current_size - 2), 1)
-		explosion(src.loc,(dist),(dist*2),(dist*4))
-		spawn(0)
-			qdel(src)
+		explosion(get_turf(src), dist, dist * 2, dist * 4)
+		QDEL_IN(src, 0)
 		return gain
