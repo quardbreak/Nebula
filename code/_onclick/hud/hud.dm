@@ -7,6 +7,7 @@
 /mob
 	var/hud_type = null
 	var/datum/hud/hud_used = null
+	var/list/master_planes = null
 
 /mob/proc/InitializeHud()
 	if(hud_used)
@@ -15,6 +16,26 @@
 		hud_used = new hud_type(src)
 	else
 		hud_used = new /datum/hud(src)
+
+/mob/proc/initialize_planes()
+	LAZYINITLIST(master_planes)
+
+	var/list/planes = list(
+		/obj/screen/plane_master/blurry
+	)
+
+	for (var/plane_type in planes)
+		var/obj/screen/plane_master/plane = new plane_type()
+
+		master_planes["[plane.plane]"] = plane
+		client.screen += plane
+
+/mob/proc/update_planes()
+	LAZYINITLIST(master_planes)
+
+	for (var/plane_num in master_planes)
+		var/obj/screen/plane_master/plane = master_planes[plane_num]
+		plane.backdrop(src)
 
 /datum/hud
 	var/mob/mymob
