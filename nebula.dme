@@ -2777,6 +2777,7 @@
 #include "code\modules\paperwork\pen\reagent_pen.dm"
 #include "code\modules\paperwork\pen\retractable_pen.dm"
 #include "code\modules\particles\derbis.dm"
+#include "code\modules\particles\music.dm"
 #include "code\modules\particles\particle_holder.dm"
 #include "code\modules\particles\smoke.dm"
 #include "code\modules\particles\sparks.dm"

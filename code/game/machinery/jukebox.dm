@@ -25,6 +25,7 @@
 	var/datum/track/current_track
 	var/list/datum/track/tracks
 
+	var/atom/movable/particle_holder/music/notes
 
 /obj/machinery/media/jukebox/old
 	name = "space jukebox"
@@ -40,8 +41,12 @@
 	queue_icon_update()
 	sound_id = "[/obj/machinery/media/jukebox]_[sequential_id(/obj/machinery/media/jukebox)]"
 
+	notes = new(src)
+	notes.toggle(FALSE)
+
 /obj/machinery/media/jukebox/Destroy()
 	StopPlaying()
+	QDEL_NULL(notes)
 	QDEL_NULL_LIST(tracks)
 	current_track = null
 	. = ..()
@@ -173,7 +178,7 @@
 	playing = 0
 	update_use_power(POWER_USE_IDLE)
 	QDEL_NULL(sound_token)
-
+	notes.toggle(FALSE)
 
 /obj/machinery/media/jukebox/proc/StartPlaying()
 	StopPlaying()
@@ -185,6 +190,7 @@
 
 	playing = 1
 	update_use_power(POWER_USE_ACTIVE)
+	notes.toggle(TRUE)
 
 /obj/machinery/media/jukebox/proc/AdjustVolume(var/new_volume)
 	volume = Clamp(new_volume, 0, 50)
