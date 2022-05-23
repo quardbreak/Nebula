@@ -58,15 +58,12 @@
 /obj/machinery/door/proc/can_operate(var/mob/user)
 	. = istype(user) && !user.restrained() && (!issmall(user) || ishuman(user) || issilicon(user) || istype(user, /mob/living/bot))
 
-/obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
-	if(environment_smash >= 1)
-		damage = max(damage, 10)
-
+/obj/machinery/door/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	if(damage >= 10)
-		visible_message("<span class='danger'>\The [user] [attack_verb] into \the [src]!</span>")
+		visible_message(SPAN_DANGER("\The [user] [attack_verb] into \the [src]!"))
 		take_damage(damage)
 	else
-		visible_message("<span class='notice'>\The [user] bonks \the [src] harmlessly.</span>")
+		visible_message(SPAN_NOTICE("\The [user] bonks \the [src] harmlessly."))
 	attack_animation(user)
 
 /obj/machinery/door/Initialize(var/mapload, var/d, var/populate_parts = TRUE, var/obj/structure/door_assembly/assembly = null)

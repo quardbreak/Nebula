@@ -20,7 +20,7 @@
 	minbodytemp = 0
 
 	break_stuff_probability = 25
-	faction = "carp"
+	faction = MOB_FACTION_HOSTILE_SPACE
 	bleed_colour = "#5d0d71"
 	pass_flags = PASS_FLAG_TABLE
 

@@ -111,7 +111,6 @@
 	natural_weapon = /obj/item/natural_weapon/juggernaut
 	mob_size = MOB_SIZE_LARGE
 	speed = 3
-	environment_smash = 2
 	status_flags = 0
 	resistance = 10
 	construct_spells = list(/spell/aoe_turf/conjure/forcewall/lesser)
@@ -165,7 +164,6 @@
 	health = 75
 	natural_weapon = /obj/item/natural_weapon/wraith
 	speed = -1
-	environment_smash = 1
 	see_in_dark = 7
 	construct_spells = list(/spell/targeted/ethereal_jaunt/shift)
 
@@ -192,7 +190,6 @@
 	harm_intent_damage = 5
 	natural_weapon = /obj/item/natural_weapon/cult_builder
 	speed = 0
-	environment_smash = 1
 	construct_spells = list(/spell/aoe_turf/conjure/construct/lesser,
 							/spell/aoe_turf/conjure/wall,
 							/spell/aoe_turf/conjure/floor,
@@ -220,7 +217,6 @@
 	harm_intent_damage = 0
 	natural_weapon = /obj/item/natural_weapon/juggernaut/behemoth
 	speed = 5
-	environment_smash = 2
 	resistance = 10
 	var/energy = 0
 	var/max_energy = 1000
@@ -243,7 +239,6 @@
 	health = 150
 	natural_weapon = /obj/item/natural_weapon/harvester
 	speed = -1
-	environment_smash = 1
 	see_in_dark = 7
 
 	construct_spells = list(

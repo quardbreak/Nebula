@@ -1,7 +1,7 @@
 // Holographic Items!
 
-// Holographic tables are in code/modules/tables/presets.dm
-// Holographic racks are in code/modules/tables/rack.dm
+// Holographic tables are in code/game/objects/structures/tables.dm
+// Holographic racks are in code/game/objects/structures/racks.dm
 
 /turf/simulated/floor/holofloor
 	thermal_conductivity = 0
@@ -10,8 +10,7 @@
 	return 0.8
 
 /turf/simulated/floor/holofloor/attackby(obj/item/W, mob/user)
-	return
-	// HOLOFLOOR DOES NOT GIVE A FUCK
+	return // HOLOFLOOR DOES NOT GIVE A FUCK
 
 /turf/simulated/floor/holofloor/set_flooring()
 	return
@@ -403,36 +402,3 @@
 
 //Holocarp
 
-/mob/living/simple_animal/hostile/carp/holodeck
-	icon = 'icons/mob/simple_animal/holocarp.dmi'
-	alpha = 127
-	meat_amount = 0
-	meat_type = null
-
-/mob/living/simple_animal/hostile/carp/holodeck/carp_randomify()
-	return
-
-/mob/living/simple_animal/hostile/carp/holodeck/on_update_icon()
-	SHOULD_CALL_PARENT(FALSE)
-	return
-
-/mob/living/simple_animal/hostile/carp/holodeck/Initialize()
-	. = ..()
-	set_light(2) //hologram lighting
-
-/mob/living/simple_animal/hostile/carp/holodeck/proc/set_safety(var/safe)
-	if (safe)
-		faction = MOB_FACTION_NEUTRAL
-		natural_weapon.force = 0
-		environment_smash = 0
-		destroy_surroundings = 0
-	else
-		faction = "carp"
-		natural_weapon.force = initial(natural_weapon.force)
-
-/mob/living/simple_animal/hostile/carp/holodeck/gib()
-	death()
-
-/mob/living/simple_animal/hostile/carp/holodeck/death()
-	..(null, "fades away!", "You have been destroyed.")
-	qdel(src)

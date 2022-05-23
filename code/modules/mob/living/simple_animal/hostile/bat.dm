@@ -15,8 +15,6 @@
 	max_gas = null
 	minbodytemp = 0
 
-	environment_smash = 1
-
 	faction = "scarybat"
 	var/mob/living/owner
 

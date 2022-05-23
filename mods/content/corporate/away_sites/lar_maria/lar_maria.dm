@@ -27,7 +27,6 @@
 	desc = "You shouldn't see me!"
 	icon = 'mods/content/corporate/away_sites/lar_maria/lar_maria_guard_light.dmi'
 	unsuitable_atmos_damage = 15
-	environment_smash = 1
 	faction = "lar_maria"
 	status_flags = CANPUSH
 	speak = list("Die!", "Fresh meat!", "Hurr!", "You said help will come!", "I did nothing!", "Eat my fist!", "One for the road!")

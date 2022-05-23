@@ -293,6 +293,7 @@
 #define MOB_CLIMB_TIME_MEDIUM 50
 
 #define MOB_FACTION_NEUTRAL "neutral"
+#define MOB_FACTION_HOSTILE_SPACE "hostile_space"
 
 #define ROBOT_MODULE_TYPE_GROUNDED "grounded"
 #define ROBOT_MODULE_TYPE_FLYING   "flying"

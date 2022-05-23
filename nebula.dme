@@ -1981,6 +1981,7 @@
 #include "code\modules\holidays\holiday_hook.dm"
 #include "code\modules\holidays\holiday_name.dm"
 #include "code\modules\holidays\holiday_special.dm"
+#include "code\modules\holodeck\holocarp.dm"
 #include "code\modules\holodeck\HolodeckControl.dm"
 #include "code\modules\holodeck\HolodeckObjects.dm"
 #include "code\modules\holodeck\HolodeckPrograms.dm"

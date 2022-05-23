@@ -172,10 +172,7 @@
 							"You hear a knocking sound.")
 	return
 
-/obj/structure/window/attack_generic(var/mob/user, var/damage, var/attack_verb, var/environment_smash)
-	if(environment_smash >= 1)
-		damage = max(damage, 10)
-
+/obj/structure/window/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	if(istype(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		user.do_attack_animation(src)
