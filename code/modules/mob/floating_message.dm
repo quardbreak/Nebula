@@ -25,7 +25,7 @@ var/global/list/floating_chat_colors = list()
 	/// A luminescence-shifted value of the last color calculated for chatmessage overlays
 	var/chat_color_darkened
 
-/atom/movable/proc/animate_chat(message, decl/language/language, list/extra_classes, list/show_to, duration = CM_LIFESPAN)
+/atom/movable/proc/animate_chat(message, decl/language/language, list/extra_classes = list(), list/show_to, duration = CM_LIFESPAN)
 	set waitfor = FALSE
 
 	// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
@@ -56,16 +56,12 @@ var/global/list/floating_chat_colors = list()
 		if(copytext_char(message, -2) == "!!")
 			extra_classes.Add("yell")
 
-	// We dim italicized text to make it more distinguishable from regular text
-	var/tgt_color = extra_classes.Find("italics") ? chat_color_darkened : chat_color
-	var/complete_message = "<span class='center [extra_classes.Join(" ")]' style='color: [tgt_color]'>[message]</span>"
-
 	// create 2 messages, one that appears if you know the language, and one that appears when you don't know the language
-	var/image/understood = generate_floating_text(src, capitalize(complete_message), extra_classes, duration, show_to)
-	var/image/gibberish = language ? generate_floating_text(src, language.scramble(src, complete_message), extra_classes, duration, show_to) : understood
+	var/image/understood = generate_floating_text(src, capitalize(message), extra_classes, duration, show_to)
+	var/image/gibberish = language ? generate_floating_text(src, language.scramble(src, message), extra_classes, duration, show_to) : understood
 
 	for(var/client/C in show_to)
-		if(C.get_preference_value(/datum/client_preference/floating_messages) == PREF_SHOW)
+		if(!(C.get_preference_value(/datum/client_preference/floating_messages) == PREF_SHOW))
 			continue
 
 		var/mob/M = C.mob
@@ -83,7 +79,7 @@ var/global/list/floating_chat_colors = list()
 		else
 			C.images += gibberish
 
-/proc/generate_floating_text(atom/movable/holder, message, extra_classes, duration, show_to)
+/proc/generate_floating_text(atom/movable/holder, message, list/extra_classes, duration, show_to)
 	var/message_loc = isturf(holder) ? holder : get_atom_on_turf(holder)
 
 	var/bound_height = world.icon_size
@@ -105,7 +101,6 @@ var/global/list/floating_chat_colors = list()
 	I.maptext_height = CM_HEIGHT
 	I.maptext_x = (CM_WIDTH - bound_width) * -0.5
 
-	I.maptext = MAPTEXT(message)
 	animate(I, CM_SPAWN_TIME, alpha = 255, pixel_z = bound_height)
 
 	for(var/image/old in holder.stored_chat_text)
@@ -116,12 +111,23 @@ var/global/list/floating_chat_colors = list()
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_floating_text, holder, I), duration)
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/remove_images_from_clients, I, show_to), duration + CM_EOL_FADE)
 	events_repository.register(/decl/observ/destroyed, message_loc, I, /datum/proc/qdel_self)
+	type_floating_text(holder, I, message, extra_classes)
 	return I
 
 /proc/remove_floating_text(atom/movable/holder, image/I)
 	events_repository.unregister(/decl/observ/destroyed, I.loc, I, /datum/proc/qdel_self)
 	animate(I, CM_EOL_FADE, pixel_z = I.pixel_z + CM_FADE_PIXEL_Y, alpha = 0, flags = ANIMATION_PARALLEL)
 	LAZYREMOVE(holder.stored_chat_text, I)
+
+/proc/type_floating_text(atom/movable/holder, image/I, message, list/extra_classes)
+	set waitfor = FALSE
+
+	// We dim italicized text to make it more distinguishable from regular text
+	var/tgt_color = extra_classes.Find("italics") ? holder.chat_color_darkened : holder.chat_color
+
+	for(var/i = 1 to length_char(message) + 1)
+		I.maptext = MAPTEXT("<span class='center [extra_classes.Join(" ")]' style='color: [tgt_color]'>[copytext_char(message, 1, i)] </span>")
+		sleep(0.5)
 
 // Tweak these defines to change the available color ranges
 #define CM_COLOR_SAT_MIN 0.6
