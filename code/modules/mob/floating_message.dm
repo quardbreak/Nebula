@@ -124,9 +124,9 @@ var/global/list/floating_chat_colors = list()
 
 	// We dim italicized text to make it more distinguishable from regular text
 	var/tgt_color = extra_classes.Find("italics") ? holder.chat_color_darkened : holder.chat_color
-
+	message = html_decode(message)
 	for(var/i = 1 to length_char(message) + 1)
-		I.maptext = MAPTEXT("<span class='center [extra_classes.Join(" ")]' style='color: [tgt_color]'>[copytext_char(message, 1, i)] </span>")
+		I.maptext = MAPTEXT("<span class='center [extra_classes.Join(" ")]' style='color: [tgt_color]'>[html_encode(copytext_char(message, 1, i))] </span>")
 		sleep(0.5)
 
 // Tweak these defines to change the available color ranges
