@@ -340,9 +340,9 @@ var/global/list/channel_to_radio_key = new
 					O.hear_talk(src, stars(message), verb, speaking)
 
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/animate_speech_bubble, speech_bubble, speech_bubble_recipients | eavesdroppers, 30)
-	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients)
+	INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics ? list("italics") : list(), speech_bubble_recipients)
 	if(length(eavesdroppers))
-		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, stars(message), speaking, italics, eavesdroppers)
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, stars(message), speaking, italics ? list("italics") : list(), eavesdroppers)
 
 	if(whispering)
 		log_whisper("[name]/[key] : [message]")
