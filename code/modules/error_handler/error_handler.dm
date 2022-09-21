@@ -112,4 +112,6 @@ var/global/regex/actual_error_file_line
 
 /proc/error_write_log(msg)
 	to_world_log(msg)
+	if (config.log_runtime)
+		to_file(global.world_runtime_log, msg)
 #endif

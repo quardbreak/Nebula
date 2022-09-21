@@ -1,9 +1,8 @@
 // On Linux/Unix systems the line endings are LF, on windows it's CRLF, admins that don't use notepad++
 // will get logs that are one big line if the system is Linux and they are using notepad.  This solves it by adding CR to every line ending
-// in the logs.  ascii character 13 = CR
+// in the logs. ascii character 13 = CR
 
-var/global/log_end= world.system_type == UNIX ? ascii2text(13) : ""
-
+var/global/log_end = world.system_type == UNIX ? ascii2text(13) : ""
 
 /proc/error(msg)
 	to_world_log("## ERROR: [msg][log_end]")
@@ -29,7 +28,7 @@ var/global/log_end= world.system_type == UNIX ? ascii2text(13) : ""
 	to_world_log("## TESTING: [msg][log_end]")
 
 /proc/game_log(category, text)
-	direct_output(diary, "\[[time_stamp()]] [game_id] [category]: [text][log_end]")
+	direct_output(global.world_main_log, "\[[time_stamp()]] [game_id] [category]: [text][log_end]")
 
 /proc/log_admin(text)
 	global.admin_log.Add(text)
@@ -89,17 +88,9 @@ var/global/log_end= world.system_type == UNIX ? ascii2text(13) : ""
 	if (config.log_attack)
 		game_log("ATTACK", text)
 
-/proc/log_adminsay(text)
-	if (config.log_adminchat)
-		game_log("ADMINSAY", text)
-
 /proc/log_adminwarn(text)
 	if (config.log_adminwarn)
 		game_log("ADMINWARN", text)
-
-/proc/log_pda(text)
-	if (config.log_pda)
-		game_log("PDA", text)
 
 /proc/log_misc(text)
 	game_log("MISC", text)

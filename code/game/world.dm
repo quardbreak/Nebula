@@ -114,7 +114,7 @@ var/global/world_topic_last = world.timeofday
 	throttle[2] = reason
 
 /world/Topic(T, addr, master, key)
-	direct_output(diary, "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]")
+	direct_output(global.world_main_log, "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]")
 
 	if (global.world_topic_last > world.timeofday)
 		global.world_topic_throttle = list() //probably passed midnight
@@ -181,7 +181,7 @@ var/global/world_topic_last = world.timeofday
 	return 1
 
 /world/proc/load_motd()
-	join_motd = safe_file2text("config/motd.txt", FALSE)
+	global.server_motd = safe_file2text("config/motd.txt", FALSE)
 
 /proc/load_configuration()
 	config = new /datum/configuration()
@@ -265,22 +265,20 @@ var/global/world_topic_last = world.timeofday
 
 /world/proc/SetupLogs()
 	global.log_directory = "data/logs/[time2text(world.realtime, "YYYY/MM/DD")]/round-"
-	if(game_id)
-		global.log_directory += "[game_id]"
-	else
-		global.log_directory += "[replacetext(time_stamp(), ":", ".")]"
+	global.log_directory += global.game_id ? "[global.game_id]" : "[time_stamp_system("hh-mm-ss")]"
 
+	global.world_main_log = file("[global.log_directory]/main.log")
+	global.world_href_log = file("[global.log_directory]/href.log")
 	global.world_qdel_log = file("[global.log_directory]/qdel.log")
-	to_file(global.world_qdel_log, "\n\nStarting up round ID [game_id]. [time_stamp()]\n---------------------")
 
-	global.world_href_log = file("[global.log_directory]/href.log") // Used for config-optional total href logging
-	diary = file("[global.log_directory]/main.log") // This is the primary log, containing attack, admin, and game logs.
-	to_file(diary, "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]")
+	var/header_message = "[global.log_end]\n[global.log_end]\n\[[time_stamp()]\] Starting up with ID [global.game_id].[global.log_end]\n----------------------------------------[global.log_end]"
+	to_file(global.world_main_log, header_message)
+	to_file(global.world_href_log, header_message)
+	to_file(global.world_qdel_log, header_message)
 
-	if(config && config.log_runtime)
-		var/runtime_log = file("[global.log_directory]/runtime.log")
-		to_file(runtime_log, "Game [game_id] starting up at [time2text(world.timeofday, "hh:mm.ss")]")
-		log = runtime_log // runtimes and some other output is logged directly to world.log, which is redirected here.
+	if(config?.log_runtime)
+		global.world_runtime_log = file("[global.log_directory]/runtime.log")
+		to_file(global.world_runtime_log, header_message)
 
 #define FAILED_DB_CONNECTION_CUTOFF 5
 var/global/failed_db_connections = 0
