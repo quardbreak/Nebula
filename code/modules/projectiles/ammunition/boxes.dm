@@ -5,14 +5,6 @@
 	ammo_type = /obj/item/ammo_casing/pistol/magnum
 	material = /decl/material/solid/metal/steel
 	max_ammo = 6
-	var/static/list/bullet_offsets = list(
-		list("x" = 0, "y" = 0),
-		list("x" = -2, "y" = -3),
-		list("x" = -2, "y" = -7),
-		list("x" = 0, "y" = -10),
-		list("x" = 2, "y" = -7),
-		list("x" = 2, "y" = -3)
-	)
 
 /obj/item/ammo_magazine/speedloader/on_update_icon()
 	. = ..()
@@ -38,9 +30,20 @@
 					I.overlays += overlay_image(icon, "marking", A.marking_color, RESET_COLOR)
 				if(A.BB)
 					I.overlays += overlay_image(icon, "bullet", A.bullet_color, RESET_COLOR)
-				I.pixel_x = bullet_offsets[i]["x"]
-				I.pixel_y = bullet_offsets[i]["y"]
+				I.pixel_x = get_bullet_offsets(i)["x"]
+				I.pixel_y = get_bullet_offsets(i)["y"]
 				add_overlay(I)
+
+/obj/item/ammo_magazine/speedloader/proc/get_bullet_offsets(index)
+	var/static/list/bullet_offsets = list(
+		list("x" = 0, "y" = 0),
+		list("x" = -2, "y" = -3),
+		list("x" = -2, "y" = -7),
+		list("x" = 0, "y" = -10),
+		list("x" = 2, "y" = -7),
+		list("x" = 2, "y" = -3)
+	)
+	return bullet_offsets[index]
 
 /obj/item/ammo_magazine/shotholder
 	name = "shotgun slug holder"
