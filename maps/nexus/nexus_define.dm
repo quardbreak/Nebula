@@ -1,10 +1,10 @@
 /datum/map/nexus
-	name = "nexus"
-	full_name = "ISC Nexus"
-	path = "nexus"
-	ground_noun = "plated covering"
+	name          = "Nexus"
+	full_name     = "IST Nexus"
+	path          = "nexus"
+	ground_noun   = "plated covering"
 
-	station_name  = "Independent Space Complex \"Nexus\""
+	station_name  = "IST \"Nexus\""
 	station_short = "Nexus"
 
 	dock_name     = "Communications HQ"
@@ -14,7 +14,7 @@
 	company_short = "PRI"
 
 	lobby_screens = list('maps/nexus/lobby/nexus_lobby.png')
-	welcome_sound = 'sound/effects/alarm.ogg'
+	welcome_sound = 'sound/effects/cowboysting.ogg'
 
 	overmap_ids = list(OVERMAP_ID_SPACE)
 	num_exoplanets = 1
@@ -34,17 +34,19 @@
 	default_spawn = /decl/spawnpoint/cryo
 
 /datum/map/nexus/get_map_info()
-	return "You're aboard the <b>[station_name],</b> a space complex positioned at the vast frontier of space. \
+	return "You're aboard the <b>[station_name],</b> a independent space tradepost positioned at the vast frontier of space. \
 	Whenever you take a bunk in the station staff or captain one of the many currently docked shuttles - it's a good thing this station is still operating."
 
 /datum/map/nexus/create_trade_hubs()
-	new/datum/trade_hub/nexus()
+	new /datum/trade_hub/singleton/nexus()
 
-/datum/trade_hub/nexus
-	name = "Long-Range Subspace Trade Uplink"
+/datum/trade_hub/singleton/nexus
+	name = "Tradehouse Freight Network"
 
-/datum/trade_hub/nexus/get_initial_traders()
+/datum/trade_hub/singleton/nexus/get_initial_traders()
 	return list(
+		/datum/trader/xeno_shop,
 		/datum/trader/medical,
-		/datum/trader/mining
+		/datum/trader/mining,
+		/datum/trader/books
 	)

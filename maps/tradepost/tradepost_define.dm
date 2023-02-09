@@ -9,7 +9,7 @@
 
 	dock_name     = "FTS Capitalist's Rest"
 	boss_name     = "FTU Merchant Navy"
-	boss_short    = "Merchant Admiral"
+	boss_short    = "LD"
 	company_name  = "Legit Cargo Ltd."
 	company_short = "LC"
 	lobby_screens = list('maps/tradeship/lobby/bloodmoney.png','maps/tradeship/lobby/vapormoney.png')
