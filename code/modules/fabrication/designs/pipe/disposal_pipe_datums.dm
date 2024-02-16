@@ -73,6 +73,13 @@
 	constructed_path = /obj/machinery/disposal
 	turn = DISPOSAL_FLIP_NONE
 
+/datum/fabricator_recipe/pipe/disposal_dispenser/device/small
+	name = "disposal bin (compact)"
+	desc = "A compact bin used to dispose of trash."
+	build_icon = 'icons/obj/pipes/disposal_bin_small.dmi'
+	path = /obj/structure/disposalconstruct/machine/chute
+	constructed_path = /obj/machinery/disposal/small
+
 /datum/fabricator_recipe/pipe/disposal_dispenser/device/outlet
 	name = "disposal outlet"
 	desc = "an outlet that ejects things from a disposal network."

@@ -43,6 +43,21 @@ var/global/list/diversion_junctions = list()
 /obj/machinery/disposal/buildable
 	uncreated_component_parts = null
 
+/obj/machinery/disposal/small
+	desc = "A compact pneumatic waste disposal unit."
+	icon = 'icons/obj/pipes/disposal_bin_small.dmi'
+	density = FALSE
+
+	directional_offset = @'{"NORTH":{"y":-13}, "SOUTH":{"y":20}, "EAST":{"x":-14}, "WEST":{"x":11}}'
+
+/obj/machinery/disposal/small/set_dir()
+	. = ..()
+	if(.)
+		layer = (dir & NORTH) ? ABOVE_HUMAN_LAYER : initial(layer)
+
+/obj/machinery/disposal/small/check_mob_size(mob/target)
+	return (target.mob_size <= MOB_SIZE_SMALL)
+
 // create a new disposal
 // find the attached trunk (if present) and init gas resvr.
 /obj/machinery/disposal/Initialize()
@@ -94,13 +109,16 @@ var/global/list/diversion_junctions = list()
 	if(istype(G))	// handle grabbed mob
 		var/mob/GM = G.get_affecting_mob()
 		if(GM)
-			usr.visible_message(SPAN_DANGER("\The [usr] starts putting [GM.name] into the disposal."))
+			if(!check_mob_size(GM))
+				to_chat(user, SPAN_NOTICE("The opening is too narrow for [GM] to fit!"))
+				return
+			user.visible_message(SPAN_DANGER("\The [usr] starts putting [GM] into the disposal."))
 			if(do_after(usr, 20, src))
 				if (GM.client)
 					GM.client.perspective = EYE_PERSPECTIVE
 					GM.client.eye = src
 				GM.forceMove(src)
-				usr.visible_message(SPAN_DANGER("\The [GM] has been placed in the [src] by \the [user]."))
+				user.visible_message(SPAN_DANGER("\The [GM] has been placed in the [src] by \the [user]."))
 				qdel(G)
 				admin_attack_log(usr, GM, "Placed the victim into \the [src].", "Was placed into \the [src] by the attacker.", "stuffed \the [src] with")
 		return
@@ -120,6 +138,10 @@ var/global/list/diversion_junctions = list()
 
 		if(isanimal(user) && dropping != user)
 			return TRUE
+
+		if(!check_mob_size(dropping))
+			to_chat(user, SPAN_NOTICE("The opening is too narrow for [dropping] to fit!"))
+			return FALSE
 
 		var/incapacitation_flags = INCAPACITATION_DEFAULT
 		if(dropping == user)
@@ -435,17 +457,20 @@ var/global/list/diversion_junctions = list()
 		H.vent_gas(loc)
 		qdel(H)
 
+/obj/machinery/disposal/proc/check_mob_size(mob/target)
+	return TRUE
+
 /obj/machinery/disposal/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if (istype(mover,/obj/item) && mover.throwing)
+	if(istype(mover, /obj/item/projectile))
+		return TRUE
+	if(isitem(mover) && mover.throwing)
 		var/obj/item/I = mover
-		if(istype(I, /obj/item/projectile))
-			return
 		if(prob(75))
 			I.forceMove(src)
 			visible_message("\The [I] lands in \the [src].")
 		else
 			visible_message("\The [I] bounces off of \the [src]'s rim!")
-		return 0
+		return FALSE
 	else
 		return ..(mover, target, height, air_group)
 
