@@ -173,6 +173,7 @@
 /obj/structure/bed/chair/janicart
 	name = "janicart"
 	icon = 'icons/obj/vehicles.dmi'
+	base_icon = "pussywagon"
 	icon_state = "pussywagon"
 	anchored = FALSE
 	density =  TRUE
