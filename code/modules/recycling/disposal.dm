@@ -44,11 +44,15 @@ var/global/list/diversion_junctions = list()
 	uncreated_component_parts = null
 
 /obj/machinery/disposal/small
-	desc = "A compact pneumatic waste disposal unit."
+	name = "compact disposal unit"
+	desc = "A compact, pneumatic waste disposal unit."
 	icon = 'icons/obj/pipes/disposal_bin_small.dmi'
 	density = FALSE
 
 	directional_offset = @'{"NORTH":{"y":-13}, "SOUTH":{"y":20}, "EAST":{"x":-14}, "WEST":{"x":11}}'
+
+/obj/machinery/disposal/small/buildable
+	uncreated_component_parts = null
 
 /obj/machinery/disposal/small/set_dir()
 	. = ..()

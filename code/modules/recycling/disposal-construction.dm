@@ -225,7 +225,7 @@
 	update_icon()
 
 /obj/structure/disposalconstruct/machine/build(obj/structure/disposalpipe/CP)
-	var/obj/machinery/disposal/machine = new /obj/machinery/disposal(get_turf(src), dir)
+	var/obj/machinery/disposal/machine = new constructed_path(get_turf(src), dir)
 	var/datum/extension/parts_stash/stash = get_extension(src, /datum/extension/parts_stash)
 	if(stash)
 		stash.install_into(machine)

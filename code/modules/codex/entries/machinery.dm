@@ -73,6 +73,13 @@
 	disambiguator = "machine"
 	available_to_map_tech_level = MAP_TECH_LEVEL_SPACE
 
+/datum/codex_entry/disposal_small
+	associated_paths = list(/obj/machinery/disposal/small/buildable)
+	mechanics_text = "A compact, high-tech garbage bin. Inserting an item causes the disposal unit (after a delay) to pneumatically launch the item through a series of pipes leading to either a garbage processing room, or space, depending on the ship/station. Larger objects can be inserted via click+drag. <BR> You can remove a disposal unit by turning it off, using a screwdriver, then a welding tool, and removing the floor tile underneath it."
+	antag_text = "Only small-sized creatures can be inserted into the compact disposal unit. If they're capable of moving however, it's easy for them to get out. Be careful though, putting things in disposal units doesn't always mean they're gone forever. <BR>If you turn it off, it can be used to hide in. Just be careful no one turns it back on while you're still in there!"
+	disambiguator = "machine"
+	available_to_map_tech_level = MAP_TECH_LEVEL_SPACE
+
 /datum/codex_entry/emitter
 	associated_paths = list(/obj/machinery/emitter)
 	mechanics_text = "You must secure this in place with a wrench and weld it to the floor before using it. Using cables on the emitter will allow you to connect it to the powernet with a terminal, placed over a cable node. Clicking will toggle it on and off, at which point, so long as it remains powered, it will fire in a single direction in bursts of four."
