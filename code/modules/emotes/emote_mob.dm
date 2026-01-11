@@ -194,3 +194,18 @@
 /mob/observer/ghost/emote(var/act, var/type, var/message)
 	if(message && act == "me")
 		communicate(/decl/communication_channel/dsay, client, message, /decl/dsay_communication/emote)
+
+// A placeholder for emote buttons in stat panel.
+/mob/proc/emote_verb()
+	set category = "Emote"
+	emote(callee.name)
+
+/mob/proc/setup_emote_verbs()
+	var/list/usable_emotes = list()
+	for(var/emote in get_default_emotes())
+		var/decl/emote/emote_datum = GET_DECL(emote)
+		if(emote_datum.mob_can_use(src, assume_available = TRUE))
+			usable_emotes[emote_datum.key] = emote_datum
+	for(var/emote_key in usable_emotes)
+		verbs |= new /mob/proc/emote_verb(src, emote_key)
+

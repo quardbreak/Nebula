@@ -45,6 +45,7 @@
 		move_intent = GET_DECL(move_intent)
 	. = ..()
 	refresh_ai_handler()
+	setup_emote_verbs()
 	START_PROCESSING(SSmobs, src)
 
 /mob/proc/refresh_ai_handler()
