@@ -262,7 +262,7 @@ var/global/list/time_prefs_fixed = list()
 
 	var/list/preview_screen_locs = mannequin?.get_preview_screen_locs() || default_preview_screen_locs
 	for(var/D in global.cardinal)
-		var/obj/screen/setup_preview/O = LAZYACCESS(char_render_holders, "[D]")
+		var/obj/screen/setup_preview/mannequin/O = LAZYACCESS(char_render_holders, "[D]")
 		if(!O)
 			O = new
 			O.pref = src

@@ -11,6 +11,14 @@
 	pref = null
 	return ..()
 
+/obj/screen/setup_preview/mannequin/examined_by(mob/user, distance, infix, suffix)
+	SHOULD_CALL_PARENT(FALSE)
+	if(pref)
+		var/mob/living/human/dummy/mannequin/mannequin = get_mannequin(pref.client_ckey)
+		if(mannequin)
+			mannequin.examined_by(user, distance, infix, suffix)
+	return TRUE
+
 // Background 'floor'
 /obj/screen/setup_preview/bg
 	layer = TURF_LAYER
