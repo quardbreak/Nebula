@@ -74,9 +74,10 @@
 		else
 			icon_state = "[icon_state]4"
 
+	z_flags &= ~ZMM_MANGLE_PLANES
 	if(lit && remaining_fuel > 0)
-		// TODO: emissives
-		add_overlay(overlay_image(icon, "[icon_state]_lit", flags = RESET_COLOR))
+		add_overlay(emissive_overlay(icon, "[icon_state]_lit", flags = RESET_COLOR))
+		z_flags |= ~ZMM_MANGLE_PLANES
 
 	if(istype(loc, /obj/item/candelabra))
 		loc.queue_icon_update()

@@ -28,6 +28,8 @@ var/global/list/all_apcs = list()
 	layer = ABOVE_WINDOW_LAYER
 	directional_offset = @'{"NORTH":{"y":22}, "SOUTH":{"y":-22}, "EAST":{"x":22}, "WEST":{"x":-22}}'
 
+	z_flags = ZMM_MANGLE_PLANES
+
 	var/powered_down = FALSE
 	var/area/area
 	var/areastring = null
@@ -216,21 +218,21 @@ var/global/list/all_apcs = list()
 		status_overlays_lighting.len = 5
 		status_overlays_environ.len = 5
 
-		status_overlays_lock[1] = image(icon, "apcox-0")    // 0=blue 1=red
-		status_overlays_lock[2] = image(icon, "apcox-1")
+		status_overlays_lock[1] = emissive_overlay(icon, "apcox-0")    // 0=blue 1=red
+		status_overlays_lock[2] = emissive_overlay(icon, "apcox-1")
 
-		status_overlays_charging[1] = image(icon, "apco3-0")
-		status_overlays_charging[2] = image(icon, "apco3-1")
-		status_overlays_charging[3] = image(icon, "apco3-2")
+		status_overlays_charging[1] = emissive_overlay(icon, "apco3-0")
+		status_overlays_charging[2] = emissive_overlay(icon, "apco3-1")
+		status_overlays_charging[3] = emissive_overlay(icon, "apco3-2")
 
 		var/list/channel_overlays = list(status_overlays_equipment, status_overlays_lighting, status_overlays_environ)
 		var/channel = 0
 		for(var/list/channel_leds in channel_overlays)
-			channel_leds[POWERCHAN_OFF + 1] = overlay_image(icon,"apco[channel]",COLOR_RED)
-			channel_leds[POWERCHAN_OFF_TEMP + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
-			channel_leds[POWERCHAN_OFF_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_ORANGE)
-			channel_leds[POWERCHAN_ON + 1] = overlay_image(icon,"apco[channel]",COLOR_LIME)
-			channel_leds[POWERCHAN_ON_AUTO + 1] = overlay_image(icon,"apco[channel]",COLOR_BLUE)
+			channel_leds[POWERCHAN_OFF + 1] = emissive_overlay(icon,"apco[channel]",COLOR_RED)
+			channel_leds[POWERCHAN_OFF_TEMP + 1] = emissive_overlay(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_OFF_AUTO + 1] = emissive_overlay(icon,"apco[channel]",COLOR_ORANGE)
+			channel_leds[POWERCHAN_ON + 1] = emissive_overlay(icon,"apco[channel]",COLOR_LIME)
+			channel_leds[POWERCHAN_ON_AUTO + 1] = emissive_overlay(icon,"apco[channel]",COLOR_BLUE)
 			channel++
 
 	var/update = check_updates() 		//returns 0 if no need to update icons.
