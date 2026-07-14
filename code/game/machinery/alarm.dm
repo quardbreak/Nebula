@@ -847,7 +847,7 @@ FIRE ALARM
 	directional_offset = @'{"NORTH":{"y":-21}, "SOUTH":{"y":21}, "EAST":{"x":21}, "WEST":{"x":-21}}'
 
 	var/detecting =    TRUE
-	var/working =      TRUE
+	var/working =      FALSE
 	var/time =         1 SECOND
 	var/timing =       FALSE
 	var/last_process = 0
@@ -863,7 +863,6 @@ FIRE ALARM
 
 /obj/machinery/firealarm/on_update_icon()
 	cut_overlays()
-	icon_state = "casing"
 	if(construct_state && !istype(construct_state, /decl/machine_construction/wall_frame/panel_closed))
 		var/construct_icon_state
 		switch(construct_state.type)
@@ -880,30 +879,40 @@ FIRE ALARM
 	if(stat & BROKEN)
 		add_overlay("broken")
 		set_light(0)
-	else if(stat & NOPOWER)
-		add_overlay("unpowered")
-		set_light(0)
+		return
+
+	if(working)
+		add_overlay("fire1_panel")
 	else
-		if(!detecting)
-			add_overlay("fire1")
-			set_light(2, 0.25, COLOR_RED)
-		else if(isContactLevel(z))
+		add_overlay("fire0_panel")
+
+	if(stat & NOPOWER)
+		set_light(0)
+		return
+
+	if(!detecting)
+		if(working)
+			add_overlay(emissive_overlay("fire1_light"))
+			set_light(2, 0.5, COLOR_RED)
+		else
+			add_overlay(emissive_overlay("fire0_light"))
+			set_light(2, 0.5, COLOR_LIME)
+	else
+		if(isContactLevel(z))
 			var/decl/security_state/security_state = GET_DECL(global.using_map.security_state)
 			var/decl/security_level/sec_level = security_state.current_security_level
 
 			set_light(sec_level.light_power, sec_level.light_range, sec_level.light_color_alarm)
 
 			if(sec_level.alarm_appearance.alarm_icon)
-				var/image/alert1 = image(sec_level.icon, sec_level.alarm_appearance.alarm_icon)
+				var/image/alert1 = emissive_overlay(sec_level.icon, sec_level.alarm_appearance.alarm_icon)
 				alert1.color = sec_level.alarm_appearance.alarm_icon_color
 				add_overlay(alert1)
 
 			if(sec_level.alarm_appearance.alarm_icon_twotone)
-				var/image/alert2 = image(sec_level.icon, sec_level.alarm_appearance.alarm_icon_twotone)
+				var/image/alert2 = emissive_overlay(sec_level.icon, sec_level.alarm_appearance.alarm_icon_twotone)
 				alert2.color = sec_level.alarm_appearance.alarm_icon_twotone_color
 				add_overlay(alert2)
-		else
-			add_overlay("fire0")
 
 /obj/machinery/firealarm/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(detecting && exposed_temperature > T0C+200)
@@ -1007,8 +1016,9 @@ FIRE ALARM
 		interact(user)
 
 /obj/machinery/firealarm/proc/reset()
-	if (!( src.working ))
+	if(!working)
 		return
+	working = FALSE
 	var/area/area = get_area(src)
 	for(var/obj/machinery/firealarm/FA in area)
 		fire_alarm.clearAlarm(loc, FA)
@@ -1016,9 +1026,10 @@ FIRE ALARM
 	QDEL_NULL(sound_token)
 	return
 
-/obj/machinery/firealarm/proc/alarm(var/duration = 0)
-	if (!( src.working))
+/obj/machinery/firealarm/proc/alarm(duration = 0)
+	if(working)
 		return
+	working = TRUE
 	var/area/area = get_area(src)
 	for(var/obj/machinery/firealarm/FA in area)
 		fire_alarm.triggerAlarm(loc, FA, duration)
